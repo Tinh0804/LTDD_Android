@@ -1,0 +1,37 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+//plugins {
+//alias(libs.plugins.android.application) apply false
+//}
+buildscript {
+    ext.kotlin_version = "1.8.0"
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath libs.gradle
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath libs.google.services
+        classpath libs.firebase.crashlytics.gradle
+
+    }
+}
+plugins {
+    // You should apply the application plugin in your app-level build.gradle
+    // This file is for plugins common to all modules or for buildscript dependencies
+    // if not using the plugins {} block directly for them.
+    alias(libs.plugins.android.application) apply false // If you have an app module
+    // alias(libs.plugins.android.library) apply false // If you have library modules
+    id("org.jetbrains.kotlin.android") version "1.8.0" apply false // Example for Kotlin
+    // Add other plugins like hilt, google-services, etc. here apply false
+}
+allprojects {
+//    repositories {
+//        google()
+//        mavenCentral()
+//    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
