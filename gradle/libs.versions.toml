@@ -30,6 +30,7 @@ lifecycleViewmodelKtx = "2.9.4"
 materialVersion = "1.10.0"
 mockitoCore = "5.1.1"
 navigationFragment = "2.9.5"
+playServicesAuth = "21.4.0"
 recyclerview = "1.3.2"
 retrofit = "3.0.0"
 roomCompiler = "2.8.1"
@@ -90,6 +91,7 @@ material-v1100 = { module = "com.google.android.material:material", version.ref 
 mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockitoCore" }
 navigation-fragment = { module = "androidx.navigation:navigation-fragment", version.ref = "navigationFragment" }
 navigation-ui = { module = "androidx.navigation:navigation-ui", version.ref = "navigationFragment" }
+play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
 recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomCompiler" }
