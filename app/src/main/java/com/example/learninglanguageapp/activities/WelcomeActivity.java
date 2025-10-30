@@ -1,17 +1,21 @@
-package com.example.test;
+package com.example.learninglanguageapp.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Looper;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.learninglanguageapp.R;
+
 
 public class WelcomeActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private Button getStartedButton;
-    private Handler handler = new Handler();
+    private Handler handler = new Handler(Looper.getMainLooper());
+
     private int progressStatus = 0;
 
     @Override

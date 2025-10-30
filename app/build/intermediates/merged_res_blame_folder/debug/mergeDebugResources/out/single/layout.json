@@ -1,0 +1,66 @@
+[
+    {
+        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-75:/layout/activity_splash.xml",
+        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-78:/layout/activity_splash.xml"
+    },
+    {
+        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-75:/layout/activity_login.xml",
+        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-78:/layout/activity_login.xml"
+    },
+    {
+        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-75:/layout/welcome.xml",
+        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-78:/layout/welcome.xml"
+    },
+    {
+        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-75:/layout/name_register.xml",
+        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-78:/layout/name_register.xml"
+    },
+    {
+        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-75:/layout/language_learn.xml",
+        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-78:/layout/language_learn.xml"
+    },
+    {
+        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-75:/layout/phone_register.xml",
+        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-78:/layout/phone_register.xml"
+    },
+    {
+        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-75:/layout/level.xml",
+        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-78:/layout/level.xml"
+    },
+    {
+        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-75:/layout/welcome2.xml",
+        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-78:/layout/welcome2.xml"
+    },
+    {
+        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-75:/layout/pass_register.xml",
+        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-78:/layout/pass_register.xml"
+    },
+    {
+        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-75:/layout/splash.xml",
+        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-78:/layout/splash.xml"
+    },
+    {
+        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-75:/layout/activity_main.xml",
+        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-78:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-75:/layout/loading.xml",
+        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-78:/layout/loading.xml"
+    },
+    {
+        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-75:/layout/activity_register.xml",
+        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-78:/layout/activity_register.xml"
+    },
+    {
+        "merged": "com.example.learninglanguageapp-mergeDebugResources-75:/layout/pass_register.xml",
+        "source": "com.example.learninglanguageapp-main-78:/layout/pass_register.xml"
+    },
+    {
+        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-75:/layout/language_use.xml",
+        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-78:/layout/language_use.xml"
+    },
+    {
+        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-75:/layout/layout4_12.xml",
+        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-78:/layout/layout4_12.xml"
+    }
+]

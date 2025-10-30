@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- Network Permissions -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- Storage Permissions -->
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- Audio Permissions -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" /> <!-- System Permissions -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> <!-- Camera Permission (for profile picture) -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- Foreground Service Permission (API 28+) -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.LearningLanguageApp"
+        android:usesCleartextTraffic="false"
+        tools:targetApi="31">
+
+        <!-- Splash Activity -->
+        <activity
+            android:name="com.example.learninglanguageapp.activities.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LearningLanguageApp.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.learninglanguageapp.activities.WelcomeActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.learninglanguageapp.activities.NameRegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.learninglanguageapp.activities.PassRegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.learninglanguageapp.activities.Welcome2Activity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.learninglanguageapp.activities.PhoneRegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.learninglanguageapp.activities.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.learninglanguageapp.activities.LoginActivity"
+            android:exported="false" />
+        <!-- Main Activity -->
+        <activity
+            android:name="com.example.learninglanguageapp.activities.MainActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider> <!-- Firebase App Check (Security) -->
+        <meta-data
+            android:name="firebase_analytics_collection_enabled"
+            android:value="true" />
+        <meta-data
+            android:name="firebase_crashlytics_collection_enabled"
+            android:value="true" />
+    </application>
+
+</manifest>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Cơ bản -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Duolingo primary colors -->
+    <color name="primary_green">#03B409</color>
+    <color name="green">#58CC02</color>          <!-- xanh lá chính -->
+    <color name="green_dark">#46A302</color>     <!-- xanh lá đậm -->
+    <color name="yellow">#FFD600</color>         <!-- vàng -->
+    <color name="blue">#1CB0F6</color>           <!-- xanh dương -->
+    <color name="red">#FF4B4B</color>            <!-- đỏ -->
+
+    <!-- Background & Surface -->
+    <color name="background_primary">#FFFFFF</color>
+    <color name="background_secondary">#F5F7FA</color>
+    <color name="surface_card">#FFFFFF</color>
+
+    <!-- Text -->
+    <color name="text_primary">#000000</color>
+    <color name="text_secondary">#4B4B4B</color>
+    <color name="text_hint">#9E9E9E</color>
+    <color name="text_white">#FFFFFFFF</color>
+
+    <!-- Buttons -->
+
+    <color name="button_primary">@color/green</color>
+    <color name="button_primary_pressed">@color/green_dark</color>
+    <color name="button_disabled">#BDBDBD</color>
+
+    <!-- Navigation / Selector -->
+    <color name="selector_bottom_nav">@color/blue</color>
+
+
+    <!-- Extra colors -->
+    <color name="purple_500">#9C27B0</color>
+    <color name="teal_700">#00796B</color>
+</resources>
