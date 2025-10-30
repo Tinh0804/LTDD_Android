@@ -132,4 +132,8 @@ dependencies {
     androidTestImplementation libs.junit.v115
     androidTestImplementation libs.espresso.core.v351
     androidTestImplementation libs.rules
+
+
+    implementation libs.facebook.android.sdk
+
 }

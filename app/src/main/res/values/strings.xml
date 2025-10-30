@@ -19,4 +19,10 @@
     <string name="login">Login</string>
     <string name="register">Register</string>
 
+    <string name="facebook_app_id">805393175371694</string>
+    <string name="fb_login_protocol_scheme">fb805393175371694</string>
+    <string name="facebook_client_token">2c6c96f02d4933003be8c982338856b8</string>
+
+
+
 </resources>
