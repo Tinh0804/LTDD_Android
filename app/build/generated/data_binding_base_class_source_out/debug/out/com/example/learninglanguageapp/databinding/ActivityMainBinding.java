@@ -5,13 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.learninglanguageapp.R;
+import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -20,6 +21,9 @@ import java.lang.String;
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   private final CoordinatorLayout rootView;
+
+  @NonNull
+  public final AppBarLayout appBarLayout;
 
   @NonNull
   public final BottomNavigationView bottomNavigation;
@@ -31,16 +35,31 @@ public final class ActivityMainBinding implements ViewBinding {
   public final CoordinatorLayout main;
 
   @NonNull
-  public final Toolbar toolbar;
+  public final TextView tvGems;
+
+  @NonNull
+  public final TextView tvLanguage;
+
+  @NonNull
+  public final TextView tvPremium;
+
+  @NonNull
+  public final TextView tvStreak;
 
   private ActivityMainBinding(@NonNull CoordinatorLayout rootView,
-      @NonNull BottomNavigationView bottomNavigation, @NonNull FrameLayout fragmentContainer,
-      @NonNull CoordinatorLayout main, @NonNull Toolbar toolbar) {
+      @NonNull AppBarLayout appBarLayout, @NonNull BottomNavigationView bottomNavigation,
+      @NonNull FrameLayout fragmentContainer, @NonNull CoordinatorLayout main,
+      @NonNull TextView tvGems, @NonNull TextView tvLanguage, @NonNull TextView tvPremium,
+      @NonNull TextView tvStreak) {
     this.rootView = rootView;
+    this.appBarLayout = appBarLayout;
     this.bottomNavigation = bottomNavigation;
     this.fragmentContainer = fragmentContainer;
     this.main = main;
-    this.toolbar = toolbar;
+    this.tvGems = tvGems;
+    this.tvLanguage = tvLanguage;
+    this.tvPremium = tvPremium;
+    this.tvStreak = tvStreak;
   }
 
   @Override
@@ -70,6 +89,12 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.appBarLayout;
+      AppBarLayout appBarLayout = ViewBindings.findChildViewById(rootView, id);
+      if (appBarLayout == null) {
+        break missingId;
+      }
+
       id = R.id.bottom_navigation;
       BottomNavigationView bottomNavigation = ViewBindings.findChildViewById(rootView, id);
       if (bottomNavigation == null) {
@@ -84,14 +109,32 @@ public final class ActivityMainBinding implements ViewBinding {
 
       CoordinatorLayout main = (CoordinatorLayout) rootView;
 
-      id = R.id.toolbar;
-      Toolbar toolbar = ViewBindings.findChildViewById(rootView, id);
-      if (toolbar == null) {
+      id = R.id.tvGems;
+      TextView tvGems = ViewBindings.findChildViewById(rootView, id);
+      if (tvGems == null) {
         break missingId;
       }
 
-      return new ActivityMainBinding((CoordinatorLayout) rootView, bottomNavigation,
-          fragmentContainer, main, toolbar);
+      id = R.id.tvLanguage;
+      TextView tvLanguage = ViewBindings.findChildViewById(rootView, id);
+      if (tvLanguage == null) {
+        break missingId;
+      }
+
+      id = R.id.tvPremium;
+      TextView tvPremium = ViewBindings.findChildViewById(rootView, id);
+      if (tvPremium == null) {
+        break missingId;
+      }
+
+      id = R.id.tvStreak;
+      TextView tvStreak = ViewBindings.findChildViewById(rootView, id);
+      if (tvStreak == null) {
+        break missingId;
+      }
+
+      return new ActivityMainBinding((CoordinatorLayout) rootView, appBarLayout, bottomNavigation,
+          fragmentContainer, main, tvGems, tvLanguage, tvPremium, tvStreak);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

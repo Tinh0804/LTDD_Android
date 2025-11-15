@@ -3,8 +3,11 @@ package com.example.learninglanguageapp.network;
 
 import android.annotation.SuppressLint;
 
+import com.example.learninglanguageapp.models.Lesson;
 import com.example.learninglanguageapp.models.Request.LoginRequest;
 import com.example.learninglanguageapp.models.Response.LoginResponse;
+import com.example.learninglanguageapp.models.Unit;
+import com.example.learninglanguageapp.models.Word;
 import com.google.firebase.firestore.auth.User;
 
 import java.util.List;
@@ -31,4 +34,14 @@ public interface ApiService {
     @SuppressLint("RestrictedApi")
     @GET("users/{id}")
     Call<User> getUser(@Path("id") String id);
+
+    //VY HẬU
+    @GET("units")
+    Call<List<Unit>> getAllUnits();
+
+    @GET("units/{unitId}/lessons")
+    Call<List<Lesson>> getLessonsByUnit(@Path("unitId") int unitId);
+
+    @GET("lessons/{lessonId}/words")
+    Call<List<Word>> getWordsByLesson(@Path("lessonId") int lessonId);
 }
