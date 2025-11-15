@@ -43,8 +43,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void setupClickListeners() {
-        binding.btnLogin.setOnClickListener(v -> handleLogin());
-        binding.tvRegister.setOnClickListener(v -> openRegisterActivity());
+        binding.btnSignIn.setOnClickListener(v -> handleLogin());
+        binding.tvSignUp.setOnClickListener(v -> openRegisterActivity());
         binding.tvForgotPassword.setOnClickListener(v -> handleForgotPassword());
     }
 
@@ -55,8 +55,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void handleLogin() {
-        String email = binding.etEmail.getText().toString().trim();
-        String password = binding.etPassword.getText().toString().trim();
+        String email = binding.edtEmail.getText().toString().trim();
+        String password = binding.edtPassword.getText().toString().trim();
 
         if (!validateInput(email, password)) {
             return;
@@ -113,8 +113,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private void showProgress(boolean show) {
         binding.progressBar.setVisibility(show ? View.VISIBLE : View.GONE);
-        binding.btnLogin.setEnabled(!show);
-        binding.btnLogin.setText(show ? "Đang đăng nhập..." : getString(R.string.login));
+        binding.btnSignIn.setEnabled(!show);
+        binding.btnSignIn.setText(show ? "Đang đăng nhập..." : getString(R.string.login));
     }
 
     private String getErrorMessage(Exception exception) {
@@ -139,7 +139,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void handleForgotPassword() {
-        String email = binding.etEmail.getText().toString().trim();
+        String email = binding.edtEmail.getText().toString().trim();
         if (email.isEmpty()) {
             Toast.makeText(this, "Vui lòng nhập email", Toast.LENGTH_SHORT).show();
             return;
