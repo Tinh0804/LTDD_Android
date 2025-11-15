@@ -39,7 +39,7 @@ public class WelcomeActivity extends AppCompatActivity {
         }).start();
 
         getStartedButton.setOnClickListener(v -> {
-            Intent intent = new Intent(WelcomeActivity.this, NameRegisterActivity.class);
+            Intent intent = new Intent(WelcomeActivity.this, RegisterActivity.class);
             startActivity(intent);
             finish(); // đóng WelcomeActivity
         });

@@ -2,112 +2,137 @@ package com.example.learninglanguageapp.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.learninglanguageapp.firebase.FirebaseAuthManager;
-import com.example.learninglanguageapp.utils.Constants;
-import com.example.learninglanguageapp.utils.SharedPrefsHelper;
-import com.example.learninglanguageapp.utils.ValidationUtils;
-import com.google.firebase.auth.FirebaseUser;
 import com.example.learninglanguageapp.R;
-import com.example.learninglanguageapp.databinding.ActivityRegisterBinding;
+import com.google.android.material.button.MaterialButton;
 
+import java.time.Instant;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    private ActivityRegisterBinding binding;
-    private FirebaseAuthManager authManager;
-    private SharedPrefsHelper prefsHelper;
+    private EditText etName, etPhone, etPassword, etConfirmPassword;
+    private ImageButton btnTogglePassword, btnToggleConfirmPassword;
+    private MaterialButton btnRegister;
+
+    private boolean passwordVisible = false;
+    private boolean confirmPasswordVisible = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityRegisterBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        setContentView(R.layout.activity_register);
 
-        authManager = FirebaseAuthManager.getInstance(this);
-        prefsHelper = new SharedPrefsHelper(this);
-
-        binding.btnRegister.setOnClickListener(v -> handleRegister());
-        binding.tvLogin.setOnClickListener(v -> openLoginActivity());
+        initViews();
+        setListeners();
     }
 
-    private void handleRegister() {
-        String email = binding.etEmail.getText().toString().trim();
-        String password = binding.etPassword.getText().toString().trim();
-        String confirmPassword = binding.etConfirmPassword.getText().toString().trim();
+    private void initViews() {
+        etName = findViewById(R.id.etName);
+        etPhone = findViewById(R.id.etPhone);
+        etPassword = findViewById(R.id.etPassword);
+        etConfirmPassword = findViewById(R.id.etConfirmPassword);
 
-        if (!validateInput(email, password, confirmPassword)) {
-            return;
-        }
+        btnTogglePassword = findViewById(R.id.btnTogglePassword);
+        btnToggleConfirmPassword = findViewById(R.id.btnToggleConfirmPassword);
+        btnRegister = findViewById(R.id.btnRegister);
+    }
 
-        showProgress(true);
+    private void setListeners() {
+        btnTogglePassword.setOnClickListener(v -> {
+            passwordVisible = !passwordVisible;
+            togglePasswordVisibility(etPassword, passwordVisible);
+        });
 
-        authManager.createUserWithEmailAndPassword(email, password, new FirebaseAuthManager.AuthResultListener() {
-            @Override
-            public void onSuccess(FirebaseUser user) {
-                showProgress(false);
+        btnToggleConfirmPassword.setOnClickListener(v -> {
+            confirmPasswordVisible = !confirmPasswordVisible;
+            togglePasswordVisibility(etConfirmPassword, confirmPasswordVisible);
+        });
 
-                prefsHelper.saveString(Constants.PREF_USER_ID, user.getUid());
-                prefsHelper.saveString(Constants.PREF_USER_EMAIL, user.getEmail());
+        btnRegister.setOnClickListener(v -> {
+            String name = etName.getText().toString().trim();
+            String phone = etPhone.getText().toString().trim();
+            String password = etPassword.getText().toString();
+            String confirmPassword = etConfirmPassword.getText().toString();
 
-                Toast.makeText(RegisterActivity.this, getString(R.string.register_success), Toast.LENGTH_SHORT).show();
-                navigateToMain();
-            }
+            if (validateInput(name, phone, password, confirmPassword)) {
 
-            @Override
-            public void onError(Exception exception) {
-                showProgress(false);
-                Toast.makeText(RegisterActivity.this, getString(R.string.register_failed), Toast.LENGTH_LONG).show();
+
+                Intent intent = getIntent();
+                Bundle bundle = new Bundle();
+                bundle.putString("name", name);
+                bundle.putString("phone", phone);
+                bundle.putString("password", password);
+
+
+
+                Intent intent1 = new Intent(RegisterActivity.this, StudyTimeActivity.class);
+                intent1.putExtra("data",bundle);
+
+                startActivity(intent1);
             }
         });
     }
 
-    private boolean validateInput(String email, String password, String confirmPassword) {
-        boolean isValid = true;
-
-        if (email.isEmpty() || !ValidationUtils.isValidEmail(email)) {
-            binding.tilEmail.setError(getString(R.string.error_invalid_email));
-            isValid = false;
+    private void togglePasswordVisibility(EditText editText, boolean visible) {
+        if (visible) {
+            editText.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
         } else {
-            binding.tilEmail.setError(null);
+            editText.setTransformationMethod(PasswordTransformationMethod.getInstance());
+        }
+        // Giữ con trỏ ở cuối text
+        editText.setSelection(editText.getText().length());
+    }
+
+    private boolean validateInput(String name, String phone, String password, String confirmPassword) {
+        if (TextUtils.isEmpty(name)) {
+            etName.setError("Name is required");
+            etName.requestFocus();
+            return false;
         }
 
-        if (password.isEmpty() || password.length() < 6) {
-            binding.tilPassword.setError(getString(R.string.error_password_too_short));
-            isValid = false;
-        } else {
-            binding.tilPassword.setError(null);
+        if (TextUtils.isEmpty(phone)) {
+            etPhone.setError("Phone number is required");
+            etPhone.requestFocus();
+            return false;
+        }
+
+        if (TextUtils.isEmpty(password)) {
+            etPassword.setError("Password is required");
+            etPassword.requestFocus();
+            return false;
+        }
+
+        if (password.length() < 6) {
+            etPassword.setError("Password must be at least 6 characters");
+            etPassword.requestFocus();
+            return false;
         }
 
         if (!password.equals(confirmPassword)) {
-            binding.tilConfirmPassword.setError(getString(R.string.error_password_not_match));
-            isValid = false;
-        } else {
-            binding.tilConfirmPassword.setError(null);
+            etConfirmPassword.setError("Passwords do not match");
+            etConfirmPassword.requestFocus();
+            return false;
         }
 
-        return isValid;
+        return true;
     }
 
-    private void showProgress(boolean show) {
-        binding.progressBar.setVisibility(show ? View.VISIBLE : View.GONE);
-        binding.btnRegister.setEnabled(!show);
-        binding.btnRegister.setText(show ? "Đang đăng ký..." : getString(R.string.register));
-    }
+    private void registerUser(String name, String phone, String password) {
+        // TODO: Gọi API backend ở đây
+        // Ví dụ giả lập:
+        Toast.makeText(this, "Register successful!\nName: " + name + "\nPhone: " + phone, Toast.LENGTH_LONG).show();
 
-    private void navigateToMain() {
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-        overridePendingTransition(R.anim.fade_in, android.R.anim.fade_out);
-        finish();
-    }
-
-    private void openLoginActivity() {
-        finish();
+        // Sau khi register xong -> chuyển sang LoginActivity hoặc MainActivity
+        // startActivity(new Intent(this, MainActivity.class));
+        // finish();
     }
 }

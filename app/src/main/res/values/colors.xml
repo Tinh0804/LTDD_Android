@@ -36,4 +36,7 @@
     <!-- Extra colors -->
     <color name="purple_500">#9C27B0</color>
     <color name="teal_700">#00796B</color>
+
+    <color name="purple_200">#CC5CE0</color>
+
 </resources>

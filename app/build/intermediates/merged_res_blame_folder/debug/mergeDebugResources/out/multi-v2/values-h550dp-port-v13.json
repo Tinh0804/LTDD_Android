@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.learninglanguageapp-mergeDebugResources-79:/values-h550dp-port-v13/values-h550dp-port-v13.xml",
+            "outputFile": "com.example.learninglanguageapp-mergeDebugResources-68:/values-h550dp-port-v13/values-h550dp-port-v13.xml",
             "map": [
                 {
-                    "source": "/Users/vyhau/.gradle/caches/8.13/transforms/7986064e74b1a68c504e76d99ba3f064/transformed/material-1.10.0/res/values-h550dp-port-v13/values-h550dp-port-v13.xml",
+                    "source": "/Users/macbookpro/.gradle/caches/8.13/transforms/7986064e74b1a68c504e76d99ba3f064/transformed/material-1.10.0/res/values-h550dp-port-v13/values-h550dp-port-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

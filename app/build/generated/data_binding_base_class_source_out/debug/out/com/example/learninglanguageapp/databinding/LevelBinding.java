@@ -5,12 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -31,19 +30,7 @@ public final class LevelBinding implements ViewBinding {
   public final MaterialButton btnContinue;
 
   @NonNull
-  public final CardView cardAdvanced;
-
-  @NonNull
-  public final CardView cardBeginner;
-
-  @NonNull
-  public final CardView cardElementary;
-
-  @NonNull
-  public final CardView cardIntermediate;
-
-  @NonNull
-  public final LinearLayout levelList;
+  public final ListView lvLevels;
 
   @NonNull
   public final ProgressBar progressBar;
@@ -55,19 +42,13 @@ public final class LevelBinding implements ViewBinding {
   public final TextView tvQuestion;
 
   private LevelBinding(@NonNull ConstraintLayout rootView, @NonNull ImageButton btnBack,
-      @NonNull MaterialButton btnContinue, @NonNull CardView cardAdvanced,
-      @NonNull CardView cardBeginner, @NonNull CardView cardElementary,
-      @NonNull CardView cardIntermediate, @NonNull LinearLayout levelList,
+      @NonNull MaterialButton btnContinue, @NonNull ListView lvLevels,
       @NonNull ProgressBar progressBar, @NonNull TextView tvProgress,
       @NonNull TextView tvQuestion) {
     this.rootView = rootView;
     this.btnBack = btnBack;
     this.btnContinue = btnContinue;
-    this.cardAdvanced = cardAdvanced;
-    this.cardBeginner = cardBeginner;
-    this.cardElementary = cardElementary;
-    this.cardIntermediate = cardIntermediate;
-    this.levelList = levelList;
+    this.lvLevels = lvLevels;
     this.progressBar = progressBar;
     this.tvProgress = tvProgress;
     this.tvQuestion = tvQuestion;
@@ -112,33 +93,9 @@ public final class LevelBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.cardAdvanced;
-      CardView cardAdvanced = ViewBindings.findChildViewById(rootView, id);
-      if (cardAdvanced == null) {
-        break missingId;
-      }
-
-      id = R.id.cardBeginner;
-      CardView cardBeginner = ViewBindings.findChildViewById(rootView, id);
-      if (cardBeginner == null) {
-        break missingId;
-      }
-
-      id = R.id.cardElementary;
-      CardView cardElementary = ViewBindings.findChildViewById(rootView, id);
-      if (cardElementary == null) {
-        break missingId;
-      }
-
-      id = R.id.cardIntermediate;
-      CardView cardIntermediate = ViewBindings.findChildViewById(rootView, id);
-      if (cardIntermediate == null) {
-        break missingId;
-      }
-
-      id = R.id.levelList;
-      LinearLayout levelList = ViewBindings.findChildViewById(rootView, id);
-      if (levelList == null) {
+      id = R.id.lvLevels;
+      ListView lvLevels = ViewBindings.findChildViewById(rootView, id);
+      if (lvLevels == null) {
         break missingId;
       }
 
@@ -160,9 +117,8 @@ public final class LevelBinding implements ViewBinding {
         break missingId;
       }
 
-      return new LevelBinding((ConstraintLayout) rootView, btnBack, btnContinue, cardAdvanced,
-          cardBeginner, cardElementary, cardIntermediate, levelList, progressBar, tvProgress,
-          tvQuestion);
+      return new LevelBinding((ConstraintLayout) rootView, btnBack, btnContinue, lvLevels,
+          progressBar, tvProgress, tvQuestion);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

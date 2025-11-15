@@ -1,43 +1,20 @@
-package com.example.learninglanguageapp.network;// network/ApiClient.java
-
-import com.example.learninglanguageapp.network.ApiService;
+package com.example.learninglanguageapp.network;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
 
 public class ApiClient {
-    private static final String BASE_URL = "https://api.yourapp.com/"; // thay bằng API thật
-    private static ApiClient instance;
-    private final ApiService apiService;
+    private static final String BASE_URL = "http://localhost:5111/";
+    private static ApiService apiService;
 
-    private ApiClient() {
-        // Logging cho debug
-        HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
-        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
-
-        OkHttpClient client = new OkHttpClient.Builder()
-                .addInterceptor(logging)
-                .build();
-
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .client(client)
-                .build();
-
-        apiService = retrofit.create(ApiService.class);
-    }
-
-    public static synchronized ApiClient getInstance() {
-        if (instance == null) {
-            instance = new ApiClient();
+    public static ApiService getApiService() {
+        if (apiService == null) {
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+            apiService = retrofit.create(ApiService.class);
         }
-        return instance;
-    }
-
-    public ApiService getApiService() {
         return apiService;
     }
 }

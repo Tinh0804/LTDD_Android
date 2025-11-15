@@ -21,7 +21,6 @@
     <uses-permission android:name="android.permission.CAMERA" /> <!-- Foreground Service Permission (API 28+) -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
-    <uses-permission android:name="android.permission.INTERNET"/>
 
 
 
@@ -41,36 +40,31 @@
         <!-- Splash Activity -->
         <activity
             android:name="com.example.learninglanguageapp.activities.SplashActivity"
-            android:exported="true"
+            android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.LearningLanguageApp.Splash">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/Theme.LearningLanguageApp.Splash"/>
         <activity
             android:name="com.example.learninglanguageapp.activities.WelcomeActivity"
             android:exported="false" />
-        <activity
-            android:name="com.example.learninglanguageapp.activities.NameRegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.learninglanguageapp.activities.PassRegisterActivity"
-            android:exported="false" />
+
         <activity
             android:name="com.example.learninglanguageapp.activities.Welcome2Activity"
             android:exported="false" />
-        <activity
-            android:name="com.example.learninglanguageapp.activities.PhoneRegisterActivity"
-            android:exported="false" />
+
         <activity
             android:name="com.example.learninglanguageapp.activities.RegisterActivity"
             android:exported="false" />
         <activity
             android:name="com.example.learninglanguageapp.activities.LoginActivity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
         <!-- Main Activity -->
         <activity
             android:name="com.example.learninglanguageapp.activities.MainActivity"
@@ -86,15 +80,10 @@
             tools:ignore="MissingClass" />
         <activity
             android:name="com.facebook.CustomTabActivity"
-            android:exported="true"
-            tools:ignore="MissingClass">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="@string/fb_login_protocol_scheme" />
-            </intent-filter>
-        </activity>
+            android:exported="false"
+            tools:ignore="MissingClass"
+            tools:replace="android:exported" />
+
 
         <provider
             android:name="androidx.core.content.FileProvider"

@@ -5,8 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -30,10 +31,13 @@ public final class Layout412Binding implements ViewBinding {
   public final MaterialButton btnContinue;
 
   @NonNull
-  public final LinearLayout layoutOptions;
+  public final ListView lvOptions;
 
   @NonNull
   public final ProgressBar progressBar;
+
+  @NonNull
+  public final ScrollView scrollView;
 
   @NonNull
   public final TextView tvProgress;
@@ -42,14 +46,15 @@ public final class Layout412Binding implements ViewBinding {
   public final TextView tvQuestion;
 
   private Layout412Binding(@NonNull ConstraintLayout rootView, @NonNull ImageButton btnBack,
-      @NonNull MaterialButton btnContinue, @NonNull LinearLayout layoutOptions,
-      @NonNull ProgressBar progressBar, @NonNull TextView tvProgress,
-      @NonNull TextView tvQuestion) {
+      @NonNull MaterialButton btnContinue, @NonNull ListView lvOptions,
+      @NonNull ProgressBar progressBar, @NonNull ScrollView scrollView,
+      @NonNull TextView tvProgress, @NonNull TextView tvQuestion) {
     this.rootView = rootView;
     this.btnBack = btnBack;
     this.btnContinue = btnContinue;
-    this.layoutOptions = layoutOptions;
+    this.lvOptions = lvOptions;
     this.progressBar = progressBar;
+    this.scrollView = scrollView;
     this.tvProgress = tvProgress;
     this.tvQuestion = tvQuestion;
   }
@@ -93,15 +98,21 @@ public final class Layout412Binding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.layoutOptions;
-      LinearLayout layoutOptions = ViewBindings.findChildViewById(rootView, id);
-      if (layoutOptions == null) {
+      id = R.id.lvOptions;
+      ListView lvOptions = ViewBindings.findChildViewById(rootView, id);
+      if (lvOptions == null) {
         break missingId;
       }
 
       id = R.id.progressBar;
       ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
       if (progressBar == null) {
+        break missingId;
+      }
+
+      id = R.id.scrollView;
+      ScrollView scrollView = ViewBindings.findChildViewById(rootView, id);
+      if (scrollView == null) {
         break missingId;
       }
 
@@ -117,8 +128,8 @@ public final class Layout412Binding implements ViewBinding {
         break missingId;
       }
 
-      return new Layout412Binding((ConstraintLayout) rootView, btnBack, btnContinue, layoutOptions,
-          progressBar, tvProgress, tvQuestion);
+      return new Layout412Binding((ConstraintLayout) rootView, btnBack, btnContinue, lvOptions,
+          progressBar, scrollView, tvProgress, tvQuestion);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

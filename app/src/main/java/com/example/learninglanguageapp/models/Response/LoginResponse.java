@@ -2,13 +2,13 @@ package com.example.learninglanguageapp.models.Response;
 
 import android.annotation.SuppressLint;
 
-import com.google.firebase.firestore.auth.User;
+import com.example.learninglanguageapp.models.UserProfile;
 
 public class LoginResponse {
     private boolean success;
     private String message;
     private String token;   // token nếu đăng nhập thành công
-    private User user;      // thông tin user trả về (nếu API có)
+    private UserProfile user;      // thông tin user trả về (nếu API có)
 
     // Getter & Setter
     public boolean isSuccess() {
@@ -36,11 +36,11 @@ public class LoginResponse {
     }
 
     @SuppressLint("RestrictedApi")
-    public User getUser() {
+    public UserProfile getUser() {
         return user;
     }
     @SuppressLint("RestrictedApi")
-    public void setUser( User user) {
+    public void setUser( UserProfile user) {
         this.user = user;
     }
 }

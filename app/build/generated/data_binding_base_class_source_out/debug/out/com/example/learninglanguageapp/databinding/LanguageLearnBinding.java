@@ -5,12 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -31,22 +31,7 @@ public final class LanguageLearnBinding implements ViewBinding {
   public final MaterialButton btnContinue;
 
   @NonNull
-  public final CardView cardCanada;
-
-  @NonNull
-  public final CardView cardEnglish;
-
-  @NonNull
-  public final CardView cardFrench;
-
-  @NonNull
-  public final CardView cardGermany;
-
-  @NonNull
-  public final CardView cardSpanish;
-
-  @NonNull
-  public final CardView cardVietnamese;
+  public final ListView listViewLearn;
 
   @NonNull
   public final ProgressBar progressBar;
@@ -61,20 +46,13 @@ public final class LanguageLearnBinding implements ViewBinding {
   public final TextView tvTitle;
 
   private LanguageLearnBinding(@NonNull ConstraintLayout rootView, @NonNull ImageButton btnBack,
-      @NonNull MaterialButton btnContinue, @NonNull CardView cardCanada,
-      @NonNull CardView cardEnglish, @NonNull CardView cardFrench, @NonNull CardView cardGermany,
-      @NonNull CardView cardSpanish, @NonNull CardView cardVietnamese,
+      @NonNull MaterialButton btnContinue, @NonNull ListView listViewLearn,
       @NonNull ProgressBar progressBar, @NonNull ScrollView scrollView,
       @NonNull TextView tvProgress, @NonNull TextView tvTitle) {
     this.rootView = rootView;
     this.btnBack = btnBack;
     this.btnContinue = btnContinue;
-    this.cardCanada = cardCanada;
-    this.cardEnglish = cardEnglish;
-    this.cardFrench = cardFrench;
-    this.cardGermany = cardGermany;
-    this.cardSpanish = cardSpanish;
-    this.cardVietnamese = cardVietnamese;
+    this.listViewLearn = listViewLearn;
     this.progressBar = progressBar;
     this.scrollView = scrollView;
     this.tvProgress = tvProgress;
@@ -120,39 +98,9 @@ public final class LanguageLearnBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.cardCanada;
-      CardView cardCanada = ViewBindings.findChildViewById(rootView, id);
-      if (cardCanada == null) {
-        break missingId;
-      }
-
-      id = R.id.cardEnglish;
-      CardView cardEnglish = ViewBindings.findChildViewById(rootView, id);
-      if (cardEnglish == null) {
-        break missingId;
-      }
-
-      id = R.id.cardFrench;
-      CardView cardFrench = ViewBindings.findChildViewById(rootView, id);
-      if (cardFrench == null) {
-        break missingId;
-      }
-
-      id = R.id.cardGermany;
-      CardView cardGermany = ViewBindings.findChildViewById(rootView, id);
-      if (cardGermany == null) {
-        break missingId;
-      }
-
-      id = R.id.cardSpanish;
-      CardView cardSpanish = ViewBindings.findChildViewById(rootView, id);
-      if (cardSpanish == null) {
-        break missingId;
-      }
-
-      id = R.id.cardVietnamese;
-      CardView cardVietnamese = ViewBindings.findChildViewById(rootView, id);
-      if (cardVietnamese == null) {
+      id = R.id.listViewLearn;
+      ListView listViewLearn = ViewBindings.findChildViewById(rootView, id);
+      if (listViewLearn == null) {
         break missingId;
       }
 
@@ -180,9 +128,8 @@ public final class LanguageLearnBinding implements ViewBinding {
         break missingId;
       }
 
-      return new LanguageLearnBinding((ConstraintLayout) rootView, btnBack, btnContinue, cardCanada,
-          cardEnglish, cardFrench, cardGermany, cardSpanish, cardVietnamese, progressBar,
-          scrollView, tvProgress, tvTitle);
+      return new LanguageLearnBinding((ConstraintLayout) rootView, btnBack, btnContinue,
+          listViewLearn, progressBar, scrollView, tvProgress, tvTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

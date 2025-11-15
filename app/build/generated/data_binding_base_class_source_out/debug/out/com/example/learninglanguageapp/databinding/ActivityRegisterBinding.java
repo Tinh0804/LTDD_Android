@@ -4,72 +4,94 @@ package com.example.learninglanguageapp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ProgressBar;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.learninglanguageapp.R;
-import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
+import com.google.android.material.button.MaterialButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class ActivityRegisterBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final ScrollView rootView;
 
   @NonNull
-  public final Button btnRegister;
+  public final MaterialButton btnRegister;
 
   @NonNull
-  public final TextInputEditText etConfirmPassword;
+  public final ImageButton btnToggleConfirmPassword;
 
   @NonNull
-  public final TextInputEditText etEmail;
+  public final ImageButton btnTogglePassword;
 
   @NonNull
-  public final TextInputEditText etPassword;
+  public final LinearLayout confirmPasswordLayout;
 
   @NonNull
-  public final ProgressBar progressBar;
+  public final EditText etConfirmPassword;
 
   @NonNull
-  public final TextInputLayout tilConfirmPassword;
+  public final EditText etName;
 
   @NonNull
-  public final TextInputLayout tilEmail;
+  public final EditText etPassword;
 
   @NonNull
-  public final TextInputLayout tilPassword;
+  public final EditText etPhone;
 
   @NonNull
-  public final TextView tvLogin;
+  public final LinearLayout passwordLayout;
 
-  private ActivityRegisterBinding(@NonNull ConstraintLayout rootView, @NonNull Button btnRegister,
-      @NonNull TextInputEditText etConfirmPassword, @NonNull TextInputEditText etEmail,
-      @NonNull TextInputEditText etPassword, @NonNull ProgressBar progressBar,
-      @NonNull TextInputLayout tilConfirmPassword, @NonNull TextInputLayout tilEmail,
-      @NonNull TextInputLayout tilPassword, @NonNull TextView tvLogin) {
+  @NonNull
+  public final TextView tvLabelConfirmPassword;
+
+  @NonNull
+  public final TextView tvLabelName;
+
+  @NonNull
+  public final TextView tvLabelPassword;
+
+  @NonNull
+  public final TextView tvLabelPhone;
+
+  @NonNull
+  public final TextView tvTitle;
+
+  private ActivityRegisterBinding(@NonNull ScrollView rootView, @NonNull MaterialButton btnRegister,
+      @NonNull ImageButton btnToggleConfirmPassword, @NonNull ImageButton btnTogglePassword,
+      @NonNull LinearLayout confirmPasswordLayout, @NonNull EditText etConfirmPassword,
+      @NonNull EditText etName, @NonNull EditText etPassword, @NonNull EditText etPhone,
+      @NonNull LinearLayout passwordLayout, @NonNull TextView tvLabelConfirmPassword,
+      @NonNull TextView tvLabelName, @NonNull TextView tvLabelPassword,
+      @NonNull TextView tvLabelPhone, @NonNull TextView tvTitle) {
     this.rootView = rootView;
     this.btnRegister = btnRegister;
+    this.btnToggleConfirmPassword = btnToggleConfirmPassword;
+    this.btnTogglePassword = btnTogglePassword;
+    this.confirmPasswordLayout = confirmPasswordLayout;
     this.etConfirmPassword = etConfirmPassword;
-    this.etEmail = etEmail;
+    this.etName = etName;
     this.etPassword = etPassword;
-    this.progressBar = progressBar;
-    this.tilConfirmPassword = tilConfirmPassword;
-    this.tilEmail = tilEmail;
-    this.tilPassword = tilPassword;
-    this.tvLogin = tvLogin;
+    this.etPhone = etPhone;
+    this.passwordLayout = passwordLayout;
+    this.tvLabelConfirmPassword = tvLabelConfirmPassword;
+    this.tvLabelName = tvLabelName;
+    this.tvLabelPassword = tvLabelPassword;
+    this.tvLabelPhone = tvLabelPhone;
+    this.tvTitle = tvTitle;
   }
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public ScrollView getRoot() {
     return rootView;
   }
 
@@ -95,62 +117,93 @@ public final class ActivityRegisterBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.btnRegister;
-      Button btnRegister = ViewBindings.findChildViewById(rootView, id);
+      MaterialButton btnRegister = ViewBindings.findChildViewById(rootView, id);
       if (btnRegister == null) {
         break missingId;
       }
 
+      id = R.id.btnToggleConfirmPassword;
+      ImageButton btnToggleConfirmPassword = ViewBindings.findChildViewById(rootView, id);
+      if (btnToggleConfirmPassword == null) {
+        break missingId;
+      }
+
+      id = R.id.btnTogglePassword;
+      ImageButton btnTogglePassword = ViewBindings.findChildViewById(rootView, id);
+      if (btnTogglePassword == null) {
+        break missingId;
+      }
+
+      id = R.id.confirmPasswordLayout;
+      LinearLayout confirmPasswordLayout = ViewBindings.findChildViewById(rootView, id);
+      if (confirmPasswordLayout == null) {
+        break missingId;
+      }
+
       id = R.id.etConfirmPassword;
-      TextInputEditText etConfirmPassword = ViewBindings.findChildViewById(rootView, id);
+      EditText etConfirmPassword = ViewBindings.findChildViewById(rootView, id);
       if (etConfirmPassword == null) {
         break missingId;
       }
 
-      id = R.id.etEmail;
-      TextInputEditText etEmail = ViewBindings.findChildViewById(rootView, id);
-      if (etEmail == null) {
+      id = R.id.etName;
+      EditText etName = ViewBindings.findChildViewById(rootView, id);
+      if (etName == null) {
         break missingId;
       }
 
       id = R.id.etPassword;
-      TextInputEditText etPassword = ViewBindings.findChildViewById(rootView, id);
+      EditText etPassword = ViewBindings.findChildViewById(rootView, id);
       if (etPassword == null) {
         break missingId;
       }
 
-      id = R.id.progressBar;
-      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
-      if (progressBar == null) {
+      id = R.id.etPhone;
+      EditText etPhone = ViewBindings.findChildViewById(rootView, id);
+      if (etPhone == null) {
         break missingId;
       }
 
-      id = R.id.tilConfirmPassword;
-      TextInputLayout tilConfirmPassword = ViewBindings.findChildViewById(rootView, id);
-      if (tilConfirmPassword == null) {
+      id = R.id.passwordLayout;
+      LinearLayout passwordLayout = ViewBindings.findChildViewById(rootView, id);
+      if (passwordLayout == null) {
         break missingId;
       }
 
-      id = R.id.tilEmail;
-      TextInputLayout tilEmail = ViewBindings.findChildViewById(rootView, id);
-      if (tilEmail == null) {
+      id = R.id.tvLabelConfirmPassword;
+      TextView tvLabelConfirmPassword = ViewBindings.findChildViewById(rootView, id);
+      if (tvLabelConfirmPassword == null) {
         break missingId;
       }
 
-      id = R.id.tilPassword;
-      TextInputLayout tilPassword = ViewBindings.findChildViewById(rootView, id);
-      if (tilPassword == null) {
+      id = R.id.tvLabelName;
+      TextView tvLabelName = ViewBindings.findChildViewById(rootView, id);
+      if (tvLabelName == null) {
         break missingId;
       }
 
-      id = R.id.tvLogin;
-      TextView tvLogin = ViewBindings.findChildViewById(rootView, id);
-      if (tvLogin == null) {
+      id = R.id.tvLabelPassword;
+      TextView tvLabelPassword = ViewBindings.findChildViewById(rootView, id);
+      if (tvLabelPassword == null) {
         break missingId;
       }
 
-      return new ActivityRegisterBinding((ConstraintLayout) rootView, btnRegister,
-          etConfirmPassword, etEmail, etPassword, progressBar, tilConfirmPassword, tilEmail,
-          tilPassword, tvLogin);
+      id = R.id.tvLabelPhone;
+      TextView tvLabelPhone = ViewBindings.findChildViewById(rootView, id);
+      if (tvLabelPhone == null) {
+        break missingId;
+      }
+
+      id = R.id.tvTitle;
+      TextView tvTitle = ViewBindings.findChildViewById(rootView, id);
+      if (tvTitle == null) {
+        break missingId;
+      }
+
+      return new ActivityRegisterBinding((ScrollView) rootView, btnRegister,
+          btnToggleConfirmPassword, btnTogglePassword, confirmPasswordLayout, etConfirmPassword,
+          etName, etPassword, etPhone, passwordLayout, tvLabelConfirmPassword, tvLabelName,
+          tvLabelPassword, tvLabelPhone, tvTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
