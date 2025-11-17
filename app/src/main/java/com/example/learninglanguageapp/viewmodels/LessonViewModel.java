@@ -9,6 +9,7 @@ import com.example.learninglanguageapp.repository.LessonRepository;
 import java.util.List;
 
 public class LessonViewModel extends ViewModel {
+    private static final String TAG = "WordViewModel";
 
     private LessonRepository repository;
 
@@ -33,6 +34,6 @@ public class LessonViewModel extends ViewModel {
     }
 
     public void loadWords(int lessonId, int userId) {
-        repository.getWords(lessonId, wordsLiveData, isLoading, errorLiveData);
+        repository.getWords(lessonId,userId, wordsLiveData, isLoading, errorLiveData);
     }
 }

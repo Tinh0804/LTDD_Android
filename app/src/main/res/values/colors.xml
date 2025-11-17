@@ -44,4 +44,12 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
 
+    <color name="success_green">#58CC02</color>
+    <color name="success_green_dark">#46A302</color>
+    <color name="success_green_light">#D7FFB8</color>
+
+    <color name="error_red">#FF4B4B</color>
+    <color name="error_red_dark">#EA2B2B</color>
+    <color name="blue_light">#E8EBFF</color>
+
 </resources>

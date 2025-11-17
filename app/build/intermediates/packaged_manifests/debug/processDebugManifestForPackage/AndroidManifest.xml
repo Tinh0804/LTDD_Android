@@ -60,8 +60,9 @@
         android:theme="@style/Theme.LearningLanguageApp"
         android:usesCleartextTraffic="true" >
         <activity
-            android:name="com.example.learninglanguageapp.activities.LessonActivity"
-            android:exported="true" >
+            android:name="com.example.learninglanguageapp.activities.SelectImageGameActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
@@ -73,7 +74,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- Splash Activity -->
+        <activity
+            android:name="com.example.learninglanguageapp.activities.LessonActivity"
+            android:exported="false" />
         <activity
             android:name="com.example.learninglanguageapp.activities.SplashActivity"
             android:exported="false"
@@ -90,8 +93,7 @@
             android:exported="false" />
         <activity
             android:name="com.example.learninglanguageapp.activities.LoginActivity"
-            android:exported="false" >
-        </activity> <!-- Main Activity -->
+            android:exported="false" /> <!-- Main Activity -->
         <activity
             android:name="com.example.learninglanguageapp.activities.MainActivity"
             android:exported="false"

@@ -4,7 +4,7 @@
             "outputFile": "com.example.learninglanguageapp-mergeDebugResources-68:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "/Users/vyhau/.gradle/caches/8.13/transforms/d58a93be0a301a0828e634622ff7ddfe/transformed/cardview-1.0.0/res/values-v23/values-v23.xml",
+                    "source": "/Users/macbookpro/.gradle/caches/8.13/transforms/b4a85410d02e65f4aff7c7edb6d27b30/transformed/cardview-1.0.0/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,26 +23,7 @@
                     }
                 },
                 {
-                    "source": "/Users/vyhau/.gradle/caches/8.13/transforms/7986064e74b1a68c504e76d99ba3f064/transformed/material-1.10.0/res/values-v23/values-v23.xml",
-                    "from": {
-                        "startLines": "2,5,9,13,16,21,25,28,31,34,39,42,46",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,271,413,574,784,1104,1341,1548,1755,1958,2290,2492,2757",
-                        "endLines": "4,8,12,15,20,24,27,30,33,38,41,45,49",
-                        "endColumns": "10,10,10,10,10,10,10,10,10,10,10,10,10",
-                        "endOffsets": "266,408,569,779,1099,1336,1543,1750,1953,2285,2487,2752,3025"
-                    },
-                    "to": {
-                        "startLines": "55,58,62,66,69,74,78,81,84,87,92,95,99",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "3511,3727,3869,4030,4240,4560,4797,5004,5211,5414,5746,5948,6213",
-                        "endLines": "57,61,65,68,73,77,80,83,86,91,94,98,102",
-                        "endColumns": "10,10,10,10,10,10,10,10,10,10,10,10,10",
-                        "endOffsets": "3722,3864,4025,4235,4555,4792,4999,5206,5409,5741,5943,6208,6481"
-                    }
-                },
-                {
-                    "source": "/Users/vyhau/.gradle/caches/8.13/transforms/90f3b5d928d2f4654fc9dce69273e287/transformed/appcompat-1.6.1/res/values-v23/values-v23.xml",
+                    "source": "/Users/macbookpro/.gradle/caches/8.13/transforms/357e6f3c3204aae2a9693e75e2caaf7c/transformed/appcompat-1.6.1/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -61,7 +42,26 @@
                     }
                 },
                 {
-                    "source": "/Users/vyhau/.gradle/caches/8.13/transforms/921edae53a127c404cc476d801611c87/transformed/work-runtime-2.9.0/res/values-v23/values-v23.xml",
+                    "source": "/Users/macbookpro/.gradle/caches/8.13/transforms/e847edab33b6522728a8905d6edf39d7/transformed/material-1.10.0/res/values-v23/values-v23.xml",
+                    "from": {
+                        "startLines": "2,5,9,13,16,21,25,28,31,34,39,42,46",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,271,413,574,784,1104,1341,1548,1755,1958,2290,2492,2757",
+                        "endLines": "4,8,12,15,20,24,27,30,33,38,41,45,49",
+                        "endColumns": "10,10,10,10,10,10,10,10,10,10,10,10,10",
+                        "endOffsets": "266,408,569,779,1099,1336,1543,1750,1953,2285,2487,2752,3025"
+                    },
+                    "to": {
+                        "startLines": "55,58,62,66,69,74,78,81,84,87,92,95,99",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3511,3727,3869,4030,4240,4560,4797,5004,5211,5414,5746,5948,6213",
+                        "endLines": "57,61,65,68,73,77,80,83,86,91,94,98,102",
+                        "endColumns": "10,10,10,10,10,10,10,10,10,10,10,10,10",
+                        "endOffsets": "3722,3864,4025,4235,4555,4792,4999,5206,5409,5741,5943,6208,6481"
+                    }
+                },
+                {
+                    "source": "/Users/macbookpro/.gradle/caches/8.13/transforms/24a8168111ee2c568698b6e2092fa2fe/transformed/work-runtime-2.9.0/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

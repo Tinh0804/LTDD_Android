@@ -130,16 +130,17 @@ dependencies {
 
 
     // ViewPager2
-    implementation 'androidx.viewpager2:viewpager2:1.1.0'
+    implementation libs.viewpager2.v110
 
 
 
     // Glide
-    implementation 'com.github.bumptech.glide:glide:4.16.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
+    implementation libs.glide.v4160
+    annotationProcessor libs.compiler
 
     // CardView
-    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation libs.cardview
+    implementation libs.material.v180
 
 
 

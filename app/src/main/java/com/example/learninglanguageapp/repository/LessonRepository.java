@@ -1,9 +1,13 @@
 package com.example.learninglanguageapp.repository;
 
+import static android.content.ContentValues.TAG;
+
+import android.util.Log;
+
 import androidx.lifecycle.MutableLiveData;
 
+import com.example.learninglanguageapp.models.Response.ApiResponse;
 import com.example.learninglanguageapp.models.Word;
-import com.example.learninglanguageapp.models.Response.WordResponse;
 import com.example.learninglanguageapp.network.ApiClient;
 import com.example.learninglanguageapp.network.ApiService;
 
@@ -21,34 +25,31 @@ public class LessonRepository {
         api = ApiClient.getApiService();
     }
 
-    public void getWords(int lessonId,
+    public void getWords(int lessonId,int userId,
                          MutableLiveData<List<Word>> wordsLiveData,
                          MutableLiveData<Boolean> loadingLiveData,
                          MutableLiveData<String> errorLiveData) {
 
         loadingLiveData.setValue(true);
 
-        api.getWordsByLesson(lessonId).enqueue(new Callback<WordResponse>() {
+        api.getWordsByLessonOfUser(lessonId,userId).enqueue(new Callback<ApiResponse<List<Word>>>() {
+
             @Override
-            public void onResponse(Call<WordResponse> call, Response<WordResponse> response) {
+            public void onResponse(Call<ApiResponse<List<Word>>> call, Response<ApiResponse<List<Word>>> response) {
                 loadingLiveData.setValue(false);
 
                 if (response.isSuccessful() && response.body() != null) {
-                    WordResponse res = response.body();
-
-                    if (res.status && res.data != null) {
-                        wordsLiveData.setValue(res.data);
-                    } else {
-                        errorLiveData.setValue(res.message != null ? res.message : "Lỗi dữ liệu");
-                    }
-
+                    Log.d(TAG, "API Success: " + response.body().getData().size() + " words");
+                    wordsLiveData.setValue(response.body().getData());
                 } else {
-                    errorLiveData.setValue("Lỗi server");
+                    String error = "Error: " + response.code() + " - " + response.message();
+                    Log.e(TAG, "API Error Response: " + error);
+                    errorLiveData.setValue(error);
                 }
             }
 
             @Override
-            public void onFailure(Call<WordResponse> call, Throwable t) {
+            public void onFailure(Call<ApiResponse<List<Word>>> call, Throwable t) {
                 loadingLiveData.setValue(false);
                 errorLiveData.setValue(t.getMessage());
             }

@@ -11,9 +11,12 @@ color background_primary
 color background_secondary
 color black
 color blue
+color blue_light
 color button_disabled
 color button_primary
 color button_primary_pressed
+color error_red
+color error_red_dark
 color gray
 color gray_light
 color green
@@ -24,6 +27,9 @@ color purple_500
 color purple_700
 color red
 color selector_bottom_nav
+color success_green
+color success_green_dark
+color success_green_light
 color surface_card
 color teal_200
 color teal_700
@@ -42,7 +48,11 @@ drawable background_splash
 drawable bag
 drawable beginer
 drawable bg_badge
+drawable bg_badge_blue
 drawable bg_button_primary
+drawable bg_circle_blue
+drawable bg_progress_bar
+drawable bg_progress_fill
 drawable book
 drawable button_background
 drawable custom_progress
@@ -70,6 +80,7 @@ drawable ic_facebook
 drawable ic_flip
 drawable ic_friend
 drawable ic_google
+drawable ic_heart
 drawable ic_home
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -80,6 +91,8 @@ drawable ic_notification
 drawable ic_phone
 drawable ic_play
 drawable ic_practice
+drawable ic_settings
+drawable ic_star
 drawable ic_timer
 drawable ic_trophy
 drawable ic_volume
@@ -115,6 +128,7 @@ id btnGoogle
 id btnNext
 id btnPrevious
 id btnRegister
+id btnSettings
 id btnSignIn
 id btnToggleConfirmPassword
 id btnTogglePassword
@@ -130,6 +144,7 @@ id etConfirmPassword
 id etName
 id etPassword
 id etPhone
+id feedbackContainer
 id fragment_container
 id get_started_button
 id imageView
@@ -157,9 +172,22 @@ id option15min
 id option30min
 id option5min
 id option60min
+id optionCard1
+id optionCard2
+id optionCard3
+id optionCard4
+id optionImage1
+id optionImage2
+id optionImage3
+id optionImage4
+id optionText1
+id optionText2
+id optionText3
+id optionText4
 id passwordLayout
 id prg
 id progressBar
+id progressIndicator
 id recyclerViewLessons
 id scrollView
 id splash_text
@@ -167,8 +195,11 @@ id topBar
 id top_background
 id tvCategory
 id tvExampleSentence
+id tvFeedback
 id tvForgotPassword
 id tvGems
+id tvHearts
+id tvInstruction
 id tvLabelConfirmPassword
 id tvLabelName
 id tvLabelPassword
@@ -199,6 +230,7 @@ layout activity_lesson
 layout activity_login
 layout activity_main
 layout activity_register
+layout activity_select_image_game
 layout activity_splash
 layout activity_study_time
 layout fragment_home
@@ -240,6 +272,7 @@ string google_api_key
 string google_app_id
 string google_crash_reporting_api_key
 string google_storage_bucket
+string heart
 string hello_blank_fragment
 string invalid_password
 string invalid_username
@@ -247,6 +280,7 @@ string login
 string login_failed
 string login_success
 string next
+string option_image
 string play_audio
 string previous
 string project_id
@@ -255,6 +289,7 @@ string prompt_password
 string register
 string register_failed
 string register_success
+string settings
 string title_activity_login
 string welcome
 string word_image

@@ -1,16 +1,12 @@
 // network/ApiService.java
 package com.example.learninglanguageapp.network;
 
-import android.annotation.SuppressLint;
-
 import com.example.learninglanguageapp.models.Lesson;
 import com.example.learninglanguageapp.models.Request.LoginRequest;
 import com.example.learninglanguageapp.models.Request.RegisterRequest;
 import com.example.learninglanguageapp.models.Request.SocialLoginRequest;
 import com.example.learninglanguageapp.models.Response.ApiResponse;
-import com.example.learninglanguageapp.models.Response.LoginResponse;
 import com.example.learninglanguageapp.models.Response.UserResponse;
-import com.example.learninglanguageapp.models.Response.WordResponse;
 import com.example.learninglanguageapp.models.Unit;
 import com.example.learninglanguageapp.models.Word;
 
@@ -43,8 +39,13 @@ public interface ApiService {
     Call<List<Lesson>> getLessonsByUnit(@Path("unitId") int unitId);
 
     @GET("api/Words/lesson/{lessonId}")
-    Call<WordResponse> getWordsByLesson(
+    Call<ApiResponse<List<Word>>> getWordsByLesson(
             @Path("lessonId") int lessonId
     );
+    @GET("api/Words/lesson/{lessonId}/user/{userId}")
+    Call<ApiResponse<List<Word>>> getWordsByLessonOfUser(
+            @Path("lessonId") int lessonId,@Path("userId") int userId
+    );
+
 
 }
