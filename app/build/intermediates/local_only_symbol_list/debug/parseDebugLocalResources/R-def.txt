@@ -251,6 +251,10 @@ layout welcome2
 menu bottom_nav_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
+raw complete
+raw correct
+raw game_over
+raw wrong
 string action_sign_in
 string action_sign_in_short
 string animal

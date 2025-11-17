@@ -96,12 +96,20 @@
         "source": "com.example.learninglanguageapp-main-72:/layout/splash.xml"
     },
     {
+        "merged": "com.example.learninglanguageapp-debug-70:/raw_wrong.mp3.flat",
+        "source": "com.example.learninglanguageapp-main-72:/raw/wrong.mp3"
+    },
+    {
         "merged": "com.example.learninglanguageapp-debug-70:/drawable_bag.png.flat",
         "source": "com.example.learninglanguageapp-main-72:/drawable/bag.png"
     },
     {
         "merged": "com.example.learninglanguageapp-debug-70:/drawable_button_background.xml.flat",
         "source": "com.example.learninglanguageapp-main-72:/drawable/button_background.xml"
+    },
+    {
+        "merged": "com.example.learninglanguageapp-debug-70:/raw_game_over.mp3.flat",
+        "source": "com.example.learninglanguageapp-main-72:/raw/game_over.mp3"
     },
     {
         "merged": "com.example.learninglanguageapp-debug-70:/drawable_star.png.flat",
@@ -250,6 +258,10 @@
     {
         "merged": "com.example.learninglanguageapp-debug-70:/drawable_element.png.flat",
         "source": "com.example.learninglanguageapp-main-72:/drawable/element.png"
+    },
+    {
+        "merged": "com.example.learninglanguageapp-debug-70:/raw_complete.mp3.flat",
+        "source": "com.example.learninglanguageapp-main-72:/raw/complete.mp3"
     },
     {
         "merged": "com.example.learninglanguageapp-debug-70:/layout_activity_lesson.xml.flat",
@@ -410,6 +422,10 @@
     {
         "merged": "com.example.learninglanguageapp-debug-70:/drawable_bg_button_primary.xml.flat",
         "source": "com.example.learninglanguageapp-main-72:/drawable/bg_button_primary.xml"
+    },
+    {
+        "merged": "com.example.learninglanguageapp-debug-70:/raw_correct.mp3.flat",
+        "source": "com.example.learninglanguageapp-main-72:/raw/correct.mp3"
     },
     {
         "merged": "com.example.learninglanguageapp-debug-70:/drawable_option_background_selected.xml.flat",
