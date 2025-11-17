@@ -18,6 +18,13 @@
     <string name="login_success">Login success</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
+    <string name="close">Close</string>
+    <string name="animal">Animal</string>
+    <string name="word_image">Word Image</string>
+    <string name="play_audio">Play Audio</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+    <string name="flip_card">Flip Card</string>
 
     <string name="facebook_app_id">805393175371694</string>
     <string name="fb_login_protocol_scheme">fb805393175371694</string>

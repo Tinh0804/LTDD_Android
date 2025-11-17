@@ -43,4 +43,8 @@ public interface ApiService {
 
     @GET("lessons/{lessonId}/words")
     Call<List<Word>> getWordsByLesson(@Path("lessonId") int lessonId);
+
+
+    @GET("api/Words/lesson/{lessonId}/user/{userId}")
+    Call<ApiResponse<List<Word>>> getWordsByLesson(@Path("lessonId") int lessonId , @Path("userId") int userId);
 }

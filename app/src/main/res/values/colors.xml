@@ -11,10 +11,13 @@
     <color name="yellow">#FFD600</color>         <!-- vàng -->
     <color name="blue">#1CB0F6</color>           <!-- xanh dương -->
     <color name="red">#FF4B4B</color>            <!-- đỏ -->
+    <color name="gray">#757575</color>
+    <color name="gray_light">#E0E0E0</color>
 
     <!-- Background & Surface -->
     <color name="background_primary">#FFFFFF</color>
     <color name="background_secondary">#F5F7FA</color>
+    <color name="background_gray">#F5F5F5</color>
     <color name="surface_card">#FFFFFF</color>
 
     <!-- Text -->
@@ -34,9 +37,11 @@
 
 
     <!-- Extra colors -->
-    <color name="purple_500">#9C27B0</color>
-    <color name="teal_700">#00796B</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
 
-    <color name="purple_200">#CC5CE0</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
 
 </resources>

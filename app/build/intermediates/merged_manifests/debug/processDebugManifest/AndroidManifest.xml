@@ -58,8 +58,21 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.LearningLanguageApp"
-        android:usesCleartextTraffic="false" >
+        android:usesCleartextTraffic="true" >
+        <activity
+            android:name="com.example.learninglanguageapp.activities.LessonActivity"
+            android:exported="true" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
 
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <!-- Splash Activity -->
         <activity
             android:name="com.example.learninglanguageapp.activities.SplashActivity"
@@ -77,19 +90,8 @@
             android:exported="false" />
         <activity
             android:name="com.example.learninglanguageapp.activities.LoginActivity"
-            android:exported="true" >
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data android:scheme="@string/fb_login_protocol_scheme" />
-
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <!-- Main Activity -->
+            android:exported="false" >
+        </activity> <!-- Main Activity -->
         <activity
             android:name="com.example.learninglanguageapp.activities.MainActivity"
             android:exported="false"

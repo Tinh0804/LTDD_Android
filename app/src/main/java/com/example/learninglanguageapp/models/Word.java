@@ -4,7 +4,7 @@ public class Word {
     private int wordId;
     private int languageId;
     private int lessonId;
-    private String word;
+    private String wordName;
     private String translation;
     private String pronunciation;
     private String wordType;
@@ -39,11 +39,11 @@ public class Word {
     }
 
     public String getWord() {
-        return word;
+        return wordName;
     }
 
     public void setWord(String word) {
-        this.word = word;
+        this.wordName = word;
     }
 
     public String getTranslation() {
