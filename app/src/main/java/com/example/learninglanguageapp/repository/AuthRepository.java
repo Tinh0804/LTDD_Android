@@ -62,21 +62,23 @@ public class AuthRepository {
         });
     }
 
-    public void socialLogin(SocialLoginRequest request, MutableLiveData<Result<UserResponse>> liveData) {
-        apiService.socialLogin(request).enqueue(new Callback<ApiResponse<UserResponse>>() {
+    // Trong AuthRepository.java
+    public void socialLogin(SocialLoginRequest request, MutableLiveData<Result<UserResponse>> resultLiveData) {
+        apiService.socialLogin(request).enqueue(new Callback<UserResponse>() {
             @Override
-            public void onResponse(Call<ApiResponse<UserResponse>> call, Response<ApiResponse<UserResponse>> response) {
-                if (response.isSuccessful() && response.body() != null && response.body().isStatus()) {
-                    liveData.postValue(Result.success(response.body().getData()));
+            public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    resultLiveData.setValue(Result.success(response.body()));
                 } else {
-                    liveData.postValue(Result.failure(new Exception(response.body() != null ? response.body().getMessage() : "Social login failed")));
+                    resultLiveData.setValue(Result.failure(new Exception("Login failed: " + response.message())));
                 }
             }
 
             @Override
-            public void onFailure(Call<ApiResponse<UserResponse>> call, Throwable t) {
-                liveData.postValue(Result.failure(new Exception(t)));
+            public void onFailure(Call<UserResponse> call, Throwable t) {
+                resultLiveData.setValue(Result.failure(new Exception(t.getMessage())));
             }
         });
     }
+
 }

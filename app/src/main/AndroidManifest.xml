@@ -65,7 +65,6 @@
         <activity
             android:name=".activities.LoginActivity"
             android:exported="false">
-
         </activity> <!-- Main Activity -->
         <activity
             android:name=".activities.MainActivity"

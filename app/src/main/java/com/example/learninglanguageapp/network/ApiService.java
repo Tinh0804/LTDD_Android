@@ -10,6 +10,7 @@ import com.example.learninglanguageapp.models.Request.SocialLoginRequest;
 import com.example.learninglanguageapp.models.Response.ApiResponse;
 import com.example.learninglanguageapp.models.Response.LoginResponse;
 import com.example.learninglanguageapp.models.Response.UserResponse;
+import com.example.learninglanguageapp.models.Response.WordResponse;
 import com.example.learninglanguageapp.models.Unit;
 import com.example.learninglanguageapp.models.Word;
 
@@ -32,19 +33,18 @@ public interface ApiService {
     Call<ApiResponse<UserResponse>> register(@Body RegisterRequest request);
 
     @POST("api/Auth/external-login")
-    Call<ApiResponse<UserResponse>> socialLogin(@Body SocialLoginRequest request);
+    Call<UserResponse> socialLogin(@Body SocialLoginRequest request);
 
     //VY HẬU
-    @GET("units")
+    @GET("api/units")
     Call<List<Unit>> getAllUnits();
 
-    @GET("units/{unitId}/lessons")
+    @GET("api/units/{unitId}/lessons")
     Call<List<Lesson>> getLessonsByUnit(@Path("unitId") int unitId);
 
-    @GET("lessons/{lessonId}/words")
-    Call<List<Word>> getWordsByLesson(@Path("lessonId") int lessonId);
+    @GET("api/Words/lesson/{lessonId}")
+    Call<WordResponse> getWordsByLesson(
+            @Path("lessonId") int lessonId
+    );
 
-
-    @GET("api/Words/lesson/{lessonId}/user/{userId}")
-    Call<ApiResponse<List<Word>>> getWordsByLesson(@Path("lessonId") int lessonId , @Path("userId") int userId);
 }
