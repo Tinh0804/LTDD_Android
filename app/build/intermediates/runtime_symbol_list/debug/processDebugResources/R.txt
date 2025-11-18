@@ -2472,6 +2472,7 @@ int dimen exo_styled_progress_enabled_thumb_size 0x7f0700c3
 int dimen exo_styled_progress_layout_height 0x7f0700c4
 int dimen exo_styled_progress_margin_bottom 0x7f0700c5
 int dimen exo_styled_progress_touch_target_height 0x7f0700c6
+int dimen fab_margin 0x7f070353
 int dimen fastscroll_default_thickness 0x7f0700c7
 int dimen fastscroll_margin 0x7f0700c8
 int dimen fastscroll_minimum_range 0x7f0700c9
@@ -3276,6 +3277,7 @@ int drawable design_ic_visibility 0x7f0800be
 int drawable design_ic_visibility_off 0x7f0800bf
 int drawable design_password_eye 0x7f0800c0
 int drawable design_snackbar_background 0x7f0800c1
+int drawable diamond 0x7f0801b0
 int drawable edittext_background 0x7f0800c2
 int drawable element 0x7f0800c3
 int drawable exo_controls_fastforward 0x7f0800c4
@@ -3449,6 +3451,7 @@ int drawable messenger_button_blue_bg_selector 0x7f08016b
 int drawable messenger_button_send_round_shadow 0x7f08016c
 int drawable messenger_button_white_bg_round 0x7f08016d
 int drawable messenger_button_white_bg_selector 0x7f08016e
+int drawable momo 0x7f0801b1
 int drawable mother 0x7f08016f
 int drawable mtrl_bottomsheet_drag_handle 0x7f080170
 int drawable mtrl_checkbox_button 0x7f080171
@@ -3514,12 +3517,14 @@ int drawable test_level_drawable 0x7f0801ac
 int drawable textbubble 0x7f0801ad
 int drawable tooltip_frame_dark 0x7f0801ae
 int drawable tooltip_frame_light 0x7f0801af
+int drawable vnpay 0x7f0801b2
 int font roboto_medium_numbers 0x7f090000
 int id ALT 0x7f0a0000
 int id BOTTOM_END 0x7f0a0001
 int id BOTTOM_START 0x7f0a0002
 int id CTRL 0x7f0a0003
 int id FUNCTION 0x7f0a0004
+int id FirstFragment 0x7f0a02d9
 int id META 0x7f0a0005
 int id NO_DEBUG 0x7f0a0006
 int id SHIFT 0x7f0a0007
@@ -3527,6 +3532,7 @@ int id SHOW_ALL 0x7f0a0008
 int id SHOW_PATH 0x7f0a0009
 int id SHOW_PROGRESS 0x7f0a000a
 int id SYM 0x7f0a000b
+int id SecondFragment 0x7f0a02da
 int id TOP_END 0x7f0a000c
 int id TOP_START 0x7f0a000d
 int id accelerate 0x7f0a000e
@@ -3567,6 +3573,8 @@ int id action0 0x7f0a0030
 int id actionDown 0x7f0a0031
 int id actionDownUp 0x7f0a0032
 int id actionUp 0x7f0a0033
+int id action_FirstFragment_to_SecondFragment 0x7f0a02db
+int id action_SecondFragment_to_FirstFragment 0x7f0a02dc
 int id action_bar 0x7f0a0034
 int id action_bar_activity_content 0x7f0a0035
 int id action_bar_container 0x7f0a0036
@@ -3640,6 +3648,7 @@ int id btnFlipBack 0x7f0a0079
 int id btnGoogle 0x7f0a007a
 int id btnNext 0x7f0a007b
 int id btnPrevious 0x7f0a007c
+int id btnRedeemHeart 0x7f0a02dd
 int id btnRegister 0x7f0a007d
 int id btnSettings 0x7f0a007e
 int id btnSignIn 0x7f0a007f
@@ -3653,8 +3662,15 @@ int id callMeasure 0x7f0a0086
 int id cancel_action 0x7f0a0087
 int id cancel_button 0x7f0a0088
 int id cardBackContainer 0x7f0a0089
+int id cardDiamond1000 0x7f0a02de
+int id cardDiamond2000 0x7f0a02df
+int id cardDiamond3000 0x7f0a02e0
+int id cardDiamondBalance 0x7f0a02e1
 int id cardFrontContainer 0x7f0a008a
+int id cardHeart 0x7f0a02e2
+int id cardMomo 0x7f0a02e3
 int id cardTrophy 0x7f0a008b
+int id cardVNPay 0x7f0a02e4
 int id carryVelocity 0x7f0a008c
 int id center 0x7f0a008d
 int id centerCrop 0x7f0a008e
@@ -3849,6 +3865,8 @@ int id homeAsUp 0x7f0a014a
 int id honorRequest 0x7f0a014b
 int id horizontal_only 0x7f0a014c
 int id icon 0x7f0a014d
+int id iconCheckMomo 0x7f0a02e5
+int id iconCheckVNPay 0x7f0a02e6
 int id icon_group 0x7f0a014e
 int id icon_only 0x7f0a014f
 int id ifRoom 0x7f0a0150
@@ -3878,6 +3896,8 @@ int id jumpToStart 0x7f0a0167
 int id labeled 0x7f0a0168
 int id large 0x7f0a0169
 int id layout 0x7f0a016a
+int id layoutDiamondPackages 0x7f0a02e7
+int id layoutHeader 0x7f0a02e8
 int id left 0x7f0a016b
 int id leftToRight 0x7f0a016c
 int id legacy 0x7f0a016d
@@ -3962,6 +3982,8 @@ int id multiply 0x7f0a01bb
 int id nav_account 0x7f0a01bc
 int id nav_controller_view_tag 0x7f0a01bd
 int id nav_friend 0x7f0a01be
+int id nav_graph 0x7f0a02e9
+int id nav_graph2 0x7f0a02ea
 int id nav_home 0x7f0a01bf
 int id nav_host_fragment_container 0x7f0a01c0
 int id nav_practice 0x7f0a01c1
@@ -4182,11 +4204,14 @@ int id transition_position 0x7f0a0297
 int id transition_scene_layoutid_cache 0x7f0a0298
 int id transition_transform 0x7f0a0299
 int id triangle 0x7f0a029a
+int id tvBuyDiamonds 0x7f0a02eb
 int id tvCategory 0x7f0a029b
+int id tvDiamondCount 0x7f0a02ec
 int id tvExampleSentence 0x7f0a029c
 int id tvFeedback 0x7f0a029d
 int id tvForgotPassword 0x7f0a029e
 int id tvGems 0x7f0a029f
+int id tvHeart 0x7f0a02ed
 int id tvHearts 0x7f0a02a0
 int id tvInstruction 0x7f0a02a1
 int id tvLabelConfirmPassword 0x7f0a02a2
@@ -4197,6 +4222,7 @@ int id tvLanguage 0x7f0a02a6
 int id tvLevelDesc 0x7f0a02a7
 int id tvLevelName 0x7f0a02a8
 int id tvPosition 0x7f0a02a9
+int id tvPowerUp 0x7f0a02ee
 int id tvPremium 0x7f0a02aa
 int id tvProgress 0x7f0a02ab
 int id tvPronunciation 0x7f0a02ac
@@ -4232,6 +4258,7 @@ int id view_tree_saved_state_registry_owner 0x7f0a02c9
 int id view_tree_view_model_store_owner 0x7f0a02ca
 int id visible 0x7f0a02cb
 int id visible_removing_fragment_view_tag 0x7f0a02cc
+int id webView 0x7f0a02ef
 int id west 0x7f0a02cd
 int id when_playing 0x7f0a02ce
 int id wide 0x7f0a02cf
@@ -4365,10 +4392,13 @@ int layout abc_tooltip 0x7f0d001b
 int layout activity_lesson 0x7f0d001c
 int layout activity_login 0x7f0d001d
 int layout activity_main 0x7f0d001e
+int layout activity_payment 0x7f0d00a2
 int layout activity_register 0x7f0d001f
 int layout activity_select_image_game 0x7f0d0020
+int layout activity_shop 0x7f0d00a3
 int layout activity_splash 0x7f0d0021
 int layout activity_study_time 0x7f0d0022
+int layout activity_web_view 0x7f0d00a4
 int layout browser_actions_context_menu_page 0x7f0d0023
 int layout browser_actions_context_menu_row 0x7f0d0024
 int layout com_facebook_activity_layout 0x7f0d0025
@@ -4499,6 +4529,8 @@ int layout welcome2 0x7f0d00a1
 int menu bottom_nav_menu 0x7f0f0000
 int mipmap ic_launcher 0x7f100000
 int mipmap ic_launcher_round 0x7f100001
+int navigation nav_graph 0x7f170000
+int navigation nav_graph2 0x7f170001
 int plurals exo_controls_fastforward_by_amount_description 0x7f110000
 int plurals exo_controls_rewind_by_amount_description 0x7f110001
 int plurals mtrl_badge_content_description 0x7f110002
@@ -4667,6 +4699,7 @@ int string facebook_app_id 0x7f13009d
 int string facebook_client_token 0x7f13009e
 int string fb_login_protocol_scheme 0x7f13009f
 int string firebase_database_url 0x7f1300a0
+int string first_fragment_label 0x7f130132
 int string flip_card 0x7f1300a1
 int string gcm_defaultSenderId 0x7f1300a2
 int string google_api_key 0x7f1300a3
@@ -4683,6 +4716,7 @@ int string item_view_role_description 0x7f1300ad
 int string login 0x7f1300ae
 int string login_failed 0x7f1300af
 int string login_success 0x7f1300b0
+int string lorem_ipsum 0x7f130133
 int string m3_exceed_max_badge_text_suffix 0x7f1300b1
 int string m3_ref_typeface_brand_medium 0x7f1300b2
 int string m3_ref_typeface_brand_regular 0x7f1300b3
@@ -4805,6 +4839,7 @@ int string search_menu_title 0x7f130127
 int string searchbar_scrolling_view_behavior 0x7f130128
 int string searchview_clear_text_content_description 0x7f130129
 int string searchview_navigation_content_description 0x7f13012a
+int string second_fragment_label 0x7f130134
 int string settings 0x7f13012b
 int string side_sheet_accessibility_pane_title 0x7f13012c
 int string side_sheet_behavior 0x7f13012d

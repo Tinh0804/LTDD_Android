@@ -41,6 +41,7 @@ color white
 color yellow
 dimen activity_horizontal_margin
 dimen activity_vertical_margin
+dimen fab_margin
 drawable advance
 drawable apple_welcome
 drawable apple_welcome2
@@ -57,6 +58,7 @@ drawable book
 drawable button_background
 drawable custom_progress
 drawable custom_progress2
+drawable diamond
 drawable edittext_background
 drawable element
 drawable flagcanada
@@ -100,6 +102,7 @@ drawable icon_background
 drawable icon_foreground
 drawable image_error
 drawable mascot
+drawable momo
 drawable mother
 drawable option_background
 drawable option_background_selected
@@ -111,6 +114,11 @@ drawable social_button_bg
 drawable splash_background
 drawable star
 drawable textbubble
+drawable vnpay
+id FirstFragment
+id SecondFragment
+id action_FirstFragment_to_SecondFragment
+id action_SecondFragment_to_FirstFragment
 id appBarLayout
 id apple_mascot
 id bottomLayout
@@ -127,6 +135,7 @@ id btnFlipBack
 id btnGoogle
 id btnNext
 id btnPrevious
+id btnRedeemHeart
 id btnRegister
 id btnSettings
 id btnSignIn
@@ -134,8 +143,15 @@ id btnToggleConfirmPassword
 id btnTogglePassword
 id bubbletext
 id cardBackContainer
+id cardDiamond1000
+id cardDiamond2000
+id cardDiamond3000
+id cardDiamondBalance
 id cardFrontContainer
+id cardHeart
+id cardMomo
 id cardTrophy
+id cardVNPay
 id chkRemember
 id confirmPasswordLayout
 id edtEmail
@@ -147,6 +163,8 @@ id etPhone
 id feedbackContainer
 id fragment_container
 id get_started_button
+id iconCheckMomo
+id iconCheckVNPay
 id imageView
 id imgFlag
 id imgMascotTop
@@ -155,6 +173,8 @@ id ivApple
 id ivCheck
 id ivIcon
 id ivWord
+id layoutDiamondPackages
+id layoutHeader
 id listViewLearn
 id listViewUse
 id login_button
@@ -163,6 +183,8 @@ id lvOptions
 id main
 id nav_account
 id nav_friend
+id nav_graph
+id nav_graph2
 id nav_home
 id nav_practice
 id nav_reckon
@@ -193,11 +215,14 @@ id scrollView
 id splash_text
 id topBar
 id top_background
+id tvBuyDiamonds
 id tvCategory
+id tvDiamondCount
 id tvExampleSentence
 id tvFeedback
 id tvForgotPassword
 id tvGems
+id tvHeart
 id tvHearts
 id tvInstruction
 id tvLabelConfirmPassword
@@ -208,6 +233,7 @@ id tvLanguage
 id tvLevelDesc
 id tvLevelName
 id tvPosition
+id tvPowerUp
 id tvPremium
 id tvProgress
 id tvPronunciation
@@ -226,13 +252,17 @@ id tvWordBack
 id tvWordType
 id tvWordTypeBack
 id viewPager
+id webView
 layout activity_lesson
 layout activity_login
 layout activity_main
+layout activity_payment
 layout activity_register
 layout activity_select_image_game
+layout activity_shop
 layout activity_splash
 layout activity_study_time
+layout activity_web_view
 layout fragment_home
 layout fragment_home2
 layout item_language
@@ -251,6 +281,8 @@ layout welcome2
 menu bottom_nav_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
+navigation nav_graph
+navigation nav_graph2
 raw complete
 raw correct
 raw game_over
@@ -270,6 +302,7 @@ string facebook_app_id
 string facebook_client_token
 string fb_login_protocol_scheme
 string firebase_database_url
+string first_fragment_label
 string flip_card
 string gcm_defaultSenderId
 string google_api_key
@@ -283,6 +316,7 @@ string invalid_username
 string login
 string login_failed
 string login_success
+string lorem_ipsum
 string next
 string option_image
 string play_audio
@@ -293,6 +327,7 @@ string prompt_password
 string register
 string register_failed
 string register_success
+string second_fragment_label
 string settings
 string title_activity_login
 string welcome

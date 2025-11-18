@@ -6,6 +6,7 @@
     </style>
 
     <style name="Theme.LearningLanguageApp" parent="Base.Theme.LearningLanguageApp" />
+
     <style name="Theme.LearningLanguageApp.Splash" parent="Base.Theme.LearningLanguageApp" />
 
 </resources>
