@@ -4,7 +4,7 @@
             "outputFile": "com.example.learninglanguageapp-mergeDebugResources-70:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "/Users/vyhau/.gradle/caches/8.13/transforms/56db770f33a97f7423c1e69b2f1c5871/transformed/material-1.10.0/res/values-v23/values-v23.xml",
+                    "source": "/Users/macbookpro/.gradle/caches/8.13/transforms/56db770f33a97f7423c1e69b2f1c5871/transformed/material-1.10.0/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,5,9,13,16,21,25,28,31,34,39,42,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -23,36 +23,7 @@
                     }
                 },
                 {
-                    "source": "/Users/vyhau/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/res/values-v23/values-v23.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,121",
-                        "endColumns": "65,62",
-                        "endOffsets": "116,179"
-                    }
-                },
-                {
-                    "source": "/Users/vyhau/.gradle/caches/8.13/transforms/90b9d0821e7c5bb1052e6c2a42955b5d/transformed/cardview-1.0.0/res/values-v23/values-v23.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "4",
-                        "endColumns": "12",
-                        "endOffsets": "200"
-                    },
-                    "to": {
-                        "startLines": "52",
-                        "startColumns": "4",
-                        "startOffsets": "3361",
-                        "endLines": "54",
-                        "endColumns": "12",
-                        "endOffsets": "3506"
-                    }
-                },
-                {
-                    "source": "/Users/vyhau/.gradle/caches/8.13/transforms/36246465837c5819b0b5ec76df187f79/transformed/appcompat-1.6.1/res/values-v23/values-v23.xml",
+                    "source": "/Users/macbookpro/.gradle/caches/8.13/transforms/36246465837c5819b0b5ec76df187f79/transformed/appcompat-1.6.1/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -71,7 +42,36 @@
                     }
                 },
                 {
-                    "source": "/Users/vyhau/SourceTree/LTTD_Android/app/src/main/res/values-v23/themes.xml",
+                    "source": "/Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/res/values-v23/values-v23.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,121",
+                        "endColumns": "65,62",
+                        "endOffsets": "116,179"
+                    }
+                },
+                {
+                    "source": "/Users/macbookpro/.gradle/caches/8.13/transforms/90b9d0821e7c5bb1052e6c2a42955b5d/transformed/cardview-1.0.0/res/values-v23/values-v23.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "200"
+                    },
+                    "to": {
+                        "startLines": "52",
+                        "startColumns": "4",
+                        "startOffsets": "3361",
+                        "endLines": "54",
+                        "endColumns": "12",
+                        "endOffsets": "3506"
+                    }
+                },
+                {
+                    "source": "/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/res/values-v23/themes.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

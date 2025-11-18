@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.learninglanguageapp.R;
+
 import com.example.learninglanguageapp.fragments.AccountFragment;
 import com.example.learninglanguageapp.fragments.FriendFragment;
 import com.example.learninglanguageapp.fragments.HomeFragment;

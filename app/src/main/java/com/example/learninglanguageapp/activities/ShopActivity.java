@@ -37,7 +37,7 @@ public class ShopActivity extends AppCompatActivity {
         setContentView(R.layout.activity_shop);
 
         // Get userId từ SharedPreferences hoặc Intent
-        userId = getUserId();
+        userId = 1;
 
         // Init ViewModel
         viewModel = new ViewModelProvider(this).get(ShopViewModel.class);
@@ -48,7 +48,7 @@ public class ShopActivity extends AppCompatActivity {
         setupClickListeners();
 
         // Load balance
-        viewModel.loadBalance();
+//        viewModel.loadBalance();
     }
 
     private void initViews() {

@@ -4,9 +4,10 @@ package com.example.learninglanguageapp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -20,7 +21,7 @@ import java.lang.String;
 
 public final class ActivityShopBinding implements ViewBinding {
   @NonNull
-  private final ScrollView rootView;
+  private final FrameLayout rootView;
 
   @NonNull
   public final ImageView btnClose;
@@ -47,6 +48,9 @@ public final class ActivityShopBinding implements ViewBinding {
   public final LinearLayout layoutDiamondPackages;
 
   @NonNull
+  public final ProgressBar progressBar;
+
+  @NonNull
   public final TextView tvBuyDiamonds;
 
   @NonNull
@@ -55,12 +59,13 @@ public final class ActivityShopBinding implements ViewBinding {
   @NonNull
   public final TextView tvHeart;
 
-  private ActivityShopBinding(@NonNull ScrollView rootView, @NonNull ImageView btnClose,
+  private ActivityShopBinding(@NonNull FrameLayout rootView, @NonNull ImageView btnClose,
       @NonNull TextView btnRedeemHeart, @NonNull CardView cardDiamond1000,
       @NonNull CardView cardDiamond2000, @NonNull CardView cardDiamond3000,
       @NonNull CardView cardDiamondBalance, @NonNull CardView cardHeart,
-      @NonNull LinearLayout layoutDiamondPackages, @NonNull TextView tvBuyDiamonds,
-      @NonNull TextView tvDiamondCount, @NonNull TextView tvHeart) {
+      @NonNull LinearLayout layoutDiamondPackages, @NonNull ProgressBar progressBar,
+      @NonNull TextView tvBuyDiamonds, @NonNull TextView tvDiamondCount,
+      @NonNull TextView tvHeart) {
     this.rootView = rootView;
     this.btnClose = btnClose;
     this.btnRedeemHeart = btnRedeemHeart;
@@ -70,6 +75,7 @@ public final class ActivityShopBinding implements ViewBinding {
     this.cardDiamondBalance = cardDiamondBalance;
     this.cardHeart = cardHeart;
     this.layoutDiamondPackages = layoutDiamondPackages;
+    this.progressBar = progressBar;
     this.tvBuyDiamonds = tvBuyDiamonds;
     this.tvDiamondCount = tvDiamondCount;
     this.tvHeart = tvHeart;
@@ -77,7 +83,7 @@ public final class ActivityShopBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public ScrollView getRoot() {
+  public FrameLayout getRoot() {
     return rootView;
   }
 
@@ -150,6 +156,12 @@ public final class ActivityShopBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.progressBar;
+      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
+        break missingId;
+      }
+
       id = R.id.tvBuyDiamonds;
       TextView tvBuyDiamonds = ViewBindings.findChildViewById(rootView, id);
       if (tvBuyDiamonds == null) {
@@ -168,9 +180,9 @@ public final class ActivityShopBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityShopBinding((ScrollView) rootView, btnClose, btnRedeemHeart,
+      return new ActivityShopBinding((FrameLayout) rootView, btnClose, btnRedeemHeart,
           cardDiamond1000, cardDiamond2000, cardDiamond3000, cardDiamondBalance, cardHeart,
-          layoutDiamondPackages, tvBuyDiamonds, tvDiamondCount, tvHeart);
+          layoutDiamondPackages, progressBar, tvBuyDiamonds, tvDiamondCount, tvHeart);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
