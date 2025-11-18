@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -28,6 +29,12 @@ public final class ActivityGamewordropBinding implements ViewBinding {
   public final Button btnCheck;
 
   @NonNull
+  public final ImageButton btnSettings;
+
+  @NonNull
+  public final View progressIndicator;
+
+  @NonNull
   public final FlexboxLayout selectedWordsContainer;
 
   @NonNull
@@ -38,11 +45,14 @@ public final class ActivityGamewordropBinding implements ViewBinding {
 
   private ActivityGamewordropBinding(@NonNull ScrollView rootView,
       @NonNull FlexboxLayout availableWordsContainer, @NonNull Button btnCheck,
+      @NonNull ImageButton btnSettings, @NonNull View progressIndicator,
       @NonNull FlexboxLayout selectedWordsContainer, @NonNull TextView tvHearts,
       @NonNull TextView tvQuestion) {
     this.rootView = rootView;
     this.availableWordsContainer = availableWordsContainer;
     this.btnCheck = btnCheck;
+    this.btnSettings = btnSettings;
+    this.progressIndicator = progressIndicator;
     this.selectedWordsContainer = selectedWordsContainer;
     this.tvHearts = tvHearts;
     this.tvQuestion = tvQuestion;
@@ -87,6 +97,18 @@ public final class ActivityGamewordropBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.btnSettings;
+      ImageButton btnSettings = ViewBindings.findChildViewById(rootView, id);
+      if (btnSettings == null) {
+        break missingId;
+      }
+
+      id = R.id.progressIndicator;
+      View progressIndicator = ViewBindings.findChildViewById(rootView, id);
+      if (progressIndicator == null) {
+        break missingId;
+      }
+
       id = R.id.selectedWordsContainer;
       FlexboxLayout selectedWordsContainer = ViewBindings.findChildViewById(rootView, id);
       if (selectedWordsContainer == null) {
@@ -106,7 +128,7 @@ public final class ActivityGamewordropBinding implements ViewBinding {
       }
 
       return new ActivityGamewordropBinding((ScrollView) rootView, availableWordsContainer,
-          btnCheck, selectedWordsContainer, tvHearts, tvQuestion);
+          btnCheck, btnSettings, progressIndicator, selectedWordsContainer, tvHearts, tvQuestion);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

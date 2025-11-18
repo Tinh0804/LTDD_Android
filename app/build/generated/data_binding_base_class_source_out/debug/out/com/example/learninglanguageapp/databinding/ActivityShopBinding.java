@@ -55,15 +55,12 @@ public final class ActivityShopBinding implements ViewBinding {
   @NonNull
   public final TextView tvHeart;
 
-  @NonNull
-  public final TextView tvPowerUp;
-
   private ActivityShopBinding(@NonNull ScrollView rootView, @NonNull ImageView btnClose,
       @NonNull TextView btnRedeemHeart, @NonNull CardView cardDiamond1000,
       @NonNull CardView cardDiamond2000, @NonNull CardView cardDiamond3000,
       @NonNull CardView cardDiamondBalance, @NonNull CardView cardHeart,
       @NonNull LinearLayout layoutDiamondPackages, @NonNull TextView tvBuyDiamonds,
-      @NonNull TextView tvDiamondCount, @NonNull TextView tvHeart, @NonNull TextView tvPowerUp) {
+      @NonNull TextView tvDiamondCount, @NonNull TextView tvHeart) {
     this.rootView = rootView;
     this.btnClose = btnClose;
     this.btnRedeemHeart = btnRedeemHeart;
@@ -76,7 +73,6 @@ public final class ActivityShopBinding implements ViewBinding {
     this.tvBuyDiamonds = tvBuyDiamonds;
     this.tvDiamondCount = tvDiamondCount;
     this.tvHeart = tvHeart;
-    this.tvPowerUp = tvPowerUp;
   }
 
   @Override
@@ -172,15 +168,9 @@ public final class ActivityShopBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tvPowerUp;
-      TextView tvPowerUp = ViewBindings.findChildViewById(rootView, id);
-      if (tvPowerUp == null) {
-        break missingId;
-      }
-
       return new ActivityShopBinding((ScrollView) rootView, btnClose, btnRedeemHeart,
           cardDiamond1000, cardDiamond2000, cardDiamond3000, cardDiamondBalance, cardHeart,
-          layoutDiamondPackages, tvBuyDiamonds, tvDiamondCount, tvHeart, tvPowerUp);
+          layoutDiamondPackages, tvBuyDiamonds, tvDiamondCount, tvHeart);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

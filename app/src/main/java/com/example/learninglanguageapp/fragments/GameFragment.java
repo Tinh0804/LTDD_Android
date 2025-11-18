@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.learninglanguageapp.R;
 import com.example.learninglanguageapp.activities.GameWordropActivity;
+import com.example.learninglanguageapp.activities.MatchGameActivity;
 import com.example.learninglanguageapp.activities.MatchingGameActivity;
 import com.example.learninglanguageapp.activities.SelectImageGameActivity;
 
@@ -28,8 +29,15 @@ public class GameFragment extends Fragment {
         CardView cardImageWordGame = view.findViewById(R.id.cardImageWordGame);
         CardView cardViewArrangeWord = view.findViewById(R.id.cardArrangeWordGame);
         CardView cardViewMatchingGame = view.findViewById(R.id.cardMatchingGame);
+        CardView cardViewPictureVocabulary = view.findViewById(R.id.cardVocabularyGame);
         cardImageWordGame.setOnClickListener(v -> {
             Intent intent = new Intent(requireContext(), SelectImageGameActivity.class);
+            int unitId = getArguments() != null ? getArguments().getInt("unitId", -1) : -1;
+            intent.putExtra("unitId", unitId);
+            startActivity(intent);
+        });
+        cardViewPictureVocabulary.setOnClickListener(v -> {
+            Intent intent = new Intent(requireContext(), MatchGameActivity.class);
             int unitId = getArguments() != null ? getArguments().getInt("unitId", -1) : -1;
             intent.putExtra("unitId", unitId);
             startActivity(intent);

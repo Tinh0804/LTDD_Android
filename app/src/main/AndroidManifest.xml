@@ -40,6 +40,9 @@
             android:name=".activities.MatchGameActivity"
             android:exported="false" />
         <activity
+            android:name=".activities.MatchingGameActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.LeaderboardActivity"
             android:exported="false" />
         <activity
@@ -58,7 +61,8 @@
         <activity
             android:name=".activities.ShopActivity"
             android:exported="false"
-            android:theme="@style/Theme.LearningLanguageApp" />
+            android:theme="@style/Theme.LearningLanguageApp" >
+        </activity>
         <activity
             android:name=".activities.SelectImageGameActivity"
             android:exported="false"
@@ -81,7 +85,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".activities.WelcomeActivity"
