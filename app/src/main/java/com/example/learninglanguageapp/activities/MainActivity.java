@@ -1,39 +1,50 @@
 package com.example.learninglanguageapp.activities;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
 
 import com.example.learninglanguageapp.R;
-import com.example.learninglanguageapp.models.Response.UserResponse;
-import com.example.learninglanguageapp.utils.SharedPrefsHelper;
+import com.example.learninglanguageapp.fragments.HomeFragment;
+import com.example.learninglanguageapp.fragments.PracticeFragment;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+
+        bottomNav.setOnItemSelectedListener(item -> {
+            int id = item.getItemId();
+
+            if (id == R.id.nav_home)
+                loadFragment(new HomeFragment());
+            else if (id == R.id.nav_practice)
+                loadFragment(new PracticeFragment());
+//          else if (id == R.id.nav_reckon)
+//                loadFragment(new ReckonFragment());
+//          else if (id == R.id.nav_friend) {
+//                loadFragment(new FriendFragment());
+//          else if (id == R.id.nav_account) {
+//                loadFragment(new AccountFragment());
+
+            return true;
         });
 
-        //lấy thông tin user
-        SharedPrefsHelper prefs = new SharedPrefsHelper(this);
-        UserResponse user = prefs.getCurrentUserResponse();
+        bottomNav.setSelectedItemId(R.id.nav_home);
+    }
 
-        if (user != null)
-            new AlertDialog.Builder(this).setTitle("Chào mừng!").setMessage("Xin chào " + user.getFullName() + "!").setPositiveButton("OK", null).show();
+    private void loadFragment(Fragment fragment) {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .commit();
     }
 }

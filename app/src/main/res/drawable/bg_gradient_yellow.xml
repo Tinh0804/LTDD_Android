@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Shadow Layer -->
+    <item android:top="4dp">
+        <shape android:shape="oval">
+            <solid android:color="#40000000"/>
+        </shape>
+    </item>
+
+    <!-- Main Circle with Gradient -->
+    <item android:bottom="4dp">
+        <shape android:shape="oval">
+            <gradient
+                android:startColor="#FFD54F"
+                android:endColor="#FFA000"
+                android:angle="270"
+                android:type="linear"/>
+        </shape>
+    </item>
+
+    <!-- Inner Highlight -->
+    <item
+        android:bottom="15dp"
+        android:left="1dp"
+        android:top="1dp"
+        android:right="1dp">
+        <shape android:shape="oval">
+            <solid android:color="#50FFFFFF"/>
+        </shape>
+    </item>
+</layer-list>
