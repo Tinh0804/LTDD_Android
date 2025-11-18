@@ -34,12 +34,22 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".activities.PaymentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.WebViewActivity"
+            android:exported="false"
+            android:theme="@style/Theme.LearningLanguageApp" />
+        <activity
+            android:name=".activities.ShopActivity"
+            android:exported="false"
+            android:theme="@style/Theme.LearningLanguageApp" />
+        <activity
             android:name=".activities.SelectImageGameActivity"
-            android:screenOrientation="portrait"
-            android:exported="false" >
+            android:exported="false"
+            android:screenOrientation="portrait" >
 
         </activity>
-
         <activity
             android:name=".activities.LessonActivity"
             android:exported="true">
@@ -53,8 +63,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
 
+        </activity>
         <activity
             android:name=".activities.SplashActivity"
             android:exported="false"
@@ -71,7 +81,7 @@
             android:exported="false" />
         <activity
             android:name=".activities.LoginActivity"
-            android:exported="false">
+            android:exported="false" >
 
         </activity> <!-- Main Activity -->
         <activity
@@ -90,14 +100,16 @@
             tools:replace="android:exported" />
         <activity
             android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-            android:exported="false"
             android:excludeFromRecents="true"
+            android:exported="false"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
         <service
             android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
             android:exported="true"
             android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_BOUND_SERVICE"
             tools:replace="android:permission" />
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileprovider"

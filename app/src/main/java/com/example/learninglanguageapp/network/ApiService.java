@@ -1,11 +1,16 @@
 // network/ApiService.java
 package com.example.learninglanguageapp.network;
 
+import androidx.room.Query;
+
 import com.example.learninglanguageapp.models.Request.LoginRequest;
+import com.example.learninglanguageapp.models.Request.PaymentRequest;
 import com.example.learninglanguageapp.models.Request.RegisterRequest;
 import com.example.learninglanguageapp.models.Request.SocialLoginRequest;
 import com.example.learninglanguageapp.models.Response.ApiResponse;
+import com.example.learninglanguageapp.models.Response.BalanceResponse;
 import com.example.learninglanguageapp.models.Response.LoginResponse;
+import com.example.learninglanguageapp.models.Response.PaymentResponse;
 import com.example.learninglanguageapp.models.Response.UserResponse;
 import com.example.learninglanguageapp.models.Word;
 
@@ -41,4 +46,20 @@ public interface ApiService {
             @Path("lessonId") int lessonId,
             @Path("userId") int userId
     );
+
+    @GET("shop/balance/{userId}")
+    Call<ApiResponse<BalanceResponse>> getBalance(@Path("userId") int userId);
+
+    /**
+     * Tạo payment request và nhận payment URL
+     */
+    @POST("shop/payment/create")
+    Call<ApiResponse<PaymentResponse>> createPayment(@Body PaymentRequest request);
+
+    /**
+     * Verify payment status sau khi callback
+     */
+    @GET("shop/payment/verify/{transactionId}")
+    Call<ApiResponse<PaymentResponse>> verifyPayment(@Path("transactionId") String transactionId);
+
 }

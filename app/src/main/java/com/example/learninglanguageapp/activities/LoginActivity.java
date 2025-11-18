@@ -35,12 +35,18 @@ public class LoginActivity extends AppCompatActivity {
                 if (result.getResultCode() == RESULT_OK && result.getData() != null) {
                     Task<GoogleSignInAccount> task =
                             GoogleSignIn.getSignedInAccountFromIntent(result.getData());
+                    try {
+                        GoogleSignInAccount acc = task.getResult(ApiException.class);
+                        Log.d("GG", "TOKEN = " + acc.getIdToken());
+                    } catch (ApiException e) {
+                        Log.e("GG", "Error Code = " + e.getStatusCode());
+                    }
                     handleGoogleSignInResult(task);
                 }
             });
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
 
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
@@ -51,6 +57,7 @@ public class LoginActivity extends AppCompatActivity {
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken("976124393303-rlu8pmavq33q5q0781jbglma8ntglmb7.apps.googleusercontent.com")
+//                .requestIdToken("74834344847-io42cjb2tqhkkquvis1jnbjvec2rl6t5.apps.googleusercontent.com")
                 .requestEmail()
                 .build();
         googleSignInClient = GoogleSignIn.getClient(this, gso);
@@ -82,6 +89,7 @@ public class LoginActivity extends AppCompatActivity {
             googleSignInClient.signOut().addOnCompleteListener(task -> {
                 Intent signInIntent = googleSignInClient.getSignInIntent();
                 googleSignInLauncher.launch(signInIntent);
+
             });
         });
     }

@@ -46,18 +46,18 @@ public class LessonRepository {
 
         // 1️⃣ Lấy offline trước
         new Thread(() -> {
-            List<WordEntity> cached = wordDao.getWordsByLesson(lessonId);
-
-            if (!cached.isEmpty()) {
-                // Có dữ liệu local → dùng luôn
-                List<Word> list = new ArrayList<>();
-                for (WordEntity wordEntity:cached) {
-                   list.add(WordMapper.toDomain(wordEntity));
-                }
-                wordsLiveData.postValue(list);
-                loadingLiveData.postValue(false);
-                return;
-            }
+//            List<WordEntity> cached = wordDao.getWordsByLesson(lessonId);
+//
+//            if (!cached.isEmpty()) {
+//                // Có dữ liệu local → dùng luôn
+//                List<Word> list = new ArrayList<>();
+//                for (WordEntity wordEntity:cached) {
+//                   list.add(WordMapper.toDomain(wordEntity));
+//                }
+//                wordsLiveData.postValue(list);
+//                loadingLiveData.postValue(false);
+//                return;
+//            }
 
             // 2️⃣ Không có → gọi API
             api.getWordsByLessonOfUser(lessonId, userId)

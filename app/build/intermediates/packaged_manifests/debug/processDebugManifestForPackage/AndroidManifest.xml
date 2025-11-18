@@ -60,6 +60,17 @@
         android:theme="@style/Theme.LearningLanguageApp"
         android:usesCleartextTraffic="true" >
         <activity
+            android:name="com.example.learninglanguageapp.activities.PaymentActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.learninglanguageapp.activities.WebViewActivity"
+            android:exported="false"
+            android:theme="@style/Theme.LearningLanguageApp" />
+        <activity
+            android:name="com.example.learninglanguageapp.activities.ShopActivity"
+            android:exported="false"
+            android:theme="@style/Theme.LearningLanguageApp" />
+        <activity
             android:name="com.example.learninglanguageapp.activities.SelectImageGameActivity"
             android:exported="false"
             android:screenOrientation="portrait" >
