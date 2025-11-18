@@ -72,7 +72,7 @@ public class StudyTimeActivity extends AppCompatActivity {
 
 
                 RegisterRequest request = new RegisterRequest(username, password, fullName, phoneNumber, nativeLanguageId, learnLanguageId,courseId);
-                ApiService api = ApiClient.getApiService();
+                ApiService api = ApiClient.getApiService(this);
 
                 api.register(request).enqueue(new retrofit2.Callback<ApiResponse<UserResponse>>() {
                     @Override

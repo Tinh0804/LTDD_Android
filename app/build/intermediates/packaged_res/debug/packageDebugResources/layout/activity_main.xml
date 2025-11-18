@@ -25,7 +25,7 @@
             <!-- Language Flag -->
             <TextView
                 android:id="@+id/tvLanguage"
-                android:layout_width="40pt"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="🇺🇸 EN"
                 android:textColor="@android:color/white"
@@ -36,7 +36,7 @@
             <!-- Fire Streak -->
             <TextView
                 android:id="@+id/tvStreak"
-                android:layout_width="40pt"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="🔥 4"
                 android:textColor="@android:color/white"
@@ -47,13 +47,12 @@
             <!-- Gems/Diamonds -->
             <TextView
                 android:id="@+id/tvGems"
-                android:layout_width="40pt"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="💎 957"
                 android:textColor="@android:color/white"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_weight="1"/>
+                android:textStyle="bold" />
 
             <!-- Star/Premium Icon -->
             <TextView
@@ -73,19 +72,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:layout_marginBottom="56dp"/>
+        android:layout_marginBottom="?attr/actionBarSize"/>
 
     <!-- FOOTER: Bottom Navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:background="@android:color/white"
         app:elevation="8dp"
         app:itemIconTint="@color/selector_bottom_nav"
         app:itemTextColor="@color/selector_bottom_nav"
         app:labelVisibilityMode="labeled"
+        app:itemIconSize="24dp"
         app:menu="@menu/bottom_nav_menu"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

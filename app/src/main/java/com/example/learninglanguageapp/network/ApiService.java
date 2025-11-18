@@ -1,51 +1,44 @@
 // network/ApiService.java
 package com.example.learninglanguageapp.network;
 
-import com.example.learninglanguageapp.models.Lesson;
 import com.example.learninglanguageapp.models.Request.LoginRequest;
 import com.example.learninglanguageapp.models.Request.RegisterRequest;
 import com.example.learninglanguageapp.models.Request.SocialLoginRequest;
 import com.example.learninglanguageapp.models.Response.ApiResponse;
+import com.example.learninglanguageapp.models.Response.LoginResponse;
 import com.example.learninglanguageapp.models.Response.UserResponse;
-import com.example.learninglanguageapp.models.Unit;
 import com.example.learninglanguageapp.models.Word;
 
 import java.util.List;
 
 import retrofit2.Call;
-import retrofit2.http.GET;
-import retrofit2.http.POST;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
+import retrofit2.http.Header;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 
-// Đây chỉ là ví dụ, bạn thay đổi theo API thật của bạn
 public interface ApiService {
 
-    //Bé Bin
+    // 1. LOGIN THƯỜNG – TRẢ VỀ ApiResponse<LoginResponse>
     @POST("api/Auth/login")
-    Call<ApiResponse<UserResponse>> login(@Body LoginRequest request);
+    Call<ApiResponse<LoginResponse>> login(@Body LoginRequest request);
 
+    // 2. ĐĂNG KÝ – TRẢ VỀ ApiResponse<UserResponse>
     @POST("api/Auth/register")
     Call<ApiResponse<UserResponse>> register(@Body RegisterRequest request);
 
+    // 3. SOCIAL LOGIN – BACKEND TRẢ VỀ LoginResponse TRỰC TIẾP (không bọc ApiResponse)
     @POST("api/Auth/external-login")
-    Call<UserResponse> socialLogin(@Body SocialLoginRequest request);
+    Call<ApiResponse<LoginResponse>> socialLogin(@Body SocialLoginRequest request);
 
-    //VY HẬU
-    @GET("api/units")
-    Call<List<Unit>> getAllUnits();
+    // 4. LẤY PROFILE – TRẢ VỀ ApiResponse<UserResponse>
+    @GET("api/Profile/myInfo")
+    Call<ApiResponse<UserResponse>> getMyProfile(@Header("Authorization") String authHeader);
 
-    @GET("api/units/{unitId}/lessons")
-    Call<List<Lesson>> getLessonsByUnit(@Path("unitId") int unitId);
-
-    @GET("api/Words/lesson/{lessonId}")
-    Call<ApiResponse<List<Word>>> getWordsByLesson(
-            @Path("lessonId") int lessonId
-    );
     @GET("api/Words/lesson/{lessonId}/user/{userId}")
     Call<ApiResponse<List<Word>>> getWordsByLessonOfUser(
-            @Path("lessonId") int lessonId,@Path("userId") int userId
+            @Path("lessonId") int lessonId,
+            @Path("userId") int userId
     );
-
-
 }

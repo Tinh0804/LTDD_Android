@@ -2,6 +2,7 @@ package com.example.learninglanguageapp.repository;
 
 import static android.content.ContentValues.TAG;
 
+import android.content.Context;
 import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
@@ -21,8 +22,8 @@ public class LessonRepository {
 
     private ApiService api;
 
-    public LessonRepository() {
-        api = ApiClient.getApiService();
+    public LessonRepository(Context context) {
+        api = ApiClient.getApiService(context);
     }
 
     public void getWords(int lessonId,int userId,

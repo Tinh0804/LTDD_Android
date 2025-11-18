@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 
+import com.example.learninglanguageapp.utils.SharedPrefsHelper;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -21,8 +22,8 @@ public class ApiClient {
 
     // Default URLs
 //    private static final String DEFAULT_EMULATOR_URL = "http://10.0.2.2:5111/";
-    private static final String DEFAULT_EMULATOR_URL = "http://192.168.1.73:5050/";
-    private static final String DEFAULT_REAL_DEVICE_URL = "http://192.168.1.73:5050/"; // Thay IP của bạn
+    private static final String DEFAULT_EMULATOR_URL = "http://192.168.99.121:5050/";
+    private static final String DEFAULT_REAL_DEVICE_URL = "http://192.168.99.121:5050/"; // Thay IP của bạn
 
     private static Retrofit retrofit;
     private static ApiService apiService;
@@ -54,51 +55,30 @@ public class ApiClient {
         return currentBaseUrl != null ? currentBaseUrl : DEFAULT_EMULATOR_URL;
     }
 
-    private static OkHttpClient createOkHttpClient() {
-        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(message ->
-                Log.d(TAG, message)
-        );
-        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-
-        return new OkHttpClient.Builder()
-                .addInterceptor(loggingInterceptor)
-                .connectTimeout(30, TimeUnit.SECONDS)
-                .readTimeout(30, TimeUnit.SECONDS)
-                .writeTimeout(30, TimeUnit.SECONDS)
-                .retryOnConnectionFailure(true)
-                .build();
+    private static OkHttpClient createOkHttpClient(Context context) {
+        HttpLoggingInterceptor logging = new HttpLoggingInterceptor(message -> Log.d("OkHttp", message));
+        logging.setLevel(HttpLoggingInterceptor.Level.BODY);
+        SharedPrefsHelper prefs = new SharedPrefsHelper(context);
+        return new OkHttpClient.Builder().addInterceptor(new AuthInterceptor(prefs)).addInterceptor(logging).connectTimeout(30, TimeUnit.SECONDS).readTimeout(30, TimeUnit.SECONDS).build();
     }
 
     private static Gson createGson() {
-        return new GsonBuilder()
-                .setLenient()
-                .setDateFormat("yyyy-MM-dd'T'HH:mm:ss")
-                .create();
+        return new GsonBuilder().setLenient().setDateFormat("yyyy-MM-dd'T'HH:mm:ss").create();
     }
 
-    private static Retrofit getRetrofitInstance() {
+    private static Retrofit getRetrofitInstance(Context context) {  // thêm context
         if (retrofit == null) {
-            synchronized (ApiClient.class) {
-                if (retrofit == null) {
-                    String baseUrl = getCurrentBaseUrl();
-                    retrofit = new Retrofit.Builder()
-                            .baseUrl(baseUrl)
-                            .client(createOkHttpClient())
-                            .addConverterFactory(GsonConverterFactory.create(createGson()))
-                            .build();
-
-                    Log.i(TAG, "Retrofit initialized with BASE_URL: " + baseUrl);
-                }
-            }
+            String baseUrl = getCurrentBaseUrl();
+            retrofit = new Retrofit.Builder().baseUrl(baseUrl).client(createOkHttpClient(context)).addConverterFactory(GsonConverterFactory.create(createGson())).build();
         }
         return retrofit;
     }
 
-    public static ApiService getApiService() {
+    public static ApiService getApiService(Context context) {
         if (apiService == null) {
             synchronized (ApiClient.class) {
                 if (apiService == null) {
-                    apiService = getRetrofitInstance().create(ApiService.class);
+                    apiService = getRetrofitInstance(context).create(ApiService.class);
                     Log.i(TAG, "ApiService created");
                 }
             }

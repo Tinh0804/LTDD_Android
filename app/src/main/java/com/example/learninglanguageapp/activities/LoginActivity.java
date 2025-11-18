@@ -10,11 +10,11 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.learninglanguageapp.R;
 import com.example.learninglanguageapp.databinding.ActivityLoginBinding;
 import com.example.learninglanguageapp.models.Request.LoginRequest;
 import com.example.learninglanguageapp.models.Request.SocialLoginRequest;
 import com.example.learninglanguageapp.models.Response.UserResponse;
+import com.example.learninglanguageapp.utils.SharedPrefsHelper;
 import com.example.learninglanguageapp.viewmodels.AuthViewModel;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -28,12 +28,13 @@ public class LoginActivity extends AppCompatActivity {
     private ActivityLoginBinding binding;
     private AuthViewModel authViewModel;
     private GoogleSignInClient googleSignInClient;
+    private SharedPrefsHelper prefs;
 
-    // Launcher cho Google Sign-In
     private final ActivityResultLauncher<Intent> googleSignInLauncher =
             registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
                 if (result.getResultCode() == RESULT_OK && result.getData() != null) {
-                    Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(result.getData());
+                    Task<GoogleSignInAccount> task =
+                            GoogleSignIn.getSignedInAccountFromIntent(result.getData());
                     handleGoogleSignInResult(task);
                 }
             });
@@ -46,21 +47,20 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         authViewModel = new ViewModelProvider(this).get(AuthViewModel.class);
+        prefs = new SharedPrefsHelper(this);
 
-        // Cấu hình Google Sign-In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken("976124393303-rlu8pmavq33q5q0781jbglma8ntglmb7.apps.googleusercontent.com")
                 .requestEmail()
                 .build();
-
         googleSignInClient = GoogleSignIn.getClient(this, gso);
 
         setupClickListeners();
-        observeLoginResult();
+        observeViewModel();
     }
 
     private void setupClickListeners() {
-        // Login thường
+
         binding.btnSignIn.setOnClickListener(v -> {
             String email = binding.edtEmail.getText().toString().trim();
             String password = binding.edtPassword.getText().toString().trim();
@@ -70,56 +70,49 @@ public class LoginActivity extends AppCompatActivity {
                 return;
             }
 
-            LoginRequest request = new LoginRequest(email, password);
-            authViewModel.login(request);
+            authViewModel.login(new LoginRequest(email, password));
         });
 
-        // Đăng ký
-        binding.tvSignUp.setOnClickListener(v -> {
-            startActivity(new Intent(this, RegisterActivity.class));
-        });
+        binding.tvSignUp.setOnClickListener(v ->
+                startActivity(new Intent(this, RegisterActivity.class))
+        );
 
         // GOOGLE LOGIN
         binding.btnGoogle.setOnClickListener(v -> {
-            Intent signInIntent = googleSignInClient.getSignInIntent();
-            googleSignInLauncher.launch(signInIntent);
+            googleSignInClient.signOut().addOnCompleteListener(task -> {
+                Intent signInIntent = googleSignInClient.getSignInIntent();
+                googleSignInLauncher.launch(signInIntent);
+            });
         });
     }
 
-    // Trong handleGoogleSignInResult()
     private void handleGoogleSignInResult(Task<GoogleSignInAccount> task) {
         try {
             GoogleSignInAccount account = task.getResult(ApiException.class);
             String idToken = account.getIdToken();
-
-            Log.d("GOOGLE_LOGIN", "ID Token: " + idToken);
-
-            // Tạo request
-            SocialLoginRequest request = new SocialLoginRequest("Google", idToken);
-
-            // Gọi ViewModel
-            authViewModel.socialLogin(request);
+            Log.d("GOOGLE_LOGIN", "ID Token: " + idToken.substring(0, 20) + "...");
+            authViewModel.socialLogin(new SocialLoginRequest("Google", idToken));
 
         } catch (ApiException e) {
-            Log.e("GOOGLE_LOGIN", "Lỗi: " + e.getStatusCode());
-            Toast.makeText(this, "Đăng nhập Google thất bại", Toast.LENGTH_SHORT).show();
+            Log.e("GOOGLE_LOGIN", "Google Sign-In Error: " + e.getMessage());
         }
     }
 
-    private void observeLoginResult() {
+    private void observeViewModel() {
         authViewModel.getLoginResult().observe(this, result -> {
+            if (result.isSuccess())
+                authViewModel.fetchUserProfile();
+            else
+                Toast.makeText(this, result.getException().getMessage(), Toast.LENGTH_LONG).show();
+        });
+
+        // Khi fetch PROFILE thành công -> chuyển MainActivity
+        authViewModel.getUserProfileLiveData().observe(this, result -> {
             if (result.isSuccess()) {
                 UserResponse user = result.getValue();
-                Toast.makeText(this, "Đăng nhập thành công: " + user.getFullName(), Toast.LENGTH_SHORT).show();
-
-                // TODO: Chuyển sang MainActivity
-                 startActivity(new Intent(this, MainActivity.class));
-                // finish();
-            } else {
-                String msg = result.getException() != null
-                        ? result.getException().getMessage()
-                        : "Đăng nhập thất bại";
-                Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Xin chào " + user.getFullName() + "!", Toast.LENGTH_LONG).show();
+                startActivity(new Intent(this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
+                finish();
             }
         });
     }

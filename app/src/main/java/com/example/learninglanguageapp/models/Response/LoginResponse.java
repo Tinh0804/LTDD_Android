@@ -1,46 +1,64 @@
+// models/Response/LoginResponse.java
 package com.example.learninglanguageapp.models.Response;
 
-import android.annotation.SuppressLint;
-
-import com.example.learninglanguageapp.models.UserProfile;
+import com.example.learninglanguageapp.models.User;
+import com.google.gson.annotations.SerializedName;
 
 public class LoginResponse {
-    private boolean success;
-    private String message;
-    private String token;   // token nếu đăng nhập thành công
-    private UserProfile user;      // thông tin user trả về (nếu API có)
 
-    // Getter & Setter
-    public boolean isSuccess() {
-        return success;
+    @SerializedName("status")
+    private boolean success;
+
+    @SerializedName("message")
+    private String message;
+
+    @SerializedName("token")
+    private String token;
+
+    @SerializedName("refreshToken")
+    private String refreshToken;
+
+    @SerializedName("isNewUser")
+    private boolean isNewUser = false;
+
+    // Backend trả về "data" -> "user" -> thông tin chi tiết
+    // Nên mẹ map thẳng vào User model của con luôn cho tiện
+    @SerializedName("data")
+    private DataWrapper data;
+
+    // Class con để map đúng cấu trúc JSON
+    public static class DataWrapper {
+        @SerializedName("user")
+        public User user;
     }
 
-    public void setSuccess(boolean success) {
-        this.success = success;
+    // Getter & Setter siêu gọn
+    public boolean isSuccess() {
+        return success;
     }
 
     public String getMessage() {
         return message;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
     public String getToken() {
         return token;
     }
 
-    public void setToken(String token) {
-        this.token = token;
+    public String getRefreshToken() {
+        return refreshToken;
     }
 
-    @SuppressLint("RestrictedApi")
-    public UserProfile getUser() {
-        return user;
+    public boolean isNewUser() {
+        return isNewUser;
     }
-    @SuppressLint("RestrictedApi")
-    public void setUser( UserProfile user) {
-        this.user = user;
+
+    public User getUser() {
+        return data != null ? data.user : null;
+    }
+
+    // Bonus: method tiện lợi để check login thành công
+    public boolean isLoginSuccessful() {
+        return success && token != null;
     }
 }
