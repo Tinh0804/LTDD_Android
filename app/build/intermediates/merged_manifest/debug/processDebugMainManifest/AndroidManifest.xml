@@ -86,18 +86,8 @@
             android:theme="@style/Theme.LearningLanguageApp" />
         <activity
             android:name="com.example.learninglanguageapp.activities.ShopActivity"
-            android:exported="true"
+            android:exported="false"
             android:theme="@style/Theme.LearningLanguageApp" >
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data android:scheme="@string/fb_login_protocol_scheme" />
-
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="com.example.learninglanguageapp.activities.SelectImageGameActivity"
@@ -108,9 +98,19 @@
             android:exported="false" />
         <activity
             android:name="com.example.learninglanguageapp.activities.SplashActivity"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.LearningLanguageApp.Splash" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name="com.example.learninglanguageapp.activities.WelcomeActivity"

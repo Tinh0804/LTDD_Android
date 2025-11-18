@@ -93,7 +93,7 @@
 45-->[com.android.installreferrer:installreferrer:1.0] /Users/vyhau/.gradle/caches/8.13/transforms/7550981c4d8f6eed5aa579409ffb2ccd/transformed/installreferrer-1.0/AndroidManifest.xml:9:22-107
 46
 47    <application
-47-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:24:5-149:19
+47-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:24:5-148:19
 48        android:allowBackup="true"
 48-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:25:9-35
 49        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -170,108 +170,108 @@
 86            android:theme="@style/Theme.LearningLanguageApp" />
 86-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:60:13-61
 87        <activity
-87-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:61:9-75:20
+87-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:61:9-65:20
 88            android:name="com.example.learninglanguageapp.activities.ShopActivity"
 88-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:62:13-52
-89            android:exported="true"
-89-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:63:13-36
+89            android:exported="false"
+89-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:63:13-37
 90            android:theme="@style/Theme.LearningLanguageApp" >
 90-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:64:13-61
-91            <intent-filter>
-91-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:65:13-74:29
-92                <category android:name="android.intent.category.DEFAULT" />
-92-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:66:17-76
-92-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:66:27-73
-93                <category android:name="android.intent.category.BROWSABLE" />
-93-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:67:17-78
-93-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:67:27-75
-94
-95                <data android:scheme="@string/fb_login_protocol_scheme" />
-95-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:69:17-75
-95-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:69:23-72
-96
-97                <action android:name="android.intent.action.MAIN" />
-97-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:71:17-69
-97-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:71:25-66
-98
-99                <category android:name="android.intent.category.LAUNCHER" />
-99-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:73:17-77
-99-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:73:27-74
-100            </intent-filter>
-101        </activity>
-102        <activity
-102-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:76:9-79:52
-103            android:name="com.example.learninglanguageapp.activities.SelectImageGameActivity"
-103-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:77:13-63
-104            android:exported="false"
-104-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:78:13-37
-105            android:screenOrientation="portrait" />
-105-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:79:13-49
-106        <activity
-106-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:80:9-82:40
-107            android:name="com.example.learninglanguageapp.activities.LessonActivity"
-107-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:81:13-54
-108            android:exported="false" />
-108-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:82:13-37
-109        <activity
-109-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:83:9-89:20
-110            android:name="com.example.learninglanguageapp.activities.SplashActivity"
-110-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:84:13-54
-111            android:exported="false"
-111-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:85:13-37
-112            android:screenOrientation="portrait"
-112-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:86:13-49
-113            android:theme="@style/Theme.LearningLanguageApp.Splash" >
-113-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:87:13-68
+91        </activity>
+92        <activity
+92-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:66:9-69:52
+93            android:name="com.example.learninglanguageapp.activities.SelectImageGameActivity"
+93-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:67:13-63
+94            android:exported="false"
+94-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:68:13-37
+95            android:screenOrientation="portrait" />
+95-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:69:13-49
+96        <activity
+96-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:70:9-72:40
+97            android:name="com.example.learninglanguageapp.activities.LessonActivity"
+97-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:71:13-54
+98            android:exported="false" />
+98-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:72:13-37
+99        <activity
+99-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:73:9-88:20
+100            android:name="com.example.learninglanguageapp.activities.SplashActivity"
+100-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:74:13-54
+101            android:exported="true"
+101-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:75:13-36
+102            android:screenOrientation="portrait"
+102-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:76:13-49
+103            android:theme="@style/Theme.LearningLanguageApp.Splash" >
+103-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:77:13-68
+104            <intent-filter>
+104-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:78:13-87:29
+105                <category android:name="android.intent.category.DEFAULT" />
+105-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:79:17-76
+105-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:79:27-73
+106                <category android:name="android.intent.category.BROWSABLE" />
+106-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:80:17-78
+106-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:80:27-75
+107
+108                <data android:scheme="@string/fb_login_protocol_scheme" />
+108-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:82:17-75
+108-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:82:23-72
+109
+110                <action android:name="android.intent.action.MAIN" />
+110-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:84:17-69
+110-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:84:25-66
+111
+112                <category android:name="android.intent.category.LAUNCHER" />
+112-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:86:17-77
+112-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:86:27-74
+113            </intent-filter>
 114        </activity>
 115        <activity
-115-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:90:9-92:40
+115-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:89:9-91:40
 116            android:name="com.example.learninglanguageapp.activities.WelcomeActivity"
-116-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:91:13-55
+116-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:90:13-55
 117            android:exported="false" />
-117-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:92:13-37
+117-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:91:13-37
 118        <activity
-118-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:93:9-95:40
+118-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:92:9-94:40
 119            android:name="com.example.learninglanguageapp.activities.Welcome2Activity"
-119-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:94:13-56
+119-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:93:13-56
 120            android:exported="false" />
-120-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:95:13-37
+120-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:94:13-37
 121        <activity
-121-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:96:9-98:40
+121-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:95:9-97:40
 122            android:name="com.example.learninglanguageapp.activities.RegisterActivity"
-122-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:97:13-56
+122-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:96:13-56
 123            android:exported="false" />
-123-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:98:13-37
+123-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:97:13-37
 124        <activity
-124-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:99:9-101:40
+124-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:98:9-100:40
 125            android:name="com.example.learninglanguageapp.activities.LoginActivity"
-125-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:100:13-53
+125-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:99:13-53
 126            android:exported="false" /> <!-- Main Activity -->
-126-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:101:13-37
+126-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:100:13-37
 127        <activity
-127-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:102:9-106:52
+127-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:101:9-105:52
 128            android:name="com.example.learninglanguageapp.activities.MainActivity"
-128-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:103:13-52
+128-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:102:13-52
 129            android:exported="false"
-129-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:104:13-37
+129-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:103:13-37
 130            android:launchMode="singleTop"
-130-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:105:13-43
+130-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:104:13-43
 131            android:screenOrientation="portrait" />
-131-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:106:13-49
+131-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:105:13-49
 132        <activity
-132-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:107:9-110:43
+132-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:106:9-109:43
 133            android:name="com.facebook.FacebookActivity"
-133-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:108:13-57
+133-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:107:13-57
 134            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-134-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:109:13-96
+134-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:108:13-96
 135            android:theme="@style/com_facebook_activity_theme" />
 135-->[com.facebook.android:facebook-common:18.1.3] /Users/vyhau/.gradle/caches/8.13/transforms/80bce67d1166e74afeb4e8ca961be266/transformed/facebook-common-18.1.3/AndroidManifest.xml:23:13-63
 136        <activity
-136-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:111:9-115:48
+136-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:110:9-114:48
 137            android:name="com.facebook.CustomTabActivity"
-137-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:112:13-58
+137-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:111:13-58
 138            android:exported="false" >
-138-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:113:13-37
+138-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:112:13-37
 139            <intent-filter>
 139-->[com.facebook.android:facebook-common:18.1.3] /Users/vyhau/.gradle/caches/8.13/transforms/80bce67d1166e74afeb4e8ca961be266/transformed/facebook-common-18.1.3/AndroidManifest.xml:29:13-38:29
 140                <action android:name="android.intent.action.VIEW" />
@@ -279,81 +279,81 @@
 140-->[com.facebook.android:facebook-common:18.1.3] /Users/vyhau/.gradle/caches/8.13/transforms/80bce67d1166e74afeb4e8ca961be266/transformed/facebook-common-18.1.3/AndroidManifest.xml:30:25-66
 141
 142                <category android:name="android.intent.category.DEFAULT" />
-142-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:66:17-76
-142-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:66:27-73
+142-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:79:17-76
+142-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:79:27-73
 143                <category android:name="android.intent.category.BROWSABLE" />
-143-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:67:17-78
-143-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:67:27-75
+143-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:80:17-78
+143-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:80:27-75
 144
 145                <data
-145-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:69:17-75
+145-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:82:17-75
 146                    android:host="cct.com.example.learninglanguageapp"
 147                    android:scheme="fbconnect" />
-147-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:69:23-72
+147-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:82:23-72
 148            </intent-filter>
 149        </activity>
 150        <activity
-150-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:116:9-120:75
+150-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:115:9-119:75
 151            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-151-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:117:13-93
+151-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:116:13-93
 152            android:excludeFromRecents="true"
-152-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:118:13-46
+152-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:117:13-46
 153            android:exported="false"
-153-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:119:13-37
+153-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:118:13-37
 154            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-154-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:120:13-72
+154-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:119:13-72
 155
 156        <service
-156-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:122:9-126:50
+156-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:121:9-125:50
 157            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-157-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:123:13-89
+157-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:122:13-89
 158            android:exported="true"
-158-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:124:13-36
+158-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:123:13-36
 159            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_BOUND_SERVICE"
-159-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:125:13-108
+159-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:124:13-108
 160            android:visibleToInstantApps="true" />
 160-->[com.google.android.gms:play-services-auth:21.4.0] /Users/vyhau/.gradle/caches/8.13/transforms/5c7357a57330df8bc337a7f9a22d5b97/transformed/play-services-auth-21.4.0/AndroidManifest.xml:37:13-48
 161
 162        <provider
 163            android:name="androidx.core.content.FileProvider"
-163-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:129:13-62
+163-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:128:13-62
 164            android:authorities="com.example.learninglanguageapp.fileprovider"
-164-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:130:13-64
+164-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:129:13-64
 165            android:exported="false"
-165-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:131:13-37
+165-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:130:13-37
 166            android:grantUriPermissions="true" >
-166-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:132:13-47
+166-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:131:13-47
 167            <meta-data
-167-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:133:13-135:54
+167-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:132:13-134:54
 168                android:name="android.support.FILE_PROVIDER_PATHS"
-168-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:134:17-67
+168-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:133:17-67
 169                android:resource="@xml/file_paths" />
-169-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:135:17-51
+169-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:134:17-51
 170        </provider> <!-- Firebase App Check (Security) -->
 171        <meta-data
-171-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:137:9-139:36
+171-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:136:9-138:36
 172            android:name="firebase_analytics_collection_enabled"
-172-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:138:13-65
+172-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:137:13-65
 173            android:value="true" />
-173-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:139:13-33
+173-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:138:13-33
 174        <meta-data
-174-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:140:9-142:36
+174-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:139:9-141:36
 175            android:name="firebase_crashlytics_collection_enabled"
-175-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:141:13-67
+175-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:140:13-67
 176            android:value="true" />
-176-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:142:13-33
+176-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:141:13-33
 177        <meta-data
-177-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:143:9-145:55
+177-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:142:9-144:55
 178            android:name="com.facebook.sdk.ApplicationId"
-178-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:144:13-58
+178-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:143:13-58
 179            android:value="@string/facebook_app_id" />
-179-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:145:13-52
+179-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:144:13-52
 180        <meta-data
-180-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:146:9-148:61
+180-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:145:9-147:61
 181            android:name="com.facebook.sdk.ClientToken"
-181-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:147:13-56
+181-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:146:13-56
 182            android:value="@string/facebook_client_token" />
-182-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:148:13-58
+182-->/Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:147:13-58
 183
 184        <activity
 184-->[com.karumi:dexter:6.2.3] /Users/vyhau/.gradle/caches/8.13/transforms/954a6338a87fbe0e344bc53422e352d3/transformed/dexter-6.2.3/AndroidManifest.xml:27:9-29:72

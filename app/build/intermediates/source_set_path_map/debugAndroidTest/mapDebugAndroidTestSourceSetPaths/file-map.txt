@@ -1,0 +1,6 @@
+com.example.learninglanguageapp.test.app-annotation-experimental-1.5.0-0 /Users/vyhau/.gradle/caches/8.13/transforms/7ab478d32e7058fbaeca6fb62c20d81e/transformed/annotation-experimental-1.5.0/res
+com.example.learninglanguageapp.test.app-core-1.5.0-1 /Users/vyhau/.gradle/caches/8.13/transforms/ea224faaaafc7d44d695103ed6b8148a/transformed/core-1.5.0/res
+com.example.learninglanguageapp.test.app-androidTest-2 /Users/vyhau/SourceTree/LTTD_Android/app/build/generated/res/resValues/androidTest/debug
+com.example.learninglanguageapp.test.app-mergeDebugAndroidTestResources-3 /Users/vyhau/SourceTree/LTTD_Android/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+com.example.learninglanguageapp.test.app-mergeDebugAndroidTestResources-4 /Users/vyhau/SourceTree/LTTD_Android/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+com.example.learninglanguageapp.test.app-debugAndroidTest-5 /Users/vyhau/SourceTree/LTTD_Android/app/build/intermediates/merged_res/debugAndroidTest/mergeDebugAndroidTestResources
