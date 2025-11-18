@@ -4,14 +4,13 @@ package com.example.learninglanguageapp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
-import androidx.core.widget.NestedScrollView;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.learninglanguageapp.R;
@@ -21,42 +20,64 @@ import java.lang.String;
 
 public final class FragmentHomeBinding implements ViewBinding {
   @NonNull
-  private final NestedScrollView rootView;
+  private final ScrollView rootView;
 
   @NonNull
-  public final CardView cardTrophy;
+  public final FrameLayout cardCheckLevel1;
 
   @NonNull
-  public final ImageView imgMascotTop;
+  public final FrameLayout cardCheckLevel2;
 
   @NonNull
-  public final ImageView imgTrophy;
+  public final FrameLayout cardListLevel;
 
   @NonNull
-  public final ProgressBar progressBar;
+  public final FrameLayout cardLockedLevel;
 
   @NonNull
-  public final RecyclerView recyclerViewLessons;
+  public final FrameLayout cardStarLevel;
 
   @NonNull
-  public final TextView tvTrophyCount;
+  public final CardView cardStartButton;
 
-  private FragmentHomeBinding(@NonNull NestedScrollView rootView, @NonNull CardView cardTrophy,
-      @NonNull ImageView imgMascotTop, @NonNull ImageView imgTrophy,
-      @NonNull ProgressBar progressBar, @NonNull RecyclerView recyclerViewLessons,
-      @NonNull TextView tvTrophyCount) {
+  @NonNull
+  public final ImageView ivAppleHappy;
+
+  @NonNull
+  public final ImageView ivAppleSinging;
+
+  @NonNull
+  public final ImageView ivAppleTop;
+
+  @NonNull
+  public final ImageView ivTrophy;
+
+  @NonNull
+  public final TextView tvLevel;
+
+  private FragmentHomeBinding(@NonNull ScrollView rootView, @NonNull FrameLayout cardCheckLevel1,
+      @NonNull FrameLayout cardCheckLevel2, @NonNull FrameLayout cardListLevel,
+      @NonNull FrameLayout cardLockedLevel, @NonNull FrameLayout cardStarLevel,
+      @NonNull CardView cardStartButton, @NonNull ImageView ivAppleHappy,
+      @NonNull ImageView ivAppleSinging, @NonNull ImageView ivAppleTop, @NonNull ImageView ivTrophy,
+      @NonNull TextView tvLevel) {
     this.rootView = rootView;
-    this.cardTrophy = cardTrophy;
-    this.imgMascotTop = imgMascotTop;
-    this.imgTrophy = imgTrophy;
-    this.progressBar = progressBar;
-    this.recyclerViewLessons = recyclerViewLessons;
-    this.tvTrophyCount = tvTrophyCount;
+    this.cardCheckLevel1 = cardCheckLevel1;
+    this.cardCheckLevel2 = cardCheckLevel2;
+    this.cardListLevel = cardListLevel;
+    this.cardLockedLevel = cardLockedLevel;
+    this.cardStarLevel = cardStarLevel;
+    this.cardStartButton = cardStartButton;
+    this.ivAppleHappy = ivAppleHappy;
+    this.ivAppleSinging = ivAppleSinging;
+    this.ivAppleTop = ivAppleTop;
+    this.ivTrophy = ivTrophy;
+    this.tvLevel = tvLevel;
   }
 
   @Override
   @NonNull
-  public NestedScrollView getRoot() {
+  public ScrollView getRoot() {
     return rootView;
   }
 
@@ -81,44 +102,75 @@ public final class FragmentHomeBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.cardTrophy;
-      CardView cardTrophy = ViewBindings.findChildViewById(rootView, id);
-      if (cardTrophy == null) {
+      id = R.id.cardCheckLevel1;
+      FrameLayout cardCheckLevel1 = ViewBindings.findChildViewById(rootView, id);
+      if (cardCheckLevel1 == null) {
         break missingId;
       }
 
-      id = R.id.imgMascotTop;
-      ImageView imgMascotTop = ViewBindings.findChildViewById(rootView, id);
-      if (imgMascotTop == null) {
+      id = R.id.cardCheckLevel2;
+      FrameLayout cardCheckLevel2 = ViewBindings.findChildViewById(rootView, id);
+      if (cardCheckLevel2 == null) {
         break missingId;
       }
 
-      id = R.id.imgTrophy;
-      ImageView imgTrophy = ViewBindings.findChildViewById(rootView, id);
-      if (imgTrophy == null) {
+      id = R.id.cardListLevel;
+      FrameLayout cardListLevel = ViewBindings.findChildViewById(rootView, id);
+      if (cardListLevel == null) {
         break missingId;
       }
 
-      id = R.id.progressBar;
-      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
-      if (progressBar == null) {
+      id = R.id.cardLockedLevel;
+      FrameLayout cardLockedLevel = ViewBindings.findChildViewById(rootView, id);
+      if (cardLockedLevel == null) {
         break missingId;
       }
 
-      id = R.id.recyclerViewLessons;
-      RecyclerView recyclerViewLessons = ViewBindings.findChildViewById(rootView, id);
-      if (recyclerViewLessons == null) {
+      id = R.id.cardStarLevel;
+      FrameLayout cardStarLevel = ViewBindings.findChildViewById(rootView, id);
+      if (cardStarLevel == null) {
         break missingId;
       }
 
-      id = R.id.tvTrophyCount;
-      TextView tvTrophyCount = ViewBindings.findChildViewById(rootView, id);
-      if (tvTrophyCount == null) {
+      id = R.id.cardStartButton;
+      CardView cardStartButton = ViewBindings.findChildViewById(rootView, id);
+      if (cardStartButton == null) {
         break missingId;
       }
 
-      return new FragmentHomeBinding((NestedScrollView) rootView, cardTrophy, imgMascotTop,
-          imgTrophy, progressBar, recyclerViewLessons, tvTrophyCount);
+      id = R.id.ivAppleHappy;
+      ImageView ivAppleHappy = ViewBindings.findChildViewById(rootView, id);
+      if (ivAppleHappy == null) {
+        break missingId;
+      }
+
+      id = R.id.ivAppleSinging;
+      ImageView ivAppleSinging = ViewBindings.findChildViewById(rootView, id);
+      if (ivAppleSinging == null) {
+        break missingId;
+      }
+
+      id = R.id.ivAppleTop;
+      ImageView ivAppleTop = ViewBindings.findChildViewById(rootView, id);
+      if (ivAppleTop == null) {
+        break missingId;
+      }
+
+      id = R.id.ivTrophy;
+      ImageView ivTrophy = ViewBindings.findChildViewById(rootView, id);
+      if (ivTrophy == null) {
+        break missingId;
+      }
+
+      id = R.id.tvLevel;
+      TextView tvLevel = ViewBindings.findChildViewById(rootView, id);
+      if (tvLevel == null) {
+        break missingId;
+      }
+
+      return new FragmentHomeBinding((ScrollView) rootView, cardCheckLevel1, cardCheckLevel2,
+          cardListLevel, cardLockedLevel, cardStarLevel, cardStartButton, ivAppleHappy,
+          ivAppleSinging, ivAppleTop, ivTrophy, tvLevel);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

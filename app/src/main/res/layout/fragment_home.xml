@@ -1,91 +1,200 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F7F7F7">
+    android:background="#F5F5F5">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="16dp"
-        android:paddingBottom="24dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp">
+        android:padding="24dp">
 
-        <!-- Trophy Section -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardTrophy"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="16dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="4dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:background="@android:color/white"
-                android:padding="12dp">
-
-                <ImageView
-                    android:id="@+id/imgTrophy"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/ic_trophy"
-                    android:contentDescription="Trophy"/>
-
-                <TextView
-                    android:id="@+id/tvTrophyCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="#424242"
-                    android:layout_marginTop="4dp"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <!-- Mascot Top -->
+        <!-- Trophy with Level 26 -->
         <ImageView
-            android:id="@+id/imgMascotTop"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            android:src="@drawable/mascot"
-            android:contentDescription="Mascot"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/ivTrophy"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_trophy"
+            android:contentDescription="Trophy"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="16dp"/>
+            app:layout_constraintEnd_toStartOf="@id/ivAppleTop"
+            android:layout_marginEnd="40dp"/>
 
-        <!-- Progress Bar -->
-        <ProgressBar
-            android:id="@+id/progressBar"
+        <TextView
+            android:id="@+id/tvLevel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardTrophy"
-            android:layout_marginTop="24dp"/>
+            android:text="26"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#757575"
+            app:layout_constraintTop_toTopOf="@id/ivTrophy"
+            app:layout_constraintBottom_toBottomOf="@id/ivTrophy"
+            app:layout_constraintStart_toStartOf="@id/ivTrophy"
+            app:layout_constraintEnd_toEndOf="@id/ivTrophy"/>
 
-        <!-- RecyclerView for Units and Lessons -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewLessons"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:overScrollMode="never"
-            android:nestedScrollingEnabled="false"
+        <!-- Apple Character Top Right -->
+        <ImageView
+            android:id="@+id/ivAppleTop"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/mascot"
+            android:contentDescription="Apple with basket"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <!-- Locked Level - CENTER -->
+        <FrameLayout
+            android:id="@+id/cardLockedLevel"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/bg_circle_locked"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardTrophy"/>
+            app:layout_constraintTop_toBottomOf="@id/ivTrophy">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_lock"
+                android:layout_gravity="center"
+                android:contentDescription="Locked level"
+                app:tint="#9E9E9E"/>
+        </FrameLayout>
+
+        <!-- Apple Character Singing Left -->
+        <ImageView
+            android:id="@+id/ivAppleSinging"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/mascot"
+            android:contentDescription="Apple singing"
+            android:layout_marginEnd="40dp"
+            app:layout_constraintEnd_toStartOf="@id/cardLockedLevel"
+            app:layout_constraintTop_toTopOf="@id/cardLockedLevel"
+            app:layout_constraintBottom_toBottomOf="@id/cardLockedLevel"/>
+
+        <!-- START Button -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardStartButton"
+            android:layout_width="140dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="4dp"
+            app:layout_constraintStart_toEndOf="@id/cardLockedLevel"
+            app:layout_constraintTop_toTopOf="@id/cardLockedLevel">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="START!"
+                android:textColor="#5B4DFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Star Level (Purple) - RIGHT SIDE -->
+        <FrameLayout
+            android:id="@+id/cardStarLevel"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/bg_gradient_purple"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardLockedLevel">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_star"
+                android:layout_gravity="center"
+                android:contentDescription="Star level"
+                app:tint="#FFFFFF"/>
+        </FrameLayout>
+
+        <!-- Checkmark Level 1 (Yellow) - CENTER -->
+        <FrameLayout
+            android:id="@+id/cardCheckLevel1"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/bg_gradient_yellow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardStarLevel">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/ic_check"
+                android:layout_gravity="center"
+                android:contentDescription="Completed level"
+                app:tint="#FFFFFF"/>
+        </FrameLayout>
+
+        <!-- List Level (Yellow) - LEFT SIDE -->
+        <FrameLayout
+            android:id="@+id/cardListLevel"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="40dp"
+            android:background="@drawable/bg_gradient_yellow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardCheckLevel1">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/ic_document"
+                android:layout_gravity="center"
+                android:contentDescription="List level"
+                app:tint="#FFFFFF"/>
+        </FrameLayout>
+
+        <!-- Apple Character Happy Right -->
+        <ImageView
+            android:id="@+id/ivAppleHappy"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/mascot"
+            android:contentDescription="Apple happy"
+            android:layout_marginStart="40dp"
+            app:layout_constraintStart_toEndOf="@id/cardListLevel"
+            app:layout_constraintTop_toTopOf="@id/cardListLevel"
+            app:layout_constraintBottom_toBottomOf="@id/cardListLevel"/>
+
+        <!-- Checkmark Level 2 (Yellow) - CENTER -->
+        <FrameLayout
+            android:id="@+id/cardCheckLevel2"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/bg_gradient_yellow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardListLevel"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src="@drawable/ic_check"
+                android:layout_gravity="center"
+                android:contentDescription="Completed level"
+                app:tint="#FFFFFF"/>
+        </FrameLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.core.widget.NestedScrollView>
+</ScrollView>

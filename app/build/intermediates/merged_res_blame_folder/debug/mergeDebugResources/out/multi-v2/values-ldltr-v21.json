@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.learninglanguageapp-mergeDebugResources-68:/values-ldltr-v21/values-ldltr-v21.xml",
+            "outputFile": "com.example.learninglanguageapp-mergeDebugResources-69:/values-ldltr-v21/values-ldltr-v21.xml",
             "map": [
                 {
-                    "source": "/Users/macbookpro/.gradle/caches/8.13/transforms/36246465837c5819b0b5ec76df187f79/transformed/appcompat-1.6.1/res/values-ldltr-v21/values-ldltr-v21.xml",
+                    "source": "/Users/vyhau/.gradle/caches/8.13/transforms/36246465837c5819b0b5ec76df187f79/transformed/appcompat-1.6.1/res/values-ldltr-v21/values-ldltr-v21.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

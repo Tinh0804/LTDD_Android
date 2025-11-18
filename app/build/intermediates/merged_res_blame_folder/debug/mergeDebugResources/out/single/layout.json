@@ -1,102 +1,130 @@
 [
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-69:/layout/layout4_12.xml",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-72:/layout/layout4_12.xml"
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_practice.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/activity_practice.xml"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-69:/layout/item_word_card.xml",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-72:/layout/item_word_card.xml"
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_select_image_game.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/activity_select_image_game.xml"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-69:/layout/item_language.xml",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-72:/layout/item_language.xml"
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_login.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/activity_login.xml"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-69:/layout/activity_register.xml",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-72:/layout/activity_register.xml"
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/word_chip.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/word_chip.xml"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-69:/layout/level_item.xml",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-72:/layout/level_item.xml"
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/level_item.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/level_item.xml"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-69:/layout/item_study_time.xml",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-72:/layout/item_study_time.xml"
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/language_use.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/language_use.xml"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-69:/layout/welcome.xml",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-72:/layout/welcome.xml"
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/fragment_home2.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/fragment_home2.xml"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-69:/layout/activity_main.xml",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-72:/layout/activity_main.xml"
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/level.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/level.xml"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-69:/layout/loading.xml",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-72:/layout/loading.xml"
+        "merged": "com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_matching_game.xml",
+        "source": "com.example.learninglanguageapp-main-73:/layout/activity_matching_game.xml"
     },
     {
-        "merged": "com.example.learninglanguageapp-mergeDebugResources-69:/layout/activity_shop.xml",
-        "source": "com.example.learninglanguageapp-main-72:/layout/activity_shop.xml"
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_progress.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/activity_progress.xml"
     },
     {
-        "merged": "com.example.learninglanguageapp-mergeDebugResources-69:/layout/activity_web_view.xml",
-        "source": "com.example.learninglanguageapp-main-72:/layout/activity_web_view.xml"
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/language_learn.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/language_learn.xml"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-69:/layout/welcome2.xml",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-72:/layout/welcome2.xml"
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_main.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/activity_main.xml"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-69:/layout/splash.xml",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-72:/layout/splash.xml"
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/word_chip_placeholder.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/word_chip_placeholder.xml"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-69:/layout/language_use.xml",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-72:/layout/language_use.xml"
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/layout4_12.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/layout4_12.xml"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-69:/layout/fragment_home2.xml",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-72:/layout/fragment_home2.xml"
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/welcome.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/welcome.xml"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-69:/layout/activity_select_image_game.xml",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-72:/layout/activity_select_image_game.xml"
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_register.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/activity_register.xml"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-69:/layout/fragment_home.xml",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-72:/layout/fragment_home.xml"
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_game.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/activity_game.xml"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-69:/layout/activity_login.xml",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-72:/layout/activity_login.xml"
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/welcome2.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/welcome2.xml"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-69:/layout/activity_study_time.xml",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-72:/layout/activity_study_time.xml"
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/item_word_card.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/item_word_card.xml"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-69:/layout/item_option.xml",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-72:/layout/item_option.xml"
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_setting.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/activity_setting.xml"
     },
     {
-        "merged": "com.example.learninglanguageapp-mergeDebugResources-69:/layout/activity_payment.xml",
-        "source": "com.example.learninglanguageapp-main-72:/layout/activity_payment.xml"
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/word_chip_selected.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/word_chip_selected.xml"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-69:/layout/activity_lesson.xml",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-72:/layout/activity_lesson.xml"
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/item_option.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/item_option.xml"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-69:/layout/language_learn.xml",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-72:/layout/language_learn.xml"
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_study_time.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/activity_study_time.xml"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-69:/layout/activity_splash.xml",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-72:/layout/activity_splash.xml"
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_splash.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/activity_splash.xml"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-69:/layout/level.xml",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-72:/layout/level.xml"
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_gamewordrop.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/activity_gamewordrop.xml"
+    },
+    {
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_lesson.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/activity_lesson.xml"
+    },
+    {
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/splash.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/splash.xml"
+    },
+    {
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/item_study_time.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/item_study_time.xml"
+    },
+    {
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/fragment_home.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/loading.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/loading.xml"
+    },
+    {
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/item_unit.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/item_unit.xml"
+    },
+    {
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/item_language.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/item_language.xml"
     }
 ]
