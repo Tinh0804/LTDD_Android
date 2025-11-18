@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.learninglanguageapp-mergeDebugResources-68:/values-ar/values-ar.xml",
+            "outputFile": "com.example.learninglanguageapp-mergeDebugResources-69:/values-ar/values-ar.xml",
             "map": [
                 {
                     "source": "/Users/vyhau/.gradle/caches/8.13/transforms/82fc768c0d1a3ca18ad598908f027d70/transformed/facebook-login-18.1.3/res/values-ar/values-ar.xml",

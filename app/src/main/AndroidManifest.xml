@@ -44,6 +44,10 @@
             android:name=".activities.LessonActivity"
             android:exported="false">
         </activity>
+        <activity
+            android:name=".activities.MatchingGameActivity"
+            android:exported="false">
+        </activity>
 
         <activity
             android:name=".activities.SplashActivity"
@@ -78,6 +82,11 @@
             android:exported="false"
             android:launchMode="singleTop"
             android:screenOrientation="portrait" >
+        </activity>
+
+        <activity
+            android:name=".activities.GameWordropActivity"
+            android:exported="false">
         </activity>
         <activity
             android:name="com.facebook.FacebookActivity"

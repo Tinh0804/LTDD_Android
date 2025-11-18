@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.learninglanguageapp-mergeDebugResources-68:/values-en-rGB/values-en-rGB.xml",
+            "outputFile": "com.example.learninglanguageapp-mergeDebugResources-69:/values-en-rGB/values-en-rGB.xml",
             "map": [
                 {
                     "source": "/Users/vyhau/.gradle/caches/8.13/transforms/a4bea8f7d66266291274db7e5849183a/transformed/play-services-base-18.5.0/res/values-en-rGB/values.xml",

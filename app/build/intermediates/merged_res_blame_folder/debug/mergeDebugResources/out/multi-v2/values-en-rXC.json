@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.learninglanguageapp-mergeDebugResources-68:/values-en-rXC/values-en-rXC.xml",
+            "outputFile": "com.example.learninglanguageapp-mergeDebugResources-69:/values-en-rXC/values-en-rXC.xml",
             "map": [
                 {
                     "source": "/Users/vyhau/.gradle/caches/8.13/transforms/0d096d8e62f9a130e477d0df5990a6c4/transformed/core-1.13.1/res/values-en-rXC/values-en-rXC.xml",

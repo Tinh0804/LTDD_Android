@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.learninglanguageapp-mergeDebugResources-68:/values-ko/values-ko.xml",
+            "outputFile": "com.example.learninglanguageapp-mergeDebugResources-69:/values-ko/values-ko.xml",
             "map": [
                 {
                     "source": "/Users/vyhau/.gradle/caches/8.13/transforms/36246465837c5819b0b5ec76df187f79/transformed/appcompat-1.6.1/res/values-ko/values-ko.xml",

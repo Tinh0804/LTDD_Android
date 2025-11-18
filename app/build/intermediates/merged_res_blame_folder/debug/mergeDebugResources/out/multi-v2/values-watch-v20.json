@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.learninglanguageapp-mergeDebugResources-68:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.example.learninglanguageapp-mergeDebugResources-69:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
                     "source": "/Users/vyhau/.gradle/caches/8.13/transforms/5c7357a57330df8bc337a7f9a22d5b97/transformed/play-services-auth-21.4.0/res/values-watch-v20/values.xml",

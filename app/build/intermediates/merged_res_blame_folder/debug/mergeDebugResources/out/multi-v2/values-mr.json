@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.learninglanguageapp-mergeDebugResources-68:/values-mr/values-mr.xml",
+            "outputFile": "com.example.learninglanguageapp-mergeDebugResources-69:/values-mr/values-mr.xml",
             "map": [
                 {
                     "source": "/Users/vyhau/.gradle/caches/8.13/transforms/15ad54e40bdef9aeb3fe704555663b74/transformed/navigation-ui-2.9.5/res/values-mr/values-mr.xml",

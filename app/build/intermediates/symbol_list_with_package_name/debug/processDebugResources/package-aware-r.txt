@@ -142,6 +142,8 @@ attr alertDialogButtonGroupStyle
 attr alertDialogCenterButtons
 attr alertDialogStyle
 attr alertDialogTheme
+attr alignContent
+attr alignItems
 attr allowStacking
 attr alpha
 attr alphabeticModifiers
@@ -510,6 +512,9 @@ attr dialogTheme
 attr displayOptions
 attr divider
 attr dividerColor
+attr dividerDrawable
+attr dividerDrawableHorizontal
+attr dividerDrawableVertical
 attr dividerHorizontal
 attr dividerInsetEnd
 attr dividerInsetStart
@@ -605,6 +610,8 @@ attr fastScrollVerticalTrackDrawable
 attr finishPrimaryWithSecondary
 attr finishSecondaryWithPrimary
 attr firstBaselineToTopHeight
+attr flexDirection
+attr flexWrap
 attr floatingActionButtonLargePrimaryStyle
 attr floatingActionButtonLargeSecondaryStyle
 attr floatingActionButtonLargeStyle
@@ -745,6 +752,7 @@ attr itemTextAppearanceActiveBoldEnabled
 attr itemTextAppearanceInactive
 attr itemTextColor
 attr itemVerticalPadding
+attr justifyContent
 attr keep_content_on_player_reset
 attr keyPositionType
 attr keyboardIcon
@@ -761,6 +769,7 @@ attr layout
 attr layoutDescription
 attr layoutDuringTransition
 attr layoutManager
+attr layout_alignSelf
 attr layout_anchor
 attr layout_anchorGravity
 attr layout_behavior
@@ -815,6 +824,9 @@ attr layout_constraintWidth_percent
 attr layout_dodgeInsetEdges
 attr layout_editor_absoluteX
 attr layout_editor_absoluteY
+attr layout_flexBasisPercent
+attr layout_flexGrow
+attr layout_flexShrink
 attr layout_goneMarginBaseline
 attr layout_goneMarginBottom
 attr layout_goneMarginEnd
@@ -825,10 +837,16 @@ attr layout_goneMarginTop
 attr layout_insetEdge
 attr layout_keyline
 attr layout_marginBaseline
+attr layout_maxHeight
+attr layout_maxWidth
+attr layout_minHeight
+attr layout_minWidth
 attr layout_optimizationLevel
+attr layout_order
 attr layout_scrollEffect
 attr layout_scrollFlags
 attr layout_scrollInterpolator
+attr layout_wrapBefore
 attr layout_wrapBehaviorInParent
 attr liftOnScroll
 attr liftOnScrollColor
@@ -934,6 +952,7 @@ attr maxButtonHeight
 attr maxCharacterCount
 attr maxHeight
 attr maxImageSize
+attr maxLine
 attr maxLines
 attr maxNumber
 attr maxVelocity
@@ -1145,6 +1164,9 @@ attr shouldRemoveExpandedCorners
 attr showAnimationBehavior
 attr showAsAction
 attr showDelay
+attr showDivider
+attr showDividerHorizontal
+attr showDividerVertical
 attr showDividers
 attr showMotionSpec
 attr showPaths
@@ -1591,6 +1613,7 @@ color error_color_material_dark
 color error_color_material_light
 color error_red
 color error_red_dark
+color error_red_light
 color exo_black_opacity_60
 color exo_black_opacity_70
 color exo_bottom_bar_background
@@ -3207,6 +3230,7 @@ drawable abc_vector_test
 drawable advance
 drawable apple_welcome
 drawable apple_welcome2
+drawable avatar
 drawable avd_hide_password
 drawable avd_show_password
 drawable background_splash
@@ -3232,6 +3256,8 @@ drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable button_background
+drawable button_check_bg
+drawable character_bg
 drawable com_facebook_auth_dialog_background
 drawable com_facebook_auth_dialog_cancel_background
 drawable com_facebook_auth_dialog_header_background
@@ -3371,8 +3397,10 @@ drawable flagvietnam
 drawable fun
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable ic_accessibility
 drawable ic_account
 drawable ic_animal
+drawable ic_apps
 drawable ic_arrange
 drawable ic_arrow_back
 drawable ic_arrow_back_black_24
@@ -3386,10 +3414,14 @@ drawable ic_call_answer_video_low
 drawable ic_call_decline
 drawable ic_call_decline_low
 drawable ic_check
+drawable ic_chevron_left
+drawable ic_chevron_right
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
 drawable ic_close
+drawable ic_crown
 drawable ic_dailyactivity
+drawable ic_darkmode
 drawable ic_document
 drawable ic_download
 drawable ic_email
@@ -3409,20 +3441,25 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_leaderboard
 drawable ic_lock
+drawable ic_logout
 drawable ic_m3_chip_check
 drawable ic_m3_chip_checked_circle
 drawable ic_m3_chip_close
 drawable ic_matching
+drawable ic_menu
 drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_notification
+drawable ic_people
+drawable ic_person
 drawable ic_phone
 drawable ic_play
 drawable ic_practice
 drawable ic_puzzle
 drawable ic_search_black_24
+drawable ic_security
 drawable ic_settings
 drawable ic_star
 drawable ic_timer
@@ -3522,14 +3559,19 @@ drawable option_background_selected
 drawable placeholder
 drawable plane
 drawable rounded_button_blue
+drawable selected_area_bg
 drawable selector_bottom_nav
 drawable social_button_bg
+drawable speech_bubble_bg
 drawable splash_background
 drawable star
 drawable test_level_drawable
 drawable textbubble
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable word_chip_bg
+drawable word_chip_placeholder_bg
+drawable word_chip_selected_bg
 font roboto_medium_numbers
 id ALT
 id BOTTOM_END
@@ -3625,6 +3667,7 @@ id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
 id automatic
+id availableWordsContainer
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -3645,29 +3688,63 @@ id browser_actions_menu_item_icon
 id browser_actions_menu_item_text
 id browser_actions_menu_items
 id browser_actions_menu_view
+id btnAccessibility
+id btnAchievements
 id btnAudio
 id btnAudioBack
 id btnBack
+id btnCheck
 id btnClose
 id btnContinue
+id btnDarkMode
 id btnFacebook
+id btnFindFriends
 id btnFlip
 id btnFlipBack
+id btnGeneral
 id btnGoogle
+id btnInsights
+id btnLogout
+id btnMenu
+id btnMonthlyHistory
+id btnMonthlyTime
 id btnNext
+id btnNextMonth
+id btnNextWeek
+id btnNotification
+id btnPersonalInfo
+id btnPreferences
+id btnPrevMonth
+id btnPrevWeek
 id btnPrevious
 id btnRegister
+id btnSecurity
 id btnSettings
 id btnSignIn
 id btnToggleConfirmPassword
 id btnTogglePassword
+id btnWeeklyHistory
+id btnWeeklyTime
+id btnYearlyHistory
+id btnYearlyTime
 id bubbletext
 id button
 id buttonPanel
 id cache_measures
+id calendarGrid
 id callMeasure
 id cancel_action
 id cancel_button
+id card1
+id card10
+id card2
+id card3
+id card4
+id card5
+id card6
+id card7
+id card8
+id card9
 id cardArrangeWordGame
 id cardBackContainer
 id cardCheckLevel1
@@ -3677,8 +3754,11 @@ id cardImageWordGame
 id cardListLevel
 id cardLockedLevel
 id cardMatchingGame
+id cardMenu
+id cardProfile
 id cardStarLevel
 id cardStartButton
+id cardUpgrade
 id cardVocabularyGame
 id carryVelocity
 id center
@@ -3689,6 +3769,7 @@ id center_vertical
 id chain
 id chain2
 id chains
+id chartContainer
 id checkbox
 id checked
 id chkRemember
@@ -3700,6 +3781,8 @@ id clip_vertical
 id clockwise
 id closest
 id collapseActionView
+id column
+id column_reverse
 id com_facebook_body_frame
 id com_facebook_button_xout
 id com_facebook_device_auth_instructions
@@ -3848,6 +3931,8 @@ id fitXY
 id fixed
 id fixed_height
 id fixed_width
+id flex_end
+id flex_start
 id flip
 id floating
 id forever
@@ -3866,6 +3951,7 @@ id group_divider
 id grouping
 id groups
 id hardware
+id header
 id header_title
 id hide_ime_id
 id hideable
@@ -3881,7 +3967,9 @@ id ignore
 id ignoreRequest
 id image
 id imageView
+id imgAvatar
 id imgFlag
+id imgLogo
 id imgUnit
 id immediateStop
 id included
@@ -3901,6 +3989,7 @@ id ivArrangeWordIcon
 id ivCheck
 id ivIcon
 id ivImageWordIcon
+id ivLogo
 id ivMatchingIcon
 id ivTrophy
 id ivVocabularyIcon
@@ -4019,6 +4108,7 @@ id north
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id nowrap
 id off
 id on
 id onInterceptTouchReturnSwipe
@@ -4094,7 +4184,9 @@ id rightToLeft
 id right_icon
 id right_side
 id rounded
+id row
 id row_index_key
+id row_reverse
 id rtl
 id save_non_transition_alpha
 id save_overlay_view
@@ -4118,6 +4210,7 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id selected
+id selectedWordsContainer
 id selection_type
 id sharedValueSet
 id sharedValueUnset
@@ -4138,6 +4231,9 @@ id snap
 id snapMargins
 id software
 id south
+id space_around
+id space_between
+id space_evenly
 id spacer
 id special_effects_controller_view_tag
 id spherical_gl_surface_view
@@ -4165,6 +4261,7 @@ id submenuarrow
 id submit_area
 id supportScrollUp
 id surface_view
+id switchDarkMode
 id tabMode
 id tag_accessibility_actions
 id tag_accessibility_clickable_spans
@@ -4217,6 +4314,7 @@ id triangle
 id tvArrangeWordSubtitle
 id tvArrangeWordTitle
 id tvCategory
+id tvDateRange
 id tvExampleSentence
 id tvFeedback
 id tvForgotPassword
@@ -4235,6 +4333,7 @@ id tvLevelDesc
 id tvLevelName
 id tvMatchingSubtitle
 id tvMatchingTitle
+id tvMonthYear
 id tvPosition
 id tvPremium
 id tvProgress
@@ -4249,10 +4348,22 @@ id tvTranslation
 id tvTranslationBack
 id tvUnitDesc
 id tvUnitName
+id tvUserEmail
+id tvUserName
 id tvVocabularySubtitle
 id tvVocabularyTitle
 id tvWelcomeTitle
 id tvWord
+id tvWord1
+id tvWord10
+id tvWord2
+id tvWord3
+id tvWord4
+id tvWord5
+id tvWord6
+id tvWord7
+id tvWord8
+id tvWord9
 id tvWordBack
 id tvWordType
 id tvWordTypeBack
@@ -4280,9 +4391,12 @@ id wide
 id withText
 id with_icon
 id withinBounds
+id wordChip
+id wordChipSelected
 id wrap
 id wrap_content
 id wrap_content_constrained
+id wrap_reverse
 id x_left
 id x_right
 id zoom
@@ -4405,12 +4519,16 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_game
+layout activity_gamewordrop
 layout activity_lesson
 layout activity_login
 layout activity_main
+layout activity_matching_game
 layout activity_practice
+layout activity_progress
 layout activity_register
 layout activity_select_image_game
+layout activity_setting
 layout activity_splash
 layout activity_study_time
 layout browser_actions_context_menu_page
@@ -4541,6 +4659,9 @@ layout splash
 layout support_simple_spinner_dropdown_item
 layout welcome
 layout welcome2
+layout word_chip
+layout word_chip_placeholder
+layout word_chip_selected
 menu bottom_nav_menu
 mipmap ic_launcher
 mipmap ic_launcher_round
@@ -6093,6 +6214,8 @@ styleable DrawerArrowToggle arrowHeadLength arrowShaftLength barLength color dra
 styleable DrawerLayout elevation
 styleable ExtendedFloatingActionButton collapsedSize elevation extendMotionSpec extendStrategy hideMotionSpec showMotionSpec shrinkMotionSpec
 styleable ExtendedFloatingActionButton_Behavior_Layout behavior_autoHide behavior_autoShrink
+styleable FlexboxLayout alignContent alignItems dividerDrawable dividerDrawableHorizontal dividerDrawableVertical flexDirection flexWrap justifyContent maxLine showDivider showDividerHorizontal showDividerVertical
+styleable FlexboxLayout_Layout layout_alignSelf layout_flexBasisPercent layout_flexGrow layout_flexShrink layout_maxHeight layout_maxWidth layout_minHeight layout_minWidth layout_order layout_wrapBefore
 styleable FloatingActionButton android_enabled backgroundTint backgroundTintMode borderWidth elevation ensureMinTouchTargetSize fabCustomSize fabSize hideMotionSpec hoveredFocusedTranslationZ maxImageSize pressedTranslationZ rippleColor shapeAppearance shapeAppearanceOverlay showMotionSpec useCompatPadding
 styleable FloatingActionButton_Behavior_Layout behavior_autoHide
 styleable FlowLayout itemSpacing lineSpacing

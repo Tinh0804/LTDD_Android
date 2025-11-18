@@ -1,20 +1,20 @@
 -- Merging decision tree log ---
 provider#androidx.core.content.FileProvider
-INJECTED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:101:9-109:20
+INJECTED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:110:9-118:20
 	android:grantUriPermissions
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:105:13-47
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:114:13-47
 	android:authorities
 		INJECTED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:103:13-64
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:112:13-64
 	android:exported
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:104:13-37
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:113:13-37
 	android:name
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:102:13-62
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:111:13-62
 manifest
-ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:2:1-124:12
-INJECTED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:2:1-124:12
-INJECTED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:2:1-124:12
-INJECTED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:2:1-124:12
+ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:2:1-133:12
+INJECTED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:2:1-133:12
+INJECTED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:2:1-133:12
+INJECTED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:2:1-133:12
 MERGED from [androidx.databinding:viewbinding:8.12.3] /Users/vyhau/.gradle/caches/8.13/transforms/63d419614e8a75a501e26c7b780cab6c/transformed/viewbinding-8.12.3/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-runtime-android:2.9.5] /Users/vyhau/.gradle/caches/8.13/transforms/b241e0d98359692e497b6c19fbb1b18a/transformed/navigation-runtime-release/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common-android:2.9.5] /Users/vyhau/.gradle/caches/8.13/transforms/03fbc2a2d55ed5c799d8355ce0503f53/transformed/navigation-common-release/AndroidManifest.xml:17:1-22:12
@@ -122,6 +122,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/vyha
 MERGED from [androidx.sqlite:sqlite-framework-android:2.6.1] /Users/vyhau/.gradle/caches/8.13/transforms/870507ab5357142d6cd1a6bf118aa58d/transformed/sqlite-framework/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.sqlite:sqlite-android:2.6.1] /Users/vyhau/.gradle/caches/8.13/transforms/86f07c5292e2c64edbd799b17005a7ca/transformed/sqlite/AndroidManifest.xml:17:1-22:12
 MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] /Users/vyhau/.gradle/caches/8.13/transforms/276904ddacb9259e1f150523084e580c/transformed/rxandroid-2.1.1/AndroidManifest.xml:15:1-20:12
+MERGED from [com.google.android.flexbox:flexbox:3.0.0] /Users/vyhau/.gradle/caches/8.13/transforms/44bc404ffc8c80e396839da52d6d4ef9/transformed/flexbox-3.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core-viewtree:1.0.0] /Users/vyhau/.gradle/caches/8.13/transforms/d5fc61b8090c7abdc8a1b3172c2bee37/transformed/core-viewtree-1.0.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.annotation:annotation-experimental:1.5.0] /Users/vyhau/.gradle/caches/8.13/transforms/7ab478d32e7058fbaeca6fb62c20d81e/transformed/annotation-experimental-1.5.0/AndroidManifest.xml:2:1-7:12
 MERGED from [com.github.bumptech.glide:disklrucache:5.0.5] /Users/vyhau/.gradle/caches/8.13/transforms/de5ec8e47295406135a3ca58a71e4704/transformed/disklrucache-5.0.5/AndroidManifest.xml:2:1-7:12
@@ -207,8 +208,8 @@ MERGED from [androidx.work:work-runtime:2.9.0] /Users/vyhau/.gradle/caches/8.13/
 	android:name
 		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:22:22-74
 application
-ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:24:5-122:19
-INJECTED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:24:5-122:19
+ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:24:5-131:19
+INJECTED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:24:5-131:19
 MERGED from [com.karumi:dexter:6.2.3] /Users/vyhau/.gradle/caches/8.13/transforms/954a6338a87fbe0e344bc53422e352d3/transformed/dexter-6.2.3/AndroidManifest.xml:26:5-30:19
 MERGED from [com.karumi:dexter:6.2.3] /Users/vyhau/.gradle/caches/8.13/transforms/954a6338a87fbe0e344bc53422e352d3/transformed/dexter-6.2.3/AndroidManifest.xml:26:5-30:19
 MERGED from [com.google.android.material:material:1.10.0] /Users/vyhau/.gradle/caches/8.13/transforms/56db770f33a97f7423c1e69b2f1c5871/transformed/material-1.10.0/AndroidManifest.xml:22:5-20
@@ -307,154 +308,166 @@ ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml
 		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:45:13-37
 	android:name
 		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:44:13-54
+activity#com.example.learninglanguageapp.activities.MatchingGameActivity
+ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:47:9-50:20
+	android:exported
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:49:13-37
+	android:name
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:48:13-60
 activity#com.example.learninglanguageapp.activities.SplashActivity
-ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:48:9-52:71
+ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:52:9-56:71
 	android:screenOrientation
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:51:13-49
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:55:13-49
 	android:exported
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:50:13-37
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:54:13-37
 	android:theme
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:52:13-68
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:56:13-68
 	android:name
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:49:13-54
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:53:13-54
 activity#com.example.learninglanguageapp.activities.WelcomeActivity
-ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:53:9-55:40
+ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:57:9-59:40
 	android:exported
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:55:13-37
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:59:13-37
 	android:name
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:54:13-55
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:58:13-55
 activity#com.example.learninglanguageapp.activities.Welcome2Activity
-ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:56:9-58:40
+ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:60:9-62:40
 	android:exported
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:58:13-37
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:62:13-37
 	android:name
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:57:13-56
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:61:13-56
 activity#com.example.learninglanguageapp.activities.RegisterActivity
-ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:59:9-61:40
+ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:63:9-65:40
 	android:exported
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:61:13-37
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:65:13-37
 	android:name
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:60:13-56
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:64:13-56
 activity#com.example.learninglanguageapp.activities.LoginActivity
-ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:62:9-75:20
+ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:66:9-79:20
 	android:exported
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:64:13-36
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:68:13-36
 	android:name
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:63:13-53
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:67:13-53
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+category:name:android.intent.category.LAUNCHER+data:scheme:@string/fb_login_protocol_scheme
-ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:65:13-74:29
+ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:69:13-78:29
 category#android.intent.category.DEFAULT
-ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:66:17-76
+ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:70:17-76
 	android:name
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:66:27-73
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:70:27-73
 category#android.intent.category.BROWSABLE
-ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:67:17-78
+ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:71:17-78
 	android:name
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:67:27-75
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:71:27-75
 data
-ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:69:17-75
+ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:73:17-75
 	android:scheme
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:69:23-72
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:73:23-72
 action#android.intent.action.MAIN
-ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:71:17-69
+ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:75:17-69
 	android:name
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:71:25-66
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:75:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:73:17-77
+ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:77:17-77
 	android:name
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:73:27-74
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:77:27-74
 activity#com.example.learninglanguageapp.activities.MainActivity
-ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:76:9-81:20
+ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:80:9-85:20
 	android:screenOrientation
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:80:13-49
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:84:13-49
 	android:launchMode
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:79:13-43
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:83:13-43
 	android:exported
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:78:13-37
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:82:13-37
 	android:name
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:77:13-52
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:81:13-52
+activity#com.example.learninglanguageapp.activities.GameWordropActivity
+ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:87:9-90:20
+	android:exported
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:89:13-37
+	android:name
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:88:13-59
 activity#com.facebook.FacebookActivity
-ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:82:9-85:43
+ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:91:9-94:43
 MERGED from [com.facebook.android:facebook-common:18.1.3] /Users/vyhau/.gradle/caches/8.13/transforms/80bce67d1166e74afeb4e8ca961be266/transformed/facebook-common-18.1.3/AndroidManifest.xml:20:9-23:66
 MERGED from [com.facebook.android:facebook-common:18.1.3] /Users/vyhau/.gradle/caches/8.13/transforms/80bce67d1166e74afeb4e8ca961be266/transformed/facebook-common-18.1.3/AndroidManifest.xml:20:9-23:66
 	tools:ignore
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:85:13-40
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:94:13-40
 	android:configChanges
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:84:13-96
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:93:13-96
 	android:theme
 		ADDED from [com.facebook.android:facebook-common:18.1.3] /Users/vyhau/.gradle/caches/8.13/transforms/80bce67d1166e74afeb4e8ca961be266/transformed/facebook-common-18.1.3/AndroidManifest.xml:23:13-63
 	android:name
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:83:13-57
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:92:13-57
 activity#com.facebook.CustomTabActivity
-ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:86:9-90:48
+ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:95:9-99:48
 MERGED from [com.facebook.android:facebook-common:18.1.3] /Users/vyhau/.gradle/caches/8.13/transforms/80bce67d1166e74afeb4e8ca961be266/transformed/facebook-common-18.1.3/AndroidManifest.xml:25:9-39:20
 MERGED from [com.facebook.android:facebook-common:18.1.3] /Users/vyhau/.gradle/caches/8.13/transforms/80bce67d1166e74afeb4e8ca961be266/transformed/facebook-common-18.1.3/AndroidManifest.xml:25:9-39:20
 	android:exported
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:88:13-37
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:97:13-37
 		REJECTED from [com.facebook.android:facebook-common:18.1.3] /Users/vyhau/.gradle/caches/8.13/transforms/80bce67d1166e74afeb4e8ca961be266/transformed/facebook-common-18.1.3/AndroidManifest.xml:27:13-36
 	tools:ignore
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:89:13-40
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:98:13-40
 	tools:replace
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:90:13-45
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:99:13-45
 	android:name
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:87:13-58
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:96:13-58
 activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
-ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:91:9-95:75
+ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:100:9-104:75
 MERGED from [com.google.android.gms:play-services-auth:21.4.0] /Users/vyhau/.gradle/caches/8.13/transforms/5c7357a57330df8bc337a7f9a22d5b97/transformed/play-services-auth-21.4.0/AndroidManifest.xml:23:9-27:75
 MERGED from [com.google.android.gms:play-services-auth:21.4.0] /Users/vyhau/.gradle/caches/8.13/transforms/5c7357a57330df8bc337a7f9a22d5b97/transformed/play-services-auth-21.4.0/AndroidManifest.xml:23:9-27:75
 	android:excludeFromRecents
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:94:13-46
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:103:13-46
 	android:exported
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:93:13-37
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:102:13-37
 	android:theme
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:95:13-72
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:104:13-72
 	android:name
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:92:13-93
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:101:13-93
 service#com.google.android.gms.auth.api.signin.RevocationBoundService
-ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:96:9-100:50
+ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:105:9-109:50
 MERGED from [com.google.android.gms:play-services-auth:21.4.0] /Users/vyhau/.gradle/caches/8.13/transforms/5c7357a57330df8bc337a7f9a22d5b97/transformed/play-services-auth-21.4.0/AndroidManifest.xml:33:9-37:51
 MERGED from [com.google.android.gms:play-services-auth:21.4.0] /Users/vyhau/.gradle/caches/8.13/transforms/5c7357a57330df8bc337a7f9a22d5b97/transformed/play-services-auth-21.4.0/AndroidManifest.xml:33:9-37:51
 	android:exported
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:98:13-36
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:107:13-36
 	android:visibleToInstantApps
 		ADDED from [com.google.android.gms:play-services-auth:21.4.0] /Users/vyhau/.gradle/caches/8.13/transforms/5c7357a57330df8bc337a7f9a22d5b97/transformed/play-services-auth-21.4.0/AndroidManifest.xml:37:13-48
 	android:permission
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:99:13-108
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:108:13-108
 		REJECTED from [com.google.android.gms:play-services-auth:21.4.0] /Users/vyhau/.gradle/caches/8.13/transforms/5c7357a57330df8bc337a7f9a22d5b97/transformed/play-services-auth-21.4.0/AndroidManifest.xml:36:13-107
 	tools:replace
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:100:13-47
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:109:13-47
 	android:name
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:97:13-89
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:106:13-89
 meta-data#firebase_analytics_collection_enabled
-ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:110:9-112:36
+ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:119:9-121:36
 	android:value
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:112:13-33
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:121:13-33
 	android:name
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:111:13-65
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:120:13-65
 meta-data#firebase_crashlytics_collection_enabled
-ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:113:9-115:36
+ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:122:9-124:36
 	android:value
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:115:13-33
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:124:13-33
 	android:name
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:114:13-67
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:123:13-67
 meta-data#com.facebook.sdk.ApplicationId
-ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:116:9-118:55
+ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:125:9-127:55
 	android:value
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:118:13-52
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:127:13-52
 	android:name
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:117:13-58
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:126:13-58
 meta-data#com.facebook.sdk.ClientToken
-ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:119:9-121:61
+ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:128:9-130:61
 	android:value
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:121:13-58
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:130:13-58
 	android:name
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:120:13-56
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:129:13-56
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:106:13-108:54
+ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:115:13-117:54
 	android:resource
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:108:17-51
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:117:17-51
 	android:name
-		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:107:17-67
+		ADDED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml:116:17-67
 uses-sdk
 INJECTED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/vyhau/SourceTree/LTTD_Android/app/src/main/AndroidManifest.xml
@@ -673,6 +686,8 @@ MERGED from [androidx.sqlite:sqlite-android:2.6.1] /Users/vyhau/.gradle/caches/8
 MERGED from [androidx.sqlite:sqlite-android:2.6.1] /Users/vyhau/.gradle/caches/8.13/transforms/86f07c5292e2c64edbd799b17005a7ca/transformed/sqlite/AndroidManifest.xml:20:5-44
 MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] /Users/vyhau/.gradle/caches/8.13/transforms/276904ddacb9259e1f150523084e580c/transformed/rxandroid-2.1.1/AndroidManifest.xml:18:5-43
 MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] /Users/vyhau/.gradle/caches/8.13/transforms/276904ddacb9259e1f150523084e580c/transformed/rxandroid-2.1.1/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.flexbox:flexbox:3.0.0] /Users/vyhau/.gradle/caches/8.13/transforms/44bc404ffc8c80e396839da52d6d4ef9/transformed/flexbox-3.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.flexbox:flexbox:3.0.0] /Users/vyhau/.gradle/caches/8.13/transforms/44bc404ffc8c80e396839da52d6d4ef9/transformed/flexbox-3.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core-viewtree:1.0.0] /Users/vyhau/.gradle/caches/8.13/transforms/d5fc61b8090c7abdc8a1b3172c2bee37/transformed/core-viewtree-1.0.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.core:core-viewtree:1.0.0] /Users/vyhau/.gradle/caches/8.13/transforms/d5fc61b8090c7abdc8a1b3172c2bee37/transformed/core-viewtree-1.0.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.5.0] /Users/vyhau/.gradle/caches/8.13/transforms/7ab478d32e7058fbaeca6fb62c20d81e/transformed/annotation-experimental-1.5.0/AndroidManifest.xml:5:5-44

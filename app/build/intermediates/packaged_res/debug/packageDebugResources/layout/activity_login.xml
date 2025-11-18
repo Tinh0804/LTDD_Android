@@ -109,10 +109,10 @@
             <ImageButton
                 android:id="@+id/btnTogglePassword"
                 android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_height="18dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/ic_eye_open"/>
+                app:srcCompat="@drawable/ic_eye_open" />
         </LinearLayout>
 
         <!-- Remember me + Forgot Password -->
