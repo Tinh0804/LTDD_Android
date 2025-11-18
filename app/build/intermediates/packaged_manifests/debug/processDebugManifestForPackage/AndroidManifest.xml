@@ -60,6 +60,21 @@
         android:theme="@style/Theme.LearningLanguageApp"
         android:usesCleartextTraffic="true" >
         <activity
+            android:name="com.example.learninglanguageapp.activities.ProfileFriend"
+            android:exported="false" />
+        <activity
+            android:name="com.example.learninglanguageapp.activities.MatchGameActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.learninglanguageapp.activities.LeaderboardActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.learninglanguageapp.activities.AccountPersonal"
+            android:exported="false" />
+        <activity
+            android:name="com.example.learninglanguageapp.activities.AccountActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.learninglanguageapp.activities.PaymentActivity"
             android:exported="false" />
         <activity
@@ -73,11 +88,15 @@
         <activity
             android:name="com.example.learninglanguageapp.activities.SelectImageGameActivity"
             android:exported="false"
-            android:screenOrientation="portrait" >
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.example.learninglanguageapp.activities.LessonActivity"
-            android:exported="true" >
+            android:exported="false" />
+        <activity
+            android:name="com.example.learninglanguageapp.activities.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LearningLanguageApp.Splash" >
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
@@ -90,11 +109,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.learninglanguageapp.activities.SplashActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.LearningLanguageApp.Splash" />
-        <activity
             android:name="com.example.learninglanguageapp.activities.WelcomeActivity"
             android:exported="false" />
         <activity
@@ -105,8 +119,7 @@
             android:exported="false" />
         <activity
             android:name="com.example.learninglanguageapp.activities.LoginActivity"
-            android:exported="false" >
-        </activity> <!-- Main Activity -->
+            android:exported="false" /> <!-- Main Activity -->
         <activity
             android:name="com.example.learninglanguageapp.activities.MainActivity"
             android:exported="false"

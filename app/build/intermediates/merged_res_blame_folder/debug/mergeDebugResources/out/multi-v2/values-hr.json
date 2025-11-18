@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.learninglanguageapp-mergeDebugResources-68:/values-hr/values-hr.xml",
+            "outputFile": "com.example.learninglanguageapp-mergeDebugResources-70:/values-hr/values-hr.xml",
             "map": [
                 {
                     "source": "/Users/macbookpro/.gradle/caches/8.13/transforms/45d89ad6ac586c5739d6126c616b816a/transformed/play-services-basement-18.5.0/res/values-hr/values.xml",

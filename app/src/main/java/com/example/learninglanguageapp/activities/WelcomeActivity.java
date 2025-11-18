@@ -13,7 +13,7 @@ import com.example.learninglanguageapp.R;
 
 public class WelcomeActivity extends AppCompatActivity {
     private ProgressBar progressBar;
-    private Button getStartedButton;
+    private Button getStartedButton,haveAccountButton;
     private Handler handler = new Handler(Looper.getMainLooper());
 
     private int progressStatus = 0;
@@ -25,6 +25,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
         progressBar = findViewById(R.id.prg);
         getStartedButton = findViewById(R.id.get_started_button);
+        haveAccountButton = findViewById(R.id.login_button);
 
         new Thread(() -> {
             while (progressStatus < 100) {
@@ -40,6 +41,11 @@ public class WelcomeActivity extends AppCompatActivity {
 
         getStartedButton.setOnClickListener(v -> {
             Intent intent = new Intent(WelcomeActivity.this, RegisterActivity.class);
+            startActivity(intent);
+            finish(); // đóng WelcomeActivity
+        });
+        haveAccountButton.setOnClickListener(v -> {
+            Intent intent = new Intent(WelcomeActivity.this, LoginActivity.class);
             startActivity(intent);
             finish(); // đóng WelcomeActivity
         });

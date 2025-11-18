@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.learninglanguageapp.R;
 import com.google.android.flexbox.FlexboxLayout;
 
 import java.util.ArrayList;

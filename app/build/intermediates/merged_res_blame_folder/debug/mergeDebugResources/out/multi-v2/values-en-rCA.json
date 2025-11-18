@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.learninglanguageapp-mergeDebugResources-68:/values-en-rCA/values-en-rCA.xml",
+            "outputFile": "com.example.learninglanguageapp-mergeDebugResources-70:/values-en-rCA/values-en-rCA.xml",
             "map": [
                 {
                     "source": "/Users/macbookpro/.gradle/caches/8.13/transforms/0d096d8e62f9a130e477d0df5990a6c4/transformed/core-1.13.1/res/values-en-rCA/values-en-rCA.xml",

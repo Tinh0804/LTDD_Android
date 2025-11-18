@@ -1,20 +1,20 @@
 -- Merging decision tree log ---
 provider#androidx.core.content.FileProvider
-INJECTED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:113:9-121:20
+INJECTED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:124:9-132:20
 	android:grantUriPermissions
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:117:13-47
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:128:13-47
 	android:authorities
 		INJECTED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:115:13-64
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:126:13-64
 	android:exported
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:116:13-37
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:127:13-37
 	android:name
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:114:13-62
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:125:13-62
 manifest
-ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:2:1-136:12
-INJECTED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:2:1-136:12
-INJECTED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:2:1-136:12
-INJECTED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:2:1-136:12
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:2:1-147:12
+INJECTED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:2:1-147:12
+INJECTED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:2:1-147:12
+INJECTED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:2:1-147:12
 MERGED from [androidx.databinding:viewbinding:8.12.3] /Users/macbookpro/.gradle/caches/8.13/transforms/63d419614e8a75a501e26c7b780cab6c/transformed/viewbinding-8.12.3/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.navigation:navigation-runtime-android:2.9.5] /Users/macbookpro/.gradle/caches/8.13/transforms/b241e0d98359692e497b6c19fbb1b18a/transformed/navigation-runtime-release/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common-android:2.9.5] /Users/macbookpro/.gradle/caches/8.13/transforms/03fbc2a2d55ed5c799d8355ce0503f53/transformed/navigation-common-release/AndroidManifest.xml:17:1-22:12
@@ -122,6 +122,8 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/macb
 MERGED from [androidx.sqlite:sqlite-framework-android:2.6.1] /Users/macbookpro/.gradle/caches/8.13/transforms/870507ab5357142d6cd1a6bf118aa58d/transformed/sqlite-framework/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.sqlite:sqlite-android:2.6.1] /Users/macbookpro/.gradle/caches/8.13/transforms/86f07c5292e2c64edbd799b17005a7ca/transformed/sqlite/AndroidManifest.xml:17:1-22:12
 MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] /Users/macbookpro/.gradle/caches/8.13/transforms/276904ddacb9259e1f150523084e580c/transformed/rxandroid-2.1.1/AndroidManifest.xml:15:1-20:12
+MERGED from [com.google.android.flexbox:flexbox:3.0.0] /Users/macbookpro/.gradle/caches/8.13/transforms/44bc404ffc8c80e396839da52d6d4ef9/transformed/flexbox-3.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [de.hdodenhof:circleimageview:3.1.0] /Users/macbookpro/.gradle/caches/8.13/transforms/b798ee0320b43645f681777505e960a5/transformed/circleimageview-3.1.0/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.core:core-viewtree:1.0.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d5fc61b8090c7abdc8a1b3172c2bee37/transformed/core-viewtree-1.0.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.annotation:annotation-experimental:1.5.0] /Users/macbookpro/.gradle/caches/8.13/transforms/7ab478d32e7058fbaeca6fb62c20d81e/transformed/annotation-experimental-1.5.0/AndroidManifest.xml:2:1-7:12
 MERGED from [com.github.bumptech.glide:disklrucache:5.0.5] /Users/macbookpro/.gradle/caches/8.13/transforms/de5ec8e47295406135a3ca58a71e4704/transformed/disklrucache-5.0.5/AndroidManifest.xml:2:1-7:12
@@ -207,8 +209,8 @@ MERGED from [androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/
 	android:name
 		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:22:22-74
 application
-ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:24:5-134:19
-INJECTED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:24:5-134:19
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:24:5-145:19
+INJECTED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:24:5-145:19
 MERGED from [com.karumi:dexter:6.2.3] /Users/macbookpro/.gradle/caches/8.13/transforms/954a6338a87fbe0e344bc53422e352d3/transformed/dexter-6.2.3/AndroidManifest.xml:26:5-30:19
 MERGED from [com.karumi:dexter:6.2.3] /Users/macbookpro/.gradle/caches/8.13/transforms/954a6338a87fbe0e344bc53422e352d3/transformed/dexter-6.2.3/AndroidManifest.xml:26:5-30:19
 MERGED from [com.google.android.material:material:1.10.0] /Users/macbookpro/.gradle/caches/8.13/transforms/56db770f33a97f7423c1e69b2f1c5871/transformed/material-1.10.0/AndroidManifest.xml:22:5-20
@@ -265,6 +267,8 @@ MERGED from [androidx.startup:startup-runtime:1.2.0] /Users/macbookpro/.gradle/c
 MERGED from [androidx.startup:startup-runtime:1.2.0] /Users/macbookpro/.gradle/caches/8.13/transforms/de250d59af964b721bcae672c9fbca78/transformed/startup-runtime-1.2.0/AndroidManifest.xml:23:5-29:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/macbookpro/.gradle/caches/8.13/transforms/acb6b82e284a67450c8ec91d1bc05ddc/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/macbookpro/.gradle/caches/8.13/transforms/acb6b82e284a67450c8ec91d1bc05ddc/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [de.hdodenhof:circleimageview:3.1.0] /Users/macbookpro/.gradle/caches/8.13/transforms/b798ee0320b43645f681777505e960a5/transformed/circleimageview-3.1.0/AndroidManifest.xml:9:5-20
+MERGED from [de.hdodenhof:circleimageview:3.1.0] /Users/macbookpro/.gradle/caches/8.13/transforms/b798ee0320b43645f681777505e960a5/transformed/circleimageview-3.1.0/AndroidManifest.xml:9:5-20
 MERGED from [com.android.installreferrer:installreferrer:1.0] /Users/macbookpro/.gradle/caches/8.13/transforms/7550981c4d8f6eed5aa579409ffb2ccd/transformed/installreferrer-1.0/AndroidManifest.xml:11:5-20
 MERGED from [com.android.installreferrer:installreferrer:1.0] /Users/macbookpro/.gradle/caches/8.13/transforms/7550981c4d8f6eed5aa579409ffb2ccd/transformed/installreferrer-1.0/AndroidManifest.xml:11:5-20
 	android:extractNativeLibs
@@ -293,190 +297,220 @@ MERGED from [com.android.installreferrer:installreferrer:1.0] /Users/macbookpro/
 		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:26:9-65
 	android:usesCleartextTraffic
 		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:34:9-44
-activity#com.example.learninglanguageapp.activities.PaymentActivity
+activity#com.example.learninglanguageapp.activities.ProfileFriend
 ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:36:9-38:40
 	android:exported
 		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:38:13-37
 	android:name
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:37:13-55
-activity#com.example.learninglanguageapp.activities.WebViewActivity
-ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:39:9-42:64
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:37:13-53
+activity#com.example.learninglanguageapp.activities.MatchGameActivity
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:39:9-41:40
 	android:exported
 		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:41:13-37
-	android:theme
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:42:13-61
 	android:name
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:40:13-55
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:40:13-57
+activity#com.example.learninglanguageapp.activities.LeaderboardActivity
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:42:9-44:40
+	android:exported
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:44:13-37
+	android:name
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:43:13-59
+activity#com.example.learninglanguageapp.activities.AccountPersonal
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:45:9-47:40
+	android:exported
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:47:13-37
+	android:name
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:46:13-55
+activity#com.example.learninglanguageapp.activities.AccountActivity
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:48:9-50:40
+	android:exported
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:50:13-37
+	android:name
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:49:13-55
+activity#com.example.learninglanguageapp.activities.PaymentActivity
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:51:9-53:40
+	android:exported
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:53:13-37
+	android:name
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:52:13-55
+activity#com.example.learninglanguageapp.activities.WebViewActivity
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:54:9-57:64
+	android:exported
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:56:13-37
+	android:theme
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:57:13-61
+	android:name
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:55:13-55
 activity#com.example.learninglanguageapp.activities.ShopActivity
-ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:43:9-46:64
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:58:9-61:64
 	android:exported
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:45:13-37
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:60:13-37
 	android:theme
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:46:13-61
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:61:13-61
 	android:name
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:44:13-52
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:59:13-52
 activity#com.example.learninglanguageapp.activities.SelectImageGameActivity
-ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:47:9-52:20
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:62:9-65:52
 	android:screenOrientation
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:50:13-49
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:65:13-49
 	android:exported
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:49:13-37
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:64:13-37
 	android:name
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:48:13-63
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:63:13-63
 activity#com.example.learninglanguageapp.activities.LessonActivity
-ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:53:9-67:20
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:66:9-68:40
 	android:exported
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:55:13-36
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:68:13-37
 	android:name
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:54:13-54
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+category:name:android.intent.category.LAUNCHER+data:scheme:@string/fb_login_protocol_scheme
-ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:56:13-65:29
-category#android.intent.category.DEFAULT
-ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:57:17-76
-	android:name
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:57:27-73
-category#android.intent.category.BROWSABLE
-ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:58:17-78
-	android:name
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:58:27-75
-data
-ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:60:17-75
-	android:scheme
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:60:23-72
-action#android.intent.action.MAIN
-ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:62:17-69
-	android:name
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:62:25-66
-category#android.intent.category.LAUNCHER
-ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:64:17-77
-	android:name
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:64:27-74
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:67:13-54
 activity#com.example.learninglanguageapp.activities.SplashActivity
-ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:68:9-72:71
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:69:9-85:20
 	android:screenOrientation
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:71:13-49
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:72:13-49
 	android:exported
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:70:13-37
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:71:13-36
 	android:theme
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:72:13-68
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:73:13-68
 	android:name
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:69:13-54
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:70:13-54
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+category:name:android.intent.category.LAUNCHER+data:scheme:@string/fb_login_protocol_scheme
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:74:13-83:29
+category#android.intent.category.DEFAULT
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:75:17-76
+	android:name
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:75:27-73
+category#android.intent.category.BROWSABLE
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:76:17-78
+	android:name
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:76:27-75
+data
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:78:17-75
+	android:scheme
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:78:23-72
+action#android.intent.action.MAIN
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:80:17-69
+	android:name
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:80:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:82:17-77
+	android:name
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:82:27-74
 activity#com.example.learninglanguageapp.activities.WelcomeActivity
-ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:73:9-75:40
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:86:9-88:40
 	android:exported
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:75:13-37
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:88:13-37
 	android:name
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:74:13-55
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:87:13-55
 activity#com.example.learninglanguageapp.activities.Welcome2Activity
-ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:76:9-78:40
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:89:9-91:40
 	android:exported
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:78:13-37
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:91:13-37
 	android:name
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:77:13-56
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:90:13-56
 activity#com.example.learninglanguageapp.activities.RegisterActivity
-ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:79:9-81:40
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:92:9-94:40
 	android:exported
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:81:13-37
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:94:13-37
 	android:name
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:80:13-56
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:93:13-56
 activity#com.example.learninglanguageapp.activities.LoginActivity
-ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:82:9-86:20
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:95:9-97:40
 	android:exported
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:84:13-37
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:97:13-37
 	android:name
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:83:13-53
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:96:13-53
 activity#com.example.learninglanguageapp.activities.MainActivity
-ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:87:9-91:52
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:98:9-102:52
 	android:screenOrientation
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:91:13-49
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:102:13-49
 	android:launchMode
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:90:13-43
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:101:13-43
 	android:exported
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:89:13-37
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:100:13-37
 	android:name
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:88:13-52
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:99:13-52
 activity#com.facebook.FacebookActivity
-ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:92:9-95:43
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:103:9-106:43
 MERGED from [com.facebook.android:facebook-common:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/80bce67d1166e74afeb4e8ca961be266/transformed/facebook-common-18.1.3/AndroidManifest.xml:20:9-23:66
 MERGED from [com.facebook.android:facebook-common:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/80bce67d1166e74afeb4e8ca961be266/transformed/facebook-common-18.1.3/AndroidManifest.xml:20:9-23:66
 	tools:ignore
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:95:13-40
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:106:13-40
 	android:configChanges
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:94:13-96
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:105:13-96
 	android:theme
 		ADDED from [com.facebook.android:facebook-common:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/80bce67d1166e74afeb4e8ca961be266/transformed/facebook-common-18.1.3/AndroidManifest.xml:23:13-63
 	android:name
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:93:13-57
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:104:13-57
 activity#com.facebook.CustomTabActivity
-ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:96:9-100:48
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:107:9-111:48
 MERGED from [com.facebook.android:facebook-common:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/80bce67d1166e74afeb4e8ca961be266/transformed/facebook-common-18.1.3/AndroidManifest.xml:25:9-39:20
 MERGED from [com.facebook.android:facebook-common:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/80bce67d1166e74afeb4e8ca961be266/transformed/facebook-common-18.1.3/AndroidManifest.xml:25:9-39:20
 	android:exported
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:98:13-37
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:109:13-37
 		REJECTED from [com.facebook.android:facebook-common:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/80bce67d1166e74afeb4e8ca961be266/transformed/facebook-common-18.1.3/AndroidManifest.xml:27:13-36
 	tools:ignore
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:99:13-40
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:110:13-40
 	tools:replace
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:100:13-45
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:111:13-45
 	android:name
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:97:13-58
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:108:13-58
 activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
-ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:101:9-105:75
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:112:9-116:75
 MERGED from [com.google.android.gms:play-services-auth:21.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/5c7357a57330df8bc337a7f9a22d5b97/transformed/play-services-auth-21.4.0/AndroidManifest.xml:23:9-27:75
 MERGED from [com.google.android.gms:play-services-auth:21.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/5c7357a57330df8bc337a7f9a22d5b97/transformed/play-services-auth-21.4.0/AndroidManifest.xml:23:9-27:75
 	android:excludeFromRecents
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:103:13-46
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:114:13-46
 	android:exported
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:104:13-37
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:115:13-37
 	android:theme
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:105:13-72
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:116:13-72
 	android:name
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:102:13-93
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:113:13-93
 service#com.google.android.gms.auth.api.signin.RevocationBoundService
-ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:107:9-111:50
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:118:9-122:50
 MERGED from [com.google.android.gms:play-services-auth:21.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/5c7357a57330df8bc337a7f9a22d5b97/transformed/play-services-auth-21.4.0/AndroidManifest.xml:33:9-37:51
 MERGED from [com.google.android.gms:play-services-auth:21.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/5c7357a57330df8bc337a7f9a22d5b97/transformed/play-services-auth-21.4.0/AndroidManifest.xml:33:9-37:51
 	android:exported
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:109:13-36
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:120:13-36
 	android:visibleToInstantApps
 		ADDED from [com.google.android.gms:play-services-auth:21.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/5c7357a57330df8bc337a7f9a22d5b97/transformed/play-services-auth-21.4.0/AndroidManifest.xml:37:13-48
 	android:permission
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:110:13-108
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:121:13-108
 		REJECTED from [com.google.android.gms:play-services-auth:21.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/5c7357a57330df8bc337a7f9a22d5b97/transformed/play-services-auth-21.4.0/AndroidManifest.xml:36:13-107
 	tools:replace
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:111:13-47
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:122:13-47
 	android:name
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:108:13-89
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:119:13-89
 meta-data#firebase_analytics_collection_enabled
-ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:122:9-124:36
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:133:9-135:36
 	android:value
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:124:13-33
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:135:13-33
 	android:name
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:123:13-65
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:134:13-65
 meta-data#firebase_crashlytics_collection_enabled
-ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:125:9-127:36
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:136:9-138:36
 	android:value
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:127:13-33
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:138:13-33
 	android:name
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:126:13-67
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:137:13-67
 meta-data#com.facebook.sdk.ApplicationId
-ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:128:9-130:55
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:139:9-141:55
 	android:value
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:130:13-52
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:141:13-52
 	android:name
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:129:13-58
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:140:13-58
 meta-data#com.facebook.sdk.ClientToken
-ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:131:9-133:61
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:142:9-144:61
 	android:value
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:133:13-58
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:144:13-58
 	android:name
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:132:13-56
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:143:13-56
 meta-data#android.support.FILE_PROVIDER_PATHS
-ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:118:13-120:54
+ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:129:13-131:54
 	android:resource
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:120:17-51
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:131:17-51
 	android:name
-		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:119:17-67
+		ADDED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:130:17-67
 uses-sdk
 INJECTED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml
@@ -695,6 +729,10 @@ MERGED from [androidx.sqlite:sqlite-android:2.6.1] /Users/macbookpro/.gradle/cac
 MERGED from [androidx.sqlite:sqlite-android:2.6.1] /Users/macbookpro/.gradle/caches/8.13/transforms/86f07c5292e2c64edbd799b17005a7ca/transformed/sqlite/AndroidManifest.xml:20:5-44
 MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] /Users/macbookpro/.gradle/caches/8.13/transforms/276904ddacb9259e1f150523084e580c/transformed/rxandroid-2.1.1/AndroidManifest.xml:18:5-43
 MERGED from [io.reactivex.rxjava2:rxandroid:2.1.1] /Users/macbookpro/.gradle/caches/8.13/transforms/276904ddacb9259e1f150523084e580c/transformed/rxandroid-2.1.1/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.flexbox:flexbox:3.0.0] /Users/macbookpro/.gradle/caches/8.13/transforms/44bc404ffc8c80e396839da52d6d4ef9/transformed/flexbox-3.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.flexbox:flexbox:3.0.0] /Users/macbookpro/.gradle/caches/8.13/transforms/44bc404ffc8c80e396839da52d6d4ef9/transformed/flexbox-3.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [de.hdodenhof:circleimageview:3.1.0] /Users/macbookpro/.gradle/caches/8.13/transforms/b798ee0320b43645f681777505e960a5/transformed/circleimageview-3.1.0/AndroidManifest.xml:5:5-7:41
+MERGED from [de.hdodenhof:circleimageview:3.1.0] /Users/macbookpro/.gradle/caches/8.13/transforms/b798ee0320b43645f681777505e960a5/transformed/circleimageview-3.1.0/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.core:core-viewtree:1.0.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d5fc61b8090c7abdc8a1b3172c2bee37/transformed/core-viewtree-1.0.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.core:core-viewtree:1.0.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d5fc61b8090c7abdc8a1b3172c2bee37/transformed/core-viewtree-1.0.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.5.0] /Users/macbookpro/.gradle/caches/8.13/transforms/7ab478d32e7058fbaeca6fb62c20d81e/transformed/annotation-experimental-1.5.0/AndroidManifest.xml:5:5-44

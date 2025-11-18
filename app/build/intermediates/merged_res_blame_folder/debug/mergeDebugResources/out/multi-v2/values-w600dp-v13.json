@@ -1,38 +1,16 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-68:/values-w600dp-v13/values-w600dp-v13.xml",
+            "outputFile": "com.example.learninglanguageapp-mergeDebugResources-70:/values-w600dp-v13/values-w600dp-v13.xml",
             "map": [
                 {
                     "source": "/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/res/values-w600dp/dimens.xml",
                     "from": {
-                        "startLines": "1",
-                        "startColumns": "4",
-                        "startOffsets": "16",
-                        "endColumns": "57",
-                        "endOffsets": "69"
-                    },
-                    "to": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "57",
-                        "endOffsets": "108"
-                    }
-                }
-            ]
-        },
-        {
-            "outputFile": "com.example.learninglanguageapp-mergeDebugResources-68:/values-w600dp-v13/values-w600dp-v13.xml",
-            "map": [
-                {
-                    "source": "/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/res/values-w600dp/dimens.xml",
-                    "from": {
-                        "startLines": "-1,2",
-                        "startColumns": "-1,4",
-                        "startOffsets": "-1,74",
-                        "endColumns": "-1,41",
-                        "endOffsets": "-1,111"
+                        "startLines": "1,2",
+                        "startColumns": "4,4",
+                        "startOffsets": "16,74",
+                        "endColumns": "57,41",
+                        "endOffsets": "69,111"
                     },
                     "to": {
                         "startLines": "2,3",

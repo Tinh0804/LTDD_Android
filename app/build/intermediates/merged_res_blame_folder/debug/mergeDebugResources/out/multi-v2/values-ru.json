@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.learninglanguageapp-mergeDebugResources-68:/values-ru/values-ru.xml",
+            "outputFile": "com.example.learninglanguageapp-mergeDebugResources-70:/values-ru/values-ru.xml",
             "map": [
                 {
                     "source": "/Users/macbookpro/.gradle/caches/8.13/transforms/82fc768c0d1a3ca18ad598908f027d70/transformed/facebook-login-18.1.3/res/values-ru/values-ru.xml",

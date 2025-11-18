@@ -34,6 +34,21 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".activities.ProfileFriend"
+            android:exported="false" />
+        <activity
+            android:name=".activities.MatchGameActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.LeaderboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.AccountPersonal"
+            android:exported="false" />
+        <activity
+            android:name=".activities.AccountActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.PaymentActivity"
             android:exported="false" />
         <activity
@@ -47,12 +62,15 @@
         <activity
             android:name=".activities.SelectImageGameActivity"
             android:exported="false"
-            android:screenOrientation="portrait" >
-
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activities.LessonActivity"
-            android:exported="true">
+            android:exported="false" />
+        <activity
+            android:name=".activities.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.LearningLanguageApp.Splash">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
@@ -66,11 +84,6 @@
 
         </activity>
         <activity
-            android:name=".activities.SplashActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.LearningLanguageApp.Splash" />
-        <activity
             android:name=".activities.WelcomeActivity"
             android:exported="false" />
         <activity
@@ -81,9 +94,7 @@
             android:exported="false" />
         <activity
             android:name=".activities.LoginActivity"
-            android:exported="false" >
-
-        </activity> <!-- Main Activity -->
+            android:exported="false" /> <!-- Main Activity -->
         <activity
             android:name=".activities.MainActivity"
             android:exported="false"
