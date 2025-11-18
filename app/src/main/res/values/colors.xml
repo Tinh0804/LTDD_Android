@@ -52,4 +52,6 @@
     <color name="error_red_dark">#EA2B2B</color>
     <color name="blue_light">#E8EBFF</color>
 
+    <color name="error_red_light">#FFD6D6</color>
+
 </resources>

@@ -10,6 +10,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.learninglanguageapp.R;
 import com.example.learninglanguageapp.databinding.ActivityLoginBinding;
 import com.example.learninglanguageapp.models.Request.LoginRequest;
 import com.example.learninglanguageapp.models.Request.SocialLoginRequest;
@@ -29,6 +30,9 @@ public class LoginActivity extends AppCompatActivity {
     private AuthViewModel authViewModel;
     private GoogleSignInClient googleSignInClient;
     private SharedPrefsHelper prefs;
+
+    private boolean isPasswordVisible = false;
+
 
     private final ActivityResultLauncher<Intent> googleSignInLauncher =
             registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
@@ -91,6 +95,30 @@ public class LoginActivity extends AppCompatActivity {
                 googleSignInLauncher.launch(signInIntent);
 
             });
+        });
+
+        binding.btnTogglePassword.setOnClickListener(v -> {
+            if (isPasswordVisible) {
+                // Ẩn mật khẩu
+                binding.edtPassword.setInputType(
+                        android.text.InputType.TYPE_CLASS_TEXT |
+                                android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD
+                );
+                binding.btnTogglePassword.setImageResource(R.drawable.ic_eye_open);
+            } else {
+                // Hiện mật khẩu
+                binding.edtPassword.setInputType(
+                        android.text.InputType.TYPE_CLASS_TEXT |
+                                android.text.InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                );
+                binding.btnTogglePassword.setImageResource(R.drawable.ic_eye);
+            }
+
+            // Luôn giữ con trỏ ở cuối
+            binding.edtPassword.setSelection(binding.edtPassword.length());
+
+            // Đổi trạng thái
+            isPasswordVisible = !isPasswordVisible;
         });
     }
 

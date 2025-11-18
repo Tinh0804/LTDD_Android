@@ -12,6 +12,14 @@ public class Unit {
 
     public Unit() {}
 
+    public Unit(int unitId, int courseId, String unitName, int orderIndex) {
+        this.unitId = unitId;
+        this.courseId = courseId;
+        this.unitName = unitName;
+        this.orderIndex = orderIndex;
+        this.unlockRequired = false;
+    }
+
     public int getUnitId() {
         return unitId;
     }
