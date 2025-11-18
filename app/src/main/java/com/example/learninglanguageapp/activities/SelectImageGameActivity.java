@@ -216,6 +216,13 @@ public class SelectImageGameActivity extends AppCompatActivity {
             }
         }
     }
+    private void playSfx(int resId) {
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+        }
+        mediaPlayer = MediaPlayer.create(this, resId);
+        mediaPlayer.start();
+    }
 
     private void checkAnswer(Word selectedWord, int selectedIndex) {
         isAnswered = true;
@@ -226,6 +233,7 @@ public class SelectImageGameActivity extends AppCompatActivity {
 
         if (isCorrect) {
             // Correct answer
+            playSfx(R.raw.correct);
             correctAnswers++;
             showCorrectFeedback(selectedIndex);
 
@@ -237,6 +245,7 @@ public class SelectImageGameActivity extends AppCompatActivity {
 
         } else {
             // Wrong answer
+            playSfx(R.raw.wrong);
             wrongAnswers++;
             hearts--;
             updateHearts();
@@ -327,38 +336,34 @@ public class SelectImageGameActivity extends AppCompatActivity {
     }
 
     private void playAudio(String audioUrl) {
-        if (audioUrl == null || audioUrl.isEmpty()) {
-            return;
-        }
-
-        if (mediaPlayer != null) {
-            mediaPlayer.release();
-            mediaPlayer = null;
-        }
+        if (audioUrl == null || audioUrl.isEmpty()) return;
 
         try {
-            mediaPlayer = new MediaPlayer();
-            mediaPlayer.setAudioAttributes(
-                    new AudioAttributes.Builder()
-                            .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
-                            .setUsage(AudioAttributes.USAGE_MEDIA)
-                            .build()
-            );
+            if (mediaPlayer != null) {
+                mediaPlayer.reset();
+            } else {
+                mediaPlayer = new MediaPlayer();
+                mediaPlayer.setAudioAttributes(
+                        new AudioAttributes.Builder()
+                                .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+                                .setUsage(AudioAttributes.USAGE_MEDIA)
+                                .build()
+                );
+            }
 
             mediaPlayer.setDataSource(audioUrl);
-            mediaPlayer.prepareAsync();
-
             mediaPlayer.setOnPreparedListener(MediaPlayer::start);
-
-            mediaPlayer.setOnCompletionListener(mp -> {
-                mp.release();
-                mediaPlayer = null;
+            mediaPlayer.setOnErrorListener((mp, what, extra) -> {
+                Log.e(TAG, "MediaPlayer error: what=" + what + ", extra=" + extra);
+                return true;
             });
+            mediaPlayer.prepareAsync();
 
         } catch (IOException e) {
             Log.e(TAG, "Error playing audio: " + e.getMessage());
         }
     }
+
 
     private void enableAllOptions() {
         for (CardView card : optionCards) {
@@ -381,6 +386,7 @@ public class SelectImageGameActivity extends AppCompatActivity {
     }
 
     private void showGameOver() {
+        playSfx(R.raw.game_over);
         new AlertDialog.Builder(this)
                 .setTitle("Hết tim rồi!")
                 .setMessage("Bạn đã hết 5 tim. Hãy thử lại nhé!")
@@ -396,7 +402,7 @@ public class SelectImageGameActivity extends AppCompatActivity {
 
     private void showGameCompleted() {
         long timeTaken = (System.currentTimeMillis() - startTime) / 1000;
-
+        playSfx(R.raw.complete);
         String message = String.format(
                 "Chúc mừng! Bạn đã hoàn thành!\n\n" +
                         "Tổng số từ: %d\n" +

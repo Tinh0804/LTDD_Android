@@ -37,11 +37,23 @@
             android:name=".activities.SelectImageGameActivity"
             android:screenOrientation="portrait"
             android:exported="false" >
+
         </activity>
 
         <activity
             android:name=".activities.LessonActivity"
-            android:exported="false"/>
+            android:exported="true">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".activities.SplashActivity"
@@ -59,17 +71,8 @@
             android:exported="false" />
         <activity
             android:name=".activities.LoginActivity"
-            android:exported="true">
-            <intent-filter>
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
+            android:exported="false">
 
-                <data android:scheme="@string/fb_login_protocol_scheme" />
-
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity> <!-- Main Activity -->
         <activity
             android:name=".activities.MainActivity"

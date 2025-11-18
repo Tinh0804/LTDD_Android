@@ -1,5 +1,6 @@
 package com.example.learninglanguageapp.models;
 
+
 public class Word {
     private int wordId;
     private int languageId;

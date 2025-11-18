@@ -1,5 +1,7 @@
 package com.example.learninglanguageapp.adapters;
 
+import static com.example.learninglanguageapp.R.*;
+
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
 import android.annotation.SuppressLint;
@@ -124,6 +126,7 @@ public class WordAdapter extends RecyclerView.Adapter<WordAdapter.WordViewHolder
             flipToFrontAnimation = (AnimatorSet) AnimatorInflater.loadAnimator(context, R.anim.card_flip_in);
         }
 
+        @SuppressLint("ResourceType")
         public void bind(Word word) {
             // Reset to front
             isShowingFront = true;

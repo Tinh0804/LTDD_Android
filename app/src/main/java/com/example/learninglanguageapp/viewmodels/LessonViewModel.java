@@ -1,27 +1,29 @@
-// Sửa LessonViewModel.java thành AndroidViewModel
 package com.example.learninglanguageapp.viewmodels;
 
 import android.app.Application;
+
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
 
 import com.example.learninglanguageapp.models.Word;
 import com.example.learninglanguageapp.repository.LessonRepository;
 
 import java.util.List;
 
-public class LessonViewModel extends AndroidViewModel { // Đổi từ ViewModel → AndroidViewModel
+public class LessonViewModel extends AndroidViewModel {
+    private static final String TAG = "WordViewModel";
 
-    private final LessonRepository repository;
+    private LessonRepository repository;
 
-    private final MutableLiveData<List<Word>> wordsLiveData = new MutableLiveData<>();
-    private final MutableLiveData<Boolean> isLoading = new MutableLiveData<>();
-    private final MutableLiveData<String> errorLiveData = new MutableLiveData<>();
+    private MutableLiveData<List<Word>> wordsLiveData = new MutableLiveData<>();
+    private MutableLiveData<Boolean> isLoading = new MutableLiveData<>();
+    private MutableLiveData<String> errorLiveData = new MutableLiveData<>();
 
     public LessonViewModel(@NonNull Application application) {
         super(application);
-        repository = new LessonRepository(application); // Tự động có Context rồi nha!!!
+        repository = new LessonRepository(application);
     }
 
     public MutableLiveData<List<Word>> getWordsLiveData() {
@@ -37,6 +39,6 @@ public class LessonViewModel extends AndroidViewModel { // Đổi từ ViewModel
     }
 
     public void loadWords(int lessonId, int userId) {
-        repository.getWords(lessonId, userId, wordsLiveData, isLoading, errorLiveData);
+        repository.getWords(lessonId,userId, wordsLiveData, isLoading, errorLiveData);
     }
 }
