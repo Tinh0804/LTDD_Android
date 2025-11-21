@@ -29,7 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="Account"
+                android:text="Cài đặt"
                 android:textColor="#000000"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -129,7 +129,7 @@
                         android:id="@+id/tvUserName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Andrew"
+                        android:text="Lê Hoàng Q.Tỉnh"
                         android:textColor="#000000"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -138,7 +138,7 @@
                         android:id="@+id/tvUserEmail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Andrew@gmail.com"
+                        android:text="lhqtinh2005@gmail.com"
                         android:textColor="#808080"
                         android:textSize="14sp"
                         android:layout_marginTop="2dp" />

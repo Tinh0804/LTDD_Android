@@ -41,10 +41,9 @@ public interface ApiService {
     @GET("api/Profile/myInfo")
     Call<ApiResponse<UserResponse>> getMyProfile(@Header("Authorization") String authHeader);
 
-    @GET("api/Words/lesson/{lessonId}/user/{userId}")
+    @GET("api/Words/user/lesson/{lessonId}")
     Call<ApiResponse<List<Word>>> getWordsByLessonOfUser(
-            @Path("lessonId") int lessonId,
-            @Path("userId") int userId
+            @Path("lessonId") int lessonId
     );
 
     @GET("shop/balance/{userId}")

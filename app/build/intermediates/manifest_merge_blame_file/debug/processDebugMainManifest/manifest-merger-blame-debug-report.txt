@@ -93,7 +93,7 @@
 45-->[com.android.installreferrer:installreferrer:1.0] /Users/macbookpro/.gradle/caches/8.13/transforms/7550981c4d8f6eed5aa579409ffb2ccd/transformed/installreferrer-1.0/AndroidManifest.xml:9:22-107
 46
 47    <application
-47-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:24:5-153:19
+47-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:24:5-156:19
 48        android:allowBackup="true"
 48-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:25:9-35
 49        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -170,7 +170,7 @@
 86            android:theme="@style/Theme.LearningLanguageApp" />
 86-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:60:13-61
 87        <activity
-87-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:61:9-65:20
+87-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:61:9-66:20
 88            android:name="com.example.learninglanguageapp.activities.ShopActivity"
 88-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:62:13-52
 89            android:exported="false"
@@ -179,537 +179,538 @@
 90-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:64:13-61
 91        </activity>
 92        <activity
-92-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:66:9-69:52
+92-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:67:9-70:52
 93            android:name="com.example.learninglanguageapp.activities.SelectImageGameActivity"
-93-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:67:13-63
+93-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:68:13-63
 94            android:exported="false"
-94-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:68:13-37
+94-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:69:13-37
 95            android:screenOrientation="portrait" />
-95-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:69:13-49
+95-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:70:13-49
 96        <activity
-96-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:70:9-72:40
+96-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:71:9-73:40
 97            android:name="com.example.learninglanguageapp.activities.GameWordropActivity"
-97-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:71:13-59
+97-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:72:13-59
 98            android:exported="false" />
-98-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:72:13-37
+98-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:73:13-37
 99        <activity
-99-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:73:9-75:40
+99-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:74:9-76:40
 100            android:name="com.example.learninglanguageapp.activities.LessonActivity"
-100-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:74:13-54
+100-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:75:13-54
 101            android:exported="false" />
-101-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:75:13-37
+101-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:76:13-37
 102        <activity
-102-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:76:9-82:20
+102-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:77:9-83:20
 103            android:name="com.example.learninglanguageapp.activities.SplashActivity"
-103-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:77:13-54
+103-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:78:13-54
 104            android:exported="false"
-104-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:78:13-37
+104-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:79:13-37
 105            android:screenOrientation="portrait"
-105-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:79:13-49
+105-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:80:13-49
 106            android:theme="@style/Theme.LearningLanguageApp.Splash" >
-106-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:80:13-68
+106-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:81:13-68
 107        </activity>
 108        <activity
-108-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:83:9-85:40
+108-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:84:9-86:40
 109            android:name="com.example.learninglanguageapp.activities.WelcomeActivity"
-109-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:84:13-55
+109-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:85:13-55
 110            android:exported="false" />
-110-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:85:13-37
+110-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:86:13-37
 111        <activity
-111-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:86:9-88:40
+111-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:87:9-89:40
 112            android:name="com.example.learninglanguageapp.activities.Welcome2Activity"
-112-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:87:13-56
+112-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:88:13-56
 113            android:exported="false" />
-113-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:88:13-37
+113-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:89:13-37
 114        <activity
-114-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:89:9-91:40
+114-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:90:9-92:40
 115            android:name="com.example.learninglanguageapp.activities.RegisterActivity"
-115-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:90:13-56
+115-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:91:13-56
 116            android:exported="false" />
-116-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:91:13-37
+116-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:92:13-37
 117        <activity
-117-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:92:9-94:40
+117-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:93:9-106:20
 118            android:name="com.example.learninglanguageapp.activities.LoginActivity"
-118-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:93:13-53
-119            android:exported="false" /> <!-- Main Activity -->
-119-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:94:13-37
-120        <activity
-120-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:95:9-110:20
-121            android:name="com.example.learninglanguageapp.activities.MainActivity"
-121-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:96:13-52
-122            android:exported="true"
-122-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:97:13-36
-123            android:launchMode="singleTop"
-123-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:98:13-43
-124            android:screenOrientation="portrait" >
-124-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:99:13-49
-125            <intent-filter>
-125-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:100:13-109:29
-126                <category android:name="android.intent.category.DEFAULT" />
-126-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:101:17-76
-126-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:101:27-73
-127                <category android:name="android.intent.category.BROWSABLE" />
-127-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:102:17-78
-127-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:102:27-75
-128
-129                <data android:scheme="@string/fb_login_protocol_scheme" />
-129-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:104:17-75
-129-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:104:23-72
-130
-131                <action android:name="android.intent.action.MAIN" />
-131-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:106:17-69
-131-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:106:25-66
-132
-133                <category android:name="android.intent.category.LAUNCHER" />
-133-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:108:17-77
-133-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:108:27-74
-134            </intent-filter>
-135        </activity>
-136        <activity
-136-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:111:9-114:43
-137            android:name="com.facebook.FacebookActivity"
-137-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:112:13-57
-138            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-138-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:113:13-96
-139            android:theme="@style/com_facebook_activity_theme" />
-139-->[com.facebook.android:facebook-common:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/80bce67d1166e74afeb4e8ca961be266/transformed/facebook-common-18.1.3/AndroidManifest.xml:23:13-63
-140        <activity
-140-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:115:9-119:48
-141            android:name="com.facebook.CustomTabActivity"
-141-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:116:13-58
-142            android:exported="false" >
-142-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:117:13-37
-143            <intent-filter>
-143-->[com.facebook.android:facebook-common:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/80bce67d1166e74afeb4e8ca961be266/transformed/facebook-common-18.1.3/AndroidManifest.xml:29:13-38:29
-144                <action android:name="android.intent.action.VIEW" />
-144-->[com.facebook.android:facebook-common:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/80bce67d1166e74afeb4e8ca961be266/transformed/facebook-common-18.1.3/AndroidManifest.xml:30:17-69
-144-->[com.facebook.android:facebook-common:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/80bce67d1166e74afeb4e8ca961be266/transformed/facebook-common-18.1.3/AndroidManifest.xml:30:25-66
-145
-146                <category android:name="android.intent.category.DEFAULT" />
-146-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:101:17-76
-146-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:101:27-73
-147                <category android:name="android.intent.category.BROWSABLE" />
-147-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:102:17-78
-147-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:102:27-75
-148
-149                <data
-149-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:104:17-75
-150                    android:host="cct.com.example.learninglanguageapp"
-151                    android:scheme="fbconnect" />
-151-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:104:23-72
-152            </intent-filter>
-153        </activity>
-154        <activity
-154-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:120:9-124:75
-155            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-155-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:121:13-93
-156            android:excludeFromRecents="true"
-156-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:122:13-46
-157            android:exported="false"
-157-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:123:13-37
-158            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-158-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:124:13-72
-159
-160        <service
-160-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:126:9-130:50
-161            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-161-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:127:13-89
-162            android:exported="true"
-162-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:128:13-36
-163            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_BOUND_SERVICE"
-163-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:129:13-108
-164            android:visibleToInstantApps="true" />
-164-->[com.google.android.gms:play-services-auth:21.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/5c7357a57330df8bc337a7f9a22d5b97/transformed/play-services-auth-21.4.0/AndroidManifest.xml:37:13-48
-165
-166        <provider
-167            android:name="androidx.core.content.FileProvider"
-167-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:133:13-62
-168            android:authorities="com.example.learninglanguageapp.fileprovider"
-168-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:134:13-64
-169            android:exported="false"
-169-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:135:13-37
-170            android:grantUriPermissions="true" >
-170-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:136:13-47
-171            <meta-data
-171-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:137:13-139:54
-172                android:name="android.support.FILE_PROVIDER_PATHS"
-172-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:138:17-67
-173                android:resource="@xml/file_paths" />
-173-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:139:17-51
-174        </provider> <!-- Firebase App Check (Security) -->
-175        <meta-data
-175-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:141:9-143:36
-176            android:name="firebase_analytics_collection_enabled"
-176-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:142:13-65
-177            android:value="true" />
-177-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:143:13-33
-178        <meta-data
-178-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:144:9-146:36
-179            android:name="firebase_crashlytics_collection_enabled"
-179-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:145:13-67
-180            android:value="true" />
-180-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:146:13-33
-181        <meta-data
-181-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:147:9-149:55
-182            android:name="com.facebook.sdk.ApplicationId"
-182-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:148:13-58
-183            android:value="@string/facebook_app_id" />
-183-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:149:13-52
-184        <meta-data
-184-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:150:9-152:61
-185            android:name="com.facebook.sdk.ClientToken"
-185-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:151:13-56
-186            android:value="@string/facebook_client_token" />
-186-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:152:13-58
-187
-188        <activity
-188-->[com.karumi:dexter:6.2.3] /Users/macbookpro/.gradle/caches/8.13/transforms/954a6338a87fbe0e344bc53422e352d3/transformed/dexter-6.2.3/AndroidManifest.xml:27:9-29:72
-189            android:name="com.karumi.dexter.DexterActivity"
-189-->[com.karumi:dexter:6.2.3] /Users/macbookpro/.gradle/caches/8.13/transforms/954a6338a87fbe0e344bc53422e352d3/transformed/dexter-6.2.3/AndroidManifest.xml:28:13-60
-190            android:theme="@style/Dexter.Internal.Theme.Transparent" />
-190-->[com.karumi:dexter:6.2.3] /Users/macbookpro/.gradle/caches/8.13/transforms/954a6338a87fbe0e344bc53422e352d3/transformed/dexter-6.2.3/AndroidManifest.xml:29:13-69
-191        <activity android:name="com.facebook.CustomTabMainActivity" />
-191-->[com.facebook.android:facebook-common:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/80bce67d1166e74afeb4e8ca961be266/transformed/facebook-common-18.1.3/AndroidManifest.xml:24:9-71
-191-->[com.facebook.android:facebook-common:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/80bce67d1166e74afeb4e8ca961be266/transformed/facebook-common-18.1.3/AndroidManifest.xml:24:19-68
-192        <activity
-192-->[com.google.android.gms:play-services-base:18.5.0] /Users/macbookpro/.gradle/caches/8.13/transforms/a4bea8f7d66266291274db7e5849183a/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:9-173
-193            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-193-->[com.google.android.gms:play-services-base:18.5.0] /Users/macbookpro/.gradle/caches/8.13/transforms/a4bea8f7d66266291274db7e5849183a/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:19-85
-194            android:exported="false"
-194-->[com.google.android.gms:play-services-base:18.5.0] /Users/macbookpro/.gradle/caches/8.13/transforms/a4bea8f7d66266291274db7e5849183a/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:146-170
-195            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-195-->[com.google.android.gms:play-services-base:18.5.0] /Users/macbookpro/.gradle/caches/8.13/transforms/a4bea8f7d66266291274db7e5849183a/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:86-145
-196
-197        <meta-data
-197-->[com.google.android.gms:play-services-basement:18.5.0] /Users/macbookpro/.gradle/caches/8.13/transforms/45d89ad6ac586c5739d6126c616b816a/transformed/play-services-basement-18.5.0/AndroidManifest.xml:21:9-23:69
-198            android:name="com.google.android.gms.version"
-198-->[com.google.android.gms:play-services-basement:18.5.0] /Users/macbookpro/.gradle/caches/8.13/transforms/45d89ad6ac586c5739d6126c616b816a/transformed/play-services-basement-18.5.0/AndroidManifest.xml:22:13-58
-199            android:value="@integer/google_play_services_version" />
-199-->[com.google.android.gms:play-services-basement:18.5.0] /Users/macbookpro/.gradle/caches/8.13/transforms/45d89ad6ac586c5739d6126c616b816a/transformed/play-services-basement-18.5.0/AndroidManifest.xml:23:13-66
-200
-201        <provider
-201-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:29:9-37:20
-202            android:name="androidx.startup.InitializationProvider"
-202-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:30:13-67
-203            android:authorities="com.example.learninglanguageapp.androidx-startup"
-203-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:31:13-68
-204            android:exported="false" >
-204-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:32:13-37
-205            <meta-data
-205-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:34:13-36:52
-206                android:name="androidx.work.WorkManagerInitializer"
-206-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:35:17-68
-207                android:value="androidx.startup" />
-207-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:36:17-49
-208            <meta-data
-208-->[androidx.emoji2:emoji2:1.2.0] /Users/macbookpro/.gradle/caches/8.13/transforms/160f720e4862b422c0398635a676676c/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
-209                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-209-->[androidx.emoji2:emoji2:1.2.0] /Users/macbookpro/.gradle/caches/8.13/transforms/160f720e4862b422c0398635a676676c/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
-210                android:value="androidx.startup" />
-210-->[androidx.emoji2:emoji2:1.2.0] /Users/macbookpro/.gradle/caches/8.13/transforms/160f720e4862b422c0398635a676676c/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
-211            <meta-data
-211-->[androidx.lifecycle:lifecycle-process:2.9.4] /Users/macbookpro/.gradle/caches/8.13/transforms/55b2438e2f8dfb86488150b559683197/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:29:13-31:52
-212                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-212-->[androidx.lifecycle:lifecycle-process:2.9.4] /Users/macbookpro/.gradle/caches/8.13/transforms/55b2438e2f8dfb86488150b559683197/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:30:17-78
-213                android:value="androidx.startup" />
-213-->[androidx.lifecycle:lifecycle-process:2.9.4] /Users/macbookpro/.gradle/caches/8.13/transforms/55b2438e2f8dfb86488150b559683197/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:31:17-49
-214            <meta-data
-214-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:29:13-31:52
-215                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-215-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:30:17-85
-216                android:value="androidx.startup" />
-216-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:31:17-49
-217            <meta-data
-217-->[com.squareup.okhttp3:okhttp-android:5.1.0] /Users/macbookpro/.gradle/caches/8.13/transforms/fec85e293bb1f6970d253b13c5d9656a/transformed/okhttp-release/AndroidManifest.xml:16:13-18:52
-218                android:name="okhttp3.internal.platform.PlatformInitializer"
-218-->[com.squareup.okhttp3:okhttp-android:5.1.0] /Users/macbookpro/.gradle/caches/8.13/transforms/fec85e293bb1f6970d253b13c5d9656a/transformed/okhttp-release/AndroidManifest.xml:17:17-77
-219                android:value="androidx.startup" />
-219-->[com.squareup.okhttp3:okhttp-android:5.1.0] /Users/macbookpro/.gradle/caches/8.13/transforms/fec85e293bb1f6970d253b13c5d9656a/transformed/okhttp-release/AndroidManifest.xml:18:17-49
-220        </provider>
-221
-222        <service
-222-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:39:9-45:35
-223            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
-223-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:40:13-88
-224            android:directBootAware="false"
-224-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:41:13-44
-225            android:enabled="@bool/enable_system_alarm_service_default"
-225-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:42:13-72
-226            android:exported="false" />
-226-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:43:13-37
-227        <service
-227-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:46:9-52:35
-228            android:name="androidx.work.impl.background.systemjob.SystemJobService"
-228-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:47:13-84
-229            android:directBootAware="false"
-229-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:48:13-44
-230            android:enabled="@bool/enable_system_job_service_default"
-230-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:49:13-70
-231            android:exported="true"
-231-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:50:13-36
-232            android:permission="android.permission.BIND_JOB_SERVICE" />
-232-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:51:13-69
-233        <service
-233-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:53:9-59:35
-234            android:name="androidx.work.impl.foreground.SystemForegroundService"
-234-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:54:13-81
-235            android:directBootAware="false"
-235-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:55:13-44
-236            android:enabled="@bool/enable_system_foreground_service_default"
-236-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:56:13-77
-237            android:exported="false" />
-237-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:57:13-37
-238
-239        <receiver
-239-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:61:9-66:35
-240            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
-240-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:62:13-88
-241            android:directBootAware="false"
-241-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:63:13-44
-242            android:enabled="true"
-242-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:64:13-35
-243            android:exported="false" />
-243-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:65:13-37
-244        <receiver
-244-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:67:9-77:20
-245            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
-245-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:68:13-106
-246            android:directBootAware="false"
-246-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:69:13-44
-247            android:enabled="false"
-247-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:70:13-36
-248            android:exported="false" >
-248-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:71:13-37
-249            <intent-filter>
-249-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:73:13-76:29
-250                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
-250-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:74:17-87
-250-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:74:25-84
-251                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
-251-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:75:17-90
-251-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:75:25-87
-252            </intent-filter>
-253        </receiver>
-254        <receiver
-254-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:78:9-88:20
-255            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
-255-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:79:13-104
-256            android:directBootAware="false"
-256-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:80:13-44
-257            android:enabled="false"
-257-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:81:13-36
-258            android:exported="false" >
-258-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:82:13-37
-259            <intent-filter>
-259-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:84:13-87:29
-260                <action android:name="android.intent.action.BATTERY_OKAY" />
-260-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:85:17-77
-260-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:85:25-74
-261                <action android:name="android.intent.action.BATTERY_LOW" />
-261-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:86:17-76
-261-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:86:25-73
-262            </intent-filter>
-263        </receiver>
-264        <receiver
-264-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:89:9-99:20
-265            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
-265-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:90:13-104
-266            android:directBootAware="false"
-266-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:91:13-44
-267            android:enabled="false"
-267-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:92:13-36
-268            android:exported="false" >
-268-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:93:13-37
-269            <intent-filter>
-269-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:95:13-98:29
-270                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
-270-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:96:17-83
-270-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:96:25-80
-271                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
-271-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:97:17-82
-271-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:97:25-79
-272            </intent-filter>
-273        </receiver>
-274        <receiver
-274-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:100:9-109:20
-275            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
-275-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:101:13-103
-276            android:directBootAware="false"
-276-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:102:13-44
-277            android:enabled="false"
-277-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:103:13-36
-278            android:exported="false" >
-278-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:104:13-37
-279            <intent-filter>
-279-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:106:13-108:29
-280                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-280-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:107:17-79
-280-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:107:25-76
-281            </intent-filter>
-282        </receiver>
-283        <receiver
-283-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:110:9-121:20
-284            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
-284-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:111:13-88
-285            android:directBootAware="false"
-285-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:112:13-44
-286            android:enabled="false"
-286-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:113:13-36
-287            android:exported="false" >
-287-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:114:13-37
-288            <intent-filter>
-288-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:116:13-120:29
-289                <action android:name="android.intent.action.BOOT_COMPLETED" />
-289-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:117:17-79
-289-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:117:25-76
-290                <action android:name="android.intent.action.TIME_SET" />
-290-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:118:17-73
-290-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:118:25-70
-291                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
-291-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:119:17-81
-291-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:119:25-78
-292            </intent-filter>
-293        </receiver>
-294        <receiver
-294-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:122:9-131:20
-295            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
-295-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:123:13-99
-296            android:directBootAware="false"
-296-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:124:13-44
-297            android:enabled="@bool/enable_system_alarm_service_default"
-297-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:125:13-72
-298            android:exported="false" >
-298-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:126:13-37
-299            <intent-filter>
-299-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:128:13-130:29
-300                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
-300-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:129:17-98
-300-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:129:25-95
-301            </intent-filter>
-302        </receiver>
-303        <receiver
-303-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:132:9-142:20
-304            android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver"
-304-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:133:13-78
-305            android:directBootAware="false"
-305-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:134:13-44
-306            android:enabled="true"
-306-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:135:13-35
-307            android:exported="true"
-307-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:136:13-36
-308            android:permission="android.permission.DUMP" >
-308-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:137:13-57
-309            <intent-filter>
-309-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:139:13-141:29
-310                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
-310-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:140:17-88
-310-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:140:25-85
-311            </intent-filter>
-312        </receiver>
-313        <!--
-314         The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically
-315         with the application context. This config is merged in with the host app's manifest,
-316         but there can only be one provider with the same authority activated at any given
-317         point; so if the end user has two or more different apps that use Facebook SDK, only the
-318         first one will be able to use the provider. To work around this problem, we use the
-319         following placeholder in the authority to identify each host application as if it was
-320         a completely different provider.
-321        -->
-322        <provider
-322-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:32:9-35:40
-323            android:name="com.facebook.internal.FacebookInitProvider"
-323-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:33:13-70
-324            android:authorities="com.example.learninglanguageapp.FacebookInitProvider"
-324-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:34:13-72
-325            android:exported="false" />
-325-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:35:13-37
-326
-327        <receiver
-327-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:37:9-43:20
-328            android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver"
-328-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:38:13-86
-329            android:exported="false" >
-329-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:39:13-37
-330            <intent-filter>
-330-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:40:13-42:29
-331                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
-331-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:41:17-95
-331-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:41:25-92
-332            </intent-filter>
-333        </receiver>
-334        <receiver
-334-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:44:9-50:20
-335            android:name="com.facebook.AuthenticationTokenManager$CurrentAuthenticationTokenChangedBroadcastReceiver"
-335-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:45:13-118
-336            android:exported="false" >
-336-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:46:13-37
-337            <intent-filter>
-337-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:47:13-49:29
-338                <action android:name="com.facebook.sdk.ACTION_CURRENT_AUTHENTICATION_TOKEN_CHANGED" />
-338-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:48:17-103
-338-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:48:25-100
-339            </intent-filter>
-340        </receiver>
-341
-342        <uses-library
-342-->[androidx.window:window:1.0.0] /Users/macbookpro/.gradle/caches/8.13/transforms/7f60553f600f3224f49dbcd1ae5c9a0d/transformed/window-1.0.0/AndroidManifest.xml:25:9-27:40
-343            android:name="androidx.window.extensions"
-343-->[androidx.window:window:1.0.0] /Users/macbookpro/.gradle/caches/8.13/transforms/7f60553f600f3224f49dbcd1ae5c9a0d/transformed/window-1.0.0/AndroidManifest.xml:26:13-54
-344            android:required="false" />
-344-->[androidx.window:window:1.0.0] /Users/macbookpro/.gradle/caches/8.13/transforms/7f60553f600f3224f49dbcd1ae5c9a0d/transformed/window-1.0.0/AndroidManifest.xml:27:13-37
-345        <uses-library
-345-->[androidx.window:window:1.0.0] /Users/macbookpro/.gradle/caches/8.13/transforms/7f60553f600f3224f49dbcd1ae5c9a0d/transformed/window-1.0.0/AndroidManifest.xml:28:9-30:40
-346            android:name="androidx.window.sidecar"
-346-->[androidx.window:window:1.0.0] /Users/macbookpro/.gradle/caches/8.13/transforms/7f60553f600f3224f49dbcd1ae5c9a0d/transformed/window-1.0.0/AndroidManifest.xml:29:13-51
-347            android:required="false" />
-347-->[androidx.window:window:1.0.0] /Users/macbookpro/.gradle/caches/8.13/transforms/7f60553f600f3224f49dbcd1ae5c9a0d/transformed/window-1.0.0/AndroidManifest.xml:30:13-37
-348
-349        <service
-349-->[androidx.room:room-runtime-android:2.8.3] /Users/macbookpro/.gradle/caches/8.13/transforms/640dd3dfa2437519f0f7646d1ed7aecc/transformed/room-runtime/AndroidManifest.xml:24:9-28:63
-350            android:name="androidx.room.MultiInstanceInvalidationService"
-350-->[androidx.room:room-runtime-android:2.8.3] /Users/macbookpro/.gradle/caches/8.13/transforms/640dd3dfa2437519f0f7646d1ed7aecc/transformed/room-runtime/AndroidManifest.xml:25:13-74
-351            android:directBootAware="true"
-351-->[androidx.room:room-runtime-android:2.8.3] /Users/macbookpro/.gradle/caches/8.13/transforms/640dd3dfa2437519f0f7646d1ed7aecc/transformed/room-runtime/AndroidManifest.xml:26:13-43
-352            android:exported="false" />
-352-->[androidx.room:room-runtime-android:2.8.3] /Users/macbookpro/.gradle/caches/8.13/transforms/640dd3dfa2437519f0f7646d1ed7aecc/transformed/room-runtime/AndroidManifest.xml:27:13-37
-353
-354        <receiver
-354-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:34:9-52:20
-355            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-355-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:35:13-76
-356            android:directBootAware="false"
-356-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:36:13-44
-357            android:enabled="true"
-357-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:37:13-35
-358            android:exported="true"
-358-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:38:13-36
-359            android:permission="android.permission.DUMP" >
-359-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:39:13-57
-360            <intent-filter>
-360-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:40:13-42:29
-361                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-361-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:17-91
-361-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:25-88
-362            </intent-filter>
-363            <intent-filter>
-363-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:43:13-45:29
-364                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-364-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:17-85
-364-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:25-82
-365            </intent-filter>
-366            <intent-filter>
-366-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:46:13-48:29
-367                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-367-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:17-88
-367-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:25-85
-368            </intent-filter>
-369            <intent-filter>
-369-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:49:13-51:29
-370                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-370-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:17-95
-370-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:25-92
-371            </intent-filter>
-372        </receiver>
-373    </application>
-374
-375</manifest>
+118-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:94:13-53
+119            android:exported="true" >
+119-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:95:13-36
+120            <intent-filter>
+120-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:96:13-105:29
+121                <category android:name="android.intent.category.DEFAULT" />
+121-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:97:17-76
+121-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:97:27-73
+122                <category android:name="android.intent.category.BROWSABLE" />
+122-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:98:17-78
+122-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:98:27-75
+123
+124                <data android:scheme="@string/fb_login_protocol_scheme" />
+124-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:100:17-75
+124-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:100:23-72
+125
+126                <action android:name="android.intent.action.MAIN" />
+126-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:102:17-69
+126-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:102:25-66
+127
+128                <category android:name="android.intent.category.LAUNCHER" />
+128-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:104:17-77
+128-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:104:27-74
+129            </intent-filter>
+130        </activity> <!-- Main Activity -->
+131        <activity
+131-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:107:9-113:20
+132            android:name="com.example.learninglanguageapp.activities.MainActivity"
+132-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:108:13-52
+133            android:exported="false"
+133-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:109:13-37
+134            android:launchMode="singleTop"
+134-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:110:13-43
+135            android:screenOrientation="portrait" >
+135-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:111:13-49
+136        </activity>
+137        <activity
+137-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:114:9-117:43
+138            android:name="com.facebook.FacebookActivity"
+138-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:115:13-57
+139            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+139-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:116:13-96
+140            android:theme="@style/com_facebook_activity_theme" />
+140-->[com.facebook.android:facebook-common:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/80bce67d1166e74afeb4e8ca961be266/transformed/facebook-common-18.1.3/AndroidManifest.xml:23:13-63
+141        <activity
+141-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:118:9-122:48
+142            android:name="com.facebook.CustomTabActivity"
+142-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:119:13-58
+143            android:exported="false" >
+143-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:120:13-37
+144            <intent-filter>
+144-->[com.facebook.android:facebook-common:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/80bce67d1166e74afeb4e8ca961be266/transformed/facebook-common-18.1.3/AndroidManifest.xml:29:13-38:29
+145                <action android:name="android.intent.action.VIEW" />
+145-->[com.facebook.android:facebook-common:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/80bce67d1166e74afeb4e8ca961be266/transformed/facebook-common-18.1.3/AndroidManifest.xml:30:17-69
+145-->[com.facebook.android:facebook-common:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/80bce67d1166e74afeb4e8ca961be266/transformed/facebook-common-18.1.3/AndroidManifest.xml:30:25-66
+146
+147                <category android:name="android.intent.category.DEFAULT" />
+147-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:97:17-76
+147-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:97:27-73
+148                <category android:name="android.intent.category.BROWSABLE" />
+148-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:98:17-78
+148-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:98:27-75
+149
+150                <data
+150-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:100:17-75
+151                    android:host="cct.com.example.learninglanguageapp"
+152                    android:scheme="fbconnect" />
+152-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:100:23-72
+153            </intent-filter>
+154        </activity>
+155        <activity
+155-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:123:9-127:75
+156            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+156-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:124:13-93
+157            android:excludeFromRecents="true"
+157-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:125:13-46
+158            android:exported="false"
+158-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:126:13-37
+159            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+159-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:127:13-72
+160
+161        <service
+161-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:129:9-133:50
+162            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+162-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:130:13-89
+163            android:exported="true"
+163-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:131:13-36
+164            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_BOUND_SERVICE"
+164-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:132:13-108
+165            android:visibleToInstantApps="true" />
+165-->[com.google.android.gms:play-services-auth:21.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/5c7357a57330df8bc337a7f9a22d5b97/transformed/play-services-auth-21.4.0/AndroidManifest.xml:37:13-48
+166
+167        <provider
+168            android:name="androidx.core.content.FileProvider"
+168-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:136:13-62
+169            android:authorities="com.example.learninglanguageapp.fileprovider"
+169-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:137:13-64
+170            android:exported="false"
+170-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:138:13-37
+171            android:grantUriPermissions="true" >
+171-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:139:13-47
+172            <meta-data
+172-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:140:13-142:54
+173                android:name="android.support.FILE_PROVIDER_PATHS"
+173-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:141:17-67
+174                android:resource="@xml/file_paths" />
+174-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:142:17-51
+175        </provider> <!-- Firebase App Check (Security) -->
+176        <meta-data
+176-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:144:9-146:36
+177            android:name="firebase_analytics_collection_enabled"
+177-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:145:13-65
+178            android:value="true" />
+178-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:146:13-33
+179        <meta-data
+179-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:147:9-149:36
+180            android:name="firebase_crashlytics_collection_enabled"
+180-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:148:13-67
+181            android:value="true" />
+181-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:149:13-33
+182        <meta-data
+182-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:150:9-152:55
+183            android:name="com.facebook.sdk.ApplicationId"
+183-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:151:13-58
+184            android:value="@string/facebook_app_id" />
+184-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:152:13-52
+185        <meta-data
+185-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:153:9-155:61
+186            android:name="com.facebook.sdk.ClientToken"
+186-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:154:13-56
+187            android:value="@string/facebook_client_token" />
+187-->/Users/macbookpro/Documents/Study/Android/Nhom/app/src/main/AndroidManifest.xml:155:13-58
+188
+189        <activity
+189-->[com.karumi:dexter:6.2.3] /Users/macbookpro/.gradle/caches/8.13/transforms/954a6338a87fbe0e344bc53422e352d3/transformed/dexter-6.2.3/AndroidManifest.xml:27:9-29:72
+190            android:name="com.karumi.dexter.DexterActivity"
+190-->[com.karumi:dexter:6.2.3] /Users/macbookpro/.gradle/caches/8.13/transforms/954a6338a87fbe0e344bc53422e352d3/transformed/dexter-6.2.3/AndroidManifest.xml:28:13-60
+191            android:theme="@style/Dexter.Internal.Theme.Transparent" />
+191-->[com.karumi:dexter:6.2.3] /Users/macbookpro/.gradle/caches/8.13/transforms/954a6338a87fbe0e344bc53422e352d3/transformed/dexter-6.2.3/AndroidManifest.xml:29:13-69
+192        <activity android:name="com.facebook.CustomTabMainActivity" />
+192-->[com.facebook.android:facebook-common:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/80bce67d1166e74afeb4e8ca961be266/transformed/facebook-common-18.1.3/AndroidManifest.xml:24:9-71
+192-->[com.facebook.android:facebook-common:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/80bce67d1166e74afeb4e8ca961be266/transformed/facebook-common-18.1.3/AndroidManifest.xml:24:19-68
+193        <activity
+193-->[com.google.android.gms:play-services-base:18.5.0] /Users/macbookpro/.gradle/caches/8.13/transforms/a4bea8f7d66266291274db7e5849183a/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:9-173
+194            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+194-->[com.google.android.gms:play-services-base:18.5.0] /Users/macbookpro/.gradle/caches/8.13/transforms/a4bea8f7d66266291274db7e5849183a/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:19-85
+195            android:exported="false"
+195-->[com.google.android.gms:play-services-base:18.5.0] /Users/macbookpro/.gradle/caches/8.13/transforms/a4bea8f7d66266291274db7e5849183a/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:146-170
+196            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+196-->[com.google.android.gms:play-services-base:18.5.0] /Users/macbookpro/.gradle/caches/8.13/transforms/a4bea8f7d66266291274db7e5849183a/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:86-145
+197
+198        <meta-data
+198-->[com.google.android.gms:play-services-basement:18.5.0] /Users/macbookpro/.gradle/caches/8.13/transforms/45d89ad6ac586c5739d6126c616b816a/transformed/play-services-basement-18.5.0/AndroidManifest.xml:21:9-23:69
+199            android:name="com.google.android.gms.version"
+199-->[com.google.android.gms:play-services-basement:18.5.0] /Users/macbookpro/.gradle/caches/8.13/transforms/45d89ad6ac586c5739d6126c616b816a/transformed/play-services-basement-18.5.0/AndroidManifest.xml:22:13-58
+200            android:value="@integer/google_play_services_version" />
+200-->[com.google.android.gms:play-services-basement:18.5.0] /Users/macbookpro/.gradle/caches/8.13/transforms/45d89ad6ac586c5739d6126c616b816a/transformed/play-services-basement-18.5.0/AndroidManifest.xml:23:13-66
+201
+202        <provider
+202-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:29:9-37:20
+203            android:name="androidx.startup.InitializationProvider"
+203-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:30:13-67
+204            android:authorities="com.example.learninglanguageapp.androidx-startup"
+204-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:31:13-68
+205            android:exported="false" >
+205-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:32:13-37
+206            <meta-data
+206-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:34:13-36:52
+207                android:name="androidx.work.WorkManagerInitializer"
+207-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:35:17-68
+208                android:value="androidx.startup" />
+208-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:36:17-49
+209            <meta-data
+209-->[androidx.emoji2:emoji2:1.2.0] /Users/macbookpro/.gradle/caches/8.13/transforms/160f720e4862b422c0398635a676676c/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+210                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+210-->[androidx.emoji2:emoji2:1.2.0] /Users/macbookpro/.gradle/caches/8.13/transforms/160f720e4862b422c0398635a676676c/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+211                android:value="androidx.startup" />
+211-->[androidx.emoji2:emoji2:1.2.0] /Users/macbookpro/.gradle/caches/8.13/transforms/160f720e4862b422c0398635a676676c/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+212            <meta-data
+212-->[androidx.lifecycle:lifecycle-process:2.9.4] /Users/macbookpro/.gradle/caches/8.13/transforms/55b2438e2f8dfb86488150b559683197/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:29:13-31:52
+213                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+213-->[androidx.lifecycle:lifecycle-process:2.9.4] /Users/macbookpro/.gradle/caches/8.13/transforms/55b2438e2f8dfb86488150b559683197/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:30:17-78
+214                android:value="androidx.startup" />
+214-->[androidx.lifecycle:lifecycle-process:2.9.4] /Users/macbookpro/.gradle/caches/8.13/transforms/55b2438e2f8dfb86488150b559683197/transformed/lifecycle-process-2.9.4/AndroidManifest.xml:31:17-49
+215            <meta-data
+215-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:29:13-31:52
+216                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+216-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:30:17-85
+217                android:value="androidx.startup" />
+217-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:31:17-49
+218            <meta-data
+218-->[com.squareup.okhttp3:okhttp-android:5.1.0] /Users/macbookpro/.gradle/caches/8.13/transforms/fec85e293bb1f6970d253b13c5d9656a/transformed/okhttp-release/AndroidManifest.xml:16:13-18:52
+219                android:name="okhttp3.internal.platform.PlatformInitializer"
+219-->[com.squareup.okhttp3:okhttp-android:5.1.0] /Users/macbookpro/.gradle/caches/8.13/transforms/fec85e293bb1f6970d253b13c5d9656a/transformed/okhttp-release/AndroidManifest.xml:17:17-77
+220                android:value="androidx.startup" />
+220-->[com.squareup.okhttp3:okhttp-android:5.1.0] /Users/macbookpro/.gradle/caches/8.13/transforms/fec85e293bb1f6970d253b13c5d9656a/transformed/okhttp-release/AndroidManifest.xml:18:17-49
+221        </provider>
+222
+223        <service
+223-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:39:9-45:35
+224            android:name="androidx.work.impl.background.systemalarm.SystemAlarmService"
+224-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:40:13-88
+225            android:directBootAware="false"
+225-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:41:13-44
+226            android:enabled="@bool/enable_system_alarm_service_default"
+226-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:42:13-72
+227            android:exported="false" />
+227-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:43:13-37
+228        <service
+228-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:46:9-52:35
+229            android:name="androidx.work.impl.background.systemjob.SystemJobService"
+229-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:47:13-84
+230            android:directBootAware="false"
+230-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:48:13-44
+231            android:enabled="@bool/enable_system_job_service_default"
+231-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:49:13-70
+232            android:exported="true"
+232-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:50:13-36
+233            android:permission="android.permission.BIND_JOB_SERVICE" />
+233-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:51:13-69
+234        <service
+234-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:53:9-59:35
+235            android:name="androidx.work.impl.foreground.SystemForegroundService"
+235-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:54:13-81
+236            android:directBootAware="false"
+236-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:55:13-44
+237            android:enabled="@bool/enable_system_foreground_service_default"
+237-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:56:13-77
+238            android:exported="false" />
+238-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:57:13-37
+239
+240        <receiver
+240-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:61:9-66:35
+241            android:name="androidx.work.impl.utils.ForceStopRunnable$BroadcastReceiver"
+241-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:62:13-88
+242            android:directBootAware="false"
+242-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:63:13-44
+243            android:enabled="true"
+243-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:64:13-35
+244            android:exported="false" />
+244-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:65:13-37
+245        <receiver
+245-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:67:9-77:20
+246            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryChargingProxy"
+246-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:68:13-106
+247            android:directBootAware="false"
+247-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:69:13-44
+248            android:enabled="false"
+248-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:70:13-36
+249            android:exported="false" >
+249-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:71:13-37
+250            <intent-filter>
+250-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:73:13-76:29
+251                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+251-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:74:17-87
+251-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:74:25-84
+252                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+252-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:75:17-90
+252-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:75:25-87
+253            </intent-filter>
+254        </receiver>
+255        <receiver
+255-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:78:9-88:20
+256            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$BatteryNotLowProxy"
+256-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:79:13-104
+257            android:directBootAware="false"
+257-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:80:13-44
+258            android:enabled="false"
+258-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:81:13-36
+259            android:exported="false" >
+259-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:82:13-37
+260            <intent-filter>
+260-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:84:13-87:29
+261                <action android:name="android.intent.action.BATTERY_OKAY" />
+261-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:85:17-77
+261-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:85:25-74
+262                <action android:name="android.intent.action.BATTERY_LOW" />
+262-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:86:17-76
+262-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:86:25-73
+263            </intent-filter>
+264        </receiver>
+265        <receiver
+265-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:89:9-99:20
+266            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$StorageNotLowProxy"
+266-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:90:13-104
+267            android:directBootAware="false"
+267-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:91:13-44
+268            android:enabled="false"
+268-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:92:13-36
+269            android:exported="false" >
+269-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:93:13-37
+270            <intent-filter>
+270-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:95:13-98:29
+271                <action android:name="android.intent.action.DEVICE_STORAGE_LOW" />
+271-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:96:17-83
+271-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:96:25-80
+272                <action android:name="android.intent.action.DEVICE_STORAGE_OK" />
+272-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:97:17-82
+272-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:97:25-79
+273            </intent-filter>
+274        </receiver>
+275        <receiver
+275-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:100:9-109:20
+276            android:name="androidx.work.impl.background.systemalarm.ConstraintProxy$NetworkStateProxy"
+276-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:101:13-103
+277            android:directBootAware="false"
+277-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:102:13-44
+278            android:enabled="false"
+278-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:103:13-36
+279            android:exported="false" >
+279-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:104:13-37
+280            <intent-filter>
+280-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:106:13-108:29
+281                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+281-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:107:17-79
+281-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:107:25-76
+282            </intent-filter>
+283        </receiver>
+284        <receiver
+284-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:110:9-121:20
+285            android:name="androidx.work.impl.background.systemalarm.RescheduleReceiver"
+285-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:111:13-88
+286            android:directBootAware="false"
+286-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:112:13-44
+287            android:enabled="false"
+287-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:113:13-36
+288            android:exported="false" >
+288-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:114:13-37
+289            <intent-filter>
+289-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:116:13-120:29
+290                <action android:name="android.intent.action.BOOT_COMPLETED" />
+290-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:117:17-79
+290-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:117:25-76
+291                <action android:name="android.intent.action.TIME_SET" />
+291-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:118:17-73
+291-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:118:25-70
+292                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+292-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:119:17-81
+292-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:119:25-78
+293            </intent-filter>
+294        </receiver>
+295        <receiver
+295-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:122:9-131:20
+296            android:name="androidx.work.impl.background.systemalarm.ConstraintProxyUpdateReceiver"
+296-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:123:13-99
+297            android:directBootAware="false"
+297-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:124:13-44
+298            android:enabled="@bool/enable_system_alarm_service_default"
+298-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:125:13-72
+299            android:exported="false" >
+299-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:126:13-37
+300            <intent-filter>
+300-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:128:13-130:29
+301                <action android:name="androidx.work.impl.background.systemalarm.UpdateProxies" />
+301-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:129:17-98
+301-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:129:25-95
+302            </intent-filter>
+303        </receiver>
+304        <receiver
+304-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:132:9-142:20
+305            android:name="androidx.work.impl.diagnostics.DiagnosticsReceiver"
+305-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:133:13-78
+306            android:directBootAware="false"
+306-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:134:13-44
+307            android:enabled="true"
+307-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:135:13-35
+308            android:exported="true"
+308-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:136:13-36
+309            android:permission="android.permission.DUMP" >
+309-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:137:13-57
+310            <intent-filter>
+310-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:139:13-141:29
+311                <action android:name="androidx.work.diagnostics.REQUEST_DIAGNOSTICS" />
+311-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:140:17-88
+311-->[androidx.work:work-runtime:2.9.0] /Users/macbookpro/.gradle/caches/8.13/transforms/d77c9ba132761cfeada7e59d3455577d/transformed/work-runtime-2.9.0/AndroidManifest.xml:140:25-85
+312            </intent-filter>
+313        </receiver>
+314        <!--
+315         The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically
+316         with the application context. This config is merged in with the host app's manifest,
+317         but there can only be one provider with the same authority activated at any given
+318         point; so if the end user has two or more different apps that use Facebook SDK, only the
+319         first one will be able to use the provider. To work around this problem, we use the
+320         following placeholder in the authority to identify each host application as if it was
+321         a completely different provider.
+322        -->
+323        <provider
+323-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:32:9-35:40
+324            android:name="com.facebook.internal.FacebookInitProvider"
+324-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:33:13-70
+325            android:authorities="com.example.learninglanguageapp.FacebookInitProvider"
+325-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:34:13-72
+326            android:exported="false" />
+326-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:35:13-37
+327
+328        <receiver
+328-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:37:9-43:20
+329            android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver"
+329-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:38:13-86
+330            android:exported="false" >
+330-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:39:13-37
+331            <intent-filter>
+331-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:40:13-42:29
+332                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
+332-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:41:17-95
+332-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:41:25-92
+333            </intent-filter>
+334        </receiver>
+335        <receiver
+335-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:44:9-50:20
+336            android:name="com.facebook.AuthenticationTokenManager$CurrentAuthenticationTokenChangedBroadcastReceiver"
+336-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:45:13-118
+337            android:exported="false" >
+337-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:46:13-37
+338            <intent-filter>
+338-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:47:13-49:29
+339                <action android:name="com.facebook.sdk.ACTION_CURRENT_AUTHENTICATION_TOKEN_CHANGED" />
+339-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:48:17-103
+339-->[com.facebook.android:facebook-core:18.1.3] /Users/macbookpro/.gradle/caches/8.13/transforms/4dc92067c0ebb89539537af7a410b807/transformed/facebook-core-18.1.3/AndroidManifest.xml:48:25-100
+340            </intent-filter>
+341        </receiver>
+342
+343        <uses-library
+343-->[androidx.window:window:1.0.0] /Users/macbookpro/.gradle/caches/8.13/transforms/7f60553f600f3224f49dbcd1ae5c9a0d/transformed/window-1.0.0/AndroidManifest.xml:25:9-27:40
+344            android:name="androidx.window.extensions"
+344-->[androidx.window:window:1.0.0] /Users/macbookpro/.gradle/caches/8.13/transforms/7f60553f600f3224f49dbcd1ae5c9a0d/transformed/window-1.0.0/AndroidManifest.xml:26:13-54
+345            android:required="false" />
+345-->[androidx.window:window:1.0.0] /Users/macbookpro/.gradle/caches/8.13/transforms/7f60553f600f3224f49dbcd1ae5c9a0d/transformed/window-1.0.0/AndroidManifest.xml:27:13-37
+346        <uses-library
+346-->[androidx.window:window:1.0.0] /Users/macbookpro/.gradle/caches/8.13/transforms/7f60553f600f3224f49dbcd1ae5c9a0d/transformed/window-1.0.0/AndroidManifest.xml:28:9-30:40
+347            android:name="androidx.window.sidecar"
+347-->[androidx.window:window:1.0.0] /Users/macbookpro/.gradle/caches/8.13/transforms/7f60553f600f3224f49dbcd1ae5c9a0d/transformed/window-1.0.0/AndroidManifest.xml:29:13-51
+348            android:required="false" />
+348-->[androidx.window:window:1.0.0] /Users/macbookpro/.gradle/caches/8.13/transforms/7f60553f600f3224f49dbcd1ae5c9a0d/transformed/window-1.0.0/AndroidManifest.xml:30:13-37
+349
+350        <service
+350-->[androidx.room:room-runtime-android:2.8.3] /Users/macbookpro/.gradle/caches/8.13/transforms/640dd3dfa2437519f0f7646d1ed7aecc/transformed/room-runtime/AndroidManifest.xml:24:9-28:63
+351            android:name="androidx.room.MultiInstanceInvalidationService"
+351-->[androidx.room:room-runtime-android:2.8.3] /Users/macbookpro/.gradle/caches/8.13/transforms/640dd3dfa2437519f0f7646d1ed7aecc/transformed/room-runtime/AndroidManifest.xml:25:13-74
+352            android:directBootAware="true"
+352-->[androidx.room:room-runtime-android:2.8.3] /Users/macbookpro/.gradle/caches/8.13/transforms/640dd3dfa2437519f0f7646d1ed7aecc/transformed/room-runtime/AndroidManifest.xml:26:13-43
+353            android:exported="false" />
+353-->[androidx.room:room-runtime-android:2.8.3] /Users/macbookpro/.gradle/caches/8.13/transforms/640dd3dfa2437519f0f7646d1ed7aecc/transformed/room-runtime/AndroidManifest.xml:27:13-37
+354
+355        <receiver
+355-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:34:9-52:20
+356            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+356-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:35:13-76
+357            android:directBootAware="false"
+357-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:36:13-44
+358            android:enabled="true"
+358-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:37:13-35
+359            android:exported="true"
+359-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:38:13-36
+360            android:permission="android.permission.DUMP" >
+360-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:39:13-57
+361            <intent-filter>
+361-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:40:13-42:29
+362                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+362-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:17-91
+362-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:25-88
+363            </intent-filter>
+364            <intent-filter>
+364-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:43:13-45:29
+365                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+365-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:17-85
+365-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:25-82
+366            </intent-filter>
+367            <intent-filter>
+367-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:46:13-48:29
+368                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+368-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:17-88
+368-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:25-85
+369            </intent-filter>
+370            <intent-filter>
+370-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:49:13-51:29
+371                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+371-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:17-95
+371-->[androidx.profileinstaller:profileinstaller:1.4.0] /Users/macbookpro/.gradle/caches/8.13/transforms/67756337f25d619eb02ccb44a4da5de1/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:25-92
+372            </intent-filter>
+373        </receiver>
+374    </application>
+375
+376</manifest>

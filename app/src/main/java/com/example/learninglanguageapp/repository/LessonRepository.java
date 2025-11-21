@@ -60,7 +60,7 @@ public class LessonRepository {
 //            }
 
             // 2️⃣ Không có → gọi API
-            api.getWordsByLessonOfUser(lessonId, 1)
+            api.getWordsByLessonOfUser(lessonId)
                     .enqueue(new Callback<ApiResponse<List<Word>>>() {
 
                         @RequiresApi(api = Build.VERSION_CODES.UPSIDE_DOWN_CAKE)

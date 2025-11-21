@@ -26,8 +26,8 @@ public class AccountActivity extends AppCompatActivity {
     private SwitchCompat switchDarkMode;
 
     // Dữ liệu giả lập - sẽ thay thế bằng database sau
-    private String userName = "Andrew";
-    private String userEmail = "Andrew@gmail.com";
+    private String userName = "Lê Hoàng Q.Tỉnh";
+    private String userEmail = "lhqtinh2005@gmail.com";
     private boolean isDarkMode = false;
 
     @Override

@@ -34,8 +34,8 @@ public class AccountFragment extends Fragment {
     private SwitchCompat switchDarkMode;
 
     // Fake data
-    private String userName = "Andrew";
-    private String userEmail = "Andrew@gmail.com";
+    private String userName = "Lê Hoàng Q.Tỉnh";
+    private String userEmail = "lhqtinh2005@gmail.com";
     private boolean isDarkMode = false;
 
     @Nullable

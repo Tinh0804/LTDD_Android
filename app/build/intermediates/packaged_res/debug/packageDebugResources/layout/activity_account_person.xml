@@ -94,7 +94,7 @@
                 android:id="@+id/etName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Andrew"
+                android:text="Lê Hoàng Q.Tỉnh"
                 android:background="@null"
                 android:textColor="#000000"
                 android:textSize="17sp"
@@ -134,7 +134,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@null"
-                    android:text="andrew.ainsley@yourdomain.com"
+                    android:text="lhqtinh2005@gmail.com"
                     android:textSize="17sp"
                     android:textColor="#000000"/>
             </LinearLayout>
@@ -163,7 +163,7 @@
                     android:id="@+id/tvCountry"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="United States of America"
+                    android:text="Đà Nẵng,Việt Nam"
                     android:textSize="17sp"
                     android:textColor="#000000"/>
 
