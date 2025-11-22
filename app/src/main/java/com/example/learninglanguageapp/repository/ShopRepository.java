@@ -38,32 +38,32 @@ public class ShopRepository {
 
         loadingLiveData.setValue(true);
 
-        api.getBalance(userId).enqueue(new Callback<ApiResponse<BalanceResponse>>() {
-            @Override
-            public void onResponse(Call<ApiResponse<BalanceResponse>> call,
-                                   Response<ApiResponse<BalanceResponse>> response) {
-
-                loadingLiveData.setValue(false);
-
-                if (response.isSuccessful() && response.body() != null) {
-                    BalanceResponse data = response.body().getData();
-                    if (data != null) {
-                        balanceLiveData.setValue(data.getDiamonds());
-                    } else {
-                        errorLiveData.setValue("No balance data");
-                    }
-                } else {
-                    errorLiveData.setValue("API Error: " + response.code());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ApiResponse<BalanceResponse>> call, Throwable t) {
-                loadingLiveData.setValue(false);
-                errorLiveData.setValue("Network Error: " + t.getMessage());
-                Log.e(TAG, "getBalance failed", t);
-            }
-        });
+//        api.getBalance(userId).enqueue(new Callback<ApiResponse<BalanceResponse>>() {
+//            @Override
+//            public void onResponse(Call<ApiResponse<BalanceResponse>> call,
+//                                   Response<ApiResponse<BalanceResponse>> response) {
+//
+//                loadingLiveData.setValue(false);
+//
+//                if (response.isSuccessful() && response.body() != null) {
+//                    BalanceResponse data = response.body().getData();
+//                    if (data != null) {
+//                        balanceLiveData.setValue(data.getDiamonds());
+//                    } else {
+//                        errorLiveData.setValue("No balance data");
+//                    }
+//                } else {
+//                    errorLiveData.setValue("API Error: " + response.code());
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<ApiResponse<BalanceResponse>> call, Throwable t) {
+//                loadingLiveData.setValue(false);
+//                errorLiveData.setValue("Network Error: " + t.getMessage());
+//                Log.e(TAG, "getBalance failed", t);
+//            }
+//        });
     }
 
     /**
@@ -80,36 +80,36 @@ public class ShopRepository {
 
         loadingLiveData.setValue(true);
 
-        PaymentRequest request = new PaymentRequest(userId, packageId, amount, price, paymentMethod);
+//        PaymentRequest request = new PaymentRequest(userId, packageId, amount, price, paymentMethod);
 
-        api.createPayment(request).enqueue(new Callback<ApiResponse<PaymentResponse>>() {
-            @Override
-            public void onResponse(Call<ApiResponse<PaymentResponse>> call,
-                                   Response<ApiResponse<PaymentResponse>> response) {
-
-                loadingLiveData.setValue(false);
-
-                if (response.isSuccessful() && response.body() != null) {
-                    PaymentResponse data = response.body().getData();
-
-                    if (data != null && data.isSuccess()) {
-                        paymentLiveData.setValue(data);
-                    } else {
-                        String message = data != null ? data.getMessage() : "Payment creation failed";
-                        errorLiveData.setValue(message);
-                    }
-                } else {
-                    errorLiveData.setValue("API Error: " + response.code());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ApiResponse<PaymentResponse>> call, Throwable t) {
-                loadingLiveData.setValue(false);
-                errorLiveData.setValue("Network Error: " + t.getMessage());
-                Log.e(TAG, "createPayment failed", t);
-            }
-        });
+//        api.createPayment(request).enqueue(new Callback<ApiResponse<PaymentResponse>>() {
+//            @Override
+//            public void onResponse(Call<ApiResponse<PaymentResponse>> call,
+//                                   Response<ApiResponse<PaymentResponse>> response) {
+//
+//                loadingLiveData.setValue(false);
+//
+//                if (response.isSuccessful() && response.body() != null) {
+//                    PaymentResponse data = response.body().getData();
+//
+//                    if (data != null && data.isSuccess()) {
+//                        paymentLiveData.setValue(data);
+//                    } else {
+//                        String message = data != null ? data.getMessage() : "Payment creation failed";
+//                        errorLiveData.setValue(message);
+//                    }
+//                } else {
+//                    errorLiveData.setValue("API Error: " + response.code());
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<ApiResponse<PaymentResponse>> call, Throwable t) {
+//                loadingLiveData.setValue(false);
+//                errorLiveData.setValue("Network Error: " + t.getMessage());
+//                Log.e(TAG, "createPayment failed", t);
+//            }
+//        });
     }
 
     /**
@@ -122,32 +122,32 @@ public class ShopRepository {
 
         loadingLiveData.setValue(true);
 
-        api.verifyPayment(transactionId).enqueue(new Callback<ApiResponse<PaymentResponse>>() {
-            @Override
-            public void onResponse(Call<ApiResponse<PaymentResponse>> call,
-                                   Response<ApiResponse<PaymentResponse>> response) {
-
-                loadingLiveData.setValue(false);
-
-                if (response.isSuccessful() && response.body() != null) {
-                    PaymentResponse data = response.body().getData();
-
-                    if (data != null) {
-                        successLiveData.setValue(data.isSuccess());
-                    } else {
-                        errorLiveData.setValue("No verification data");
-                    }
-                } else {
-                    errorLiveData.setValue("Verification failed: " + response.code());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<ApiResponse<PaymentResponse>> call, Throwable t) {
-                loadingLiveData.setValue(false);
-                errorLiveData.setValue("Network Error: " + t.getMessage());
-                Log.e(TAG, "verifyPayment failed", t);
-            }
-        });
+//        api.verifyPayment(transactionId).enqueue(new Callback<ApiResponse<PaymentResponse>>() {
+//            @Override
+//            public void onResponse(Call<ApiResponse<PaymentResponse>> call,
+//                                   Response<ApiResponse<PaymentResponse>> response) {
+//
+//                loadingLiveData.setValue(false);
+//
+//                if (response.isSuccessful() && response.body() != null) {
+//                    PaymentResponse data = response.body().getData();
+//
+//                    if (data != null) {
+//                        successLiveData.setValue(data.isSuccess());
+//                    } else {
+//                        errorLiveData.setValue("No verification data");
+//                    }
+//                } else {
+//                    errorLiveData.setValue("Verification failed: " + response.code());
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<ApiResponse<PaymentResponse>> call, Throwable t) {
+//                loadingLiveData.setValue(false);
+//                errorLiveData.setValue("Network Error: " + t.getMessage());
+//                Log.e(TAG, "verifyPayment failed", t);
+//            }
+//        });
     }
 }

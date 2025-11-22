@@ -1,61 +1,32 @@
 package com.example.learninglanguageapp.models.Request;
 
 
+import com.google.gson.annotations.SerializedName;
+
 public class PaymentRequest {
+    @SerializedName("userId")
     private int userId;
-    private String packageId;
-    private int amount;
-    private double price;
-    private String paymentMethod;
+    private String orderType = "other";
+    private double amount;
+    private String orderDescription;
+    private String name;
+    private int diamondAmount;     // NEW
+    private boolean refillHeart;   // NEW
 
-    public PaymentRequest() {
-    }
 
-    public PaymentRequest(int userId, String packageId, int amount, double price, String paymentMethod) {
-        this.userId = userId;
-        this.packageId = packageId;
+    public PaymentRequest(double amount, String orderDescription, String name,
+                               int diamondAmount, boolean refillHeart) {
         this.amount = amount;
-        this.price = price;
-        this.paymentMethod = paymentMethod;
+        this.orderDescription = orderDescription;
+        this.name = name;
+        this.diamondAmount = diamondAmount;
+        this.refillHeart = refillHeart;
     }
 
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
-    public String getPackageId() {
-        return packageId;
-    }
-
-    public void setPackageId(String packageId) {
-        this.packageId = packageId;
-    }
-
-    public int getAmount() {
-        return amount;
-    }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public String getPaymentMethod() {
-        return paymentMethod;
-    }
-
-    public void setPaymentMethod(String paymentMethod) {
-        this.paymentMethod = paymentMethod;
-    }
+    public String getOrderType() { return orderType; }
+    public double getAmount() { return amount; }
+    public String getOrderDescription() { return orderDescription; }
+    public String getName() { return name; }
+    public int getDiamondAmount() { return diamondAmount; }
+    public boolean isRefillHeart() { return refillHeart; }
 }

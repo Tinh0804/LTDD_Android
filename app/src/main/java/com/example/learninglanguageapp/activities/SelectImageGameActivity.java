@@ -22,7 +22,10 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.bumptech.glide.Glide;
 import com.example.learninglanguageapp.R;
+import com.example.learninglanguageapp.models.Entities.ExerciseEntity;
+import com.example.learninglanguageapp.models.Exercise;
 import com.example.learninglanguageapp.models.Word;
+import com.example.learninglanguageapp.viewmodels.ExerciseViewModel;
 import com.example.learninglanguageapp.viewmodels.LessonViewModel;
 import com.google.android.material.card.MaterialCardView;
 
@@ -53,31 +56,70 @@ public class SelectImageGameActivity extends AppCompatActivity {
     private View feedbackContainer;
 
     // Game Data
-    private List<Word> allWords;
+    private List<Word> allWords; // Dữ liệu này có thể đã lỗi thời, nên dùng allExercises
     private int currentWordIndex = 0;
     private int hearts = MAX_HEARTS;
     private int correctAnswers = 0;
     private int wrongAnswers = 0;
     private long startTime;
 
-    private int lessonId;
-    private int userId;
+    // lessonId ở đây thực ra là unitId
+    private int unitId;
+    private int userId; // Biến này không được sử dụng
     private Handler handler = new Handler(Looper.getMainLooper());
     private boolean isAnswered = false;
+
+    private ExerciseViewModel exerciseViewModel;
+    private List<Exercise> allExercises;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_image_game);
 
-        lessonId = getIntent().getIntExtra("LESSON_ID", 1);
-        userId = getIntent().getIntExtra("USER_ID", 1);
+        // ❗ SỬA LỖI: Gọi initViews() NGAY LẬP TỨC để ánh xạ UI components
+        initViews();
 
+        exerciseViewModel = new ViewModelProvider(this).get(ExerciseViewModel.class);
+
+        unitId = getIntent().getIntExtra("unitId", -1); // Lấy unitId
+        if (unitId == -1) {
+            Toast.makeText(this, "Lỗi: Không tìm thấy Unit ID hợp lệ", Toast.LENGTH_LONG).show();
+            finish();
+            return;
+        }
+
+        exerciseViewModel.fetchExercisesByType(unitId, "listen");
         startTime = System.currentTimeMillis();
 
-        initViews();
-        setupViewModel();
-        loadWords();
+        // Observer dữ liệu bài tập
+        exerciseViewModel.exercisesLiveData.observe(this, exercises -> {
+            if (exercises != null && !exercises.isEmpty()) {
+                allExercises = new ArrayList<Exercise>(exercises);
+                Collections.shuffle(allExercises);
+                currentWordIndex = 0;
+                updateHearts();
+                showCurrentQuestion();
+//                exerciseViewModel.exercisesLiveData.setValue(null); // Reset LiveData
+            } else {
+                Toast.makeText(this, "Không có bài tập nào", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
+
+        // Observer trạng thái loading (Đảm bảo progressBar đã được ánh xạ)
+        exerciseViewModel.loadingLiveData.observe(this, isLoading -> {
+            progressBar.setVisibility(isLoading ? View.VISIBLE : View.GONE);
+            if (isLoading) disableAllOptions();
+        });
+
+        // Observer lỗi
+        exerciseViewModel.errorLiveData.observe(this, error -> {
+            if (error != null) {
+                Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
+                exerciseViewModel.errorLiveData.setValue(null);
+            }
+        });
     }
 
     private void initViews() {
@@ -86,7 +128,10 @@ public class SelectImageGameActivity extends AppCompatActivity {
         tvHearts = findViewById(R.id.tvHearts);
         tvInstruction = findViewById(R.id.tvInstruction);
         tvWord = findViewById(R.id.tvWord);
+
+        // ❗ Đã sửa: Ánh xạ ProgressBar
         progressBar = findViewById(R.id.progressBar);
+
         progressIndicator = findViewById(R.id.progressIndicator);
         feedbackContainer = findViewById(R.id.feedbackContainer);
         tvFeedback = findViewById(R.id.tvFeedback);
@@ -108,45 +153,21 @@ public class SelectImageGameActivity extends AppCompatActivity {
         optionTexts[3] = findViewById(R.id.optionText4);
 
         btnSettings.setOnClickListener(v -> showSettingsDialog());
-        btnAudio.setOnClickListener(v -> playCurrentWordAudio());
-    }
-
-    private void setupViewModel() {
-        viewModel = new ViewModelProvider(this).get(LessonViewModel.class);
-
-        viewModel.getWordsLiveData().observe(this, words -> {
-            if (words != null && !words.isEmpty()) {
-                allWords = new ArrayList<>(words);
-                Collections.shuffle(allWords); // Shuffle for random order
-                showCurrentQuestion();
-            } else {
-                Toast.makeText(this, "Không có từ vựng nào để chơi", Toast.LENGTH_SHORT).show();
-                finish();
+        btnAudio.setOnClickListener(v -> {
+            if (currentWordIndex < allExercises.size()) {
+                playAudio(allExercises.get(currentWordIndex).getAudioFile());
             }
         });
 
-        viewModel.getIsLoadingLiveData().observe(this, isLoading -> {
-            progressBar.setVisibility(isLoading ? View.VISIBLE : View.GONE);
-            if (isLoading) {
-                disableAllOptions();
-            }
-        });
-
-        viewModel.getErrorLiveData().observe(this, error -> {
-            if (error != null) {
-                Toast.makeText(this, error, Toast.LENGTH_LONG).show();
-                finish();
-            }
-        });
+        // Cài đặt mặc định cho các thành phần UI ban đầu
+        tvHearts.setText(String.valueOf(MAX_HEARTS));
+        tvInstruction.setText("Nghe và chọn hình ảnh đúng"); // Đặt hướng dẫn cố định
     }
 
-    private void loadWords() {
-        viewModel.loadWords(lessonId, userId);
-    }
+    // Phương thức setupViewModel đã bị loại bỏ vì đã tích hợp logic vào onCreate()
 
     private void showCurrentQuestion() {
-        if (currentWordIndex >= allWords.size()) {
-            // Game completed
+        if (allExercises == null || currentWordIndex >= allExercises.size()) {
             showGameCompleted();
             return;
         }
@@ -154,68 +175,65 @@ public class SelectImageGameActivity extends AppCompatActivity {
         isAnswered = false;
         feedbackContainer.setVisibility(View.GONE);
 
-        Word currentWord = allWords.get(currentWordIndex);
-        tvWord.setText(currentWord.getWord());
+        Exercise exercise = allExercises.get(currentWordIndex);
+
+        // LƯU Ý: Đây là game "Select Image", nhưng bạn đang hiển thị văn bản (tvWord).
+        // Cần đảm bảo layout và dữ liệu đang hiển thị hình ảnh nếu đó là ý định của bạn.
+        // Nếu bạn muốn hiển thị Hình ảnh, hãy dùng ImageView ở đây.
+        tvWord.setText(exercise.getQuestion());
 
         // Update progress
-        float progress = (float) (currentWordIndex + 1) / allWords.size();
+        float progress = (float)(currentWordIndex + 1)/allExercises.size();
         progressIndicator.setLayoutParams(getProgressParams(progress));
 
-        // Generate options
-        generateOptions(currentWord);
+        // Tạo options từ Exercise.options
+        generateOptions(exercise);
 
-        // Play audio automatically
-        playAudio(currentWord.getAudioFile());
+        // Play audio
+        playAudio(exercise.getAudioFile());
 
-        // Enable all options
         enableAllOptions();
         resetOptionStyles();
     }
 
-    private void generateOptions(Word correctWord) {
-        List<Word> options = new ArrayList<>();
-        options.add(correctWord);
-
-        // Add random wrong options
-        List<Word> otherWords = new ArrayList<>(allWords);
-        otherWords.remove(correctWord);
-        Collections.shuffle(otherWords);
-
-        int optionsToAdd = Math.min(MAX_OPTIONS - 1, otherWords.size());
-        for (int i = 0; i < optionsToAdd; i++) {
-            options.add(otherWords.get(i));
-        }
-
-        // Shuffle options
+    private void generateOptions(Exercise exercise) {
+        List<String> options = new ArrayList<>(exercise.getOptions());
         Collections.shuffle(options);
 
-        // Display options
+        // LƯU Ý QUAN TRỌNG:
+        // Bạn đang sử dụng tvWord (Text) làm câu hỏi và optionTexts (Text) làm đáp án,
+        // nhưng tên Activity là SelectImageGameActivity (Chọn Hình ảnh).
+        // Nếu ý định là hiển thị hình ảnh, bạn cần:
+        // 1. Dùng Glide để tải exercise.getQuestion() vào ImageView (nếu câu hỏi là hình ảnh).
+        // 2. Tải URL hình ảnh từ options (Giả sử options là URL hình ảnh) vào optionImages.
+        // 3. Hiển thị văn bản đáp án đúng/sai ở đâu đó (có lẽ là tvWord hoặc tvInstruction).
+
+        // Hiện tại, code này chỉ xử lý văn bản (text), KHÔNG xử lý hình ảnh.
+        // Tôi giữ lại logic văn bản của bạn và giả định các options là văn bản hiển thị
+
         for (int i = 0; i < MAX_OPTIONS; i++) {
             if (i < options.size()) {
-                Word word = options.get(i);
+                String optionText = options.get(i);
                 optionCards[i].setVisibility(View.VISIBLE);
 
-                // Load image
-                Glide.with(this)
-                        .load(word.getImageUrl())
-                        .placeholder(R.drawable.placeholder)
-                        .error(R.drawable.image_error)
-                        .into(optionImages[i]);
+                // Giả định optionText chứa URL hình ảnh hoặc tên hình ảnh (nhưng bạn đang set vào TextView)
+                // Nếu là hình ảnh, bạn cần tải nó vào optionImages[i]
+                optionTexts[i].setText(optionText);
 
-                optionTexts[i].setText(word.getTranslation());
+                // Nếu bạn muốn hiển thị hình ảnh, hãy dùng:
+                // Glide.with(this).load(optionText).placeholder(R.drawable.placeholder).into(optionImages[i]);
 
-                // Set click listener
                 final int index = i;
                 optionCards[i].setOnClickListener(v -> {
-                    if (!isAnswered) {
-                        checkAnswer(word, index);
-                    }
+                    if (!isAnswered) checkAnswer(optionText, index);
                 });
+
             } else {
                 optionCards[i].setVisibility(View.GONE);
             }
         }
     }
+
     private void playSfx(int resId) {
         if (mediaPlayer != null) {
             mediaPlayer.release();
@@ -224,47 +242,40 @@ public class SelectImageGameActivity extends AppCompatActivity {
         mediaPlayer.start();
     }
 
-    private void checkAnswer(Word selectedWord, int selectedIndex) {
+    private void checkAnswer(String selected, int selectedIndex) {
         isAnswered = true;
         disableAllOptions();
 
-        Word correctWord = allWords.get(currentWordIndex);
-        boolean isCorrect = selectedWord.getWordId() == correctWord.getWordId();
+        Exercise exercise = allExercises.get(currentWordIndex);
+        boolean isCorrect = selected.equals(exercise.getCorrectAnswer());
 
         if (isCorrect) {
-            // Correct answer
             playSfx(R.raw.correct);
             correctAnswers++;
             showCorrectFeedback(selectedIndex);
 
-            // Move to next question after delay
             handler.postDelayed(() -> {
                 currentWordIndex++;
                 showCurrentQuestion();
             }, CORRECT_ANSWER_DELAY);
 
         } else {
-            // Wrong answer
             playSfx(R.raw.wrong);
             wrongAnswers++;
             hearts--;
             updateHearts();
-            showWrongFeedback(selectedIndex, correctWord);
+            showWrongFeedback(selectedIndex, exercise.getCorrectAnswer());
 
-            if (hearts <= 0) {
-                // Game over
-                handler.postDelayed(this::showGameOver, 1500);
-            } else {
-                // Allow retry
-                handler.postDelayed(() -> {
-                    isAnswered = false;
-                    enableAllOptions();
-                    resetOptionStyles();
-                    feedbackContainer.setVisibility(View.GONE);
-                }, 1500);
-            }
+            if (hearts <= 0) handler.postDelayed(this::showGameOver, 1500);
+            else handler.postDelayed(() -> {
+                isAnswered = false;
+                enableAllOptions();
+                resetOptionStyles();
+                feedbackContainer.setVisibility(View.GONE);
+            }, 1500);
         }
     }
+
 
     private void showCorrectFeedback(int correctIndex) {
         // Highlight correct answer
@@ -279,15 +290,13 @@ public class SelectImageGameActivity extends AppCompatActivity {
         tvFeedback.setTextColor(Color.WHITE);
     }
 
-    private void showWrongFeedback(int wrongIndex, Word correctWord) {
-        // Highlight wrong answer
+    private void showWrongFeedback(int wrongIndex, String correctAnswer) {
         optionCards[wrongIndex].setCardBackgroundColor(getColor(R.color.error_red));
         optionCards[wrongIndex].setStrokeColor(getColor(R.color.error_red_dark));
         optionCards[wrongIndex].setStrokeWidth(8);
 
-        // Highlight correct answer
         for (int i = 0; i < MAX_OPTIONS; i++) {
-            if (optionTexts[i].getText().toString().equals(correctWord.getTranslation())) {
+            if (optionTexts[i].getText().toString().equals(correctAnswer)) {
                 optionCards[i].setCardBackgroundColor(getColor(R.color.success_green_light));
                 optionCards[i].setStrokeColor(getColor(R.color.success_green));
                 optionCards[i].setStrokeWidth(8);
@@ -295,12 +304,12 @@ public class SelectImageGameActivity extends AppCompatActivity {
             }
         }
 
-        // Show feedback
         feedbackContainer.setVisibility(View.VISIBLE);
         feedbackContainer.setBackgroundColor(getColor(R.color.error_red));
         tvFeedback.setText("✗ Sai đáp án. Vui lòng chọn lại");
         tvFeedback.setTextColor(Color.WHITE);
     }
+
 
     private void resetOptionStyles() {
         for (MaterialCardView card : optionCards) {
@@ -328,12 +337,15 @@ public class SelectImageGameActivity extends AppCompatActivity {
                 .start();
     }
 
+    // Phương thức này đã bị loại bỏ vì đã tích hợp logic vào initViews()
+    /*
     private void playCurrentWordAudio() {
         if (currentWordIndex < allWords.size()) {
             Word currentWord = allWords.get(currentWordIndex);
             playAudio(currentWord.getAudioFile());
         }
     }
+    */
 
     private void playAudio(String audioUrl) {
         if (audioUrl == null || audioUrl.isEmpty()) return;
@@ -375,6 +387,7 @@ public class SelectImageGameActivity extends AppCompatActivity {
     private void disableAllOptions() {
         for (CardView card : optionCards) {
             card.setEnabled(false);
+            card.setAlpha(0.5f); // Thêm hiệu ứng mờ khi bị disable
         }
     }
 
@@ -401,16 +414,17 @@ public class SelectImageGameActivity extends AppCompatActivity {
     }
 
     private void showGameCompleted() {
+        // LƯU Ý: allWords đã bị loại bỏ, hãy dùng allExercises.size()
         long timeTaken = (System.currentTimeMillis() - startTime) / 1000;
         playSfx(R.raw.complete);
         String message = String.format(
                 "Chúc mừng! Bạn đã hoàn thành!\n\n" +
-                        "Tổng số từ: %d\n" +
+                        "Tổng số câu: %d\n" +
                         "Đúng: %d\n" +
                         "Sai: %d\n" +
                         "Tim còn lại: %d\n" +
                         "Thời gian: %d giây",
-                allWords.size(),
+                allExercises.size(),
                 correctAnswers,
                 wrongAnswers,
                 hearts,
@@ -437,7 +451,10 @@ public class SelectImageGameActivity extends AppCompatActivity {
         wrongAnswers = 0;
         startTime = System.currentTimeMillis();
         updateHearts();
-        Collections.shuffle(allWords);
+        // Cần xáo trộn lại list bài tập
+        if (allExercises != null) {
+            Collections.shuffle(allExercises);
+        }
         showCurrentQuestion();
     }
 

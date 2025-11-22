@@ -5,14 +5,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.learninglanguageapp.R;
 import com.example.learninglanguageapp.adapters.UnitAdapter;
 import com.example.learninglanguageapp.models.Unit;
+import com.example.learninglanguageapp.viewmodels.ExerciseViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +25,7 @@ public class PracticeFragment extends Fragment {
     private ListView listViewUnits;
     private UnitAdapter unitAdapter;
     private List<Unit> mockUnitList;
+    private ExerciseViewModel exerciseViewModel;
 
     @Nullable
     @Override
@@ -30,8 +34,10 @@ public class PracticeFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.activity_practice, container, false);
-
         listViewUnits = view.findViewById(R.id.listUnits);
+
+        // Đảm bảo ViewModel được chia sẻ (requireActivity())
+        exerciseViewModel = new ViewModelProvider(requireActivity()).get(ExerciseViewModel.class);
 
         // Tạo dữ liệu giả
         mockUnitList = new ArrayList<>();
@@ -44,11 +50,28 @@ public class PracticeFragment extends Fragment {
         unitAdapter = new UnitAdapter(requireContext(), mockUnitList);
         listViewUnits.setAdapter(unitAdapter);
 
-        listViewUnits.setOnItemClickListener((parent, view1, position, id) -> {
+        final int unitId = getArguments() != null ? getArguments().getInt("unitId", -1) : -1;
+        if (unitId != -1) {
+            // Gọi phương thức tải TẤT CẢ bài tập của Unit (không lọc theo type)
+            // Điều này kích hoạt kiểm tra cache và gọi API nếu cache trống.
+            exerciseViewModel.fetchExercises(unitId);
+        }
 
+        // Chỉ quan sát lỗi (nếu có)
+        exerciseViewModel.errorLiveData.observe(getViewLifecycleOwner(), error -> {
+            if (error != null) {
+                Toast.makeText(requireContext(), error, Toast.LENGTH_SHORT).show();
+                // ❗ Rất quan trọng: Xóa giá trị lỗi sau khi hiển thị
+                exerciseViewModel.errorLiveData.setValue(null);
+            }
+        });
+
+        // 2️⃣ Click vào unit: Chuyển Fragment và truyền unitId
+        listViewUnits.setOnItemClickListener((parent, view1, position, id) -> {
             Unit clickedUnit = mockUnitList.get(position);
 
             Bundle bundle = new Bundle();
+            // Truyền ID để GameFragment biết nó cần tải dữ liệu nào
             bundle.putInt("unitId", clickedUnit.getUnitId());
 
             GameFragment gameFragment = new GameFragment();

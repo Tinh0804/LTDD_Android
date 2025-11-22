@@ -89,27 +89,30 @@ public class ShopActivity extends AppCompatActivity {
         btnClose.setOnClickListener(v -> finish());
 
         cardDiamond1000.setOnClickListener(v -> {
-            PackagePayment pkg = new PackagePayment("diamond_1000", 1000, 2.00, "diamond");
+            PackagePayment pkg = new PackagePayment("diamond_1000", 1000, 2000, "diamond");
             viewModel.setSelectedPackage(pkg);
             navigateToPayment();
         });
 
         cardDiamond2000.setOnClickListener(v -> {
-            PackagePayment pkg = new PackagePayment("diamond_2000", 2000, 4.00, "diamond");
+            PackagePayment pkg = new PackagePayment("diamond_2000", 2000, 4000, "diamond");
             viewModel.setSelectedPackage(pkg);
             navigateToPayment();
         });
 
         cardDiamond3000.setOnClickListener(v -> {
-            PackagePayment pkg = new PackagePayment("diamond_3000", 3000, 6.00, "diamond");
+            PackagePayment pkg = new PackagePayment("diamond_3000", 3000, 6000, "diamond");
             viewModel.setSelectedPackage(pkg);
             navigateToPayment();
         });
 
+
         btnRedeemHeart.setOnClickListener(v -> {
-            // Show dialog to enter heart code
-            showRedeemHeartDialog();
+            PackagePayment pkg = new PackagePayment("refill_heart", 0, 2000, "heart");
+            viewModel.setSelectedPackage(pkg);
+            navigateToPayment();
         });
+
     }
 
     private void navigateToPayment() {

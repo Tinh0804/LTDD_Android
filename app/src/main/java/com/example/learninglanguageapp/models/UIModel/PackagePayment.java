@@ -2,35 +2,34 @@ package com.example.learninglanguageapp.models.UIModel;
 
 
 public class PackagePayment {
-    private String id;
-    private int amount;
-    private double price;
-    private String type; // "diamond" or "heart"
+    private String name;
+    private int value;          // Số diamond hoặc heart
+    private double price;       // Giá tiền
+    private String type;        // "diamond" hoặc "heart"
 
-    public PackagePayment() {
-    }
-
-    public PackagePayment(String id, int amount, double price, String type) {
-        this.id = id;
-        this.amount = amount;
+    public PackagePayment( String name, int value, double price, String type) {
+        this.name = name;
+        this.value = value;
         this.price = price;
         this.type = type;
     }
 
-    public String getId() {
-        return id;
+    // Getters and Setters
+
+    public String getName() {
+        return name;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getAmount() {
-        return amount;
+    public int getValue() {
+        return value;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public void setValue(int value) {
+        this.value = value;
     }
 
     public double getPrice() {
@@ -48,4 +47,5 @@ public class PackagePayment {
     public void setType(String type) {
         this.type = type;
     }
+
 }

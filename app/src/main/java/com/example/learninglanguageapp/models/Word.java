@@ -1,7 +1,9 @@
 package com.example.learninglanguageapp.models;
 
 
-public class Word {
+import java.io.Serializable;
+
+public class Word implements Serializable {
     private int wordId;
     private int languageId;
     private int lessonId;

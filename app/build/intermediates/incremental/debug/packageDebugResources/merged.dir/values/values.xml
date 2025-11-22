@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:ns1="http://schemas.android.com/tools">
+<resources>
     <color name="background_gray">#F5F5F5</color>
     <color name="background_primary">#FFFFFF</color>
     <color name="background_secondary">#F5F7FA</color>
@@ -42,23 +42,15 @@
     <string name="animal">Animal</string>
     <string name="app_name">LearningLanguageApp</string>
     <string name="close">Close</string>
-    <string name="com.google.firebase.crashlytics.mapping_file_id" ns1:ignore="UnusedResources,TypographyDashes" translatable="false">00000000000000000000000000000000</string>
-    <string name="com.google.firebase.crashlytics.version_control_info">""</string>
-    <string name="default_web_client_id" translatable="false">976124393303-rlu8pmavq33q5q0781jbglma8ntglmb7.apps.googleusercontent.com</string>
+    <string name="default_web_client_id">74834344847-io42cjb2tqhkkquvis1jnbjvec2rl6t5.apps.googleusercontent.com</string>
     <string name="error_invalid_email">Email not valid</string>
     <string name="error_password_not_match">Password not match</string>
     <string name="error_password_too_short">Password too short</string>
     <string name="facebook_app_id">805393175371694</string>
     <string name="facebook_client_token">2c6c96f02d4933003be8c982338856b8</string>
     <string name="fb_login_protocol_scheme">fb805393175371694</string>
-    <string name="firebase_database_url" translatable="false">https://learninglanguageapp-18d06-default-rtdb.asia-southeast1.firebasedatabase.app</string>
     <string name="first_fragment_label">First Fragment</string>
     <string name="flip_card">Flip Card</string>
-    <string name="gcm_defaultSenderId" translatable="false">976124393303</string>
-    <string name="google_api_key" translatable="false">AIzaSyBX1kW_z0rdGw41zkwicVKrkmQ6vTlBQ20</string>
-    <string name="google_app_id" translatable="false">1:976124393303:android:2ea1fef179e7a5764af012</string>
-    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBX1kW_z0rdGw41zkwicVKrkmQ6vTlBQ20</string>
-    <string name="google_storage_bucket" translatable="false">learninglanguageapp-18d06.firebasestorage.app</string>
     <string name="heart">Heart</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="invalid_password">Password must be at least 5 characters</string>
@@ -106,7 +98,6 @@
     <string name="option_image">Option Image</string>
     <string name="play_audio">Play Audio</string>
     <string name="previous">Previous</string>
-    <string name="project_id" translatable="false">learninglanguageapp-18d06</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="register">Register</string>

@@ -1,8 +1,9 @@
 package com.example.learninglanguageapp.models;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Unit {
+public class Unit implements Serializable {
     private int unitId;
     private int courseId;
     private String unitName;

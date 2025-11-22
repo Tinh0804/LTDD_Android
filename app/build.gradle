@@ -1,7 +1,5 @@
 plugins {
     id 'com.android.application'
-    id 'com.google.gms.google-services'
-    id 'com.google.firebase.crashlytics'
 }
 
 android {
@@ -28,7 +26,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField "String", "BASE_URL", '"https://api.yourapp.com/"'
             buildConfigField "boolean", "DEBUG_MODE", "false"
@@ -76,6 +74,7 @@ dependencies {
     implementation libs.lifecycle.livedata.ktx
     implementation libs.lifecycle.viewmodel.ktx
     implementation libs.activity
+    implementation libs.adapters
     annotationProcessor libs.room.compiler
 
     // Retrofit for API calls

@@ -3,7 +3,9 @@ package com.example.learninglanguageapp.network;
 
 import androidx.room.Query;
 
+import com.example.learninglanguageapp.models.Exercise;
 import com.example.learninglanguageapp.models.Request.LoginRequest;
+import com.example.learninglanguageapp.models.Request.OrderInfoMomo;
 import com.example.learninglanguageapp.models.Request.PaymentRequest;
 import com.example.learninglanguageapp.models.Request.RegisterRequest;
 import com.example.learninglanguageapp.models.Request.SocialLoginRequest;
@@ -46,19 +48,15 @@ public interface ApiService {
             @Path("lessonId") int lessonId
     );
 
-    @GET("shop/balance/{userId}")
-    Call<ApiResponse<BalanceResponse>> getBalance(@Path("userId") int userId);
+    @GET("api/Exercises/unit/{unitId}")
+    Call<ApiResponse<List<Exercise>>> getExercisesByUnit(
+            @Path("unitId") int unitId);
 
-    /**
-     * Tạo payment request và nhận payment URL
-     */
-    @POST("shop/payment/create")
-    Call<ApiResponse<PaymentResponse>> createPayment(@Body PaymentRequest request);
+    @POST("api/payment/create-vnpay")
+    Call<PaymentResponse> createVnPay(@Body PaymentRequest model);
 
-    /**
-     * Verify payment status sau khi callback
-     */
-    @GET("shop/payment/verify/{transactionId}")
-    Call<ApiResponse<PaymentResponse>> verifyPayment(@Path("transactionId") String transactionId);
+    @POST("api/payment/create-momo")
+    Call<PaymentResponse> createMomo(@Body OrderInfoMomo model);
+
 
 }

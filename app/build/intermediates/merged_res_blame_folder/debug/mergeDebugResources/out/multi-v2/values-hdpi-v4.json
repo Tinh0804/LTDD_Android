@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.learninglanguageapp-mergeDebugResources-70:/values-hdpi-v4/values-hdpi-v4.xml",
+            "outputFile": "com.example.learninglanguageapp-mergeDebugResources-69:/values-hdpi-v4/values-hdpi-v4.xml",
             "map": [
                 {
-                    "source": "/Users/macbookpro/.gradle/caches/8.13/transforms/36246465837c5819b0b5ec76df187f79/transformed/appcompat-1.6.1/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "source": "/Users/macbookpro/.gradle/caches/8.13/transforms/528b93dbb8bc79a62485d6b9b2f1a3e8/transformed/appcompat-1.6.1/res/values-hdpi-v4/values-hdpi-v4.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

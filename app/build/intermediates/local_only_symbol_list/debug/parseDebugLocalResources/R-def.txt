@@ -538,8 +538,6 @@ string action_sign_in_short
 string animal
 string app_name
 string close
-string com.google.firebase.crashlytics.mapping_file_id
-string com.google.firebase.crashlytics.version_control_info
 string default_web_client_id
 string error_invalid_email
 string error_password_not_match
@@ -547,14 +545,8 @@ string error_password_too_short
 string facebook_app_id
 string facebook_client_token
 string fb_login_protocol_scheme
-string firebase_database_url
 string first_fragment_label
 string flip_card
-string gcm_defaultSenderId
-string google_api_key
-string google_app_id
-string google_crash_reporting_api_key
-string google_storage_bucket
 string heart
 string hello_blank_fragment
 string invalid_password
@@ -567,7 +559,6 @@ string next
 string option_image
 string play_audio
 string previous
-string project_id
 string prompt_email
 string prompt_password
 string register

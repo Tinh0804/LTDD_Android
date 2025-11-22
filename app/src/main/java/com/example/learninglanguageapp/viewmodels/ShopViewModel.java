@@ -8,6 +8,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import com.example.learninglanguageapp.models.Request.PaymentRequest;
 import com.example.learninglanguageapp.models.Response.PaymentResponse;
 import com.example.learninglanguageapp.models.UIModel.PackagePayment;
 import com.example.learninglanguageapp.repository.ShopRepository;
@@ -47,25 +48,26 @@ public class ShopViewModel extends AndroidViewModel {
         selectedPackageLiveData.setValue(pkg);
     }
 
-    public void createPayment(String paymentMethod) {
-        PackagePayment pkg = selectedPackageLiveData.getValue();
-
-        if (pkg == null) {
-            errorLiveData.setValue("No package selected");
-            return;
-        }
-
-        repository.createPayment(
-                userId,
-                pkg.getId(),
-                pkg.getAmount(),
-                pkg.getPrice(),
-                paymentMethod,
-                paymentLiveData,
-                loadingLiveData,
-                errorLiveData
-        );
+    public void createPayment(String method) {
+//        PackagePayment pkg = selectedPackage.getValue();
+//        if (pkg == null) {
+//            errorLiveData.postValue("No package selected");
+//            return;
+//        }
+//
+//        String username = "User"; // sau bạn thay bằng SharedPreferences
+//
+//        PaymentRequest body = new PaymentRequest(
+//                pkg.getPrice(),                         // amount
+//                pkg.getPackageId(),                     // orderDescription
+//                username,                               // name
+//                pkg.getType().equals("diamond") ? pkg.getValue() : 0, // diamondAmount
+//                pkg.getType().equals("heart")           // refillHeart
+//        );
+//
+//        repository.createPayment(method, body, paymentLiveData, loadingLiveData, errorLiveData);
     }
+
 
     public void verifyPayment(String transactionId) {
         MutableLiveData<Boolean> successLiveData = new MutableLiveData<>();

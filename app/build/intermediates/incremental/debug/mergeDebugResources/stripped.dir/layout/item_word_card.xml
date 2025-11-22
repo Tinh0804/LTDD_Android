@@ -238,7 +238,7 @@
                         android:layout_alignParentStart="true"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:contentDescription="@string/flip_card"
-                        android:src="@drawable/ic_flip"
+                        android:src="@android:drawable/ic_popup_sync"
                         app:tint="@color/blue" />
 
                     <!-- Audio Button Back -->

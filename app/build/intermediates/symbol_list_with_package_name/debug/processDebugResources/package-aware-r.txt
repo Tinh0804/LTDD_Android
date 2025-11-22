@@ -3901,6 +3901,7 @@ id cut
 id cvUpgrade
 id cvUserProfile
 id dark
+id dataBinding
 id date_picker_actions
 id decelerate
 id decelerateAndComplete
@@ -4233,6 +4234,8 @@ id notification_main_column_container
 id nowrap
 id off
 id on
+id onAttachStateChangeListener
+id onDateChanged
 id onInterceptTouchReturnSwipe
 id one
 id open_graph
@@ -4407,6 +4410,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textWatcher
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -4873,8 +4877,6 @@ string character_counter_overflowed_content_description
 string character_counter_pattern
 string clear_text_end_icon_content_description
 string close
-string com_google_firebase_crashlytics_mapping_file_id
-string com_google_firebase_crashlytics_version_control_info
 string com_facebook_device_auth_instructions
 string com_facebook_image_download_unknown_error
 string com_facebook_internet_permission_error_message
@@ -4982,14 +4984,8 @@ string fab_transformation_sheet_behavior
 string facebook_app_id
 string facebook_client_token
 string fb_login_protocol_scheme
-string firebase_database_url
 string first_fragment_label
 string flip_card
-string gcm_defaultSenderId
-string google_api_key
-string google_app_id
-string google_crash_reporting_api_key
-string google_storage_bucket
 string heart
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
@@ -5113,7 +5109,6 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string play_audio
 string previous
-string project_id
 string prompt_email
 string prompt_password
 string register
