@@ -4,6 +4,7 @@ package com.example.learninglanguageapp.network;
 import androidx.room.Query;
 
 import com.example.learninglanguageapp.models.Exercise;
+import com.example.learninglanguageapp.models.Lesson;
 import com.example.learninglanguageapp.models.Request.LoginRequest;
 import com.example.learninglanguageapp.models.Request.OrderInfoMomo;
 import com.example.learninglanguageapp.models.Request.PaymentRequest;
@@ -14,6 +15,7 @@ import com.example.learninglanguageapp.models.Response.BalanceResponse;
 import com.example.learninglanguageapp.models.Response.LoginResponse;
 import com.example.learninglanguageapp.models.Response.PaymentResponse;
 import com.example.learninglanguageapp.models.Response.UserResponse;
+import com.example.learninglanguageapp.models.Unit;
 import com.example.learninglanguageapp.models.Word;
 
 import java.util.List;
@@ -58,5 +60,11 @@ public interface ApiService {
     @POST("api/payment/create-momo")
     Call<PaymentResponse> createMomo(@Body OrderInfoMomo model);
 
+    @GET("api/Units")
+    Call<ApiResponse<List<Unit>>> getUnits();
 
+    @GET("api/Lessons/unit/{unitId}")
+    Call<ApiResponse<List<Lesson>>> getLessonsByUnit(
+            @Path("unitId") int unitId
+    );
 }
