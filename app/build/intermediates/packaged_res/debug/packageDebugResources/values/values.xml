@@ -16,6 +16,7 @@
     <color name="gray_light">#E0E0E0</color>
     <color name="green">#58CC02</color>
     <color name="green_dark">#46A302</color>
+    <color name="icon_locked">#9E9E9E</color>
     <color name="primary_green">#03B409</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>

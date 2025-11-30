@@ -1634,6 +1634,7 @@ color green
 color green_dark
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color icon_locked
 color m3_appbar_overlay_color
 color m3_assist_chip_icon_tint_color
 color m3_assist_chip_stroke_color
@@ -3826,8 +3827,6 @@ id card8
 id card9
 id cardArrangeWordGame
 id cardBackContainer
-id cardCheckLevel1
-id cardCheckLevel2
 id cardDiamond1000
 id cardDiamond2000
 id cardDiamond3000
@@ -3835,14 +3834,10 @@ id cardDiamondBalance
 id cardFrontContainer
 id cardHeart
 id cardImageWordGame
-id cardListLevel
-id cardLockedLevel
 id cardMatchingGame
 id cardMenu
 id cardMomo
 id cardProfile
-id cardStarLevel
-id cardStartButton
 id cardUpgrade
 id cardVNPay
 id cardView
@@ -4055,6 +4050,7 @@ id horizontal_only
 id icon
 id iconCheckMomo
 id iconCheckVNPay
+id iconView
 id icon_group
 id icon_only
 id ifRoom
@@ -4079,9 +4075,6 @@ id is_pooling_container_tag
 id italic
 id item_touch_helper_previous_elevation
 id ivApple
-id ivAppleHappy
-id ivAppleSinging
-id ivAppleTop
 id ivArrangeWordIcon
 id ivAvatar
 id ivCheck
@@ -4092,7 +4085,6 @@ id ivLogo
 id ivMatchingIcon
 id ivMenu
 id ivProfileImage
-id ivTrophy
 id ivVocabularyIcon
 id ivWord
 id jumpToEnd
@@ -4118,6 +4110,8 @@ id layoutSecurity
 id left
 id leftToRight
 id legacy
+id lessonCard
+id lessonContainer
 id light
 id line1
 id line3
@@ -4135,6 +4129,7 @@ id lvLevels
 id lvOptions
 id m3_side_sheet
 id main
+id mainContentContainer
 id marquee
 id masked
 id match_constraint
@@ -4464,7 +4459,6 @@ id tvLabelName
 id tvLabelPassword
 id tvLabelPhone
 id tvLanguage
-id tvLevel
 id tvLevelDesc
 id tvLevelName
 id tvLives
@@ -4721,10 +4715,12 @@ layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout item_language
 layout item_leaderboard
+layout item_lesson_circle
 layout item_match_card
 layout item_option
 layout item_study_time
 layout item_unit
+layout item_unit_header_line
 layout item_word_card
 layout language_learn
 layout language_use

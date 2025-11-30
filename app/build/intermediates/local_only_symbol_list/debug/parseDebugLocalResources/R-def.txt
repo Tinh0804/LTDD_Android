@@ -22,6 +22,7 @@ color gray
 color gray_light
 color green
 color green_dark
+color icon_locked
 color primary_green
 color purple_200
 color purple_500
@@ -280,8 +281,6 @@ id card8
 id card9
 id cardArrangeWordGame
 id cardBackContainer
-id cardCheckLevel1
-id cardCheckLevel2
 id cardDiamond1000
 id cardDiamond2000
 id cardDiamond3000
@@ -289,14 +288,10 @@ id cardDiamondBalance
 id cardFrontContainer
 id cardHeart
 id cardImageWordGame
-id cardListLevel
-id cardLockedLevel
 id cardMatchingGame
 id cardMenu
 id cardMomo
 id cardProfile
-id cardStarLevel
-id cardStartButton
 id cardUpgrade
 id cardVNPay
 id cardView
@@ -321,6 +316,7 @@ id get_started_button
 id header
 id iconCheckMomo
 id iconCheckVNPay
+id iconView
 id imageView
 id imgAvatar
 id imgFlag
@@ -329,9 +325,6 @@ id imgLogo
 id imgMedal
 id imgUnit
 id ivApple
-id ivAppleHappy
-id ivAppleSinging
-id ivAppleTop
 id ivArrangeWordIcon
 id ivAvatar
 id ivCheck
@@ -342,7 +335,6 @@ id ivLogo
 id ivMatchingIcon
 id ivMenu
 id ivProfileImage
-id ivTrophy
 id ivVocabularyIcon
 id ivWord
 id layoutAccessibility
@@ -360,6 +352,8 @@ id layoutNotification
 id layoutPersonalInfo
 id layoutPreferences
 id layoutSecurity
+id lessonCard
+id lessonContainer
 id listUnits
 id listViewLearn
 id listViewUse
@@ -367,6 +361,7 @@ id login_button
 id lvLevels
 id lvOptions
 id main
+id mainContentContainer
 id navAccount
 id navFriend
 id navHome
@@ -434,7 +429,6 @@ id tvLabelName
 id tvLabelPassword
 id tvLabelPhone
 id tvLanguage
-id tvLevel
 id tvLevelDesc
 id tvLevelName
 id tvLives
@@ -507,10 +501,12 @@ layout fragment_home
 layout fragment_home2
 layout item_language
 layout item_leaderboard
+layout item_lesson_circle
 layout item_match_card
 layout item_option
 layout item_study_time
 layout item_unit
+layout item_unit_header_line
 layout item_word_card
 layout language_learn
 layout language_use

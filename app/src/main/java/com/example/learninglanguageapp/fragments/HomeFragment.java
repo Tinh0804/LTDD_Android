@@ -2,40 +2,162 @@ package com.example.learninglanguageapp.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.learninglanguageapp.R;
 import com.example.learninglanguageapp.activities.LessonActivity;
+import com.example.learninglanguageapp.models.Lesson;
+import com.example.learninglanguageapp.models.Unit;
+import com.example.learninglanguageapp.models.UnitWithLessons;
+import com.example.learninglanguageapp.viewmodels.UnitViewModel;
+
+import java.util.List;
 
 public class HomeFragment extends Fragment {
 
+    private UnitViewModel unitViewModel;
+    private LinearLayout lessonContainer;
+    private ProgressBar progressBar;
+
+    private int lessonIndex = 0;
+
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        View cardStarLevel = view.findViewById(R.id.cardStarLevel);
+        lessonContainer = view.findViewById(R.id.lessonContainer);
+        progressBar = view.findViewById(R.id.progressBar);
 
-        cardStarLevel.setOnClickListener(v -> {
-            Intent intent = new Intent(getActivity(), LessonActivity.class);
+        unitViewModel = new ViewModelProvider(this).get(UnitViewModel.class);
 
-            intent.putExtra("LESSON_ID", 1);
-//            intent.putExtra("USER_ID", 123);
-            intent.putExtra("CATEGORY_NAME", "Animal");
+        unitViewModel.getUnitsWithLessonsLiveData().observe(getViewLifecycleOwner(), this::renderCoursePath);
 
-            startActivity(intent);
+        unitViewModel.getIsLoadingLiveData().observe(getViewLifecycleOwner(), isLoading -> {
+            if (isLoading != null) {
+                progressBar.setVisibility(isLoading ? View.VISIBLE : View.GONE);
+                lessonContainer.setVisibility(isLoading ? View.GONE : View.VISIBLE);
+            }
+        });
+
+        unitViewModel.getErrorLiveData().observe(getViewLifecycleOwner(), error -> {
+            if (error != null)
+                Toast.makeText(getContext(), "Error: " + error, Toast.LENGTH_LONG).show();
         });
 
         return view;
     }
-}
 
+    private void renderCoursePath(List<UnitWithLessons> unitWithLessonsList) {
+        lessonContainer.removeAllViews();
+        LayoutInflater inflater = LayoutInflater.from(getContext());
+        lessonIndex = 0; // Reset index khi render
+
+        for (UnitWithLessons unitWithLessons : unitWithLessonsList) {
+            Unit unit = unitWithLessons.getUnit();
+
+            View headerView = inflater.inflate(R.layout.item_unit_header_line, lessonContainer, false);
+            TextView tvUnitName = headerView.findViewById(R.id.tvUnitName);
+            tvUnitName.setText(String.format("%d. %s", unit.getOrderIndex(), unit.getUnitName()));
+            lessonContainer.addView(headerView);
+
+            for (Lesson lesson : unitWithLessons.getLessons()) {
+                View lessonView = createLessonView(inflater, unit, lesson, lessonIndex);
+                lessonContainer.addView(lessonView);
+                lessonIndex++;
+            }
+        }
+    }
+
+    private View createLessonView(LayoutInflater inflater, Unit unit, Lesson lesson, int index) {
+
+        View lessonView = inflater.inflate(R.layout.item_lesson_circle, null, false);
+        FrameLayout lessonCard = lessonView.findViewById(R.id.lessonCard);
+        ImageView iconView = lessonView.findViewById(R.id.iconView);
+
+        if (lessonCard == null || iconView == null) {
+            return new View(getContext());
+        }
+
+        boolean isLocked = lesson.isUnlockRequired() || unit.isLocked();
+
+// 1. Áp dụng Style và Icon
+        if (isLocked) {
+            lessonCard.setBackgroundResource(R.drawable.bg_circle_locked);
+            iconView.setImageResource(R.drawable.ic_lock);
+            iconView.setColorFilter(ContextCompat.getColor(getContext(), R.color.icon_locked));
+            lessonCard.setAlpha(0.7f);
+        } else {
+            if (lesson.getOrderIndex() <= 1) {
+                lessonCard.setBackgroundResource(R.drawable.bg_gradient_yellow);
+                iconView.setImageResource(R.drawable.ic_check);
+            } else {
+                lessonCard.setBackgroundResource(R.drawable.bg_gradient_purple);
+                iconView.setImageResource(R.drawable.ic_star);
+            }
+            iconView.setColorFilter(ContextCompat.getColor(getContext(), android.R.color.white));
+            lessonCard.setAlpha(1.0f);
+        }
+
+        lessonCard.setOnClickListener(v -> {
+            if (isLocked)
+                Toast.makeText(getContext(), "Lesson is locked!", Toast.LENGTH_SHORT).show();
+            else {
+                Intent intent = new Intent(getActivity(), LessonActivity.class);
+                intent.putExtra("LESSON_ID", lesson.getLessonId());
+                intent.putExtra("CATEGORY_NAME", lesson.getLessonName());
+                startActivity(intent);
+            }
+        });
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        params.topMargin = 20;
+        params.bottomMargin = 20;
+        int marginUnit = (int) (getResources().getDisplayMetrics().density * 15);
+        int positionCycle = index % 5;
+        switch (positionCycle) {
+            case 0:
+                params.gravity = Gravity.START;
+                params.leftMargin = marginUnit;
+                params.rightMargin = marginUnit * 3;
+                break;
+            case 1:
+                params.gravity = Gravity.CENTER_HORIZONTAL;
+                params.leftMargin = marginUnit * 2;
+                params.rightMargin = marginUnit * 2;
+                break;
+            case 2:
+                params.gravity = Gravity.END;
+                params.leftMargin = marginUnit * 3;
+                params.rightMargin = marginUnit;
+                break;
+            case 3:
+                params.gravity = Gravity.CENTER_HORIZONTAL;
+                params.leftMargin = marginUnit * 2;
+                params.rightMargin = marginUnit * 2;
+                break;
+            case 4:
+                params.gravity = Gravity.START;
+                params.leftMargin = marginUnit;
+                params.rightMargin = marginUnit * 3;
+                break;
+        }
+        lessonView.setLayoutParams(params);
+        return lessonView;
+    }
+}

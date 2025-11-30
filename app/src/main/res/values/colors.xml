@@ -53,5 +53,6 @@
     <color name="blue_light">#E8EBFF</color>
 
     <color name="error_red_light">#FFD6D6</color>
+    <color name="icon_locked">#9E9E9E</color>
 
 </resources>
