@@ -8,64 +8,48 @@ public class Unit implements Serializable {
     private int courseId;
     private String unitName;
     private int orderIndex;
-    private boolean unlockRequired;
-    private List<Lesson> lessons; // Danh sách các bài học trong Unit
+    private boolean isLocked;
+    private int totalLessons; // Thêm
+    private int completedLessons; // Thêm
 
     public Unit() {}
 
-    public Unit(int unitId, int courseId, String unitName, int orderIndex) {
+    public Unit(int unitId, int courseId, String unitName, int orderIndex, boolean isLocked, int totalLessons, int completedLessons) {
         this.unitId = unitId;
         this.courseId = courseId;
         this.unitName = unitName;
         this.orderIndex = orderIndex;
-        this.unlockRequired = false;
+        this.isLocked = isLocked;
+        this.totalLessons = totalLessons;
+        this.completedLessons = completedLessons;
     }
 
     public int getUnitId() {
         return unitId;
     }
-
-    public void setUnitId(int unitId) {
-        this.unitId = unitId;
-    }
-
     public int getCourseId() {
         return courseId;
     }
-
-    public void setCourseId(int courseId) {
-        this.courseId = courseId;
-    }
-
     public String getUnitName() {
         return unitName;
     }
-
-    public void setUnitName(String unitName) {
-        this.unitName = unitName;
-    }
-
     public int getOrderIndex() {
         return orderIndex;
     }
-
-    public void setOrderIndex(int orderIndex) {
-        this.orderIndex = orderIndex;
+    public boolean isLocked() {
+        return isLocked;
     }
-
-    public boolean isUnlockRequired() {
-        return unlockRequired;
+    public int getTotalLessons() {
+        return totalLessons;
     }
-
-    public void setUnlockRequired(boolean unlockRequired) {
-        this.unlockRequired = unlockRequired;
+    public int getCompletedLessons() {
+        return completedLessons;
     }
-
-    public List<Lesson> getLessons() {
-        return lessons;
-    }
-
-    public void setLessons(List<Lesson> lessons) {
-        this.lessons = lessons;
-    }
+    public void setUnitId(int unitId) { this.unitId = unitId; }
+    public void setCourseId(int courseId) { this.courseId = courseId; }
+    public void setUnitName(String unitName) { this.unitName = unitName; }
+    public void setOrderIndex(int orderIndex) { this.orderIndex = orderIndex; }
+    public void setLocked(boolean locked) { isLocked = locked; }
+    public void setTotalLessons(int totalLessons) { this.totalLessons = totalLessons; }
+    public void setCompletedLessons(int completedLessons) { this.completedLessons = completedLessons; }
 }
