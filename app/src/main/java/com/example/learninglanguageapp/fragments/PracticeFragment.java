@@ -41,11 +41,11 @@ public class PracticeFragment extends Fragment {
 
         // Tạo dữ liệu giả
         mockUnitList = new ArrayList<>();
-        mockUnitList.add(new Unit(1, 1, "Animals", 1));
-        mockUnitList.add(new Unit(2, 1, "Family", 2));
-        mockUnitList.add(new Unit(3, 1, "Food", 3));
-        mockUnitList.add(new Unit(4, 1, "Weather", 4));
-        mockUnitList.add(new Unit(5, 1, "Daily Activities", 5));
+        mockUnitList.add(new Unit(1, 1, "Animals", 1, false, 5, 0));
+        mockUnitList.add(new Unit(2, 1, "Family", 2, false, 4, 0));
+        mockUnitList.add(new Unit(3, 1, "Food", 3, true, 5, 0));
+        mockUnitList.add(new Unit(4, 1, "Weather", 4, true, 3, 0));
+        mockUnitList.add(new Unit(5, 1, "Daily Activities", 5, true, 5, 0));
 
         unitAdapter = new UnitAdapter(requireContext(), mockUnitList);
         listViewUnits.setAdapter(unitAdapter);
