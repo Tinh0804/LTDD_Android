@@ -75,7 +75,7 @@ public class GameFragment extends Fragment {
         cardImageWordGame.setOnClickListener(v -> triggerFetchAndOpenGame(unitId, "listen", SelectImageGameActivity.class));
         cardViewPictureVocabulary.setOnClickListener(v -> triggerFetchAndOpenGame(unitId, "match_pairs", MatchGameActivity.class));
         cardViewArrangeWord.setOnClickListener(v -> triggerFetchAndOpenGame(unitId, "word_order", GameWordropActivity.class));
-        cardViewMatchingGame.setOnClickListener(v -> triggerFetchAndOpenGame(unitId, "MATCHING", MatchingGameActivity.class));
+        cardViewMatchingGame.setOnClickListener(v -> triggerFetchAndOpenGame(unitId, "match_pairs", MatchingGameActivity.class));
     }
 
     private void triggerFetchAndOpenGame(int unitId, String type, Class<?> activityClass) {
