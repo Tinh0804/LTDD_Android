@@ -67,7 +67,7 @@ public class HomeFragment extends Fragment {
     private void renderCoursePath(List<UnitWithLessons> unitWithLessonsList) {
         lessonContainer.removeAllViews();
         LayoutInflater inflater = LayoutInflater.from(getContext());
-        lessonIndex = 0; // Reset index khi render
+        lessonIndex = 0;
 
         for (UnitWithLessons unitWithLessons : unitWithLessonsList) {
             Unit unit = unitWithLessons.getUnit();
@@ -77,12 +77,93 @@ public class HomeFragment extends Fragment {
             tvUnitName.setText(String.format("%d. %s", unit.getOrderIndex(), unit.getUnitName()));
             lessonContainer.addView(headerView);
 
-            for (Lesson lesson : unitWithLessons.getLessons()) {
-                View lessonView = createLessonView(inflater, unit, lesson, lessonIndex);
-                lessonContainer.addView(lessonView);
+            List<Lesson> lessons = unitWithLessons.getLessons();
+            for (int i = 0; i < lessons.size(); i++) {
+                Lesson lesson = lessons.get(i);
+
+                // Nếu là lesson thứ 3 (index 2), thêm mascot và lesson vào cùng 1 hàng
+                if (i == 2) {
+                    View rowView = createLessonWithMascotRow(inflater, unit, lesson, lessonIndex);
+                    lessonContainer.addView(rowView);
+                } else {
+                    View lessonView = createLessonView(inflater, unit, lesson, lessonIndex);
+                    lessonContainer.addView(lessonView);
+                }
                 lessonIndex++;
             }
         }
+    }
+
+    private View createLessonWithMascotRow(LayoutInflater inflater, Unit unit, Lesson lesson, int index) {
+        // Tạo LinearLayout ngang để chứa lesson và mascot
+        LinearLayout rowLayout = new LinearLayout(getContext());
+        rowLayout.setOrientation(LinearLayout.HORIZONTAL);
+        rowLayout.setGravity(Gravity.CENTER_HORIZONTAL);
+
+        LinearLayout.LayoutParams rowParams = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+        );
+        rowParams.topMargin = 20;
+        rowParams.bottomMargin = 20;
+        rowLayout.setLayoutParams(rowParams);
+
+        // Tạo lesson view
+        View lessonView = inflater.inflate(R.layout.item_lesson_circle, null, false);
+        FrameLayout lessonCard = lessonView.findViewById(R.id.lessonCard);
+        ImageView iconView = lessonView.findViewById(R.id.iconView);
+
+        if (lessonCard != null && iconView != null) {
+            boolean isLocked = lesson.isUnlockRequired() || unit.isLocked();
+
+            if (isLocked) {
+                lessonCard.setBackgroundResource(R.drawable.bg_circle_locked);
+                iconView.setImageResource(R.drawable.ic_lock);
+                iconView.setColorFilter(ContextCompat.getColor(getContext(), R.color.icon_locked));
+                lessonCard.setAlpha(0.7f);
+            } else {
+                if (lesson.getOrderIndex() <= 1) {
+                    lessonCard.setBackgroundResource(R.drawable.bg_gradient_yellow);
+                    iconView.setImageResource(R.drawable.ic_check);
+                } else {
+                    lessonCard.setBackgroundResource(R.drawable.bg_gradient_purple);
+                    iconView.setImageResource(R.drawable.ic_star);
+                }
+                iconView.setColorFilter(ContextCompat.getColor(getContext(), android.R.color.white));
+                lessonCard.setAlpha(1.0f);
+            }
+
+            lessonCard.setOnClickListener(v -> {
+                if (isLocked)
+                    Toast.makeText(getContext(), "Lesson is locked!", Toast.LENGTH_SHORT).show();
+                else {
+                    Intent intent = new Intent(getActivity(), LessonActivity.class);
+                    intent.putExtra("LESSON_ID", lesson.getLessonId());
+                    intent.putExtra("CATEGORY_NAME", lesson.getLessonName());
+                    startActivity(intent);
+                }
+            });
+        }
+
+        // Thêm lesson vào row với margin nhỏ bên phải
+        LinearLayout.LayoutParams lessonParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        lessonParams.rightMargin = (int) (getResources().getDisplayMetrics().density * 20);
+        lessonView.setLayoutParams(lessonParams);
+        rowLayout.addView(lessonView);
+
+        ImageView mascotView = new ImageView(getContext());
+        mascotView.setImageResource(R.drawable.mascot);
+
+        LinearLayout.LayoutParams mascotParams = new LinearLayout.LayoutParams(
+                (int) (getResources().getDisplayMetrics().density * 80),
+                (int) (getResources().getDisplayMetrics().density * 80)
+        );
+        mascotView.setLayoutParams(mascotParams);
+        mascotView.setScaleType(ImageView.ScaleType.FIT_CENTER);
+
+        rowLayout.addView(mascotView);
+
+        return rowLayout;
     }
 
     private View createLessonView(LayoutInflater inflater, Unit unit, Lesson lesson, int index) {
@@ -97,7 +178,7 @@ public class HomeFragment extends Fragment {
 
         boolean isLocked = lesson.isUnlockRequired() || unit.isLocked();
 
-// 1. Áp dụng Style và Icon
+        // Áp dụng Style và Icon
         if (isLocked) {
             lessonCard.setBackgroundResource(R.drawable.bg_circle_locked);
             iconView.setImageResource(R.drawable.ic_lock);
@@ -125,36 +206,42 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        // Điều chỉnh layout params - các lesson gần center với độ nghiêng nhẹ
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         params.topMargin = 20;
         params.bottomMargin = 20;
-        int marginUnit = (int) (getResources().getDisplayMetrics().density * 15);
+
+        // Sử dụng margin nhỏ và đều để lesson gần center
+        int baseMargin = (int) (getResources().getDisplayMetrics().density * 20);
+        int offsetMargin = (int) (getResources().getDisplayMetrics().density * 15);
         int positionCycle = index % 5;
+
         switch (positionCycle) {
             case 0:
-                params.gravity = Gravity.START;
-                params.leftMargin = marginUnit;
-                params.rightMargin = marginUnit * 3;
+                params.gravity = Gravity.CENTER_HORIZONTAL;
+                params.leftMargin = baseMargin + offsetMargin;
+                params.rightMargin = baseMargin - offsetMargin;
                 break;
             case 1:
                 params.gravity = Gravity.CENTER_HORIZONTAL;
-                params.leftMargin = marginUnit * 2;
-                params.rightMargin = marginUnit * 2;
+                params.leftMargin = baseMargin - (offsetMargin / 2);
+                params.rightMargin = baseMargin + (offsetMargin / 2);
                 break;
             case 2:
-                params.gravity = Gravity.END;
-                params.leftMargin = marginUnit * 3;
-                params.rightMargin = marginUnit;
+                params.gravity = Gravity.CENTER_HORIZONTAL;
+                params.leftMargin = baseMargin - offsetMargin;
+                params.rightMargin = baseMargin + offsetMargin;
                 break;
             case 3:
                 params.gravity = Gravity.CENTER_HORIZONTAL;
-                params.leftMargin = marginUnit * 2;
-                params.rightMargin = marginUnit * 2;
+                params.leftMargin = baseMargin - (offsetMargin / 2);
+                params.rightMargin = baseMargin + (offsetMargin / 2);
                 break;
             case 4:
-                params.gravity = Gravity.START;
-                params.leftMargin = marginUnit;
-                params.rightMargin = marginUnit * 3;
+                params.gravity = Gravity.CENTER_HORIZONTAL;
+                params.leftMargin = baseMargin + offsetMargin;
+                params.rightMargin = baseMargin - offsetMargin;
                 break;
         }
         lessonView.setLayoutParams(params);
