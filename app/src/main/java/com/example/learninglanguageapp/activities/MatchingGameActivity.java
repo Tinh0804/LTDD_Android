@@ -233,6 +233,8 @@ public class MatchingGameActivity extends AppCompatActivity {
         boolean isMatch = checkIfMatch(word1, word2);
 
         if (isMatch) {
+            playSfx(R.raw.correct);
+
             highlightCard(card1, ContextCompat.getColor(this, R.color.success_green));
             highlightCard(card2, ContextCompat.getColor(this, R.color.success_green));
 
@@ -255,6 +257,8 @@ public class MatchingGameActivity extends AppCompatActivity {
             }, 600);
 
         } else {
+            playSfx(R.raw.wrong);
+
             highlightCard(card1, ContextCompat.getColor(this, R.color.error_red));
             highlightCard(card2, ContextCompat.getColor(this, R.color.error_red));
             hearts--;
@@ -335,18 +339,20 @@ public class MatchingGameActivity extends AppCompatActivity {
                 case 0:
                     finish();
                     break;
-                    case 1:
-                        restartGame();
-                        break;
+                case 1:
+                    restartGame();
+                    break;
             }
         }).show();
     }
 
     private void showGameOver() {
+        playSfx(R.raw.game_over);
         new AlertDialog.Builder(this).setTitle("Hết lượt chơi!").setMessage("Bạn đã hết tim. Hãy thử lại nhé!").setCancelable(false).setPositiveButton("Về trang chủ", (d, w) -> finish()).setNegativeButton("Chơi lại", (d, w) -> restartGame()).show();
     }
 
     private void showGameCompleted() {
+        playSfx(R.raw.complete);
         String message = String.format("Chúc mừng! Bạn đã hoàn thành!\n\n" + "Tim còn lại: %d\n" + "Tiến trình: %d%%", hearts, currentProgress);
         new AlertDialog.Builder(this).setTitle("Hoàn thành!").setMessage(message).setCancelable(false).setPositiveButton("Về trang chủ", (d, w) -> finish()).setNegativeButton("Chơi lại", (d, w) -> restartGame()).show();
     }
