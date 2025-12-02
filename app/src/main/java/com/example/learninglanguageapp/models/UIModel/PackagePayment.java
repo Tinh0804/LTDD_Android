@@ -1,7 +1,9 @@
 package com.example.learninglanguageapp.models.UIModel;
 
 
-public class PackagePayment {
+import java.io.Serializable;
+
+public class PackagePayment implements Serializable {
     private String name;
     private int value;          // Số diamond hoặc heart
     private double price;       // Giá tiền
@@ -47,5 +49,4 @@ public class PackagePayment {
     public void setType(String type) {
         this.type = type;
     }
-
 }

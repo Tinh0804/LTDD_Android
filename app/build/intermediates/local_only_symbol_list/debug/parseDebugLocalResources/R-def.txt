@@ -46,6 +46,10 @@ dimen activity_vertical_margin
 dimen fab_margin
 drawable advance
 drawable andrew
+drawable answer_a
+drawable answer_b
+drawable answer_c
+drawable anwser_d
 drawable app
 drawable apple_welcome
 drawable apple_welcome2
@@ -396,12 +400,15 @@ id overlayView
 id passwordLayout
 id prg
 id progressBar
+id progressBar1
+id progressBar2
 id progressIndicator
 id recyclerViewLeaderboard
 id scrollView
 id selectedWordsContainer
 id splash_text
 id switchDarkMode
+id textView2
 id topBar
 id top_background
 id tvArrangeWordSubtitle

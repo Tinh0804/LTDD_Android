@@ -3235,6 +3235,10 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable advance
 drawable andrew
+drawable answer_a
+drawable answer_b
+drawable answer_c
+drawable anwser_d
 drawable app
 drawable apple_welcome
 drawable apple_welcome2
@@ -4289,6 +4293,8 @@ id postLayout
 id pressed
 id prg
 id progressBar
+id progressBar1
+id progressBar2
 id progressIndicator
 id progress_bar
 id progress_circular
@@ -4405,6 +4411,7 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView2
 id textWatcher
 id text_input_end_icon
 id text_input_error_icon

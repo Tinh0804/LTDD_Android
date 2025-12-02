@@ -29,7 +29,7 @@ public final class ActivityWebViewBinding implements ViewBinding {
   public final ConstraintLayout layoutHeader;
 
   @NonNull
-  public final ProgressBar progressBar;
+  public final ProgressBar progressBar2;
 
   @NonNull
   public final TextView tvTitle;
@@ -38,12 +38,12 @@ public final class ActivityWebViewBinding implements ViewBinding {
   public final WebView webView;
 
   private ActivityWebViewBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView btnClose,
-      @NonNull ConstraintLayout layoutHeader, @NonNull ProgressBar progressBar,
+      @NonNull ConstraintLayout layoutHeader, @NonNull ProgressBar progressBar2,
       @NonNull TextView tvTitle, @NonNull WebView webView) {
     this.rootView = rootView;
     this.btnClose = btnClose;
     this.layoutHeader = layoutHeader;
-    this.progressBar = progressBar;
+    this.progressBar2 = progressBar2;
     this.tvTitle = tvTitle;
     this.webView = webView;
   }
@@ -87,9 +87,9 @@ public final class ActivityWebViewBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.progressBar;
-      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
-      if (progressBar == null) {
+      id = R.id.progressBar2;
+      ProgressBar progressBar2 = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar2 == null) {
         break missingId;
       }
 
@@ -106,7 +106,7 @@ public final class ActivityWebViewBinding implements ViewBinding {
       }
 
       return new ActivityWebViewBinding((ConstraintLayout) rootView, btnClose, layoutHeader,
-          progressBar, tvTitle, webView);
+          progressBar2, tvTitle, webView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

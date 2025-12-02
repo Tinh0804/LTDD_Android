@@ -3234,6 +3234,10 @@ int drawable abc_textfield_search_material 0x7f080077
 int drawable abc_vector_test 0x7f080078
 int drawable advance 0x7f080079
 int drawable andrew 0x7f08007a
+int drawable answer_a 0x7f08020d
+int drawable answer_b 0x7f08020e
+int drawable answer_c 0x7f08020f
+int drawable anwser_d 0x7f080210
 int drawable app 0x7f08007b
 int drawable apple_welcome 0x7f08007c
 int drawable apple_welcome2 0x7f08007d
@@ -4288,6 +4292,8 @@ int id postLayout 0x7f0a0287
 int id pressed 0x7f0a0288
 int id prg 0x7f0a0289
 int id progressBar 0x7f0a028a
+int id progressBar1 0x7f0a0383
+int id progressBar2 0x7f0a0384
 int id progressIndicator 0x7f0a028b
 int id progress_bar 0x7f0a028c
 int id progress_circular 0x7f0a028d
@@ -4404,6 +4410,7 @@ int id textSpacerNoButtons 0x7f0a02fb
 int id textSpacerNoTitle 0x7f0a02fc
 int id textStart 0x7f0a02fd
 int id textTop 0x7f0a02fe
+int id textView2 0x7f0a0382
 int id textWatcher 0x7f0a02ff
 int id text_input_end_icon 0x7f0a0300
 int id text_input_error_icon 0x7f0a0301

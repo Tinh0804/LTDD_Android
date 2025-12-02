@@ -20,6 +20,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.learninglanguageapp.R;
 import com.example.learninglanguageapp.models.Exercise;
 import com.example.learninglanguageapp.models.Response.UserResponse;
+import com.example.learninglanguageapp.utils.HelperFunction;
 import com.example.learninglanguageapp.utils.SharedPrefsHelper;
 import com.example.learninglanguageapp.viewmodels.ExerciseViewModel;
 import com.google.android.material.card.MaterialCardView;
@@ -57,18 +58,23 @@ public class MatchingGameActivity extends AppCompatActivity {
     private Map<String, String> correctPairs = new HashMap<>(); // Ánh xạ cặp đúng (Eng <-> Viet)
     private List<Integer> matchedCards = new ArrayList<>(); // Các thẻ đã ghép thành công
     private List<Exercise> matchingExercises = new ArrayList<>(); // Exercises tải từ API
+    private HelperFunction helperFunction;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_matching_game);
+        HelperFunction.init(getApplicationContext());
         sharedPrefsHelper = new SharedPrefsHelper(this);
         unitId = getIntent().getIntExtra("unitId", 1);
-        loadUserHearts();
+//        loadUserHearts();
+        helperFunction = HelperFunction.getInstance();
+        this.hearts = helperFunction.loadUserHearts();
         initViews();
         initViewModel();
         updateUI();
+
     }
 
     private void initViews() {
@@ -358,7 +364,8 @@ public class MatchingGameActivity extends AppCompatActivity {
     }
     private void restartGame() {
         currentProgress = 0;
-        loadUserHearts();
+//        loadUserHearts();
+        this.hearts = helperFunction.loadUserHearts();
         selectedCards.clear();
         matchedCards.clear();
         isCheckingAnswer = false;

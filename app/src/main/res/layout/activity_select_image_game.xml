@@ -193,14 +193,17 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginVertical="10dp"
+                        android:gravity="center"
                         android:orientation="vertical"
                         android:padding="12dp">
 
                         <ImageView
                             android:id="@+id/optionImage1"
-                            android:layout_width="match_parent"
-                            android:layout_height="120dp"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/answer_a"
                             android:contentDescription="@string/option_image"
                             android:scaleType="centerCrop" />
 
@@ -212,7 +215,8 @@
                             android:layout_marginTop="8dp"
                             android:text="crab"
                             android:textColor="@android:color/black"
-                            android:textSize="16sp" />
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
@@ -238,8 +242,11 @@
 
                         <ImageView
                             android:id="@+id/optionImage2"
-                            android:layout_width="match_parent"
-                            android:layout_height="120dp"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center"
+                            android:layout_marginVertical="10dp"
+                            android:background="@drawable/answer_b"
                             android:contentDescription="@string/option_image"
                             android:scaleType="centerCrop" />
 
@@ -251,7 +258,8 @@
                             android:layout_marginTop="8dp"
                             android:text="sunflower"
                             android:textColor="@android:color/black"
-                            android:textSize="16sp" />
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
@@ -272,13 +280,16 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
                         android:orientation="vertical"
                         android:padding="12dp">
 
                         <ImageView
                             android:id="@+id/optionImage3"
-                            android:layout_width="match_parent"
-                            android:layout_height="120dp"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/answer_c"
                             android:contentDescription="@string/option_image"
                             android:scaleType="centerCrop" />
 
@@ -290,7 +301,8 @@
                             android:layout_marginTop="8dp"
                             android:text="banana"
                             android:textColor="@android:color/black"
-                            android:textSize="16sp" />
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
@@ -311,13 +323,16 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
                         android:orientation="vertical"
                         android:padding="12dp">
 
                         <ImageView
                             android:id="@+id/optionImage4"
-                            android:layout_width="match_parent"
-                            android:layout_height="120dp"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/anwser_d"
                             android:contentDescription="@string/option_image"
                             android:scaleType="centerCrop" />
 
@@ -329,7 +344,8 @@
                             android:layout_marginTop="8dp"
                             android:text="shoes"
                             android:textColor="@android:color/black"
-                            android:textSize="16sp" />
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
             </GridLayout>

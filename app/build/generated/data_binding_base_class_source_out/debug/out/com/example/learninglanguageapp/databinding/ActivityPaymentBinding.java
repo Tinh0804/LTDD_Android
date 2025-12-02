@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatButton;
@@ -42,10 +43,13 @@ public final class ActivityPaymentBinding implements ViewBinding {
   @NonNull
   public final ConstraintLayout layoutHeader;
 
+  @NonNull
+  public final ProgressBar progressBar1;
+
   private ActivityPaymentBinding(@NonNull ConstraintLayout rootView, @NonNull ImageView btnBack,
       @NonNull AppCompatButton btnContinue, @NonNull CardView cardMomo, @NonNull CardView cardVNPay,
       @NonNull ImageView iconCheckMomo, @NonNull ImageView iconCheckVNPay,
-      @NonNull ConstraintLayout layoutHeader) {
+      @NonNull ConstraintLayout layoutHeader, @NonNull ProgressBar progressBar1) {
     this.rootView = rootView;
     this.btnBack = btnBack;
     this.btnContinue = btnContinue;
@@ -54,6 +58,7 @@ public final class ActivityPaymentBinding implements ViewBinding {
     this.iconCheckMomo = iconCheckMomo;
     this.iconCheckVNPay = iconCheckVNPay;
     this.layoutHeader = layoutHeader;
+    this.progressBar1 = progressBar1;
   }
 
   @Override
@@ -125,8 +130,14 @@ public final class ActivityPaymentBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.progressBar1;
+      ProgressBar progressBar1 = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar1 == null) {
+        break missingId;
+      }
+
       return new ActivityPaymentBinding((ConstraintLayout) rootView, btnBack, btnContinue, cardMomo,
-          cardVNPay, iconCheckMomo, iconCheckVNPay, layoutHeader);
+          cardVNPay, iconCheckMomo, iconCheckVNPay, layoutHeader, progressBar1);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

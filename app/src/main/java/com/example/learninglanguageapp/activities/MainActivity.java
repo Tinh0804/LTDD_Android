@@ -18,21 +18,31 @@ import com.example.learninglanguageapp.fragments.FriendFragment;
 import com.example.learninglanguageapp.fragments.HomeFragment;
 import com.example.learninglanguageapp.fragments.LeaderBoardFragment;
 import com.example.learninglanguageapp.fragments.PracticeFragment;
+import com.example.learninglanguageapp.utils.HelperFunction;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
     private TextView tvGems;
+    private HelperFunction helperFunction;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
+        HelperFunction.init(getApplicationContext());
+        helperFunction = HelperFunction.getInstance();
+        int diamond = helperFunction.loadUserDiamond();
         setContentView(R.layout.activity_main);
         tvGems = findViewById(R.id.tvGems);
+        tvGems.setText(String.valueOf(diamond));
         tvGems.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent i = new Intent(MainActivity.this, ShopActivity.class);
+                i.putExtra("diamond",diamond );
                 startActivity(i);
+
             }
         });
 

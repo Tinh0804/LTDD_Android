@@ -32,10 +32,17 @@ public class UserResponse {
     @SerializedName("subscriptionType")
     private String subscriptionType;
 
+    @SerializedName("diamond")
+    private int diamond;
+
     @SerializedName("userAccountId")
     private String userAccountId;
 
+
     // Getter & Setter
+    public int getDiamond() { return diamond; }
+    public void setDiamond(int diamond) { this.diamond = diamond; }
+
     public String getPhoneNumber() { return phoneNumber; }
     public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
 

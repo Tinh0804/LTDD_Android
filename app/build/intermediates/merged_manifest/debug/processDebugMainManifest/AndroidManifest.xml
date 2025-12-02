@@ -83,8 +83,20 @@
             android:exported="false" />
         <activity
             android:name="com.example.learninglanguageapp.activities.WebViewActivity"
-            android:exported="false"
-            android:theme="@style/Theme.LearningLanguageApp" />
+            android:exported="true"
+            android:hardwareAccelerated="false" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="payment_success"
+                    android:pathPrefix="/payment_success"
+                    android:scheme="myapp" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.example.learninglanguageapp.activities.ShopActivity"
             android:exported="false"

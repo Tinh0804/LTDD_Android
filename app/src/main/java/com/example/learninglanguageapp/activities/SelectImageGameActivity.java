@@ -82,7 +82,7 @@ public class SelectImageGameActivity extends AppCompatActivity {
 
         exerciseViewModel = new ViewModelProvider(this).get(ExerciseViewModel.class);
 
-        unitId = getIntent().getIntExtra("unitId", -1); // Lấy unitId
+        unitId = getIntent().getIntExtra("unitId", 1); // Lấy unitId
         if (unitId == -1) {
             Toast.makeText(this, "Lỗi: Không tìm thấy Unit ID hợp lệ", Toast.LENGTH_LONG).show();
             finish();

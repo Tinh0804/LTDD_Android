@@ -1,9 +1,8 @@
 package com.example.learninglanguageapp.activities;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
+import android.os.Parcelable;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -21,38 +20,27 @@ public class ShopActivity extends AppCompatActivity {
 
     private ShopViewModel viewModel;
 
-    // Views
     private TextView tvDiamondCount;
-    private CardView cardDiamond1000, cardDiamond2000, cardDiamond3000;
-    private CardView cardHeart;
+    private CardView cardDiamond1000, cardDiamond2000, cardDiamond3000, cardHeart;
     private ImageView btnClose;
     private TextView btnRedeemHeart;
     private ProgressBar progressBar;
-
-    private int userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
 
-        // Get userId từ SharedPreferences hoặc Intent
-        userId = 1;
-
-        // Init ViewModel
         viewModel = new ViewModelProvider(this).get(ShopViewModel.class);
-        viewModel.setUserId(userId);
 
         initViews();
         setupObservers();
         setupClickListeners();
-
-        // Load balance
-//        viewModel.loadBalance();
     }
-
     private void initViews() {
         tvDiamondCount = findViewById(R.id.tvDiamondCount);
+        int diamond = getIntent().getIntExtra("diamond", 20);
+        tvDiamondCount.setText(diamond + " diamonds");
         cardDiamond1000 = findViewById(R.id.cardDiamond1000);
         cardDiamond2000 = findViewById(R.id.cardDiamond2000);
         cardDiamond3000 = findViewById(R.id.cardDiamond3000);
@@ -63,21 +51,16 @@ public class ShopActivity extends AppCompatActivity {
     }
 
     private void setupObservers() {
-        // Observe balance
         viewModel.getBalanceLiveData().observe(this, balance -> {
             if (balance != null) {
                 tvDiamondCount.setText(balance + " diamonds");
             }
         });
 
-        // Observe loading
         viewModel.getLoadingLiveData().observe(this, isLoading -> {
-            if (isLoading != null) {
-                progressBar.setVisibility(isLoading ? View.VISIBLE : View.GONE);
-            }
+            progressBar.setVisibility(isLoading ? android.view.View.VISIBLE : android.view.View.GONE);
         });
 
-        // Observe error
         viewModel.getErrorLiveData().observe(this, error -> {
             if (error != null && !error.isEmpty()) {
                 Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
@@ -88,54 +71,44 @@ public class ShopActivity extends AppCompatActivity {
     private void setupClickListeners() {
         btnClose.setOnClickListener(v -> finish());
 
-        cardDiamond1000.setOnClickListener(v -> {
-            PackagePayment pkg = new PackagePayment("diamond_1000", 1000, 2000, "diamond");
-            viewModel.setSelectedPackage(pkg);
-            navigateToPayment();
-        });
+        cardDiamond1000.setOnClickListener(v -> selectPackageAndPay(new PackagePayment("diamond_1000", 1000, 25000 * 2, "diamond")));
+        cardDiamond2000.setOnClickListener(v -> selectPackageAndPay(new PackagePayment("diamond_2000", 2000, 25000 * 4, "diamond")));
+        cardDiamond3000.setOnClickListener(v -> selectPackageAndPay(new PackagePayment("diamond_3000", 3000, 25000 * 6, "diamond")));
+        cardHeart.setOnClickListener(v -> selectPackageAndPay(new PackagePayment("refill_heart", 0, 20000, "heart")));
 
-        cardDiamond2000.setOnClickListener(v -> {
-            PackagePayment pkg = new PackagePayment("diamond_2000", 2000, 4000, "diamond");
-            viewModel.setSelectedPackage(pkg);
-            navigateToPayment();
-        });
-
-        cardDiamond3000.setOnClickListener(v -> {
-            PackagePayment pkg = new PackagePayment("diamond_3000", 3000, 6000, "diamond");
-            viewModel.setSelectedPackage(pkg);
-            navigateToPayment();
-        });
-
-
-        btnRedeemHeart.setOnClickListener(v -> {
-            PackagePayment pkg = new PackagePayment("refill_heart", 0, 2000, "heart");
-            viewModel.setSelectedPackage(pkg);
-            navigateToPayment();
-        });
-
+        btnRedeemHeart.setOnClickListener(v -> Toast.makeText(this, "Redeem heart feature", Toast.LENGTH_SHORT).show());
     }
 
-    private void navigateToPayment() {
+    private void selectPackageAndPay(PackagePayment pkg) {
+        // Truyền gói qua Intent
         Intent intent = new Intent(this, PaymentActivity.class);
-        intent.putExtra("userId", userId);
-        startActivity(intent);
-    }
-
-    private void showRedeemHeartDialog() {
-        // TODO: Implement dialog to enter heart code
-        Toast.makeText(this, "Redeem heart code feature", Toast.LENGTH_SHORT).show();
-    }
-
-    private int getUserId() {
-        // Get from SharedPreferences
-        SharedPreferences prefs = getSharedPreferences("user_prefs", MODE_PRIVATE);
-        return prefs.getInt("user_id", 1); // Default userId = 1
+        intent.putExtra("selected_package",  pkg); // PackagePayment phải implement Serializable
+        startActivityForResult(intent, 100);
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        // Reload balance khi quay lại màn hình
-        viewModel.loadBalance();
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 100) {
+            if (resultCode == RESULT_OK && data != null) {
+                String transactionId = data.getStringExtra("transaction_id");
+                String status = data.getStringExtra("payment_status");
+
+                if ("success".equals(status)) {
+                    if (transactionId != null) {
+                        Toast.makeText(this, "Payment successful! Transaction: " + transactionId, Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(this, "Payment successful! Transaction ID missing", Toast.LENGTH_LONG).show();
+                    }
+                    // viewModel.loadBalance(); // load lại số dư nếu cần
+                } else {
+                    Toast.makeText(this, "Payment failed or cancelled", Toast.LENGTH_SHORT).show();
+                }
+            } else {
+                Toast.makeText(this, "Payment cancelled or failed", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
+
 }

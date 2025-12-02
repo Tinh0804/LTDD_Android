@@ -1,8 +1,6 @@
 // network/ApiService.java
 package com.example.learninglanguageapp.network;
 
-import androidx.room.Query;
-
 import com.example.learninglanguageapp.models.Exercise;
 import com.example.learninglanguageapp.models.Lesson;
 import com.example.learninglanguageapp.models.Request.LoginRequest;
@@ -17,8 +15,9 @@ import com.example.learninglanguageapp.models.Response.PaymentResponse;
 import com.example.learninglanguageapp.models.Response.UserResponse;
 import com.example.learninglanguageapp.models.Unit;
 import com.example.learninglanguageapp.models.Word;
-
+import retrofit2.http.GET;
 import java.util.List;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -26,6 +25,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface ApiService {
 
@@ -58,7 +58,9 @@ public interface ApiService {
     Call<PaymentResponse> createVnPay(@Body PaymentRequest model);
 
     @POST("api/payment/create-momo")
-    Call<PaymentResponse> createMomo(@Body OrderInfoMomo model);
+    Call<PaymentResponse> createMomo(@Body PaymentRequest model);
+    @GET("api/payment/verify")
+    Call<ApiResponse<Boolean>> verifyPayment(@Query("transactionId") String transactionId);
 
     @GET("api/Units")
     Call<ApiResponse<List<Unit>>> getUnits();
