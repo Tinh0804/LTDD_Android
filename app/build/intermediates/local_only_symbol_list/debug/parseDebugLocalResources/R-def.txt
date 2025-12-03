@@ -285,6 +285,7 @@ id card8
 id card9
 id cardArrangeWordGame
 id cardBackContainer
+id cardConfirmPassword
 id cardDiamond1000
 id cardDiamond2000
 id cardDiamond3000
@@ -295,14 +296,17 @@ id cardImageWordGame
 id cardMatchingGame
 id cardMenu
 id cardMomo
+id cardName
+id cardPassword
+id cardPhone
 id cardProfile
 id cardUpgrade
+id cardUserName
 id cardVNPay
 id cardView
 id cardVocabularyGame
 id chartContainer
 id chkRemember
-id confirmPasswordLayout
 id cvUpgrade
 id cvUserProfile
 id edtEmail
@@ -313,6 +317,7 @@ id etName
 id etPassword
 id etPhone
 id etPhoneNumber
+id etUserName
 id feedbackContainer
 id fragment_container
 id gameGrid
@@ -322,6 +327,7 @@ id iconCheckMomo
 id iconCheckVNPay
 id iconView
 id imageView
+id imageView_back
 id imgAvatar
 id imgFlag
 id imgItem
@@ -397,7 +403,6 @@ id optionText2
 id optionText3
 id optionText4
 id overlayView
-id passwordLayout
 id prg
 id progressBar
 id progressBar1
@@ -431,10 +436,6 @@ id tvHearts
 id tvImageWordSubtitle
 id tvImageWordTitle
 id tvInstruction
-id tvLabelConfirmPassword
-id tvLabelName
-id tvLabelPassword
-id tvLabelPhone
 id tvLanguage
 id tvLevelDesc
 id tvLevelName
@@ -450,6 +451,7 @@ id tvPronunciation
 id tvPronunciationBack
 id tvQuestion
 id tvRank
+id tvSignIn
 id tvSignUp
 id tvStreak
 id tvSubtitle

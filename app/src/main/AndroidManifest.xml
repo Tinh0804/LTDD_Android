@@ -88,11 +88,17 @@
             android:exported="false" />
         <activity
             android:name=".activities.SplashActivity"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.LearningLanguageApp.Splash">
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+
         </activity>
+
         <activity
             android:name=".activities.WelcomeActivity"
             android:exported="false" />
@@ -103,18 +109,24 @@
             android:name=".activities.RegisterActivity"
             android:exported="false" />
         <activity
+            android:name=".activities.LanguageUse"
+            android:exported="false"/>
+        <activity
+            android:name=".activities.LanguageLearn"
+            android:exported="false"/>
+        <activity
+            android:name=".activities.LevelActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".activities.StudyTimeActivity"
+            android:exported="false"/>
+
+
+
+        <activity
             android:name=".activities.LoginActivity"
-            android:exported="true" >
-            <intent-filter>
-<!--                <category android:name="android.intent.category.DEFAULT" />-->
-<!--                <category android:name="android.intent.category.BROWSABLE" />-->
+            android:exported="false" >
 
-<!--                <data android:scheme="@string/fb_login_protocol_scheme" />-->
-
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity> <!-- Main Activity -->
         <activity
             android:name=".activities.MainActivity"

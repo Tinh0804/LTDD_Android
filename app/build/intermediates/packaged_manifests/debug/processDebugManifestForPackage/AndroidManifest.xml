@@ -114,9 +114,14 @@
             android:exported="false" />
         <activity
             android:name="com.example.learninglanguageapp.activities.SplashActivity"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.LearningLanguageApp.Splash" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name="com.example.learninglanguageapp.activities.WelcomeActivity"
@@ -128,20 +133,20 @@
             android:name="com.example.learninglanguageapp.activities.RegisterActivity"
             android:exported="false" />
         <activity
+            android:name="com.example.learninglanguageapp.activities.LanguageUse"
+            android:exported="false" />
+        <activity
+            android:name="com.example.learninglanguageapp.activities.LanguageLearn"
+            android:exported="false" />
+        <activity
+            android:name="com.example.learninglanguageapp.activities.LevelActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.learninglanguageapp.activities.StudyTimeActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.learninglanguageapp.activities.LoginActivity"
-            android:exported="true" >
-            <intent-filter>
-
-                <!-- <category android:name="android.intent.category.DEFAULT" /> -->
-                <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
-
-
-                <!-- <data android:scheme="@string/fb_login_protocol_scheme" /> -->
-
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false" >
         </activity> <!-- Main Activity -->
         <activity
             android:name="com.example.learninglanguageapp.activities.MainActivity"

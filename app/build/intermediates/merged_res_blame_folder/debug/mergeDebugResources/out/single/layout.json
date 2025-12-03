@@ -4,24 +4,20 @@
         "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/activity_main.xml"
     },
     {
-        "merged": "com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_web_view.xml",
-        "source": "com.example.learninglanguageapp-main-73:/layout/activity_web_view.xml"
-    },
-    {
         "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_match_game.xml",
         "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/activity_match_game.xml"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/level.xml",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/level.xml"
+        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_gamewordrop.xml",
+        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/activity_gamewordrop.xml"
     },
     {
         "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/language_use.xml",
         "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/language_use.xml"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_gamewordrop.xml",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/activity_gamewordrop.xml"
+        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/level.xml",
+        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/level.xml"
     },
     {
         "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_game.xml",
@@ -134,6 +130,10 @@
     {
         "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/item_match_card.xml",
         "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/item_match_card.xml"
+    },
+    {
+        "merged": "com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_register.xml",
+        "source": "com.example.learninglanguageapp-main-73:/layout/activity_register.xml"
     },
     {
         "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_leaderboard.xml",

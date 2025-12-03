@@ -1,5 +1,5 @@
-com.example.learninglanguageapp.test.app-core-1.5.0-0 /Users/macbookpro/.gradle/caches/8.13/transforms/15e5bd2e96b81855c916ca3889aec95f/transformed/core-1.5.0/res
-com.example.learninglanguageapp.test.app-annotation-experimental-1.5.0-1 /Users/macbookpro/.gradle/caches/8.13/transforms/7728225facc76974a05c05020a6d7120/transformed/annotation-experimental-1.5.0/res
+com.example.learninglanguageapp.test.app-annotation-experimental-1.5.0-0 /Users/macbookpro/.gradle/caches/8.13/transforms/55d0ff65f601af8cfc65fd3f424e9d03/transformed/annotation-experimental-1.5.0/res
+com.example.learninglanguageapp.test.app-core-1.5.0-1 /Users/macbookpro/.gradle/caches/8.13/transforms/746cb8f7d27e22fc5a082368a342c03c/transformed/core-1.5.0/res
 com.example.learninglanguageapp.test.app-androidTest-2 /Users/macbookpro/Documents/Study/Android/Nhom/app/build/generated/res/resValues/androidTest/debug
 com.example.learninglanguageapp.test.app-mergeDebugAndroidTestResources-3 /Users/macbookpro/Documents/Study/Android/Nhom/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
 com.example.learninglanguageapp.test.app-mergeDebugAndroidTestResources-4 /Users/macbookpro/Documents/Study/Android/Nhom/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir

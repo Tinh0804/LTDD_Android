@@ -52,17 +52,18 @@ public class LevelActivity extends AppCompatActivity {
         btnContinue.setOnClickListener(v -> {
             Level selectedLevel = adapter.getSelectedLevel();
             if (selectedLevel != null) {
-                Intent intent = getIntent();
-                Bundle bundle = intent.getBundleExtra("data");
 
-                if (bundle != null)
-                    bundle.putString("level_id", selectedLevel.getName());
-                intent.putExtra("data", selectedLevel.getName());
+                Bundle bundle = getIntent().getBundleExtra("data");
+                if (bundle == null) bundle = new Bundle(); // ✅
+
+                bundle.putString("level_id", selectedLevel.getId()+""); // ✅ ID
+
+                Intent intent = new Intent(LevelActivity.this, StudyTimeActivity.class);
+                intent.putExtra("data", bundle);  // ✅ CHÍNH XÁC
                 startActivity(intent);
-            } else {
-                Toast.makeText(LevelActivity.this, "Please select a level", Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 
     public static class HomeFragment extends Fragment {

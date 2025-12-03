@@ -35,7 +35,7 @@ public interface ApiService {
 
     // 2. ĐĂNG KÝ – TRẢ VỀ ApiResponse<UserResponse>
     @POST("api/Auth/register")
-    Call<ApiResponse<UserResponse>> register(@Body RegisterRequest request);
+    Call<ApiResponse<LoginResponse>> register(@Body RegisterRequest request);
 
     // 3. SOCIAL LOGIN – BACKEND TRẢ VỀ LoginResponse TRỰC TIẾP (không bọc ApiResponse)
     @POST("api/Auth/external-login")

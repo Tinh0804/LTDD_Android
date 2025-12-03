@@ -5,18 +5,19 @@ public class RegisterRequest {
     private String password;
     private String fullName;
     private String phoneNumber;
-    private int nativeLanguagueId;
-    private int learnLanguageId;
     private int courseId;
+    private int nativeLanguageId;
+    private int learnLanguageId;
+
 
 
     public RegisterRequest(String username, String password, String fullName,
-                           String phoneNumber, int nativeLanguagueId, int learnLanguageId,int courseId) {
+                           String phoneNumber,int courseId, int nativeLanguageId, int learnLanguageId) {
         this.username = username;
         this.password = password;
         this.fullName = fullName;
         this.phoneNumber = phoneNumber;
-        this.nativeLanguagueId = nativeLanguagueId;
+        this.nativeLanguageId = nativeLanguageId;
         this.learnLanguageId = learnLanguageId;
         this.courseId = courseId;
     }

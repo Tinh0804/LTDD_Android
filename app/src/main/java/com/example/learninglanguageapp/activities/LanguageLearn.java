@@ -47,17 +47,16 @@ public class LanguageLearn extends AppCompatActivity {
         btnContinue.setOnClickListener(v -> {
             Language selected = adapter.getSelectedLanguage();
             if (selected != null) {
-                Intent intent = getIntent();
-                Bundle bundle = intent.getBundleExtra("data");
-                if (bundle != null)
-                    bundle.putString("language_learn_id", selected.getLanguageId()+"");
+                Bundle bundle = getIntent().getBundleExtra("data");
+                if (bundle == null) bundle = new Bundle(); // ✅
 
+                bundle.putString("language_learn_id", selected.getLanguageId()+"");
+
+                Intent intent = new Intent(LanguageLearn.this, LevelActivity.class);
                 intent.putExtra("data", bundle);
                 startActivity(intent);
-
-            } else {
-                Toast.makeText(LanguageLearn.this, "Please select a language", Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 }

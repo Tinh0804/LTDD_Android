@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -23,7 +23,7 @@ public final class ActivityStudyTimeBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final ImageView btnBack;
+  public final ImageButton btnBack;
 
   @NonNull
   public final Button btnContinue;
@@ -52,7 +52,7 @@ public final class ActivityStudyTimeBinding implements ViewBinding {
   @NonNull
   public final TextView tvTitle;
 
-  private ActivityStudyTimeBinding(@NonNull LinearLayout rootView, @NonNull ImageView btnBack,
+  private ActivityStudyTimeBinding(@NonNull LinearLayout rootView, @NonNull ImageButton btnBack,
       @NonNull Button btnContinue, @NonNull LinearLayout option10min,
       @NonNull LinearLayout option15min, @NonNull LinearLayout option30min,
       @NonNull LinearLayout option5min, @NonNull LinearLayout option60min,
@@ -98,7 +98,7 @@ public final class ActivityStudyTimeBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.btnBack;
-      ImageView btnBack = ViewBindings.findChildViewById(rootView, id);
+      ImageButton btnBack = ViewBindings.findChildViewById(rootView, id);
       if (btnBack == null) {
         break missingId;
       }
