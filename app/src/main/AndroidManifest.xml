@@ -88,10 +88,19 @@
             android:exported="false" />
         <activity
             android:name=".activities.SplashActivity"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.LearningLanguageApp.Splash">
+            <intent-filter>
+                <!--                <category android:name="android.intent.category.DEFAULT" />-->
+                <!--                <category android:name="android.intent.category.BROWSABLE" />-->
 
+                <!--                <data android:scheme="@string/fb_login_protocol_scheme" />-->
+
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".activities.WelcomeActivity"
@@ -104,17 +113,7 @@
             android:exported="false" />
         <activity
             android:name=".activities.LoginActivity"
-            android:exported="true" >
-            <intent-filter>
-<!--                <category android:name="android.intent.category.DEFAULT" />-->
-<!--                <category android:name="android.intent.category.BROWSABLE" />-->
-
-<!--                <data android:scheme="@string/fb_login_protocol_scheme" />-->
-
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:exported="false" >
         </activity> <!-- Main Activity -->
         <activity
             android:name=".activities.MainActivity"

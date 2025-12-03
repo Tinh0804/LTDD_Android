@@ -114,22 +114,9 @@
             android:exported="false" />
         <activity
             android:name="com.example.learninglanguageapp.activities.SplashActivity"
-            android:exported="false"
+            android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.LearningLanguageApp.Splash" >
-        </activity>
-        <activity
-            android:name="com.example.learninglanguageapp.activities.WelcomeActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.learninglanguageapp.activities.Welcome2Activity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.learninglanguageapp.activities.RegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name="com.example.learninglanguageapp.activities.LoginActivity"
-            android:exported="true" >
             <intent-filter>
 
                 <!-- <category android:name="android.intent.category.DEFAULT" /> -->
@@ -142,6 +129,19 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.learninglanguageapp.activities.WelcomeActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.learninglanguageapp.activities.Welcome2Activity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.learninglanguageapp.activities.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.learninglanguageapp.activities.LoginActivity"
+            android:exported="false" >
         </activity> <!-- Main Activity -->
         <activity
             android:name="com.example.learninglanguageapp.activities.MainActivity"

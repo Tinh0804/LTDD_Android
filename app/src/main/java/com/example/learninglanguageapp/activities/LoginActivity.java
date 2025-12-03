@@ -12,9 +12,12 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.learninglanguageapp.R;
 import com.example.learninglanguageapp.databinding.ActivityLoginBinding;
+import com.example.learninglanguageapp.mapper.UserMapper;
+import com.example.learninglanguageapp.models.Entities.UserEntity;
 import com.example.learninglanguageapp.models.Request.LoginRequest;
 import com.example.learninglanguageapp.models.Request.SocialLoginRequest;
 import com.example.learninglanguageapp.models.Response.UserResponse;
+import com.example.learninglanguageapp.storage.AppDatabase;
 import com.example.learninglanguageapp.utils.SharedPrefsHelper;
 import com.example.learninglanguageapp.viewmodels.AuthViewModel;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
