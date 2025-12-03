@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -37,9 +36,6 @@ public final class LanguageLearnBinding implements ViewBinding {
   public final ProgressBar progressBar;
 
   @NonNull
-  public final ScrollView scrollView;
-
-  @NonNull
   public final TextView tvProgress;
 
   @NonNull
@@ -47,14 +43,12 @@ public final class LanguageLearnBinding implements ViewBinding {
 
   private LanguageLearnBinding(@NonNull ConstraintLayout rootView, @NonNull ImageButton btnBack,
       @NonNull MaterialButton btnContinue, @NonNull ListView listViewLearn,
-      @NonNull ProgressBar progressBar, @NonNull ScrollView scrollView,
-      @NonNull TextView tvProgress, @NonNull TextView tvTitle) {
+      @NonNull ProgressBar progressBar, @NonNull TextView tvProgress, @NonNull TextView tvTitle) {
     this.rootView = rootView;
     this.btnBack = btnBack;
     this.btnContinue = btnContinue;
     this.listViewLearn = listViewLearn;
     this.progressBar = progressBar;
-    this.scrollView = scrollView;
     this.tvProgress = tvProgress;
     this.tvTitle = tvTitle;
   }
@@ -110,12 +104,6 @@ public final class LanguageLearnBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.scrollView;
-      ScrollView scrollView = ViewBindings.findChildViewById(rootView, id);
-      if (scrollView == null) {
-        break missingId;
-      }
-
       id = R.id.tvProgress;
       TextView tvProgress = ViewBindings.findChildViewById(rootView, id);
       if (tvProgress == null) {
@@ -129,7 +117,7 @@ public final class LanguageLearnBinding implements ViewBinding {
       }
 
       return new LanguageLearnBinding((ConstraintLayout) rootView, btnBack, btnContinue,
-          listViewLearn, progressBar, scrollView, tvProgress, tvTitle);
+          listViewLearn, progressBar, tvProgress, tvTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

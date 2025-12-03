@@ -16,12 +16,12 @@
         "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_ic_medal_top5.png.flat",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/ic_medal_top5.png"
-    },
-    {
         "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/anim_card_flip_in.xml.flat",
         "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/anim/card_flip_in.xml"
+    },
+    {
+        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_ic_medal_top5.png.flat",
+        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/ic_medal_top5.png"
     },
     {
         "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_bg_start_label.xml.flat",
@@ -62,6 +62,10 @@
     {
         "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_textbubble.png.flat",
         "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/textbubble.png"
+    },
+    {
+        "merged": "com.example.learninglanguageapp-debug-71:/layout_activity_register.xml.flat",
+        "source": "com.example.learninglanguageapp-main-73:/layout/activity_register.xml"
     },
     {
         "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/layout_item_lesson_circle.xml.flat",
@@ -132,16 +136,16 @@
         "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/mipmap-anydpi/ic_launcher_round.xml"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_ic_dailyactivity.png.flat",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/ic_dailyactivity.png"
+        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/layout_activity_payment.xml.flat",
+        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/activity_payment.xml"
     },
     {
         "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_ic_medal_top7.png.flat",
         "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/ic_medal_top7.png"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/layout_activity_payment.xml.flat",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/activity_payment.xml"
+        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_ic_dailyactivity.png.flat",
+        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/ic_dailyactivity.png"
     },
     {
         "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_bg_selected.xml.flat",
@@ -172,12 +176,12 @@
         "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/word_chip_selected_bg.xml"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_bg_icon_green.xml.flat",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/bg_icon_green.xml"
-    },
-    {
         "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_ic_family.png.flat",
         "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/ic_family.png"
+    },
+    {
+        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_bg_icon_green.xml.flat",
+        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/bg_icon_green.xml"
     },
     {
         "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_bg_button_unselected.xml.flat",
@@ -228,20 +232,20 @@
         "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/raw/complete.mp3"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_search.png.flat",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/search.png"
-    },
-    {
         "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/layout_activity_login.xml.flat",
         "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/activity_login.xml"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/layout_item_unit.xml.flat",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/item_unit.xml"
+        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_search.png.flat",
+        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/search.png"
     },
     {
         "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_ic_settings.xml.flat",
         "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/ic_settings.xml"
+    },
+    {
+        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/layout_item_unit.xml.flat",
+        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/item_unit.xml"
     },
     {
         "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_advance.png.flat",
@@ -276,20 +280,20 @@
         "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/level.xml"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/menu_bottom_nav_menu.xml.flat",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/menu/bottom_nav_menu.xml"
-    },
-    {
         "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_ic_eye.png.flat",
         "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/ic_eye.png"
     },
     {
-        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_ic_download.xml.flat",
-        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/ic_download.xml"
+        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/menu_bottom_nav_menu.xml.flat",
+        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/menu/bottom_nav_menu.xml"
     },
     {
         "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_edittext_background.xml.flat",
         "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/edittext_background.xml"
+    },
+    {
+        "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_ic_download.xml.flat",
+        "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/ic_download.xml"
     },
     {
         "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/xml_backup_rules.xml.flat",
@@ -510,10 +514,6 @@
     {
         "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_splash_background.xml.flat",
         "source": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/splash_background.xml"
-    },
-    {
-        "merged": "com.example.learninglanguageapp-debug-71:/xml_network_security_config.xml.flat",
-        "source": "com.example.learninglanguageapp-main-73:/xml/network_security_config.xml"
     },
     {
         "merged": "/Users/macbookpro/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_ic_back.png.flat",

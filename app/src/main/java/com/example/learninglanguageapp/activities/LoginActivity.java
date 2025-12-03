@@ -88,7 +88,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         binding.tvSignUp.setOnClickListener(v ->
-                startActivity(new Intent(this, RegisterActivity.class))
+                startActivity(new Intent(this, LanguageUse.class))
         );
 
         // GOOGLE LOGIN

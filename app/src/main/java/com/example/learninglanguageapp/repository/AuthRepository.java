@@ -66,6 +66,36 @@ public class AuthRepository {
             }
         });
     }
+    // REGISTER – backend trả ApiResponse<LoginResponse>
+    public void register(RegisterRequest request, MutableLiveData<Result<LoginResponse>> liveData) {
+        apiService.register(request).enqueue(new Callback<ApiResponse<LoginResponse>>() {
+            @Override
+            public void onResponse(Call<ApiResponse<LoginResponse>> call, Response<ApiResponse<LoginResponse>> response) {
+                if (response.isSuccessful() && response.body() != null && response.body().isStatus()) {
+                    LoginResponse loginResp = response.body().getData();
+
+                    // Lưu token sau khi register thành công (tương tự login)
+                    prefs.saveToken(
+                            loginResp.getToken(),
+                            loginResp.getRefreshToken(),
+                            loginResp.isNewUser()
+                    );
+
+                    liveData.postValue(Result.success(loginResp));
+                } else {
+                    String msg = response.body() != null ?
+                            response.body().getMessage() :
+                            "Đăng ký thất bại";
+                    liveData.postValue(Result.failure(new Exception(msg)));
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ApiResponse<LoginResponse>> call, Throwable t) {
+                liveData.postValue(Result.failure(new Exception("Lỗi mạng: " + t.getMessage())));
+            }
+        });
+    }
 
     public void fetchUserProfile(MutableLiveData<Result<UserResponse>> liveData) {
         String token = prefs.getToken();

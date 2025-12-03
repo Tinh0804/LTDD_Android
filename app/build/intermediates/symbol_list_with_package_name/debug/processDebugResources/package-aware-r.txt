@@ -3831,6 +3831,7 @@ id card8
 id card9
 id cardArrangeWordGame
 id cardBackContainer
+id cardConfirmPassword
 id cardDiamond1000
 id cardDiamond2000
 id cardDiamond3000
@@ -3841,8 +3842,12 @@ id cardImageWordGame
 id cardMatchingGame
 id cardMenu
 id cardMomo
+id cardName
+id cardPassword
+id cardPhone
 id cardProfile
 id cardUpgrade
+id cardUserName
 id cardVNPay
 id cardView
 id cardVocabularyGame
@@ -3880,7 +3885,6 @@ id com_facebook_tooltip_bubble_view_bottom_pointer
 id com_facebook_tooltip_bubble_view_text_body
 id com_facebook_tooltip_bubble_view_top_pointer
 id compress
-id confirmPasswordLayout
 id confirm_button
 id confirmation_code
 id constraint
@@ -3955,6 +3959,7 @@ id etName
 id etPassword
 id etPhone
 id etPhoneNumber
+id etUserName
 id exitUntilCollapsed
 id exo_ad_overlay
 id exo_artwork
@@ -4062,6 +4067,7 @@ id ignore
 id ignoreRequest
 id image
 id imageView
+id imageView_back
 id imgAvatar
 id imgFlag
 id imgItem
@@ -4280,7 +4286,6 @@ id parent
 id parentPanel
 id parentRelative
 id parent_matrix
-id passwordLayout
 id password_toggle
 id path
 id pathRelative
@@ -4461,10 +4466,6 @@ id tvHearts
 id tvImageWordSubtitle
 id tvImageWordTitle
 id tvInstruction
-id tvLabelConfirmPassword
-id tvLabelName
-id tvLabelPassword
-id tvLabelPhone
 id tvLanguage
 id tvLevelDesc
 id tvLevelName
@@ -4480,6 +4481,7 @@ id tvPronunciation
 id tvPronunciationBack
 id tvQuestion
 id tvRank
+id tvSignIn
 id tvSignUp
 id tvStreak
 id tvSubtitle
