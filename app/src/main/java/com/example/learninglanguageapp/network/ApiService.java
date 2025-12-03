@@ -69,4 +69,7 @@ public interface ApiService {
     Call<ApiResponse<List<Lesson>>> getLessonsByUnit(
             @Path("unitId") int unitId
     );
+
+    @POST("api/Auth/revoke-token")
+    Call<ApiResponse<String>> revokeToken(@Query("refreshToken") String refreshToken);
 }
