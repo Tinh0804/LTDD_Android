@@ -27,29 +27,51 @@ public class ShopRepository {
         this.apiService = ApiClient.getApiService(context);
     }
 
-    public void createPayment(PaymentRequest request,
+    public void createPayment(String method,PaymentRequest request,
                               MutableLiveData<PaymentResponse> liveData,
                               MutableLiveData<Boolean> loading,
                               MutableLiveData<String> error) {
         loading.postValue(true);
 
-        apiService.createVnPay(request).enqueue(new Callback<PaymentResponse>() {
-            @Override
-            public void onResponse(Call<PaymentResponse> call, Response<PaymentResponse> response) {
-                loading.postValue(false);
-                if (response.isSuccessful() && response.body() != null) {
-                    liveData.postValue(response.body());
-                } else {
-                    error.postValue("Failed to create payment");
+        if(method.equalsIgnoreCase("momo")) {
+            apiService.createMomo(request).enqueue(new Callback<PaymentResponse>() {
+                @Override
+                public void onResponse(Call<PaymentResponse> call, Response<PaymentResponse> response) {
+                    loading.postValue(false);
+                    if (response.isSuccessful() && response.body() != null) {
+                        liveData.postValue(response.body());
+                    } else {
+                        error.postValue("Failed to create payment");
+                    }
                 }
-            }
 
-            @Override
-            public void onFailure(Call<PaymentResponse> call, Throwable t) {
-                loading.postValue(false);
-                error.postValue(t.getMessage());
-            }
-        });
+                @Override
+                public void onFailure(Call<PaymentResponse> call, Throwable t) {
+                    loading.postValue(false);
+                    error.postValue(t.getMessage());
+                }
+            });
+        }
+        else{
+            apiService.createVnPay(request).enqueue(new Callback<PaymentResponse>() {
+                @Override
+                public void onResponse(Call<PaymentResponse> call, Response<PaymentResponse> response) {
+                    loading.postValue(false);
+                    if (response.isSuccessful() && response.body() != null) {
+                        liveData.postValue(response.body());
+                    } else {
+                        error.postValue("Failed to create payment");
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<PaymentResponse> call, Throwable t) {
+                    loading.postValue(false);
+                    error.postValue(t.getMessage());
+                }
+            });
+        }
+
     }
 
     public void verifyPayment(String transactionId, PaymentVerifyCallback callback,

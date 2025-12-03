@@ -54,12 +54,12 @@ public interface ApiService {
     Call<ApiResponse<List<Exercise>>> getExercisesByUnit(
             @Path("unitId") int unitId);
 
-    @POST("api/payment/create-vnpay")
+    @POST("api/Payment/create-vnpay")
     Call<PaymentResponse> createVnPay(@Body PaymentRequest model);
 
-    @POST("api/payment/create-momo")
+    @POST("api/Payment/create-momo")
     Call<PaymentResponse> createMomo(@Body PaymentRequest model);
-    @GET("api/payment/verify")
+    @GET("api/Payment/verify")
     Call<ApiResponse<Boolean>> verifyPayment(@Query("transactionId") String transactionId);
 
     @GET("api/Units")

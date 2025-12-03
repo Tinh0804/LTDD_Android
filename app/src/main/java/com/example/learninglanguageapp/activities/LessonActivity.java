@@ -25,7 +25,7 @@ public class LessonActivity extends AppCompatActivity {
     private ProgressBar progressBar;
 
     private int lessonId;
-    private int userId;
+//    private int userId;
     private String categoryName = "Animal";
 
     @Override
@@ -35,7 +35,7 @@ public class LessonActivity extends AppCompatActivity {
 
         // Get Intent data
         lessonId = getIntent().getIntExtra("LESSON_ID", 1);
-        userId = getIntent().getIntExtra("USER_ID", 1);
+//        userId = getIntent().getIntExtra("USER_ID", 1);
         categoryName = getIntent().getStringExtra("CATEGORY_NAME");
         if (categoryName == null) categoryName = "Vocabulary";
 
@@ -122,7 +122,7 @@ public class LessonActivity extends AppCompatActivity {
     }
 
     private void loadWords() {
-        viewModel.loadWords(lessonId, userId);
+        viewModel.loadWords(lessonId);
     }
 
     private void updatePositionText() {

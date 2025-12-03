@@ -22,7 +22,7 @@ public class ApiClient {
 
     // Default URLs
 //    private static final String DEFAULT_EMULATOR_URL = "http://10.0.2.2:5111/";
-    private static final String DEFAULT_EMULATOR_URL = "http://192.168.1.73:5050/";
+    private static final String DEFAULT_EMULATOR_URL = "http://192.168.1.178:5050/";
     private static final String DEFAULT_REAL_DEVICE_URL = "http://172.16.1.43:5050/"; // Thay IP của bạn
 
     private static Retrofit retrofit;

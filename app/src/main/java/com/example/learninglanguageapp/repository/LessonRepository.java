@@ -37,7 +37,6 @@ public class LessonRepository {
     }
 
     public void getWords(int lessonId,
-                         int userId,
                          MutableLiveData<List<Word>> wordsLiveData,
                          MutableLiveData<Boolean> loadingLiveData,
                          MutableLiveData<String> errorLiveData) {

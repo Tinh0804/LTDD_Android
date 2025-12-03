@@ -50,7 +50,7 @@ public class ShopViewModel extends AndroidViewModel {
                 pkg.getType().equals("heart")
         );
 
-        repository.createPayment(request, paymentLiveData, loadingLiveData, errorLiveData);
+        repository.createPayment(method,request, paymentLiveData, loadingLiveData, errorLiveData);
     }
 
     public void verifyPayment(String transactionId) {

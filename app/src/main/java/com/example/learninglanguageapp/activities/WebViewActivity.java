@@ -75,7 +75,6 @@ public class WebViewActivity extends AppCompatActivity {
         }
     }
 
-
     @SuppressLint({"SetJavaScriptEnabled", "ClickableViewAccessibility"})
     private void setupWebView() {
         WebSettings settings = webView.getSettings();
@@ -100,33 +99,64 @@ public class WebViewActivity extends AppCompatActivity {
         android.webkit.CookieManager.getInstance().setAcceptThirdPartyCookies(webView, true);
 
         webView.setWebViewClient(new WebViewClient() {
+
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
                 String url = request.getUrl().toString();
-                Log.d("VNPayURL", "Override URL: " + url);
+                Uri uri = request.getUrl();
+                Log.d("PaymentURL", "Override URL: " + url);
 
-                // 1. Logic Bắt Deep Link Thành công (Fix lỗi ERR_UNKNOWN_URL_SCHEME sau khi thanh toán)
+                if (url.startsWith("intent://")) {
+                    try {
+                        // Chuyển Intent URL thành Intent Android
+                        Intent intent = Intent.parseUri(url, Intent.URI_INTENT_SCHEME);
+
+                        // Nếu có ứng dụng để xử lý Intent này (Momo)
+                        if (view.getContext().getPackageManager().resolveActivity(intent, 0) != null) {
+                            view.getContext().startActivity(intent);
+                        } else {
+                            // Nếu không có ứng dụng Momo, chuyển hướng đến link tải (fallback)
+                            String fallbackUrl = intent.getStringExtra("browser_fallback_url");
+                            if (fallbackUrl != null) {
+                                view.loadUrl(fallbackUrl);
+                            } else {
+                                Toast.makeText(view.getContext(), "Ứng dụng Momo chưa được cài đặt.", Toast.LENGTH_LONG).show();
+                            }
+                        }
+                        return true; // Quan trọng: Đã xử lý URL này
+                    } catch (Exception e) {
+                        Log.e("MomoIntent", "Error handling Momo Intent URL: " + e.getMessage());
+                        return true;
+                    }
+                }
+
+                // --- 2. LOGIC BẮT DEEP LINK CALLBACK (myapp://payment_success) ---
                 if (url.startsWith("myapp://payment_success")) {
-                    Uri uri = Uri.parse(url);
-                    String receivedTransactionId = uri.getQueryParameter("transactionId");
+                    Uri callbackUri = Uri.parse(url);
+                    String receivedTransactionId = callbackUri.getQueryParameter("transactionId");
 
                     handlePaymentSuccess(receivedTransactionId != null ? receivedTransactionId : transactionId);
-                    return true; // Xử lý xong, chặn WebView tải URL này.
+                    return true; // Đã xử lý callback
                 }
 
-                // 2. Logic Bắt URL Thất bại (VNPay Response Code 24, /cancel, v.v.)
+                // --- 3. LOGIC BẮT URL THẤT BẠI CỦA VNPAY/MOMO ---
                 else if (url.contains("payment_failed") || url.contains("/cancel") || url.contains("vnp_ResponseCode=24")) {
                     handlePaymentFailure();
-                    return true; // Xử lý xong, chặn tải URL này.
+                    return true;
                 }
 
-                // 3. Cho phép WebView xử lý URL HTTP/HTTPS thông thường (cần thiết cho quá trình điều hướng)
-                // Nếu URL không phải Deep Link hoặc Callback, để WebView tự xử lý.
+                // --- 4. Cho phép WebView xử lý URL HTTP/HTTPS thông thường ---
                 if (url.startsWith("http://") || url.startsWith("https://")) {
-                    // Cho phép WebView tự tải URL. Không cần view.loadUrl() ở đây.
-                    return false;
+                    return false; // Trả về false để WebView tự tải
                 }
-                return false;
+
+                // Xử lý các scheme khác (tel:, mailto:)
+                try {
+                    view.getContext().startActivity(new Intent(Intent.ACTION_VIEW, uri).setClassName(/* TODO: provide the application ID. For example: */ getPackageName(), "com.facebook.CustomTabActivity"));
+                    return true;
+                } catch (Exception e) {
+                    return true;
+                }
             }
 
             @SuppressLint("WebViewClientOnReceivedSslError")

@@ -38,7 +38,7 @@ public class LessonViewModel extends AndroidViewModel {
         return errorLiveData;
     }
 
-    public void loadWords(int lessonId, int userId) {
-        repository.getWords(lessonId,userId, wordsLiveData, isLoading, errorLiveData);
+    public void loadWords(int lessonId) {
+        repository.getWords(lessonId, wordsLiveData, isLoading, errorLiveData);
     }
 }

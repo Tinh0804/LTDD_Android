@@ -19,7 +19,6 @@ import com.example.learninglanguageapp.viewmodels.ShopViewModel;
 public class ShopActivity extends AppCompatActivity {
 
     private ShopViewModel viewModel;
-
     private TextView tvDiamondCount;
     private CardView cardDiamond1000, cardDiamond2000, cardDiamond3000, cardHeart;
     private ImageView btnClose;
