@@ -138,17 +138,21 @@ public class LoginActivity extends AppCompatActivity {
         authViewModel.getLoginResult().observe(this, result -> {
             if (result.isSuccess())
                 authViewModel.fetchUserProfile();
-            else
-                Toast.makeText(this, result.getException().getMessage(), Toast.LENGTH_LONG).show();
         });
 
         // Khi fetch PROFILE thành công -> chuyển MainActivity
         authViewModel.getUserProfileLiveData().observe(this, result -> {
             if (result.isSuccess()) {
-                UserResponse user = result.getValue();
-                Toast.makeText(this, "Xin chào " + user.getFullName() + "!", Toast.LENGTH_LONG).show();
-                startActivity(new Intent(this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
-                finish();
+                UserResponse userResponse = result.getValue();
+                UserEntity userEntity = UserMapper.toEntity(userResponse);
+                new Thread(() -> {
+                    AppDatabase.getInstance(this).userDAO().insertUser(userEntity);
+                    runOnUiThread(() -> {
+                        Toast.makeText(this, "Xin chào " + userResponse.getFullName() + "!", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK));
+                        finish();
+                    });
+                }).start();
             }
         });
     }
