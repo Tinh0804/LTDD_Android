@@ -8,6 +8,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.learninglanguageapp.models.Request.LoginRequest;
+import com.example.learninglanguageapp.models.Request.RegisterRequest;
 import com.example.learninglanguageapp.models.Request.SocialLoginRequest;
 import com.example.learninglanguageapp.models.Response.LoginResponse;
 import com.example.learninglanguageapp.models.Response.Result;
@@ -32,6 +33,11 @@ public class AuthViewModel extends AndroidViewModel {
 
     public LiveData<Result<LoginResponse>> getLoginResult() { return loginResult; }
     public LiveData<Result<UserResponse>> getUserProfileLiveData() { return userProfileResult; }
+    private final MutableLiveData<Result<LoginResponse>> registerResult = new MutableLiveData<>();
+    public LiveData<Result<LoginResponse>> getRegisterResult() { return registerResult; }
+    public void register(RegisterRequest request) {
+        repository.register(request, registerResult);
+    }
     public void login(LoginRequest request) {
         repository.login(request, loginResult);
     }
