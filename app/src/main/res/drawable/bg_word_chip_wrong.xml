@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Viền ngoài (bóng nhẹ) -->
     <item>
         <shape>
-            <solid android:color="#388E3C" /> <!-- xanh lá đậm hơn làm viền bóng -->
+            <solid android:color="#D32F2F" />
             <corners android:radius="16dp" />
         </shape>
     </item>
 
-    <!-- Khoảng cách giữa viền và nền chính -->
     <item android:left="3dp" android:top="3dp" android:right="3dp" android:bottom="3dp">
         <shape>
-            <solid android:color="#58CC02" /> <!-- màu xanh lá bạn đang thích -->
+            <solid android:color="#F44336" />
             <corners android:radius="13dp" />
         </shape>
     </item>
 
-    <!-- Lớp trong cùng: highlight sáng nhẹ (tạo cảm giác nổi 3D) -->
     <item android:left="4dp" android:top="4dp" android:right="4dp" android:bottom="10dp">
         <shape>
             <gradient
