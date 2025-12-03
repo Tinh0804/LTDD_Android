@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class User  implements Serializable {
 
-    private int userId;
+    private String userId;
     private String phoneNumber;
     private String fullName;
     private String dateOfBirth;          // dùng String vì trong POJO thuần không cần LocalDate
@@ -26,11 +26,11 @@ public class User  implements Serializable {
     }
 
     // Getter & Setter
-    public int getUserId() {
+    public String getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(String userId) {
         this.userId = userId;
     }
 
