@@ -15,7 +15,7 @@ public class User  implements Serializable {
     private String avatar;
     private int hearts;
     private String subscriptionType;     // "free" hoặc "premium"
-
+    private int diamond;
     // Constructor rỗng
     public User() {
         this.totalExperience = 0;
@@ -113,4 +113,12 @@ public class User  implements Serializable {
     public void setSubscriptionType(String subscriptionType) {
         this.subscriptionType = subscriptionType;
     }
+    public int getDiamond() {
+        return currentStreak;
+    }
+
+    public void setDiamond(int diamond) {
+        this.diamond = diamond;
+    }
+    
 }
