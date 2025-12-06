@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.learninglanguageapp.R;
+import com.example.learninglanguageapp.fragments.AccountFragment;
 import com.example.learninglanguageapp.models.Response.UserResponse;
 import com.example.learninglanguageapp.utils.SharedPrefsHelper;
 
@@ -61,12 +62,7 @@ public class AccountPersonal extends AppCompatActivity {
     }
 
     private void setupListeners() {
-        // Back → quay về màn AccountActivity
-        btnBack.setOnClickListener(v -> {
-            Intent intent = new Intent(AccountPersonal.this, AccountActivity.class);
-            startActivity(intent);
-            finish();
-        });
+        btnBack.setOnClickListener(v -> finish());
     }
 
     /**
