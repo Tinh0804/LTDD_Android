@@ -66,12 +66,14 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/bg_edit_icon" />
+                    android:src="@drawable/pen" />
             </RelativeLayout>
 
         </RelativeLayout>
 
         <!-- FORM -->
+
+        <!-- BUTTON -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -83,21 +85,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
                 android:text="Name"
-                android:textSize="14sp"
                 android:textColor="#000000"
-                android:layout_marginTop="4dp"/>
+                android:textSize="14sp" />
 
             <EditText
                 android:id="@+id/etName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Andrew"
                 android:background="@null"
-                android:textColor="#000000"
-                android:textSize="17sp"
                 android:paddingTop="8dp"
-                android:paddingBottom="8dp" />
+                android:paddingBottom="8dp"
+                android:text="Andrew"
+                android:textColor="#000000"
+                android:textSize="17sp" />
 
             <View
                 android:layout_width="match_parent"
@@ -109,23 +111,23 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Email"
                 android:layout_marginTop="24dp"
-                android:textSize="14sp"
-                android:textColor="#000000" />
+                android:text="Email"
+                android:textColor="#000000"
+                android:textSize="14sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:gravity="center_vertical"
+                android:orientation="horizontal"
                 android:paddingVertical="12dp">
 
                 <ImageView
                     android:layout_width="22dp"
                     android:layout_height="22dp"
-                    android:src="@drawable/ic_email"
-                    android:layout_marginEnd="12dp"/>
+                    android:layout_marginEnd="12dp"
+                    android:src="@drawable/ic_email" />
 
                 <EditText
                     android:id="@+id/etEmail"
@@ -133,8 +135,8 @@
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:text="andrew.ainsley@yourdomain.com"
-                    android:textSize="17sp"
-                    android:textColor="#000000"/>
+                    android:textColor="#000000"
+                    android:textSize="17sp" />
             </LinearLayout>
 
             <View
@@ -146,10 +148,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Country"
                 android:layout_marginTop="24dp"
+                android:text="Country"
                 android:textColor="#000000"
-                android:textSize="14sp"/>
+                android:textSize="14sp" />
 
             <RelativeLayout
                 android:id="@+id/layoutCountry"
@@ -162,14 +164,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="United States of America"
-                    android:textSize="17sp"
-                    android:textColor="#000000"/>
+                    android:textColor="#000000"
+                    android:textSize="17sp" />
 
                 <ImageView
                     android:layout_width="22dp"
                     android:layout_height="22dp"
                     android:layout_alignParentEnd="true"
-                    android:src="@drawable/ic_drop_down"/>
+                    android:src="@drawable/ic_drop_down" />
             </RelativeLayout>
 
             <View
@@ -181,24 +183,24 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Phone Number"
                 android:layout_marginTop="24dp"
+                android:text="Phone Number"
                 android:textColor="#000000"
-                android:textSize="14sp"/>
+                android:textSize="14sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingVertical="12dp"
+                android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:gravity="center_vertical">
+                android:paddingVertical="12dp">
 
                 <LinearLayout
                     android:id="@+id/layoutCountryCode"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:gravity="center_vertical"
+                    android:orientation="horizontal"
                     android:paddingEnd="6dp">
 
                     <ImageView
@@ -210,20 +212,20 @@
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:src="@drawable/ic_drop_down"
-                        android:layout_marginStart="4dp"/>
+                        android:layout_marginStart="4dp"
+                        android:src="@drawable/ic_drop_down" />
                 </LinearLayout>
 
                 <EditText
                     android:id="@+id/etPhoneNumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:background="@null"
+                    android:inputType="phone"
                     android:text="+84 963954744"
                     android:textColor="#000000"
-                    android:textSize="17sp"
-                    android:background="@null"
-                    android:layout_marginStart="14dp"
-                    android:inputType="phone"/>
+                    android:textSize="17sp" />
             </LinearLayout>
 
             <View
@@ -235,10 +237,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Gender"
                 android:layout_marginTop="24dp"
+                android:text="Gender"
                 android:textColor="#000000"
-                android:textSize="14sp"/>
+                android:textSize="14sp" />
 
             <RelativeLayout
                 android:id="@+id/layoutGender"
@@ -251,14 +253,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Male"
-                    android:textSize="17sp"
-                    android:textColor="#000000"/>
+                    android:textColor="#000000"
+                    android:textSize="17sp" />
 
                 <ImageView
                     android:layout_width="22dp"
                     android:layout_height="22dp"
                     android:layout_alignParentEnd="true"
-                    android:src="@drawable/ic_drop_down"/>
+                    android:src="@drawable/ic_drop_down" />
             </RelativeLayout>
 
             <View
@@ -270,10 +272,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Date of Birth"
                 android:layout_marginTop="24dp"
+                android:text="Date of Birth"
                 android:textColor="#000000"
-                android:textSize="14sp"/>
+                android:textSize="14sp" />
 
             <RelativeLayout
                 android:id="@+id/layoutDateOfBirth"
@@ -286,14 +288,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="12-27-1995"
-                    android:textSize="17sp"
-                    android:textColor="#000000"/>
+                    android:textColor="#000000"
+                    android:textSize="17sp" />
 
                 <ImageView
                     android:layout_width="22dp"
                     android:layout_height="22dp"
                     android:layout_alignParentEnd="true"
-                    android:src="@drawable/calendar"/>
+                    android:src="@drawable/calendar" />
             </RelativeLayout>
 
             <View
@@ -303,7 +305,6 @@
 
         </LinearLayout>
 
-        <!-- BUTTON -->
         <Button
             android:id="@+id/btnUpdate"
             android:layout_width="match_parent"

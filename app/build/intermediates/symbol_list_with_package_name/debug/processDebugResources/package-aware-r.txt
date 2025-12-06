@@ -3619,7 +3619,9 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable option_background
 drawable option_background_selected
+drawable pen
 drawable placeholder
+drawable placeholder_img
 drawable plane
 drawable progressbar_custom
 drawable rounded_button_blue

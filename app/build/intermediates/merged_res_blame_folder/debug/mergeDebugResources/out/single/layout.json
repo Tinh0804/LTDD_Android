@@ -104,10 +104,6 @@
         "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\layout\\activity_progress.xml"
     },
     {
-        "merged": "com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_profile_fr.xml",
-        "source": "com.example.learninglanguageapp-main-73:/layout/activity_profile_fr.xml"
-    },
-    {
         "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-mergeDebugResources-70:\\layout\\activity_account_person.xml",
         "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\layout\\activity_account_person.xml"
     },
@@ -146,6 +142,10 @@
     {
         "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-mergeDebugResources-70:\\layout\\activity_web_view.xml",
         "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\layout\\activity_web_view.xml"
+    },
+    {
+        "merged": "com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_account_person.xml",
+        "source": "com.example.learninglanguageapp-main-73:/layout/activity_account_person.xml"
     },
     {
         "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-mergeDebugResources-70:\\layout\\language_use.xml",

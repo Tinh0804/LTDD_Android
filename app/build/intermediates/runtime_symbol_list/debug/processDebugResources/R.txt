@@ -3618,7 +3618,9 @@ int drawable notification_tile_bg 0x7f0801f7
 int drawable notify_panel_notification_icon_bg 0x7f0801f8
 int drawable option_background 0x7f0801f9
 int drawable option_background_selected 0x7f0801fa
+int drawable pen 0x7f080212
 int drawable placeholder 0x7f0801fb
+int drawable placeholder_img 0x7f080211
 int drawable plane 0x7f0801fc
 int drawable progressbar_custom 0x7f0801fd
 int drawable rounded_button_blue 0x7f0801fe

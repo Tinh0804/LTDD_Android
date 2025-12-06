@@ -268,6 +268,10 @@
         "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\drawable\\img_dog.png"
     },
     {
+        "merged": "com.example.learninglanguageapp-debug-71:/layout_activity_account_person.xml.flat",
+        "source": "com.example.learninglanguageapp-main-73:/layout/activity_account_person.xml"
+    },
+    {
         "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-debug-71:\\layout_item_unit.xml.flat",
         "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\layout\\item_unit.xml"
     },
@@ -752,6 +756,10 @@
         "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\drawable\\button_background.xml"
     },
     {
+        "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-debug-71:\\drawable_placeholder_img.xml.flat",
+        "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\drawable\\placeholder_img.xml"
+    },
+    {
         "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-debug-71:\\drawable_bg_button_unselected.xml.flat",
         "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\drawable\\bg_button_unselected.xml"
     },
@@ -856,6 +864,10 @@
         "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\layout\\activity_select_image_game.xml"
     },
     {
+        "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-debug-71:\\drawable_pen.png.flat",
+        "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\drawable\\pen.png"
+    },
+    {
         "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-debug-71:\\layout_level.xml.flat",
         "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\layout\\level.xml"
     },
@@ -918,10 +930,6 @@
     {
         "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-debug-71:\\drawable_flagcanada.png.flat",
         "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\drawable\\flagcanada.png"
-    },
-    {
-        "merged": "com.example.learninglanguageapp-debug-71:/layout_activity_profile_fr.xml.flat",
-        "source": "com.example.learninglanguageapp-main-73:/layout/activity_profile_fr.xml"
     },
     {
         "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-debug-71:\\layout_item_lesson_circle.xml.flat",
