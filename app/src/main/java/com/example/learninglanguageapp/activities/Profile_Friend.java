@@ -1,4 +1,5 @@
-package com.example.myapplication;
+package com.example.learninglanguageapp.activities;
+
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.learninglanguageapp.R;
 
 public class Profile_Friend extends AppCompatActivity {
 

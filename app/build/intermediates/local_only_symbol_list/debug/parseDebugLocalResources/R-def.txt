@@ -485,6 +485,7 @@ id viewPager
 id webView
 id wordChip
 id wordChipSelected
+layout accountpersonal
 layout activity_account
 layout activity_account_person
 layout activity_game
@@ -497,6 +498,7 @@ layout activity_match_game
 layout activity_matching_game
 layout activity_payment
 layout activity_practice
+layout activity_profile_fr
 layout activity_profile_friend
 layout activity_progress
 layout activity_register
@@ -520,6 +522,7 @@ layout item_word_card
 layout language_learn
 layout language_use
 layout layout4_12
+layout leaderboard
 layout level
 layout level_item
 layout loading

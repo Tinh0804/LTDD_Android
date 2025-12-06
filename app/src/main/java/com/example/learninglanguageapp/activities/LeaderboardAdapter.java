@@ -1,4 +1,4 @@
-package com.example.test;
+package com.example.learninglanguageapp.activities;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.learninglanguageapp.R;
 
 import java.util.List;
 

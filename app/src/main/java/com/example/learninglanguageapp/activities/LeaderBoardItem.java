@@ -1,4 +1,5 @@
-package com.example.test;
+package com.example.learninglanguageapp.activities;
+
 
 public class LeaderBoardItem {
     private int rank;
