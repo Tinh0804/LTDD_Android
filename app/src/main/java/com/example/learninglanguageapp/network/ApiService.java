@@ -69,4 +69,8 @@ public interface ApiService {
     Call<ApiResponse<List<Lesson>>> getLessonsByUnit(
             @Path("unitId") int unitId
     );
+
+    @GET("api/Profile")
+    Call<ApiResponse<List<UserResponse>>> getAllUsersRanking(@Header("Authorization") String authHeader);
 }
+

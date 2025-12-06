@@ -38,40 +38,18 @@ public final class ActivityLeaderboardBinding implements ViewBinding {
   public final ImageView btnback;
 
   @NonNull
-  public final LinearLayout navAccount;
-
-  @NonNull
-  public final LinearLayout navFriend;
-
-  @NonNull
-  public final LinearLayout navHome;
-
-  @NonNull
-  public final LinearLayout navPractice;
-
-  @NonNull
-  public final LinearLayout navReckon;
-
-  @NonNull
   public final RecyclerView recyclerViewLeaderboard;
 
   private ActivityLeaderboardBinding(@NonNull LinearLayout rootView,
       @NonNull AppCompatButton btnAllTime, @NonNull AppCompatButton btnMonthly,
       @NonNull ImageView btnSearch, @NonNull Button btnWeekly, @NonNull ImageView btnback,
-      @NonNull LinearLayout navAccount, @NonNull LinearLayout navFriend,
-      @NonNull LinearLayout navHome, @NonNull LinearLayout navPractice,
-      @NonNull LinearLayout navReckon, @NonNull RecyclerView recyclerViewLeaderboard) {
+      @NonNull RecyclerView recyclerViewLeaderboard) {
     this.rootView = rootView;
     this.btnAllTime = btnAllTime;
     this.btnMonthly = btnMonthly;
     this.btnSearch = btnSearch;
     this.btnWeekly = btnWeekly;
     this.btnback = btnback;
-    this.navAccount = navAccount;
-    this.navFriend = navFriend;
-    this.navHome = navHome;
-    this.navPractice = navPractice;
-    this.navReckon = navReckon;
     this.recyclerViewLeaderboard = recyclerViewLeaderboard;
   }
 
@@ -132,36 +110,6 @@ public final class ActivityLeaderboardBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.navAccount;
-      LinearLayout navAccount = ViewBindings.findChildViewById(rootView, id);
-      if (navAccount == null) {
-        break missingId;
-      }
-
-      id = R.id.navFriend;
-      LinearLayout navFriend = ViewBindings.findChildViewById(rootView, id);
-      if (navFriend == null) {
-        break missingId;
-      }
-
-      id = R.id.navHome;
-      LinearLayout navHome = ViewBindings.findChildViewById(rootView, id);
-      if (navHome == null) {
-        break missingId;
-      }
-
-      id = R.id.navPractice;
-      LinearLayout navPractice = ViewBindings.findChildViewById(rootView, id);
-      if (navPractice == null) {
-        break missingId;
-      }
-
-      id = R.id.navReckon;
-      LinearLayout navReckon = ViewBindings.findChildViewById(rootView, id);
-      if (navReckon == null) {
-        break missingId;
-      }
-
       id = R.id.recyclerViewLeaderboard;
       RecyclerView recyclerViewLeaderboard = ViewBindings.findChildViewById(rootView, id);
       if (recyclerViewLeaderboard == null) {
@@ -169,8 +117,7 @@ public final class ActivityLeaderboardBinding implements ViewBinding {
       }
 
       return new ActivityLeaderboardBinding((LinearLayout) rootView, btnAllTime, btnMonthly,
-          btnSearch, btnWeekly, btnback, navAccount, navFriend, navHome, navPractice, navReckon,
-          recyclerViewLeaderboard);
+          btnSearch, btnWeekly, btnback, recyclerViewLeaderboard);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

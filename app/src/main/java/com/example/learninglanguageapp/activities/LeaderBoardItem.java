@@ -1,6 +1,5 @@
 package com.example.learninglanguageapp.activities;
 
-
 public class LeaderBoardItem {
     private int rank;
     private String name;
@@ -14,35 +13,12 @@ public class LeaderBoardItem {
         this.avatarUrl = avatarUrl;
     }
 
-    public int getRank() {
-        return rank;
-    }
+    public int getRank() { return rank; }
+    public void setRank(int rank) { this.rank = rank; }
 
-    public void setRank(int rank) {
-        this.rank = rank;
-    }
+    public String getName() { return name; }
 
-    public String getName() {
-        return name;
-    }
+    public int getXp() { return xp; }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getXp() {
-        return xp;
-    }
-
-    public void setXp(int xp) {
-        this.xp = xp;
-    }
-
-    public String getAvatarUrl() {
-        return avatarUrl;
-    }
-
-    public void setAvatarUrl(String avatarUrl) {
-        this.avatarUrl = avatarUrl;
-    }
+    public String getAvatarUrl() { return avatarUrl; }
 }

@@ -16,12 +16,12 @@
         "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\layout\\activity_practice.xml"
     },
     {
-        "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-mergeDebugResources-70:\\layout\\activity_setting.xml",
-        "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\layout\\activity_setting.xml"
-    },
-    {
         "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-mergeDebugResources-70:\\layout\\activity_profile_friend.xml",
         "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\layout\\activity_profile_friend.xml"
+    },
+    {
+        "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-mergeDebugResources-70:\\layout\\activity_setting.xml",
+        "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\layout\\activity_setting.xml"
     },
     {
         "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-mergeDebugResources-70:\\layout\\activity_main.xml",
@@ -78,6 +78,10 @@
     {
         "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-mergeDebugResources-70:\\layout\\level_item.xml",
         "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\layout\\level_item.xml"
+    },
+    {
+        "merged": "com.example.learninglanguageapp-mergeDebugResources-70:/layout/item_leaderboard.xml",
+        "source": "com.example.learninglanguageapp-main-73:/layout/item_leaderboard.xml"
     },
     {
         "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-mergeDebugResources-70:\\layout\\item_unit_header_line.xml",
@@ -142,10 +146,6 @@
     {
         "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-mergeDebugResources-70:\\layout\\activity_web_view.xml",
         "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\layout\\activity_web_view.xml"
-    },
-    {
-        "merged": "com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_account_person.xml",
-        "source": "com.example.learninglanguageapp-main-73:/layout/activity_account_person.xml"
     },
     {
         "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-mergeDebugResources-70:\\layout\\language_use.xml",

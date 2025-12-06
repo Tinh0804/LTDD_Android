@@ -83,6 +83,7 @@ drawable bg_icon_yellow
 drawable bg_progress_bar
 drawable bg_progress_fill
 drawable bg_rank_circle
+drawable bg_rank_top5
 drawable bg_selected
 drawable bg_selected_matchgame
 drawable bg_start_label

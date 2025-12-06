@@ -4,29 +4,27 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.learninglanguageapp.R;
-import com.example.learninglanguageapp.adapters.LeaderboardAdapter;
-import com.example.learninglanguageapp.models.UIModel.LeaderBoardItem;
+import com.example.learninglanguageapp.activities.LeaderboardAdapter;
+import com.example.learninglanguageapp.models.Response.Result;
+import com.example.learninglanguageapp.models.Response.UserResponse;
+import com.example.learninglanguageapp.viewmodels.AuthViewModel;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class LeaderBoardFragment extends Fragment {
 
-    private RecyclerView recyclerViewLeaderboard;
+    private AuthViewModel viewModel;
     private LeaderboardAdapter adapter;
-    private Button btnWeekly, btnMonthly, btnAllTime;
-    private String currentFilter = "weekly";
 
     @Nullable
     @Override
@@ -36,79 +34,35 @@ public class LeaderBoardFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.activity_leaderboard, container, false);
 
-        ImageView btnBack = view.findViewById(R.id.btnback);
-        btnBack.setOnClickListener(v -> requireActivity().onBackPressed());
+        // RecyclerView + Adapter
+        RecyclerView recyclerView = view.findViewById(R.id.recyclerViewLeaderboard);
+        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
+        adapter = new LeaderboardAdapter();
+        recyclerView.setAdapter(adapter);
 
-        initViews(view);
-        setupRecyclerView();
-        setupFilterButtons();
-        loadLeaderboardData(currentFilter);
+        // Dùng lại AuthViewModel
+        viewModel = new ViewModelProvider(requireActivity()).get(AuthViewModel.class);
+
+        // Gọi API lấy bảng xếp hạng thật từ /api/Profile
+        viewModel.loadRanking();
+
+        // Observe – ĐÃ DÙNG ĐÚNG getValue() và getException() CỦA BẠN
+        viewModel.getRankingLiveData().observe(getViewLifecycleOwner(), result -> {
+            if (result.isSuccess()) {
+                List<UserResponse> list = result.getValue();
+                adapter.submitList(list);
+            }
+        });
+
+        // 3 nút Weekly/Monthly/AllTime → để đẹp, click reload lại bảng
+        view.findViewById(R.id.btnWeekly).setOnClickListener(v -> viewModel.loadRanking());
+        view.findViewById(R.id.btnMonthly).setOnClickListener(v -> viewModel.loadRanking());
+        view.findViewById(R.id.btnAllTime).setOnClickListener(v -> viewModel.loadRanking());
+
+        // Nút back
+        view.findViewById(R.id.btnback).setOnClickListener(v ->
+                requireActivity().getOnBackPressedDispatcher().onBackPressed());
 
         return view;
-    }
-
-    private void initViews(View view) {
-        recyclerViewLeaderboard = view.findViewById(R.id.recyclerViewLeaderboard);
-        btnWeekly = view.findViewById(R.id.btnWeekly);
-        btnMonthly = view.findViewById(R.id.btnMonthly);
-        btnAllTime = view.findViewById(R.id.btnAllTime);
-    }
-
-    private void setupRecyclerView() {
-        recyclerViewLeaderboard.setLayoutManager(new LinearLayoutManager(requireContext()));
-        adapter = new LeaderboardAdapter(requireContext(), new ArrayList<>());
-        recyclerViewLeaderboard.setAdapter(adapter);
-    }
-
-    private void setupFilterButtons() {
-        btnWeekly.setOnClickListener(v -> {
-            currentFilter = "weekly";
-            updateButtonStates(btnWeekly);
-            loadLeaderboardData(currentFilter);
-        });
-
-        btnMonthly.setOnClickListener(v -> {
-            currentFilter = "monthly";
-            updateButtonStates(btnMonthly);
-            loadLeaderboardData(currentFilter);
-        });
-
-        btnAllTime.setOnClickListener(v -> {
-            currentFilter = "alltime";
-            updateButtonStates(btnAllTime);
-            loadLeaderboardData(currentFilter);
-        });
-    }
-
-    private void updateButtonStates(Button selectedButton) {
-        // Reset button states
-        btnWeekly.setBackgroundResource(R.drawable.bg_button_unselected);
-        btnWeekly.setTextColor(ContextCompat.getColor(requireContext(), R.color.purple_200));
-
-        btnMonthly.setBackgroundResource(R.drawable.bg_button_unselected);
-        btnMonthly.setTextColor(ContextCompat.getColor(requireContext(), R.color.purple_200));
-
-        btnAllTime.setBackgroundResource(R.drawable.bg_button_unselected);
-        btnAllTime.setTextColor(ContextCompat.getColor(requireContext(), R.color.purple_200));
-
-        // Highlight the selected button
-        selectedButton.setBackgroundResource(R.drawable.bg_button_selected);
-        selectedButton.setTextColor(ContextCompat.getColor(requireContext(), android.R.color.white));
-    }
-
-    private void loadLeaderboardData(String filter) {
-
-        List<LeaderBoardItem> leaderboardList = new ArrayList<>();
-
-        leaderboardList.add(new LeaderBoardItem(1, "Nguyễn Thị Vy Hậu", 900, "avatar_1"));
-        leaderboardList.add(new LeaderBoardItem(2, "Nguyễn Lương Bin", 872, "avatar_2"));
-        leaderboardList.add(new LeaderBoardItem(3, "Nguyễn Thị Duy Phương", 850, "avatar_3"));
-        leaderboardList.add(new LeaderBoardItem(4, "Lê Hoàng Quách Tỉnh", 830, "avatar_4"));
-        leaderboardList.add(new LeaderBoardItem(5, "Nguyễn Thị Vy Hoa", 790, "avatar_5"));
-        leaderboardList.add(new LeaderBoardItem(6, "Nguyễn Thị Oanh", 750, "avatar_6"));
-        leaderboardList.add(new LeaderBoardItem(7, "Nguyễn Thị Duyên", 700, "avatar_7"));
-        leaderboardList.add(new LeaderBoardItem(8, "Nguyễn Thị Thương", 550, "avatar_8"));
-
-        adapter.updateList(leaderboardList);
     }
 }
