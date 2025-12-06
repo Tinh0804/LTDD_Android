@@ -1,17 +1,21 @@
-package com.example.test;
+package com.example.learninglanguageapp.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Looper;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.learninglanguageapp.R;
+
 
 public class WelcomeActivity extends AppCompatActivity {
     private ProgressBar progressBar;
-    private Button getStartedButton;
-    private Handler handler = new Handler();
+    private Button getStartedButton,haveAccountButton;
+    private Handler handler = new Handler(Looper.getMainLooper());
+
     private int progressStatus = 0;
 
     @Override
@@ -21,6 +25,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
         progressBar = findViewById(R.id.prg);
         getStartedButton = findViewById(R.id.get_started_button);
+        haveAccountButton = findViewById(R.id.login_button);
 
         new Thread(() -> {
             while (progressStatus < 100) {
@@ -35,7 +40,12 @@ public class WelcomeActivity extends AppCompatActivity {
         }).start();
 
         getStartedButton.setOnClickListener(v -> {
-            Intent intent = new Intent(WelcomeActivity.this, NameRegisterActivity.class);
+            Intent intent = new Intent(WelcomeActivity.this, LanguageUse.class);
+            startActivity(intent);
+            finish(); // đóng WelcomeActivity
+        });
+        haveAccountButton.setOnClickListener(v -> {
+            Intent intent = new Intent(WelcomeActivity.this, LoginActivity.class);
             startActivity(intent);
             finish(); // đóng WelcomeActivity
         });

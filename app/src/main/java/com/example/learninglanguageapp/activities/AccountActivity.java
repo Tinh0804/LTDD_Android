@@ -1,4 +1,5 @@
-package com.example.test;
+package com.example.learninglanguageapp.activities;
+
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +11,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.cardview.widget.CardView;
+
+import com.example.learninglanguageapp.R;
 
 public class AccountActivity extends AppCompatActivity {
 
@@ -23,8 +26,8 @@ public class AccountActivity extends AppCompatActivity {
     private SwitchCompat switchDarkMode;
 
     // Dữ liệu giả lập - sẽ thay thế bằng database sau
-    private String userName = "Andrew";
-    private String userEmail = "Andrew@gmail.com";
+    private String userName = "Lê Hoàng Q.Tỉnh";
+    private String userEmail = "lhqtinh2005@gmail.com";
     private boolean isDarkMode = false;
 
     @Override

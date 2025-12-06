@@ -11,8 +11,8 @@ buildscript {
     dependencies {
         classpath libs.gradle
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath libs.google.services
-        classpath libs.firebase.crashlytics.gradle
+//        classpath libs.google.services
+//        classpath libs.firebase.crashlytics.gradle
 
     }
 }

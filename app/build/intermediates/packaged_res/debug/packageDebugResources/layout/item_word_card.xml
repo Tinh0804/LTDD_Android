@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- CARD FRONT (Mặt trước) -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardFrontContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="24dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="24dp">
+
+            <!-- Word Type Badge -->
+            <TextView
+                android:id="@+id/tvWordType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/bg_badge"
+                android:paddingStart="12dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="4dp"
+                android:text="noun"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <!-- Word Title -->
+            <TextView
+                android:id="@+id/tvWord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvWordType"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:text="Búho"
+                android:textColor="@android:color/black"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+            <!-- Pronunciation -->
+            <TextView
+                android:id="@+id/tvPronunciation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvWord"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="4dp"
+                android:text="/ˈbuːhoʊ/"
+                android:textColor="@color/gray"
+                android:textSize="16sp"
+                android:textStyle="italic" />
+
+            <!-- Translation -->
+            <TextView
+                android:id="@+id/tvTranslation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvPronunciation"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:text="Owl"
+                android:textColor="@color/gray"
+                android:textSize="20sp" />
+
+            <!-- Image -->
+            <ImageView
+                android:id="@+id/ivWord"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_below="@id/tvTranslation"
+                android:layout_above="@id/bottomLayout"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="@string/word_image"
+                android:scaleType="fitCenter" />
+
+            <!-- Bottom Layout -->
+            <RelativeLayout
+                android:id="@+id/bottomLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <!-- Flip Button -->
+                <ImageButton
+                    android:id="@+id/btnFlip"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentStart="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/flip_card"
+                    android:src="@android:drawable/ic_popup_sync"
+                    app:tint="@color/teal_700" />
+
+                <!-- Audio Button -->
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/btnAudio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:contentDescription="@string/play_audio"
+                    android:src="@drawable/ic_volume"
+                    app:backgroundTint="@color/purple_500"
+                    app:fabSize="normal"
+                    app:tint="@android:color/white" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- CARD BACK (Mặt sau) -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardBackContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="24dp"
+        android:visibility="gone"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Word Type Badge -->
+                <TextView
+                    android:id="@+id/tvWordTypeBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:background="@drawable/bg_badge"
+                    android:paddingStart="12dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="12dp"
+                    android:paddingBottom="4dp"
+                    android:text="noun"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <!-- Word -->
+                <TextView
+                    android:id="@+id/tvWordBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp"
+                    android:text="Búho"
+                    android:textColor="@android:color/black"
+                    android:textSize="32sp"
+                    android:textStyle="bold" />
+
+                <!-- Pronunciation -->
+                <TextView
+                    android:id="@+id/tvPronunciationBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="4dp"
+                    android:text="/ˈbuːhoʊ/"
+                    android:textColor="@color/gray"
+                    android:textSize="16sp"
+                    android:textStyle="italic" />
+
+                <!-- Divider -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/gray_light" />
+
+                <!-- Translation Section -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nghĩa:"
+                    android:textColor="@color/blue"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTranslationBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Owl - Con cú mèo"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <!-- Example Sentence Section -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="Câu ví dụ:"
+                    android:textColor="@color/blue"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvExampleSentence"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:lineSpacingExtra="4dp"
+                    android:text="The owl hooted in the night.\nCon cú mèo kêu trong đêm."
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <!-- Bottom buttons -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp">
+
+                    <!-- Flip Back Button -->
+                    <ImageButton
+                        android:id="@+id/btnFlipBack"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_alignParentStart="true"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/flip_card"
+                        android:src="@android:drawable/ic_popup_sync"
+                        app:tint="@color/blue" />
+
+                    <!-- Audio Button Back -->
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/btnAudioBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:contentDescription="@string/play_audio"
+                        android:src="@drawable/ic_volume"
+                        app:backgroundTint="@color/blue"
+                        app:fabSize="normal"
+                        app:tint="@android:color/white" />
+                </RelativeLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

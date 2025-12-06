@@ -1,4 +1,5 @@
-package com.example.test;
+package com.example.learninglanguageapp.activities;
+
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -8,6 +9,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.learninglanguageapp.R;
+import com.example.learninglanguageapp.adapters.LeaderboardAdapter;
+import com.example.learninglanguageapp.models.UIModel.LeaderBoardItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +27,7 @@ public class LeaderboardActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.leaderboard);
+        setContentView(R.layout.activity_leaderboard);
 
         ImageView btnBack = findViewById(R.id.btnback);
         btnBack.setOnClickListener(v -> finish());

@@ -1,10 +1,12 @@
-package com.example.test;
+package com.example.learninglanguageapp.activities;
 
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.view.Window;
+
+import com.example.learninglanguageapp.R;
 
 public class LoadingDialog {
 

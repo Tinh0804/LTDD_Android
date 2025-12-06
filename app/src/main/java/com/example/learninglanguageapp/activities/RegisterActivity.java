@@ -2,112 +2,99 @@ package com.example.learninglanguageapp.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
-import com.example.learninglanguageapp.firebase.FirebaseAuthManager;
-import com.example.learninglanguageapp.utils.Constants;
-import com.example.learninglanguageapp.utils.SharedPrefsHelper;
-import com.example.learninglanguageapp.utils.ValidationUtils;
-import com.google.firebase.auth.FirebaseUser;
 import com.example.learninglanguageapp.R;
 import com.example.learninglanguageapp.databinding.ActivityRegisterBinding;
-
+import com.example.learninglanguageapp.models.Request.RegisterRequest;
+import com.example.learninglanguageapp.viewmodels.AuthViewModel;
 
 public class RegisterActivity extends AppCompatActivity {
 
     private ActivityRegisterBinding binding;
-    private FirebaseAuthManager authManager;
-    private SharedPrefsHelper prefsHelper;
+    private AuthViewModel authViewModel;
+    private boolean isPasswordVisible = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         binding = ActivityRegisterBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        authManager = FirebaseAuthManager.getInstance(this);
-        prefsHelper = new SharedPrefsHelper(this);
+        authViewModel = new ViewModelProvider(this).get(AuthViewModel.class);
 
-        binding.btnRegister.setOnClickListener(v -> handleRegister());
-        binding.tvLogin.setOnClickListener(v -> openLoginActivity());
+        setupClickListeners();
+        observeViewModel();
     }
 
-    private void handleRegister() {
-        String email = binding.etEmail.getText().toString().trim();
-        String password = binding.etPassword.getText().toString().trim();
-        String confirmPassword = binding.etConfirmPassword.getText().toString().trim();
+    private void setupClickListeners() {
+        binding.btnRegister.setOnClickListener(v -> {
+            Bundle bundle = getIntent().getBundleExtra("data");
+            if (bundle == null) {
+                Toast.makeText(this, "Missing registration data", Toast.LENGTH_SHORT).show();
+                finish();
+                return;
+            }
+            int nativeLanguageId = bundle.containsKey("language_use_id") ?
+                    Integer.parseInt(bundle.getString("language_use_id")) : 2;
 
-        if (!validateInput(email, password, confirmPassword)) {
-            return;
-        }
+            int learnLanguageId = bundle.containsKey("language_learn_id") ?
+                    Integer.parseInt(bundle.getString("language_learn_id")) : 1;
 
-        showProgress(true);
+            int courseId = bundle.containsKey("level_id") ?
+                    Integer.parseInt(bundle.getString("level_id")) : 1;
 
-        authManager.createUserWithEmailAndPassword(email, password, new FirebaseAuthManager.AuthResultListener() {
-            @Override
-            public void onSuccess(FirebaseUser user) {
-                showProgress(false);
 
-                prefsHelper.saveString(Constants.PREF_USER_ID, user.getUid());
-                prefsHelper.saveString(Constants.PREF_USER_EMAIL, user.getEmail());
+            String email = binding.etUserName.getText().toString().trim();
+            String password = binding.etPassword.getText().toString().trim();
+            String fullName = binding.etName.getText().toString().trim();
+            String phoneNumber = binding.etPhone.getText().toString().trim();
 
-                Toast.makeText(RegisterActivity.this, getString(R.string.register_success), Toast.LENGTH_SHORT).show();
-                navigateToMain();
+            if (email.isEmpty() || password.isEmpty() || fullName.isEmpty()) {
+                Toast.makeText(this, "Không được để trống thông tin", Toast.LENGTH_SHORT).show();
+                return;
             }
 
-            @Override
-            public void onError(Exception exception) {
-                showProgress(false);
-                Toast.makeText(RegisterActivity.this, getString(R.string.register_failed), Toast.LENGTH_LONG).show();
+            authViewModel.register(new RegisterRequest(email, password, fullName,phoneNumber,courseId, nativeLanguageId, learnLanguageId ));
+        });
+
+        binding.btnTogglePassword.setOnClickListener(v -> {
+            if (isPasswordVisible) {
+                binding.etPassword.setInputType(
+                        android.text.InputType.TYPE_CLASS_TEXT |
+                                android.text.InputType.TYPE_TEXT_VARIATION_PASSWORD
+                );
+                binding.btnTogglePassword.setImageResource(R.drawable.ic_eye_open);
+            } else {
+                binding.etPassword.setInputType(
+                        android.text.InputType.TYPE_CLASS_TEXT |
+                                android.text.InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD
+                );
+                binding.btnTogglePassword.setImageResource(R.drawable.ic_eye);
             }
+            binding.etPassword.setSelection(binding.etPassword.length());
+            isPasswordVisible = !isPasswordVisible;
+        });
+        binding.tvSignIn.setOnClickListener(v -> {
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
         });
     }
 
-    private boolean validateInput(String email, String password, String confirmPassword) {
-        boolean isValid = true;
-
-        if (email.isEmpty() || !ValidationUtils.isValidEmail(email)) {
-            binding.tilEmail.setError(getString(R.string.error_invalid_email));
-            isValid = false;
-        } else {
-            binding.tilEmail.setError(null);
-        }
-
-        if (password.isEmpty() || password.length() < 6) {
-            binding.tilPassword.setError(getString(R.string.error_password_too_short));
-            isValid = false;
-        } else {
-            binding.tilPassword.setError(null);
-        }
-
-        if (!password.equals(confirmPassword)) {
-            binding.tilConfirmPassword.setError(getString(R.string.error_password_not_match));
-            isValid = false;
-        } else {
-            binding.tilConfirmPassword.setError(null);
-        }
-
-        return isValid;
-    }
-
-    private void showProgress(boolean show) {
-        binding.progressBar.setVisibility(show ? View.VISIBLE : View.GONE);
-        binding.btnRegister.setEnabled(!show);
-        binding.btnRegister.setText(show ? "Đang đăng ký..." : getString(R.string.register));
-    }
-
-    private void navigateToMain() {
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
-        overridePendingTransition(R.anim.fade_in, android.R.anim.fade_out);
-        finish();
-    }
-
-    private void openLoginActivity() {
-        finish();
+    private void observeViewModel() {
+        authViewModel.getRegisterResult().observe(this, result -> {
+            if (result.isSuccess()) {
+                Toast.makeText(this, "Đăng ký thành công!", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(this, MainActivity.class); // trở về login
+                startActivity(intent);
+//                finish();
+            } else {
+                Toast.makeText(this, result.getException().getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }

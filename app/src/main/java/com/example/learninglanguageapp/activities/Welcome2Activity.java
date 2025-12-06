@@ -1,9 +1,11 @@
-package com.example.test;
+package com.example.learninglanguageapp.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.learninglanguageapp.R;
 
 public class Welcome2Activity extends AppCompatActivity {
 

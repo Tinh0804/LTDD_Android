@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Cơ bản -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Duolingo primary colors -->
+    <color name="primary_green">#03B409</color>
+    <color name="green">#58CC02</color>          <!-- xanh lá chính -->
+    <color name="green_dark">#46A302</color>     <!-- xanh lá đậm -->
+    <color name="yellow">#FFD600</color>         <!-- vàng -->
+    <color name="blue">#1CB0F6</color>           <!-- xanh dương -->
+    <color name="red">#FF4B4B</color>            <!-- đỏ -->
+    <color name="gray">#757575</color>
+    <color name="gray_light">#E0E0E0</color>
+
+    <!-- Background & Surface -->
+    <color name="background_primary">#FFFFFF</color>
+    <color name="background_secondary">#F5F7FA</color>
+    <color name="background_gray">#F5F5F5</color>
+    <color name="surface_card">#FFFFFF</color>
+
+    <!-- Text -->
+    <color name="text_primary">#000000</color>
+    <color name="text_secondary">#4B4B4B</color>
+    <color name="text_hint">#9E9E9E</color>
+    <color name="text_white">#FFFFFFFF</color>
+
+    <!-- Buttons -->
+
+    <color name="button_primary">@color/green</color>
+    <color name="button_primary_pressed">@color/green_dark</color>
+    <color name="button_disabled">#BDBDBD</color>
+
+    <!-- Navigation / Selector -->
+    <color name="selector_bottom_nav">@color/blue</color>
+
+
+    <!-- Extra colors -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+
+    <color name="success_green">#58CC02</color>
+    <color name="success_green_dark">#46A302</color>
+    <color name="success_green_light">#D7FFB8</color>
+
+    <color name="error_red">#FF4B4B</color>
+    <color name="error_red_dark">#EA2B2B</color>
+    <color name="blue_light">#E8EBFF</color>
+
+    <color name="error_red_light">#FFD6D6</color>
+    <color name="icon_locked">#9E9E9E</color>
+
+</resources>

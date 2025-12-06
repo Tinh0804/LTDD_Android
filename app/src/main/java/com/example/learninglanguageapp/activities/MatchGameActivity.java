@@ -1,4 +1,5 @@
-package com.example.test;
+package com.example.learninglanguageapp.activities;
+
 
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
@@ -12,6 +13,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+
+import com.example.learninglanguageapp.R;
+import com.example.learninglanguageapp.models.UIModel.MatchItem;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,20 +1,22 @@
-package com.example.test;
+package com.example.learninglanguageapp.activities;
+
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.learninglanguageapp.R;
 
 public class AccountPersonal extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.accountpersonal);
+        setContentView(R.layout.activity_account_person);
 
         EditText etName = findViewById(R.id.etName);
         EditText etPhone = findViewById(R.id.etPhoneNumber);
@@ -35,5 +37,4 @@ public class AccountPersonal extends AppCompatActivity {
         tvCountry.setText(country);
     }
 }
-
 
