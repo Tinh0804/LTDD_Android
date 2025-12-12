@@ -40,10 +40,12 @@ public class HelperFunction {
         UserResponse user = sharedPrefsHelper.getCurrentUserResponse();
         return (user != null && user.getHearts() > 0) ? user.getHearts() : 5;
     }
+
     public int loadUserDiamond() {
         UserResponse user = sharedPrefsHelper.getCurrentUserResponse();
         return (user != null && user.getDiamond() > 0) ? user.getDiamond() : 0;
     }
+
     public void saveUserDiamond(int newDiamond) {
         UserResponse user = sharedPrefsHelper.getCurrentUserResponse();
         if (user != null) {

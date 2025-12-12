@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.learninglanguageapp.R;
 import com.example.learninglanguageapp.databinding.ActivityRegisterBinding;
 import com.example.learninglanguageapp.models.Request.RegisterRequest;
+import com.example.learninglanguageapp.models.Response.UserResponse;
 import com.example.learninglanguageapp.viewmodels.AuthViewModel;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -87,6 +88,13 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void observeViewModel() {
         authViewModel.getRegisterResult().observe(this, result -> {
+            if (result.isSuccess())
+                authViewModel.fetchUserProfile();
+            else
+                Toast.makeText(this, result.getException().getMessage(), Toast.LENGTH_LONG).show();
+        });
+
+        authViewModel.getRegisterResult().observe(this, result -> {
             if (result.isSuccess()) {
                 Toast.makeText(this, "Đăng ký thành công!", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(this, MainActivity.class); // trở về login
@@ -96,5 +104,8 @@ public class RegisterActivity extends AppCompatActivity {
                 Toast.makeText(this, result.getException().getMessage(), Toast.LENGTH_LONG).show();
             }
         });
+
+
+
     }
 }

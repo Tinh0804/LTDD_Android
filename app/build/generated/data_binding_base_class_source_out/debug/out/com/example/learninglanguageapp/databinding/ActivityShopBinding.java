@@ -4,10 +4,10 @@ package com.example.learninglanguageapp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,10 +24,13 @@ public final class ActivityShopBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
+  public final Button btnBuyStreakFreeze;
+
+  @NonNull
   public final ImageView btnClose;
 
   @NonNull
-  public final TextView btnRedeemHeart;
+  public final Button btnUnlockCourse;
 
   @NonNull
   public final CardView cardDiamond1000;
@@ -42,13 +45,28 @@ public final class ActivityShopBinding implements ViewBinding {
   public final CardView cardDiamondBalance;
 
   @NonNull
-  public final CardView cardHeart;
+  public final CardView cardHeart10;
+
+  @NonNull
+  public final CardView cardHeart5;
+
+  @NonNull
+  public final CardView cardStreakFreeze;
+
+  @NonNull
+  public final CardView cardUnlockCourse;
+
+  @NonNull
+  public final CardView cardXp100;
+
+  @NonNull
+  public final CardView cardXp250;
+
+  @NonNull
+  public final CardView cardXp500;
 
   @NonNull
   public final LinearLayout layoutDiamondPackages;
-
-  @NonNull
-  public final ProgressBar progressBar;
 
   @NonNull
   public final TextView tvBuyDiamonds;
@@ -57,28 +75,50 @@ public final class ActivityShopBinding implements ViewBinding {
   public final TextView tvDiamondCount;
 
   @NonNull
-  public final TextView tvHeart;
+  public final TextView tvExperienceTitle;
 
-  private ActivityShopBinding(@NonNull FrameLayout rootView, @NonNull ImageView btnClose,
-      @NonNull TextView btnRedeemHeart, @NonNull CardView cardDiamond1000,
-      @NonNull CardView cardDiamond2000, @NonNull CardView cardDiamond3000,
-      @NonNull CardView cardDiamondBalance, @NonNull CardView cardHeart,
-      @NonNull LinearLayout layoutDiamondPackages, @NonNull ProgressBar progressBar,
-      @NonNull TextView tvBuyDiamonds, @NonNull TextView tvDiamondCount,
-      @NonNull TextView tvHeart) {
+  @NonNull
+  public final TextView tvHeartsTitle;
+
+  @NonNull
+  public final TextView tvStreakTitle;
+
+  @NonNull
+  public final TextView tvUnlockCourseTitle;
+
+  private ActivityShopBinding(@NonNull FrameLayout rootView, @NonNull Button btnBuyStreakFreeze,
+      @NonNull ImageView btnClose, @NonNull Button btnUnlockCourse,
+      @NonNull CardView cardDiamond1000, @NonNull CardView cardDiamond2000,
+      @NonNull CardView cardDiamond3000, @NonNull CardView cardDiamondBalance,
+      @NonNull CardView cardHeart10, @NonNull CardView cardHeart5,
+      @NonNull CardView cardStreakFreeze, @NonNull CardView cardUnlockCourse,
+      @NonNull CardView cardXp100, @NonNull CardView cardXp250, @NonNull CardView cardXp500,
+      @NonNull LinearLayout layoutDiamondPackages, @NonNull TextView tvBuyDiamonds,
+      @NonNull TextView tvDiamondCount, @NonNull TextView tvExperienceTitle,
+      @NonNull TextView tvHeartsTitle, @NonNull TextView tvStreakTitle,
+      @NonNull TextView tvUnlockCourseTitle) {
     this.rootView = rootView;
+    this.btnBuyStreakFreeze = btnBuyStreakFreeze;
     this.btnClose = btnClose;
-    this.btnRedeemHeart = btnRedeemHeart;
+    this.btnUnlockCourse = btnUnlockCourse;
     this.cardDiamond1000 = cardDiamond1000;
     this.cardDiamond2000 = cardDiamond2000;
     this.cardDiamond3000 = cardDiamond3000;
     this.cardDiamondBalance = cardDiamondBalance;
-    this.cardHeart = cardHeart;
+    this.cardHeart10 = cardHeart10;
+    this.cardHeart5 = cardHeart5;
+    this.cardStreakFreeze = cardStreakFreeze;
+    this.cardUnlockCourse = cardUnlockCourse;
+    this.cardXp100 = cardXp100;
+    this.cardXp250 = cardXp250;
+    this.cardXp500 = cardXp500;
     this.layoutDiamondPackages = layoutDiamondPackages;
-    this.progressBar = progressBar;
     this.tvBuyDiamonds = tvBuyDiamonds;
     this.tvDiamondCount = tvDiamondCount;
-    this.tvHeart = tvHeart;
+    this.tvExperienceTitle = tvExperienceTitle;
+    this.tvHeartsTitle = tvHeartsTitle;
+    this.tvStreakTitle = tvStreakTitle;
+    this.tvUnlockCourseTitle = tvUnlockCourseTitle;
   }
 
   @Override
@@ -108,15 +148,21 @@ public final class ActivityShopBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnBuyStreakFreeze;
+      Button btnBuyStreakFreeze = ViewBindings.findChildViewById(rootView, id);
+      if (btnBuyStreakFreeze == null) {
+        break missingId;
+      }
+
       id = R.id.btnClose;
       ImageView btnClose = ViewBindings.findChildViewById(rootView, id);
       if (btnClose == null) {
         break missingId;
       }
 
-      id = R.id.btnRedeemHeart;
-      TextView btnRedeemHeart = ViewBindings.findChildViewById(rootView, id);
-      if (btnRedeemHeart == null) {
+      id = R.id.btnUnlockCourse;
+      Button btnUnlockCourse = ViewBindings.findChildViewById(rootView, id);
+      if (btnUnlockCourse == null) {
         break missingId;
       }
 
@@ -144,21 +190,51 @@ public final class ActivityShopBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.cardHeart;
-      CardView cardHeart = ViewBindings.findChildViewById(rootView, id);
-      if (cardHeart == null) {
+      id = R.id.cardHeart10;
+      CardView cardHeart10 = ViewBindings.findChildViewById(rootView, id);
+      if (cardHeart10 == null) {
+        break missingId;
+      }
+
+      id = R.id.cardHeart5;
+      CardView cardHeart5 = ViewBindings.findChildViewById(rootView, id);
+      if (cardHeart5 == null) {
+        break missingId;
+      }
+
+      id = R.id.cardStreakFreeze;
+      CardView cardStreakFreeze = ViewBindings.findChildViewById(rootView, id);
+      if (cardStreakFreeze == null) {
+        break missingId;
+      }
+
+      id = R.id.cardUnlockCourse;
+      CardView cardUnlockCourse = ViewBindings.findChildViewById(rootView, id);
+      if (cardUnlockCourse == null) {
+        break missingId;
+      }
+
+      id = R.id.cardXp100;
+      CardView cardXp100 = ViewBindings.findChildViewById(rootView, id);
+      if (cardXp100 == null) {
+        break missingId;
+      }
+
+      id = R.id.cardXp250;
+      CardView cardXp250 = ViewBindings.findChildViewById(rootView, id);
+      if (cardXp250 == null) {
+        break missingId;
+      }
+
+      id = R.id.cardXp500;
+      CardView cardXp500 = ViewBindings.findChildViewById(rootView, id);
+      if (cardXp500 == null) {
         break missingId;
       }
 
       id = R.id.layoutDiamondPackages;
       LinearLayout layoutDiamondPackages = ViewBindings.findChildViewById(rootView, id);
       if (layoutDiamondPackages == null) {
-        break missingId;
-      }
-
-      id = R.id.progressBar;
-      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
-      if (progressBar == null) {
         break missingId;
       }
 
@@ -174,15 +250,35 @@ public final class ActivityShopBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tvHeart;
-      TextView tvHeart = ViewBindings.findChildViewById(rootView, id);
-      if (tvHeart == null) {
+      id = R.id.tvExperienceTitle;
+      TextView tvExperienceTitle = ViewBindings.findChildViewById(rootView, id);
+      if (tvExperienceTitle == null) {
         break missingId;
       }
 
-      return new ActivityShopBinding((FrameLayout) rootView, btnClose, btnRedeemHeart,
-          cardDiamond1000, cardDiamond2000, cardDiamond3000, cardDiamondBalance, cardHeart,
-          layoutDiamondPackages, progressBar, tvBuyDiamonds, tvDiamondCount, tvHeart);
+      id = R.id.tvHeartsTitle;
+      TextView tvHeartsTitle = ViewBindings.findChildViewById(rootView, id);
+      if (tvHeartsTitle == null) {
+        break missingId;
+      }
+
+      id = R.id.tvStreakTitle;
+      TextView tvStreakTitle = ViewBindings.findChildViewById(rootView, id);
+      if (tvStreakTitle == null) {
+        break missingId;
+      }
+
+      id = R.id.tvUnlockCourseTitle;
+      TextView tvUnlockCourseTitle = ViewBindings.findChildViewById(rootView, id);
+      if (tvUnlockCourseTitle == null) {
+        break missingId;
+      }
+
+      return new ActivityShopBinding((FrameLayout) rootView, btnBuyStreakFreeze, btnClose,
+          btnUnlockCourse, cardDiamond1000, cardDiamond2000, cardDiamond3000, cardDiamondBalance,
+          cardHeart10, cardHeart5, cardStreakFreeze, cardUnlockCourse, cardXp100, cardXp250,
+          cardXp500, layoutDiamondPackages, tvBuyDiamonds, tvDiamondCount, tvExperienceTitle,
+          tvHeartsTitle, tvStreakTitle, tvUnlockCourseTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

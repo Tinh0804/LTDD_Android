@@ -14,7 +14,9 @@
 .cxx
 local.properties
 
-
+*.pub
+id_ed25519_tinh0804.pub
+id_ed25519_tinh0804
 *.apk
 *.ap_
 *.keystore
