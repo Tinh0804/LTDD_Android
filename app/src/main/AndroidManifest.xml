@@ -91,17 +91,14 @@
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.LearningLanguageApp.Splash">
+
             <intent-filter>
-                <!--                <category android:name="android.intent.category.DEFAULT" />-->
-                <!--                <category android:name="android.intent.category.BROWSABLE" />-->
-
-                <!--                <data android:scheme="@string/fb_login_protocol_scheme" />-->
-
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+
         </activity>
+
         <activity
             android:name=".activities.WelcomeActivity"
             android:exported="false" />
@@ -112,8 +109,24 @@
             android:name=".activities.RegisterActivity"
             android:exported="false" />
         <activity
+            android:name=".activities.LanguageUse"
+            android:exported="false"/>
+        <activity
+            android:name=".activities.LanguageLearn"
+            android:exported="false"/>
+        <activity
+            android:name=".activities.LevelActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".activities.StudyTimeActivity"
+            android:exported="false"/>
+
+
+
+        <activity
             android:name=".activities.LoginActivity"
             android:exported="false" >
+
         </activity> <!-- Main Activity -->
         <activity
             android:name=".activities.MainActivity"
@@ -131,33 +144,33 @@
             android:exported="false"
             tools:ignore="MissingClass"
             tools:replace="android:exported" />
-<!--        <activity-->
-<!--            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"-->
-<!--            android:excludeFromRecents="true"-->
-<!--            android:exported="false"-->
-<!--            android:theme="@android:style/Theme.Translucent.NoTitleBar" />-->
+        <!--        <activity-->
+        <!--            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"-->
+        <!--            android:excludeFromRecents="true"-->
+        <!--            android:exported="false"-->
+        <!--            android:theme="@android:style/Theme.Translucent.NoTitleBar" />-->
 
-<!--        <service-->
-<!--            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"-->
-<!--            android:exported="true"-->
-<!--            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_BOUND_SERVICE"-->
-<!--            tools:replace="android:permission" />-->
+        <!--        <service-->
+        <!--            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"-->
+        <!--            android:exported="true"-->
+        <!--            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_BOUND_SERVICE"-->
+        <!--            tools:replace="android:permission" />-->
 
-<!--        <provider-->
-<!--            android:name="androidx.core.content.FileProvider"-->
-<!--            android:authorities="${applicationId}.fileprovider"-->
-<!--            android:exported="false"-->
-<!--            android:grantUriPermissions="true">-->
-<!--            <meta-data-->
-<!--                android:name="android.support.FILE_PROVIDER_PATHS"-->
-<!--                android:resource="@xml/file_paths" />-->
-<!--        </provider> &lt;!&ndash; Firebase App Check (Security) &ndash;&gt;-->
-<!--        <meta-data-->
-<!--            android:name="firebase_analytics_collection_enabled"-->
-<!--            android:value="true" />-->
-<!--        <meta-data-->
-<!--            android:name="firebase_crashlytics_collection_enabled"-->
-<!--            android:value="true" />-->
+        <!--        <provider-->
+        <!--            android:name="androidx.core.content.FileProvider"-->
+        <!--            android:authorities="${applicationId}.fileprovider"-->
+        <!--            android:exported="false"-->
+        <!--            android:grantUriPermissions="true">-->
+        <!--            <meta-data-->
+        <!--                android:name="android.support.FILE_PROVIDER_PATHS"-->
+        <!--                android:resource="@xml/file_paths" />-->
+        <!--        </provider> &lt;!&ndash; Firebase App Check (Security) &ndash;&gt;-->
+        <!--        <meta-data-->
+        <!--            android:name="firebase_analytics_collection_enabled"-->
+        <!--            android:value="true" />-->
+        <!--        <meta-data-->
+        <!--            android:name="firebase_crashlytics_collection_enabled"-->
+        <!--            android:value="true" />-->
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
