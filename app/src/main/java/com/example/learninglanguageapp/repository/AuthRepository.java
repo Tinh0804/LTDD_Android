@@ -74,7 +74,7 @@ public class AuthRepository {
             public void onResponse(Call<ApiResponse<LoginResponse>> call, Response<ApiResponse<LoginResponse>> response) {
                 if (response.isSuccessful() && response.body() != null && response.body().isStatus()) {
                     LoginResponse loginResp = response.body().getData();
-
+                    prefs.clearAll();
                     // Lưu token sau khi register thành công (tương tự login)
                     prefs.saveToken(
                             loginResp.getToken(),

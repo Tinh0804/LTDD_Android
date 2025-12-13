@@ -53,7 +53,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:lineSpacingExtra="4dp"
-        android:text="Nice! How much time can you study each day?"
+        android:text="Tuyệt!Thời gian ban học mỗi ngày là bao nhiêu?"
         android:textColor="#000000"
         android:textSize="28sp"
         android:textStyle="bold" />
@@ -297,7 +297,7 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/button_background"
         android:elevation="4dp"
-        android:text="Continue"
+        android:text="Tiếp tục"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         android:textStyle="bold" />

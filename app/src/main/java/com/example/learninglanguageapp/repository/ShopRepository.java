@@ -9,8 +9,10 @@ import androidx.lifecycle.MutableLiveData;
 import com.example.learninglanguageapp.models.Request.PaymentRequest;
 import com.example.learninglanguageapp.models.Response.ApiResponse;
 import com.example.learninglanguageapp.models.Response.PaymentResponse;
+import com.example.learninglanguageapp.models.UIModel.PackagePayment;
 import com.example.learninglanguageapp.network.ApiClient;
 import com.example.learninglanguageapp.network.ApiService;
+import com.example.learninglanguageapp.utils.HelperFunction;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -21,7 +23,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ShopRepository {
 
     private ApiService apiService;
-    private Handler mainHandler = new Handler(Looper.getMainLooper());
+//    private Handler mainHandler = new Handler(Looper.getMainLooper());
 
     public ShopRepository(Context context) {
         this.apiService = ApiClient.getApiService(context);
@@ -110,6 +112,40 @@ public class ShopRepository {
 //                error.postValue(t.getMessage());
 //            }
 //        });
+    }
+    public void purchaseWithDiamond(PackagePayment pkg,
+                                    MutableLiveData<Boolean> successLiveData,
+                                    MutableLiveData<Boolean> loading,
+                                    MutableLiveData<String> error) {
+        loading.postValue(true);
+
+        apiService.purchaseWithDiamond(pkg).enqueue(new Callback<ApiResponse<Boolean>>() {
+            @Override
+            public void onResponse(Call<ApiResponse<Boolean>> call, Response<ApiResponse<Boolean>> response) {
+                loading.postValue(false);
+                if (response.isSuccessful() && response.body() != null) {
+                    if (response.body().isStatus()) {
+                        successLiveData.postValue(true);
+                        HelperFunction.getInstance().saveUserDiamond(HelperFunction.getInstance().loadUserDiamond() - pkg.getValue());
+
+                    } else {
+                        successLiveData.postValue(false);
+                        error.postValue(response.body().getMessage() != null ?
+                                response.body().getMessage() : "Mua hàng thất bại");
+                    }
+                } else {
+                    successLiveData.postValue(false);
+                    error.postValue("Lỗi server: " + response.code());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ApiResponse<Boolean>> call, Throwable t) {
+                loading.postValue(false);
+                successLiveData.postValue(false);
+                error.postValue("Lỗi kết nối: " + t.getMessage());
+            }
+        });
     }
 
     public interface PaymentVerifyCallback {

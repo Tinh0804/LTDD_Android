@@ -13,6 +13,7 @@ import com.example.learninglanguageapp.models.Response.BalanceResponse;
 import com.example.learninglanguageapp.models.Response.LoginResponse;
 import com.example.learninglanguageapp.models.Response.PaymentResponse;
 import com.example.learninglanguageapp.models.Response.UserResponse;
+import com.example.learninglanguageapp.models.UIModel.PackagePayment;
 import com.example.learninglanguageapp.models.Unit;
 import com.example.learninglanguageapp.models.Word;
 import retrofit2.http.GET;
@@ -29,19 +30,15 @@ import retrofit2.http.Query;
 
 public interface ApiService {
 
-    // 1. LOGIN THƯỜNG – TRẢ VỀ ApiResponse<LoginResponse>
     @POST("api/Auth/login")
     Call<ApiResponse<LoginResponse>> login(@Body LoginRequest request);
 
-    // 2. ĐĂNG KÝ – TRẢ VỀ ApiResponse<UserResponse>
     @POST("api/Auth/register")
     Call<ApiResponse<LoginResponse>> register(@Body RegisterRequest request);
 
-    // 3. SOCIAL LOGIN – BACKEND TRẢ VỀ LoginResponse TRỰC TIẾP (không bọc ApiResponse)
     @POST("api/Auth/external-login")
     Call<ApiResponse<LoginResponse>> socialLogin(@Body SocialLoginRequest request);
 
-    // 4. LẤY PROFILE – TRẢ VỀ ApiResponse<UserResponse>
     @GET("api/Profile/myInfo")
     Call<ApiResponse<UserResponse>> getMyProfile(@Header("Authorization") String authHeader);
 
@@ -69,7 +66,7 @@ public interface ApiService {
     Call<ApiResponse<List<Lesson>>> getLessonsByUnit(
             @Path("unitId") int unitId
     );
+    @POST("api/Payment/shop")
+    Call<ApiResponse<Boolean>> purchaseWithDiamond(@Body PackagePayment packagePayment);
 
-    @POST("api/Auth/revoke-token")
-    Call<ApiResponse<String>> revokeToken(@Query("refreshToken") String refreshToken);
 }
