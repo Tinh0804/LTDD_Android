@@ -69,4 +69,7 @@ public interface ApiService {
     @POST("api/Payment/shop")
     Call<ApiResponse<Boolean>> purchaseWithDiamond(@Body PackagePayment packagePayment);
 
+    @POST("api/Auth/revoke-token")
+    Call<ApiResponse<String>> revokeToken(@Body String refreshToken);
+
 }
