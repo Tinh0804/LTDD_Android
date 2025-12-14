@@ -71,5 +71,6 @@ public interface ApiService {
 
     @POST("api/Auth/revoke-token")
     Call<ApiResponse<String>> revokeToken(@Body String refreshToken);
-
+    @GET("api/Profile")
+    Call<ApiResponse<List<UserResponse>>> getAllUsersRanking(@Header("Authorization") String authHeader);
 }

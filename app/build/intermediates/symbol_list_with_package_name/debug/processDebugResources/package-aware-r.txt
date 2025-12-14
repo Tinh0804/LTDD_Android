@@ -51,6 +51,8 @@ anim nav_default_enter_anim
 anim nav_default_exit_anim
 anim nav_default_pop_enter_anim
 anim nav_default_pop_exit_anim
+anim scale_up
+anim shake
 anim slide_in_right
 anim slide_out_left
 animator design_appbar_state_list_animator
@@ -3246,6 +3248,12 @@ drawable audience
 drawable avatar
 drawable avd_hide_password
 drawable avd_show_password
+drawable avt_fr1
+drawable avt_fr2
+drawable avt_fr3
+drawable avt_fr4
+drawable avt_fr5
+drawable avt_fr6
 drawable background_splash
 drawable bag
 drawable beginer
@@ -3278,6 +3286,8 @@ drawable bg_rank_top5
 drawable bg_selected
 drawable bg_selected_matchgame
 drawable bg_start_label
+drawable bg_word_chip_correct
+drawable bg_word_chip_wrong
 drawable bg_wrong
 drawable book
 drawable btn_checkbox_checked_mtrl
@@ -3969,6 +3979,7 @@ id etName
 id etPassword
 id etPhone
 id etPhoneNumber
+id etSearch
 id etUserName
 id exitUntilCollapsed
 id exo_ad_overlay
@@ -4044,6 +4055,7 @@ id floating
 id forever
 id fragment_container
 id fragment_container_view_tag
+id friendsContainer
 id frost
 id fullscreen_header
 id gameGrid
@@ -4094,9 +4106,11 @@ id inward
 id is_pooling_container_tag
 id italic
 id item_touch_helper_previous_elevation
+id ivAddFriend
 id ivApple
 id ivArrangeWordIcon
 id ivAvatar
+id ivBack
 id ivCheck
 id ivCountryFlag
 id ivIcon
@@ -4465,6 +4479,7 @@ id tvDateOfBirth
 id tvDateRange
 id tvDiamondCount
 id tvExampleSentence
+id tvExperiencePoints
 id tvExperienceTitle
 id tvFeedback
 id tvFollowers
@@ -4485,6 +4500,8 @@ id tvMatchingSubtitle
 id tvMatchingTitle
 id tvMonthYear
 id tvName
+id tvOnlineFriends
+id tvOnlineStatus
 id tvPosition
 id tvPremium
 id tvProgress
@@ -4498,6 +4515,7 @@ id tvStreak
 id tvStreakTitle
 id tvSubtitle
 id tvTitle
+id tvTotalFriends
 id tvTranslation
 id tvTranslationBack
 id tvUnitDesc
@@ -4679,10 +4697,12 @@ layout abc_tooltip
 layout accountpersonal
 layout activity_account
 layout activity_account_person
+layout activity_forgot_password
 layout activity_game
 layout activity_gamewordrop
 layout activity_leaderboard
 layout activity_lesson
+layout activity_list_friend
 layout activity_login
 layout activity_main
 layout activity_match_game
@@ -4737,6 +4757,7 @@ layout fragment_home
 layout fragment_home2
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
+layout item_friend
 layout item_language
 layout item_leaderboard
 layout item_lesson_circle

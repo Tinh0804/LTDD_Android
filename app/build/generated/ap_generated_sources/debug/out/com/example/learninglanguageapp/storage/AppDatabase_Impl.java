@@ -11,6 +11,8 @@ import androidx.sqlite.SQLite;
 import androidx.sqlite.SQLiteConnection;
 import com.example.learninglanguageapp.storage.DAOs.ExerciseDAO;
 import com.example.learninglanguageapp.storage.DAOs.ExerciseDAO_Impl;
+import com.example.learninglanguageapp.storage.DAOs.UserDAO;
+import com.example.learninglanguageapp.storage.DAOs.UserDAO_Impl;
 import com.example.learninglanguageapp.storage.DAOs.WordDao;
 import com.example.learninglanguageapp.storage.DAOs.WordDao_Impl;
 import java.lang.Class;
@@ -32,22 +34,26 @@ public final class AppDatabase_Impl extends AppDatabase {
 
   private volatile ExerciseDAO _exerciseDAO;
 
+  private volatile UserDAO _userDAO;
+
   @Override
   @NonNull
   protected RoomOpenDelegate createOpenDelegate() {
-    final RoomOpenDelegate _openDelegate = new RoomOpenDelegate(2, "555ddb9d29f593a7d07485047b3a29a5", "b619791ec60ce513a1faf0e6dfd3d729") {
+    final RoomOpenDelegate _openDelegate = new RoomOpenDelegate(3, "ef99b204bc842d5fa9302cae56daff78", "4a3643ac3cd811188cb8d73196dc444c") {
       @Override
       public void createAllTables(@NonNull final SQLiteConnection connection) {
         SQLite.execSQL(connection, "CREATE TABLE IF NOT EXISTS `words` (`wordId` INTEGER NOT NULL, `languageId` INTEGER NOT NULL, `lessonId` INTEGER NOT NULL, `wordName` TEXT, `translation` TEXT, `pronunciation` TEXT, `wordType` TEXT, `audioFile` TEXT, `exampleSentence` TEXT, `imageUrl` TEXT, PRIMARY KEY(`wordId`))");
         SQLite.execSQL(connection, "CREATE TABLE IF NOT EXISTS `exercises` (`exerciseId` INTEGER NOT NULL, `lessonId` INTEGER NOT NULL, `unitId` INTEGER NOT NULL, `orderIndex` INTEGER NOT NULL, `exerciseType` TEXT, `question` TEXT, `audioFile` TEXT, `correctAnswer` TEXT, `experienceReward` INTEGER NOT NULL, `options` TEXT, PRIMARY KEY(`exerciseId`))");
+        SQLite.execSQL(connection, "CREATE TABLE IF NOT EXISTS `users` (`userId` TEXT NOT NULL, `fullName` TEXT, `phoneNumber` TEXT, `dateOfBirth` TEXT, `nativeLanguageId` INTEGER NOT NULL, `totalExperience` INTEGER NOT NULL, `currentStreak` INTEGER NOT NULL, `longestStreak` INTEGER NOT NULL, `hearts` INTEGER NOT NULL, `subscriptionType` TEXT, `diamond` INTEGER NOT NULL, PRIMARY KEY(`userId`))");
         SQLite.execSQL(connection, "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        SQLite.execSQL(connection, "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '555ddb9d29f593a7d07485047b3a29a5')");
+        SQLite.execSQL(connection, "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ef99b204bc842d5fa9302cae56daff78')");
       }
 
       @Override
       public void dropAllTables(@NonNull final SQLiteConnection connection) {
         SQLite.execSQL(connection, "DROP TABLE IF EXISTS `words`");
         SQLite.execSQL(connection, "DROP TABLE IF EXISTS `exercises`");
+        SQLite.execSQL(connection, "DROP TABLE IF EXISTS `users`");
       }
 
       @Override
@@ -112,6 +118,27 @@ public final class AppDatabase_Impl extends AppDatabase {
                   + " Expected:\n" + _infoExercises + "\n"
                   + " Found:\n" + _existingExercises);
         }
+        final Map<String, TableInfo.Column> _columnsUsers = new HashMap<String, TableInfo.Column>(11);
+        _columnsUsers.put("userId", new TableInfo.Column("userId", "TEXT", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsUsers.put("fullName", new TableInfo.Column("fullName", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsUsers.put("phoneNumber", new TableInfo.Column("phoneNumber", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsUsers.put("dateOfBirth", new TableInfo.Column("dateOfBirth", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsUsers.put("nativeLanguageId", new TableInfo.Column("nativeLanguageId", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsUsers.put("totalExperience", new TableInfo.Column("totalExperience", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsUsers.put("currentStreak", new TableInfo.Column("currentStreak", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsUsers.put("longestStreak", new TableInfo.Column("longestStreak", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsUsers.put("hearts", new TableInfo.Column("hearts", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsUsers.put("subscriptionType", new TableInfo.Column("subscriptionType", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsUsers.put("diamond", new TableInfo.Column("diamond", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final Set<TableInfo.ForeignKey> _foreignKeysUsers = new HashSet<TableInfo.ForeignKey>(0);
+        final Set<TableInfo.Index> _indicesUsers = new HashSet<TableInfo.Index>(0);
+        final TableInfo _infoUsers = new TableInfo("users", _columnsUsers, _foreignKeysUsers, _indicesUsers);
+        final TableInfo _existingUsers = TableInfo.read(connection, "users");
+        if (!_infoUsers.equals(_existingUsers)) {
+          return new RoomOpenDelegate.ValidationResult(false, "users(com.example.learninglanguageapp.models.Entities.UserEntity).\n"
+                  + " Expected:\n" + _infoUsers + "\n"
+                  + " Found:\n" + _existingUsers);
+        }
         return new RoomOpenDelegate.ValidationResult(true, null);
       }
     };
@@ -123,12 +150,12 @@ public final class AppDatabase_Impl extends AppDatabase {
   protected InvalidationTracker createInvalidationTracker() {
     final Map<String, String> _shadowTablesMap = new HashMap<String, String>(0);
     final Map<String, Set<String>> _viewTables = new HashMap<String, Set<String>>(0);
-    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "words", "exercises");
+    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "words", "exercises", "users");
   }
 
   @Override
   public void clearAllTables() {
-    super.performClear(false, "words", "exercises");
+    super.performClear(false, "words", "exercises", "users");
   }
 
   @Override
@@ -137,6 +164,7 @@ public final class AppDatabase_Impl extends AppDatabase {
     final Map<Class<?>, List<Class<?>>> _typeConvertersMap = new HashMap<Class<?>, List<Class<?>>>();
     _typeConvertersMap.put(WordDao.class, WordDao_Impl.getRequiredConverters());
     _typeConvertersMap.put(ExerciseDAO.class, ExerciseDAO_Impl.getRequiredConverters());
+    _typeConvertersMap.put(UserDAO.class, UserDAO_Impl.getRequiredConverters());
     return _typeConvertersMap;
   }
 
@@ -179,6 +207,20 @@ public final class AppDatabase_Impl extends AppDatabase {
           _exerciseDAO = new ExerciseDAO_Impl(this);
         }
         return _exerciseDAO;
+      }
+    }
+  }
+
+  @Override
+  public UserDAO userDAO() {
+    if (_userDAO != null) {
+      return _userDAO;
+    } else {
+      synchronized(this) {
+        if(_userDAO == null) {
+          _userDAO = new UserDAO_Impl(this);
+        }
+        return _userDAO;
       }
     }
   }
