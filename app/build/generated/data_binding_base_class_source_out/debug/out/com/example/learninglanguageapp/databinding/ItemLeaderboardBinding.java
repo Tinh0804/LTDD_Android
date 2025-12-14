@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,7 +19,7 @@ import java.lang.String;
 
 public final class ItemLeaderboardBinding implements ViewBinding {
   @NonNull
-  private final RelativeLayout rootView;
+  private final LinearLayout rootView;
 
   @NonNull
   public final CircleImageView imgAvatar;
@@ -36,9 +36,9 @@ public final class ItemLeaderboardBinding implements ViewBinding {
   @NonNull
   public final TextView tvXP;
 
-  private ItemLeaderboardBinding(@NonNull RelativeLayout rootView,
-      @NonNull CircleImageView imgAvatar, @NonNull ImageView imgMedal, @NonNull TextView tvName,
-      @NonNull TextView tvRank, @NonNull TextView tvXP) {
+  private ItemLeaderboardBinding(@NonNull LinearLayout rootView, @NonNull CircleImageView imgAvatar,
+      @NonNull ImageView imgMedal, @NonNull TextView tvName, @NonNull TextView tvRank,
+      @NonNull TextView tvXP) {
     this.rootView = rootView;
     this.imgAvatar = imgAvatar;
     this.imgMedal = imgMedal;
@@ -49,7 +49,7 @@ public final class ItemLeaderboardBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public RelativeLayout getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -104,7 +104,7 @@ public final class ItemLeaderboardBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemLeaderboardBinding((RelativeLayout) rootView, imgAvatar, imgMedal, tvName,
+      return new ItemLeaderboardBinding((LinearLayout) rootView, imgAvatar, imgMedal, tvName,
           tvRank, tvXP);
     }
     String missingId = rootView.getResources().getResourceName(id);

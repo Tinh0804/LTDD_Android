@@ -20,6 +20,7 @@ import com.example.learninglanguageapp.storage.DAOs.WordDao;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -97,6 +98,57 @@ public class LessonRepository {
                     });
         }).start();
     }
+    public void getWordsForMatchGame(int lessonId,
+                                     Consumer<List<Word>> onSuccess,
+                                     Consumer<String> onError) {
+
+        new Thread(() -> {
+            // 1. Lấy từ cache trước (offline first)
+            List<WordEntity> cached = wordDao.getWordsByLesson(lessonId);
+            if (!cached.isEmpty()) {
+                List<Word> words = new ArrayList<>();
+                for (WordEntity entity : cached) {
+                    words.add(WordMapper.toDomain(entity));
+                }
+                onSuccess.accept(words);
+                return;
+            }
+
+            // 2. Không có cache → gọi API
+            api.getWordsByLessonOfUser(lessonId)
+                    .enqueue(new Callback<ApiResponse<List<Word>>>() {
+                        @Override
+                        public void onResponse(Call<ApiResponse<List<Word>>> call,
+                                               Response<ApiResponse<List<Word>>> response) {
+
+                            if (response.isSuccessful() && response.body() != null && response.body().getData() != null) {
+                                List<Word> words = response.body().getData();
+
+                                // Trả kết quả cho ViewModel
+                                onSuccess.accept(words);
+
+                                // Lưu vào Room (background)
+                                new Thread(() -> {
+                                    List<WordEntity> entities = new ArrayList<>();
+                                    for (Word word : words) {
+                                        entities.add(WordMapper.toEntity(word));
+                                    }
+                                    wordDao.insertWords(entities);
+                                }).start();
+
+                            } else {
+                                onError.accept("Không tải được dữ liệu từ server");
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<ApiResponse<List<Word>>> call, Throwable t) {
+                            onError.accept(t.getMessage() != null ? t.getMessage() : "Lỗi kết nối mạng");
+                        }
+                    });
+        }).start();
+    }
+
 //    public void getWords(int lessonId,int userId,
 //                         MutableLiveData<List<Word>> wordsLiveData,
 //                         MutableLiveData<Boolean> loadingLiveData,

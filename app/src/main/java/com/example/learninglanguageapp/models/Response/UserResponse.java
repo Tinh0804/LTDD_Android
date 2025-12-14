@@ -38,6 +38,8 @@ public class UserResponse {
     @SerializedName("userAccountId")
     private String userAccountId;
 
+    @SerializedName("avatarUrl")
+    private String avatarUrl;
 
     // Getter & Setter
     public int getDiamond() { return diamond; }
@@ -72,4 +74,14 @@ public class UserResponse {
 
     public String getUserAccountId() { return userAccountId; }
     public void setUserAccountId(String userAccountId) { this.userAccountId = userAccountId; }
+
+    // Getter & Setter cho avatar
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
+    }
+
 }

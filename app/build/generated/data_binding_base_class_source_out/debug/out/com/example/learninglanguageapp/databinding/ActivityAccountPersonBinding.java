@@ -4,7 +4,6 @@ package com.example.learninglanguageapp.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -30,9 +29,6 @@ public final class ActivityAccountPersonBinding implements ViewBinding {
 
   @NonNull
   public final RelativeLayout btnEditPhoto;
-
-  @NonNull
-  public final Button btnUpdate;
 
   @NonNull
   public final EditText etEmail;
@@ -71,8 +67,8 @@ public final class ActivityAccountPersonBinding implements ViewBinding {
   public final TextView tvGender;
 
   private ActivityAccountPersonBinding(@NonNull ScrollView rootView, @NonNull ImageView btnBack,
-      @NonNull RelativeLayout btnEditPhoto, @NonNull Button btnUpdate, @NonNull EditText etEmail,
-      @NonNull EditText etName, @NonNull EditText etPhoneNumber, @NonNull ImageView ivCountryFlag,
+      @NonNull RelativeLayout btnEditPhoto, @NonNull EditText etEmail, @NonNull EditText etName,
+      @NonNull EditText etPhoneNumber, @NonNull ImageView ivCountryFlag,
       @NonNull CircleImageView ivProfileImage, @NonNull RelativeLayout layoutCountry,
       @NonNull LinearLayout layoutCountryCode, @NonNull RelativeLayout layoutDateOfBirth,
       @NonNull RelativeLayout layoutGender, @NonNull TextView tvCountry,
@@ -80,7 +76,6 @@ public final class ActivityAccountPersonBinding implements ViewBinding {
     this.rootView = rootView;
     this.btnBack = btnBack;
     this.btnEditPhoto = btnEditPhoto;
-    this.btnUpdate = btnUpdate;
     this.etEmail = etEmail;
     this.etName = etName;
     this.etPhoneNumber = etPhoneNumber;
@@ -131,12 +126,6 @@ public final class ActivityAccountPersonBinding implements ViewBinding {
       id = R.id.btnEditPhoto;
       RelativeLayout btnEditPhoto = ViewBindings.findChildViewById(rootView, id);
       if (btnEditPhoto == null) {
-        break missingId;
-      }
-
-      id = R.id.btnUpdate;
-      Button btnUpdate = ViewBindings.findChildViewById(rootView, id);
-      if (btnUpdate == null) {
         break missingId;
       }
 
@@ -212,9 +201,9 @@ public final class ActivityAccountPersonBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityAccountPersonBinding((ScrollView) rootView, btnBack, btnEditPhoto,
-          btnUpdate, etEmail, etName, etPhoneNumber, ivCountryFlag, ivProfileImage, layoutCountry,
-          layoutCountryCode, layoutDateOfBirth, layoutGender, tvCountry, tvDateOfBirth, tvGender);
+      return new ActivityAccountPersonBinding((ScrollView) rootView, btnBack, btnEditPhoto, etEmail,
+          etName, etPhoneNumber, ivCountryFlag, ivProfileImage, layoutCountry, layoutCountryCode,
+          layoutDateOfBirth, layoutGender, tvCountry, tvDateOfBirth, tvGender);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

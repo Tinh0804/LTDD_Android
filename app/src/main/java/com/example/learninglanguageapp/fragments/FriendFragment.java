@@ -1,14 +1,11 @@
 package com.example.learninglanguageapp.fragments;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,18 +16,12 @@ import com.example.learninglanguageapp.R;
 
 public class FriendFragment extends Fragment {
 
-    private ImageView btnSettings;
-    private ImageView imgAvatar;
-    private TextView tvName;
-    private TextView tvUserInfo;
-    private TextView tvFollowing;
-    private TextView tvFollowers;
-    private Button btnAddFriends;
-    private ImageButton btnShare;
-    private Button btnCompleteProfile;
+    private LinearLayout friendsContainer;  // Container chứa danh sách bạn bè
+    private TextView tvTotalFriends; // Số lượng bạn bè
+    private TextView tvOnlineFriends; // Số lượng bạn bè online
 
-    // Request code
-    private static final int PICK_IMAGE = 100;
+    private int totalFriends = 25; // Số lượng bạn bè (có thể lấy từ API hoặc database)
+    private int onlineFriends = 16; // Số lượng bạn bè online
 
     @Nullable
     @Override
@@ -38,67 +29,46 @@ public class FriendFragment extends Fragment {
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.activity_profile_friend, container, false);
+        // Inflate layout cho Fragment
+        View view = inflater.inflate(R.layout.activity_list_friend, container, false);
 
-        initViews(view);
-        setupClickListeners();
+        // Khởi tạo view
+        friendsContainer = view.findViewById(R.id.friendsContainer);
+        tvTotalFriends = view.findViewById(R.id.tvTotalFriends); // Lấy TextView hiển thị số bạn bè
+        tvOnlineFriends = view.findViewById(R.id.tvOnlineFriends); // Lấy TextView hiển thị số bạn bè online
+
+        // Cập nhật số liệu bạn bè
+        tvTotalFriends.setText(String.valueOf(totalFriends));
+        tvOnlineFriends.setText(String.valueOf(onlineFriends));
+
+        // Thêm bạn bè vào layout (bạn có thể lấy dữ liệu động từ cơ sở dữ liệu hoặc API)
+        addFriend("Nguyễn Thị Phương Anh", "⚡️ 1500 XP", "Đang hoạt động", R.drawable.avt_fr2);
+        addFriend("Trần Hoàng Hiếu", "⚡️ 500 XP", "Online 2 giờ trước", R.drawable.avt_fr1);
+        addFriend("Lê Văn Công", "⚡️ 600 XP", "Đang hoạt động", R.drawable.avt_fr5);
+        addFriend("Phạm Thị Ánh Nguyên", "⚡️ 970 XP", "Online 1 ngày trước", R.drawable.avt_fr3);
+        addFriend("Hoàng Thị Mai Phương", "⚡️ 310 XP", "Đang hoạt động", R.drawable.avt_fr4);
+        addFriend("Vũ Thị Minh Anh", "⚡️ 4300 XP", "Online 3 giờ trước", R.drawable.avt_fr6);
 
         return view;
     }
 
-    private void initViews(View view) {
-        btnSettings = view.findViewById(R.id.btnSettings);
-        imgAvatar = view.findViewById(R.id.imgAvatar);
-        tvName = view.findViewById(R.id.tvName);
-        tvUserInfo = view.findViewById(R.id.tvUserInfo);
-        tvFollowing = view.findViewById(R.id.tvFollowing);
-        tvFollowers = view.findViewById(R.id.tvFollowers);
-        btnAddFriends = view.findViewById(R.id.btnAddFriends);
-        btnShare = view.findViewById(R.id.btnShare);
-        btnCompleteProfile = view.findViewById(R.id.btnCompleteProfile);
-    }
+    private void addFriend(String name, String experience, String onlineStatus, int avatarResId) {
+        // Inflate một item bạn bè
+        View friendView = getLayoutInflater().inflate(R.layout.item_friend, null);
 
-    private void setupClickListeners() {
+        // Khởi tạo các view trong item bạn bè
+        TextView tvName = friendView.findViewById(R.id.tvName);
+        TextView tvExperience = friendView.findViewById(R.id.tvExperiencePoints);
+        TextView tvStatus = friendView.findViewById(R.id.tvOnlineStatus);
+        ImageView ivAvatar = friendView.findViewById(R.id.ivAvatar);
 
-        btnSettings.setOnClickListener(v -> {
-            // TODO: Màn hình settings
-        });
+        // Gán giá trị cho các view
+        tvName.setText(name);
+        tvExperience.setText(experience);
+        tvStatus.setText(onlineStatus);
+        ivAvatar.setImageResource(avatarResId);
 
-        imgAvatar.setOnClickListener(v -> openImagePicker());
-
-        btnAddFriends.setOnClickListener(v -> {
-            // TODO: Add Friends
-        });
-
-        btnShare.setOnClickListener(v -> shareProfile());
-
-        btnCompleteProfile.setOnClickListener(v -> {
-            // TODO: Complete Profile
-        });
-    }
-
-    private void openImagePicker() {
-        Intent intent = new Intent(Intent.ACTION_PICK);
-        intent.setType("image/*");
-        startActivityForResult(intent, PICK_IMAGE);
-    }
-
-    private void shareProfile() {
-        Intent shareIntent = new Intent(Intent.ACTION_SEND);
-        shareIntent.setType("text/plain");
-        shareIntent.putExtra(Intent.EXTRA_TEXT, "Check out my profile: @Sam315105");
-        startActivity(Intent.createChooser(shareIntent, "Share Profile"));
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == PICK_IMAGE && resultCode == getActivity().RESULT_OK && data != null) {
-            Uri selectedImage = data.getData();
-            imgAvatar.setImageURI(selectedImage);
-
-            // TODO: Upload image to server
-        }
+        // Thêm view bạn bè vào container
+        friendsContainer.addView(friendView);
     }
 }

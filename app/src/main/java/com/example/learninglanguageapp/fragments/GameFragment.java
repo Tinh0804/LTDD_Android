@@ -20,6 +20,10 @@ import com.example.learninglanguageapp.activities.MatchingGameActivity;
 import com.example.learninglanguageapp.activities.SelectImageGameActivity;
 import com.example.learninglanguageapp.viewmodels.ExerciseViewModel;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 public class GameFragment extends Fragment {
 
     private ExerciseViewModel viewModel;
@@ -73,7 +77,45 @@ public class GameFragment extends Fragment {
 
         // 2. GÁN CLICK LISTENER: Gọi fetch và set biến Activity mục tiêu
         cardImageWordGame.setOnClickListener(v -> triggerFetchAndOpenGame(unitId, "listen", SelectImageGameActivity.class));
-        cardViewPictureVocabulary.setOnClickListener(v -> triggerFetchAndOpenGame(unitId, "match_pairs", MatchGameActivity.class));
+        cardImageWordGame.setOnClickListener(v -> triggerFetchAndOpenGame(unitId, "listen", SelectImageGameActivity.class));
+        // CHỈ SỬA DÒNG NÀY THÔI – DÒNG CLICK CỦA CARD PICTURE VOCABULARY
+        cardViewPictureVocabulary.setOnClickListener(v -> {
+
+            // BƯỚC 1: TẢI DỮ LIỆU MATCH_PAIRS NHƯ BÌNH THƯỜNG
+            this.nextActivityClass = MatchGameActivity.class;
+            viewModel.fetchExercisesByType(unitId, "match_pairs");
+
+            // BƯỚC 2: KHI CÓ DỮ LIỆU → RANDOM LESSON VÀ MỞ MATCHGAME NGAY
+            viewModel.exercisesLiveData.observe(getViewLifecycleOwner(), exercises -> {
+                if (exercises != null && !exercises.isEmpty() && nextActivityClass == MatchGameActivity.class) {
+                    // LẤY DANH SÁCH LESSON ID DUY NHẤT TRONG UNIT
+                    List<Integer> lessonIds = new ArrayList<>();
+                    for (var ex : exercises) {
+                        if (!lessonIds.contains(ex.getLessonId())) {
+                            lessonIds.add(ex.getLessonId());
+                        }
+                    }
+
+                    if (lessonIds.isEmpty()) {
+                        Toast.makeText(requireContext(), "Không có bài học nào!", Toast.LENGTH_SHORT).show();
+                        nextActivityClass = null;
+                        return;
+                    }
+
+                    // RANDOM 1 LESSON
+                    int randomLessonId = lessonIds.get(new Random().nextInt(lessonIds.size()));
+
+                    // MỞ MATCHGAME VỚI LESSON ĐÃ RANDOM
+                    Intent intent = new Intent(requireContext(), MatchGameActivity.class);
+                    intent.putExtra("lessonId", randomLessonId);
+                    startActivity(intent);
+
+                    // Reset để không mở lại
+                    viewModel.exercisesLiveData.setValue(null);
+                    nextActivityClass = null;
+                }
+            });
+        });
         cardViewArrangeWord.setOnClickListener(v -> triggerFetchAndOpenGame(unitId, "word_order", GameWordropActivity.class));
         cardViewMatchingGame.setOnClickListener(v -> triggerFetchAndOpenGame(unitId, "match_pairs", MatchingGameActivity.class));
     }

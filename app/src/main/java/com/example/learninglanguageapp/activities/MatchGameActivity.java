@@ -4,18 +4,27 @@ package com.example.learninglanguageapp.activities;
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.media.MediaPlayer;
 
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
 
+import com.bumptech.glide.Glide;
 import com.example.learninglanguageapp.R;
 import com.example.learninglanguageapp.models.UIModel.MatchItem;
+import com.example.learninglanguageapp.models.Word;
+import com.example.learninglanguageapp.viewmodels.MatchGameViewModel;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -26,204 +35,262 @@ public class MatchGameActivity extends AppCompatActivity {
     private GridLayout gameGrid;
     private ProgressBar progressBar;
     private TextView tvLives;
-
-    private List<MatchItem> gameItems;
-
-    private MatchItem selectedImage = null;
-    private View selectedImageOverlay = null;
-
+    private MatchItem selectedFirst = null;   // có thể là ảnh HOẶC từ
+    private View selectedFirstOverlay = null;
+    private final List<MatchItem> gameItems = new ArrayList<>();
     private int lives = 5;
-    private int totalPairs = 0;
+    private final int totalPairs = 6;
     private int matchedPairs = 0;
+
+    private MatchGameViewModel viewModel;
+    private int lessonId;
+    private MediaPlayer correctSound;
+    private MediaPlayer wrongSound;
+    private MediaPlayer completeSound;
+    private MediaPlayer gameOverSound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_match_game);
 
-        ImageView btnBack = findViewById(R.id.btnBack);
-        btnBack.setOnClickListener(v -> finish());
+        initViews();
+        setupBackButton();
+        initSounds();
 
+
+        lessonId = getIntent().getIntExtra("lessonId", 1);
+        // BẰNG DÒNG NÀY (Factory để truyền Context):
+        viewModel = new ViewModelProvider(this, new ViewModelProvider.Factory() {
+            @NonNull
+            @Override
+            public <T extends ViewModel> T create(@NonNull Class<T> modelClass) {
+                return (T) new MatchGameViewModel(MatchGameActivity.this);
+            }
+        }).get(MatchGameViewModel.class);
+
+        observeViewModel();
+        viewModel.loadWordsForGame(lessonId);
+    }
+
+    private void initViews() {
         gameGrid = findViewById(R.id.gameGrid);
         progressBar = findViewById(R.id.progressBar);
         tvLives = findViewById(R.id.tvLives);
-
-        setupGame();
+        tvLives.setText("5");
+        progressBar.setProgress(0);
     }
 
-    private void setupGame() {
-        gameItems = new ArrayList<>();
+    private void setupBackButton() {
+        ImageView btnBack = findViewById(R.id.btnBack);
+        btnBack.setOnClickListener(v -> finish());
+    }
+    private void initSounds() {
+        correctSound = MediaPlayer.create(this, R.raw.correct);
+        wrongSound = MediaPlayer.create(this, R.raw.wrong);
+        completeSound = MediaPlayer.create(this, R.raw.complete);
+        gameOverSound = MediaPlayer.create(this, R.raw.game_over);
+    }
 
-        gameItems.add(new MatchItem("Tomato", "img_tomato", true, "1"));
-        gameItems.add(new MatchItem("Tomato", "", false, "1"));
+    private void playSound(MediaPlayer mp) {
+        if (mp == null) return;
+        // phát lại từ đầu mỗi lần
+        if (mp.isPlaying()) {
+            mp.seekTo(0);
+        }
+        mp.start();
+    }
 
-        gameItems.add(new MatchItem("Dog", "img_dog", true, "2"));
-        gameItems.add(new MatchItem("Dog", "", false, "2"));
+    private void observeViewModel() {
+        viewModel.getWordsLiveData().observe(this, words -> {
+            if (words != null && words.size() >= 6) {
+                prepareGame(words);
+            } else {
+                Toast.makeText(this, "Không đủ từ để chơi!", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
 
-        gameItems.add(new MatchItem("Travel", "img_travels", true, "3"));
-        gameItems.add(new MatchItem("Travel", "", false, "3"));
+        viewModel.getLoadingLiveData().observe(this, loading -> {
+            progressBar.setVisibility(View.VISIBLE);
+        });
 
-        gameItems.add(new MatchItem("Music", "img_music", true, "4"));
-        gameItems.add(new MatchItem("Music", "", false, "4"));
+        viewModel.getErrorLiveData().observe(this, error -> {
+            if (error != null) {
+                Toast.makeText(this, "Lỗi: " + error, Toast.LENGTH_LONG).show();
+                finish();
+            }
+        });
+    }
 
-        gameItems.add(new MatchItem("Cake", "img_cake", true, "5"));
-        gameItems.add(new MatchItem("Cake", "", false, "5"));
+    private void prepareGame(List<Word> words) {
+        Collections.shuffle(words);
+        List<Word> selected = words.subList(0, 6);
 
-        gameItems.add(new MatchItem("Leaf", "img_leaft", true, "6"));
-        gameItems.add(new MatchItem("Leaf", "", false, "6"));
+        gameItems.clear();
+        for (int i = 0; i < selected.size(); i++) {
+            Word w = selected.get(i);
+            String id = String.valueOf(i + 1);
 
-        totalPairs = gameItems.size() / 2;
+            // Thẻ ảnh
+            gameItems.add(new MatchItem(w.getWord(), w.getImageUrl(), true, id));
+
+            // Thẻ chữ: nối với wordName (tiếng Anh)
+            gameItems.add(new MatchItem(w.getWord(), "", false, id));
+        }
 
         Collections.shuffle(gameItems);
-        displayItems();
-        updateProgress();
+        displayCards();
     }
 
-    /** Reset ảnh đã chọn khi chọn sai hoặc chọn ảnh mới */
-    private void resetSelectedImage() {
-        if (selectedImageOverlay != null) {
-            selectedImageOverlay.setVisibility(View.GONE);
-            selectedImageOverlay.setBackground(null);
-        }
-    }
-
-    private void displayItems() {
+    private void displayCards() {
         gameGrid.removeAllViews();
-
-        for (int i = 0; i < gameItems.size(); i++) {
-
-            MatchItem item = gameItems.get(i);
+        for (MatchItem item : gameItems) {
             View cardView = LayoutInflater.from(this).inflate(R.layout.item_match_card, gameGrid, false);
 
-            CardView card = cardView.findViewById(R.id.cardView);
             ImageView imgItem = cardView.findViewById(R.id.imgItem);
             TextView tvWord = cardView.findViewById(R.id.tvWord);
             View overlay = cardView.findViewById(R.id.overlayView);
 
-            if (item.isMatched()) {
-                cardView.setVisibility(View.INVISIBLE);
-                gameGrid.addView(cardView);
-                continue;
-            }
-
             if (item.isImage()) {
                 imgItem.setVisibility(View.VISIBLE);
                 tvWord.setVisibility(View.GONE);
-
-                int res = getResources().getIdentifier(item.getImageResource(), "drawable", getPackageName());
-                if (res != 0) imgItem.setImageResource(res);
-
+                Glide.with(this)
+                        .load(item.getImageResource())
+                        .placeholder(R.drawable.placeholder_img)
+                        .error(R.drawable.bg_wrong)
+                        .into(imgItem);
             } else {
                 imgItem.setVisibility(View.GONE);
                 tvWord.setVisibility(View.VISIBLE);
-                tvWord.setText(item.getWord());
+                tvWord.setText(item.getWord()); // hiển thị wordName
             }
 
-            card.setOnClickListener(v -> handleClick(item, overlay, tvWord, cardView));
-
+            cardView.setOnClickListener(v -> handleClick(item, overlay, cardView));
+            cardView.setTag(item);
             gameGrid.addView(cardView);
         }
     }
 
-    private void handleClick(MatchItem item, View overlay, TextView tvWord, View cardView) {
+    private void resetSelected() {
+        if (selectedFirstOverlay != null) {
+            selectedFirstOverlay.setVisibility(View.GONE);
+            selectedFirstOverlay.setBackground(null);
+            selectedFirstOverlay = null;
+        }
+        selectedFirst = null;
+    }
 
+    private void handleClick(MatchItem item, View overlay, View cardView) {
         if (item.isMatched()) return;
 
-        if (item.isImage()) {
-            resetSelectedImage();  // reset ảnh cũ trước khi chọn ảnh mới
-
-            selectedImage = item;
-            selectedImageOverlay = overlay;
-            highlightSelectedImage(overlay);
+        // 1. Chưa chọn gì → chọn cái đầu tiên
+        if (selectedFirst == null) {
+            selectedFirst = item;
+            selectedFirstOverlay = overlay;
+            highlightSelected(overlay);
             return;
         }
 
-        // Nếu click vào chữ nhưng chưa chọn ảnh thì bỏ qua
-        if (selectedImage == null) return;
+        // 2. Bấm lại cái đã chọn → bỏ chọn
+        if (selectedFirst == item) {
+            resetSelected();
+            return;
+        }
 
-        if (selectedImage.getMatchId().equals(item.getMatchId())) {
-            handleCorrectMatch(item, selectedImage, overlay, selectedImageOverlay, cardView);
+        // 3. Cấm chọn 2 ảnh hoặc 2 từ cùng lúc
+        if (selectedFirst.isImage() == item.isImage()) {
+            animateWrong(overlay);
+            animateWrong(selectedFirstOverlay);
+            new Handler(Looper.getMainLooper()).postDelayed(this::resetSelected, 600);
+            return;
+        }
+
+        // 4. ĐÚNG CẶP → ẨN CẢ 2 THẺ, GIỮ NGUYÊN VỊ TRÍ CÁC THẺ KHÁC
+        if (selectedFirst.getMatchId().equals(item.getMatchId())) {
+            item.setMatched(true);
+            selectedFirst.setMatched(true);
+            matchedPairs++;
+
+            playSound(correctSound);
+
+            animateCorrect(overlay);
+            animateCorrect(selectedFirstOverlay);
+
+            new Handler(Looper.getMainLooper()).postDelayed(() -> {
+                // Ẩn thẻ thứ 2 (hiện tại)
+                cardView.setVisibility(View.INVISIBLE);
+
+                // Ẩn thẻ đầu tiên đã chọn trước đó
+                View firstCard = findCardByItem(selectedFirst);
+                if (firstCard != null) {
+                    firstCard.setVisibility(View.INVISIBLE);
+                }
+
+                updateProgress();
+
+                if (matchedPairs == totalPairs) {
+                    playSound(completeSound);  // ÂM THANH HOÀN THÀNH
+                    Toast.makeText(this, "HOÀN THÀNH! Bạn quá giỏi!", Toast.LENGTH_LONG).show();
+                }
+
+
+                // Reset sau khi đã ẩn xong
+                resetSelected();
+            }, 700);
+
         } else {
-            handleWrongMatch(overlay, tvWord);
+            // 5. SAI CẶP → trừ mạng, rung đỏ
+            lives--;
+            tvLives.setText(String.valueOf(lives));
+
+            playSound(wrongSound);
+
+            animateWrong(overlay);
+            animateWrong(selectedFirstOverlay);
+
+            new Handler(Looper.getMainLooper()).postDelayed(() -> {
+                resetSelected();
+                if (lives <= 0) {
+                    playSound(gameOverSound); // ÂM THANH GAME OVER
+                    Toast.makeText(this, "Hết mạng! Game Over!", Toast.LENGTH_LONG).show();
+                }
+            }, 800);
         }
 
-        // Sau khi xử lý → reset chọn
-        selectedImage = null;
-        selectedImageOverlay = null;
     }
-
-    private void highlightSelectedImage(View overlay) {
-        overlay.setBackgroundResource(R.drawable.bg_selected_matchgame);
-        overlay.setVisibility(View.VISIBLE);
-    }
-
-    private void handleCorrectMatch(MatchItem wordItem, MatchItem imgItem,
-                                    View wordOverlay, View imageOverlay, View wordCardView) {
-
-        wordItem.setMatched(true);
-        imgItem.setMatched(true);
-        matchedPairs++;
-
-        showCorrectAnimation(wordOverlay);
-        showCorrectAnimation(imageOverlay);
-
-        new Handler().postDelayed(() -> {
-            wordCardView.setVisibility(View.INVISIBLE);
-            refreshGrid();
-        }, 400);
-
-        updateProgress();
-    }
-
-    private void refreshGrid() {
-        displayItems();
-    }
-
-    private void handleWrongMatch(View overlay, TextView tvWord) {
-
-        lives--;
-        tvLives.setText(String.valueOf(lives));
-
-        showWrongAnimation(overlay);
-
-        // ⭐ Quan trọng: xóa highlight của ảnh đã chọn
-        resetSelectedImage();
-
-        if (lives <= 0) {
-            // TODO: game over
+    private View findCardByItem(MatchItem item) {
+        for (int i = 0; i < gameGrid.getChildCount(); i++) {
+            View v = gameGrid.getChildAt(i);
+            if (v.getTag() == item) {
+                return v;
+            }
         }
+        return null;
     }
 
-    private void showCorrectAnimation(View overlay) {
-        overlay.setBackgroundResource(R.drawable.bg_correct);
-        overlay.setVisibility(View.VISIBLE);
-
-        ObjectAnimator.ofFloat(overlay, "scaleX", 1f, 1.1f, 1f)
-                .setDuration(250).start();
-
-        ObjectAnimator.ofFloat(overlay, "scaleY", 1f, 1.1f, 1f)
-                .setDuration(250).start();
-
-        new Handler().postDelayed(() -> overlay.setVisibility(View.GONE), 400);
+    private void highlightSelected(View v) {
+        v.setBackgroundResource(R.drawable.bg_selected_matchgame);
+        v.setVisibility(View.VISIBLE);
     }
 
-    private void showWrongAnimation(View overlay) {
-        overlay.setBackgroundResource(R.drawable.bg_wrong);
-        overlay.setVisibility(View.VISIBLE);
 
-        ObjectAnimator animator = ObjectAnimator.ofFloat(
-                overlay, "translationX",
-                0, 25, -25, 25, -25, 12, -12, 5, -5, 0
-        );
+    private void animateCorrect(View v) {
+        v.setBackgroundResource(R.drawable.bg_correct);
+        v.setVisibility(View.VISIBLE);
+        ObjectAnimator.ofFloat(v, "scaleX", 1f, 1.3f, 1f).setDuration(500).start();
+        ObjectAnimator.ofFloat(v, "scaleY", 1f, 1.3f, 1f).setDuration(500).start();
+        new Handler(Looper.getMainLooper()).postDelayed(() -> v.setVisibility(View.GONE), 600);
+    }
 
-        animator.setDuration(400);
-        animator.start();
-
-        new Handler().postDelayed(() -> overlay.setVisibility(View.GONE), 400);
+    private void animateWrong(View v) {
+        v.setBackgroundResource(R.drawable.bg_wrong);
+        v.setVisibility(View.VISIBLE);
+        ObjectAnimator.ofFloat(v, "translationX", 0, 30, -30, 20, -20, 0).setDuration(600).start();
+        new Handler(Looper.getMainLooper()).postDelayed(() -> v.setVisibility(View.GONE), 600);
     }
 
     private void updateProgress() {
-        int progress = (matchedPairs * 100) / totalPairs;
-        progressBar.setProgress(progress);
+        progressBar.setProgress((matchedPairs * 100) / totalPairs);
     }
 }

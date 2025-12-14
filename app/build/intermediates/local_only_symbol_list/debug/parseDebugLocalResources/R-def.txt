@@ -83,6 +83,7 @@ drawable bg_icon_yellow
 drawable bg_progress_bar
 drawable bg_progress_fill
 drawable bg_rank_circle
+drawable bg_rank_top5
 drawable bg_selected
 drawable bg_selected_matchgame
 drawable bg_start_label
@@ -192,7 +193,9 @@ drawable mother
 drawable notification
 drawable option_background
 drawable option_background_selected
+drawable pen
 drawable placeholder
+drawable placeholder_img
 drawable plane
 drawable progressbar_custom
 drawable rounded_button_blue
@@ -495,6 +498,7 @@ id viewPager
 id webView
 id wordChip
 id wordChipSelected
+layout accountpersonal
 layout activity_account
 layout activity_account_person
 layout activity_game
@@ -507,6 +511,7 @@ layout activity_match_game
 layout activity_matching_game
 layout activity_payment
 layout activity_practice
+layout activity_profile_fr
 layout activity_profile_friend
 layout activity_progress
 layout activity_register
@@ -530,6 +535,7 @@ layout item_word_card
 layout language_learn
 layout language_use
 layout layout4_12
+layout leaderboard
 layout level
 layout level_item
 layout loading
