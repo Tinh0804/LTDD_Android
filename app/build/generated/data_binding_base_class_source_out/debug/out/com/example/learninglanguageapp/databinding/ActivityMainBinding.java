@@ -35,16 +35,13 @@ public final class ActivityMainBinding implements ViewBinding {
   public final CoordinatorLayout main;
 
   @NonNull
-  public final TextView textView2;
-
-  @NonNull
   public final TextView tvGems;
 
   @NonNull
-  public final TextView tvLanguage;
+  public final TextView tvHearts;
 
   @NonNull
-  public final TextView tvPremium;
+  public final TextView tvLanguage;
 
   @NonNull
   public final TextView tvStreak;
@@ -52,17 +49,16 @@ public final class ActivityMainBinding implements ViewBinding {
   private ActivityMainBinding(@NonNull CoordinatorLayout rootView,
       @NonNull AppBarLayout appBarLayout, @NonNull BottomNavigationView bottomNavigation,
       @NonNull FrameLayout fragmentContainer, @NonNull CoordinatorLayout main,
-      @NonNull TextView textView2, @NonNull TextView tvGems, @NonNull TextView tvLanguage,
-      @NonNull TextView tvPremium, @NonNull TextView tvStreak) {
+      @NonNull TextView tvGems, @NonNull TextView tvHearts, @NonNull TextView tvLanguage,
+      @NonNull TextView tvStreak) {
     this.rootView = rootView;
     this.appBarLayout = appBarLayout;
     this.bottomNavigation = bottomNavigation;
     this.fragmentContainer = fragmentContainer;
     this.main = main;
-    this.textView2 = textView2;
     this.tvGems = tvGems;
+    this.tvHearts = tvHearts;
     this.tvLanguage = tvLanguage;
-    this.tvPremium = tvPremium;
     this.tvStreak = tvStreak;
   }
 
@@ -113,27 +109,21 @@ public final class ActivityMainBinding implements ViewBinding {
 
       CoordinatorLayout main = (CoordinatorLayout) rootView;
 
-      id = R.id.textView2;
-      TextView textView2 = ViewBindings.findChildViewById(rootView, id);
-      if (textView2 == null) {
-        break missingId;
-      }
-
       id = R.id.tvGems;
       TextView tvGems = ViewBindings.findChildViewById(rootView, id);
       if (tvGems == null) {
         break missingId;
       }
 
-      id = R.id.tvLanguage;
-      TextView tvLanguage = ViewBindings.findChildViewById(rootView, id);
-      if (tvLanguage == null) {
+      id = R.id.tvHearts;
+      TextView tvHearts = ViewBindings.findChildViewById(rootView, id);
+      if (tvHearts == null) {
         break missingId;
       }
 
-      id = R.id.tvPremium;
-      TextView tvPremium = ViewBindings.findChildViewById(rootView, id);
-      if (tvPremium == null) {
+      id = R.id.tvLanguage;
+      TextView tvLanguage = ViewBindings.findChildViewById(rootView, id);
+      if (tvLanguage == null) {
         break missingId;
       }
 
@@ -144,7 +134,7 @@ public final class ActivityMainBinding implements ViewBinding {
       }
 
       return new ActivityMainBinding((CoordinatorLayout) rootView, appBarLayout, bottomNavigation,
-          fragmentContainer, main, textView2, tvGems, tvLanguage, tvPremium, tvStreak);
+          fragmentContainer, main, tvGems, tvHearts, tvLanguage, tvStreak);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

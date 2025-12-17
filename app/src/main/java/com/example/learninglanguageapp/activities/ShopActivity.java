@@ -108,32 +108,16 @@ public class ShopActivity extends AppCompatActivity {
             }
         });
 
-//        viewModel.getLoadingLiveData().observe(this, isLoading -> {
-//            progressBar.setVisibility(isLoading ? android.view.View.VISIBLE : android.view.View.GONE);
-//        });
+        viewModel.getPurchaseSuccessLiveData().observe(this, isSuccess -> {
+            if (isSuccess != null && isSuccess) {
+                Toast.makeText(this, "Mua hàng thành công!", Toast.LENGTH_SHORT).show();
+                viewModel.clearPurchaseSuccess();
+            }
+        });
 
         viewModel.getErrorLiveData().observe(this, error -> {
             if (error != null && !error.isEmpty()) {
                 Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        viewModel.getPurchaseSuccessLiveData().observe(this, isSuccess -> {
-            if (isSuccess != null) {
-                if (isSuccess) {
-                    PackagePayment selectedPkg = viewModel.getSelectedPackageLiveData().getValue();
-                    if (selectedPkg != null) {
-                        // Gọi hàm trừ kim cương và lưu vào SharedPrefs
-                        viewModel.deductDiamonds((int) selectedPkg.getPrice());
-                        tvDiamondCount.setText(viewModel.getBalanceLiveData().getValue() + " kim cương");
-                    }
-
-                    Toast.makeText(this, "Mua hàng bằng kim cương thành công!", Toast.LENGTH_SHORT).show();
-                } else {
-                    // Lỗi đã được xử lý trong getErrorLiveData()
-                }
-
-                viewModel.clearPurchaseSuccess();
             }
         });
     }

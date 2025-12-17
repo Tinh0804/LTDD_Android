@@ -24,6 +24,7 @@ import com.bumptech.glide.Glide;
 import com.example.learninglanguageapp.R;
 import com.example.learninglanguageapp.models.UIModel.MatchItem;
 import com.example.learninglanguageapp.models.Word;
+import com.example.learninglanguageapp.utils.HelperFunction;
 import com.example.learninglanguageapp.viewmodels.MatchGameViewModel;
 
 import java.util.ArrayList;
@@ -77,7 +78,8 @@ public class MatchGameActivity extends AppCompatActivity {
         gameGrid = findViewById(R.id.gameGrid);
         progressBar = findViewById(R.id.progressBar);
         tvLives = findViewById(R.id.tvLives);
-        tvLives.setText("5");
+
+        tvLives.setText(String.valueOf(HelperFunction.getInstance().loadUserHearts()));
         progressBar.setProgress(0);
     }
 
@@ -242,6 +244,7 @@ public class MatchGameActivity extends AppCompatActivity {
         } else {
             // 5. SAI CẶP → trừ mạng, rung đỏ
             lives--;
+            HelperFunction.getInstance().saveUserHearts(lives);
             tvLives.setText(String.valueOf(lives));
 
             playSound(wrongSound);

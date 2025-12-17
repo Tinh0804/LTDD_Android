@@ -138,6 +138,7 @@ drawable ic_close
 drawable ic_crown
 drawable ic_dailyactivity
 drawable ic_darkmode
+drawable ic_diamond
 drawable ic_document
 drawable ic_download
 drawable ic_drop_down
@@ -437,7 +438,6 @@ id scrollView
 id selectedWordsContainer
 id splash_text
 id switchDarkMode
-id textView2
 id topBar
 id top_background
 id tvArrangeWordSubtitle
@@ -473,7 +473,6 @@ id tvName
 id tvOnlineFriends
 id tvOnlineStatus
 id tvPosition
-id tvPremium
 id tvProgress
 id tvPronunciation
 id tvPronunciationBack

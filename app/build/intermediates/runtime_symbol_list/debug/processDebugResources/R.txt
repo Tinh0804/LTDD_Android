@@ -3473,6 +3473,7 @@ int drawable ic_close 0x7f080164
 int drawable ic_crown 0x7f080165
 int drawable ic_dailyactivity 0x7f080166
 int drawable ic_darkmode 0x7f080167
+int drawable ic_diamond 0x7f08021c
 int drawable ic_document 0x7f080168
 int drawable ic_download 0x7f080169
 int drawable ic_drop_down 0x7f08016a
@@ -4439,7 +4440,6 @@ int id textSpacerNoButtons 0x7f0a030d
 int id textSpacerNoTitle 0x7f0a030e
 int id textStart 0x7f0a030f
 int id textTop 0x7f0a0310
-int id textView2 0x7f0a0311
 int id textWatcher 0x7f0a0312
 int id text_input_end_icon 0x7f0a0313
 int id text_input_error_icon 0x7f0a0314
@@ -4502,7 +4502,6 @@ int id tvName 0x7f0a034c
 int id tvOnlineFriends 0x7f0a034d
 int id tvOnlineStatus 0x7f0a034e
 int id tvPosition 0x7f0a034f
-int id tvPremium 0x7f0a0350
 int id tvProgress 0x7f0a0351
 int id tvPronunciation 0x7f0a0352
 int id tvPronunciationBack 0x7f0a0353

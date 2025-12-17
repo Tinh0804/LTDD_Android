@@ -3474,6 +3474,7 @@ drawable ic_close
 drawable ic_crown
 drawable ic_dailyactivity
 drawable ic_darkmode
+drawable ic_diamond
 drawable ic_document
 drawable ic_download
 drawable ic_drop_down
@@ -4440,7 +4441,6 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
-id textView2
 id textWatcher
 id text_input_end_icon
 id text_input_error_icon
@@ -4503,7 +4503,6 @@ id tvName
 id tvOnlineFriends
 id tvOnlineStatus
 id tvPosition
-id tvPremium
 id tvProgress
 id tvPronunciation
 id tvPronunciationBack

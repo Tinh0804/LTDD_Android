@@ -25,6 +25,7 @@ import com.example.learninglanguageapp.R;
 import com.example.learninglanguageapp.models.Entities.ExerciseEntity;
 import com.example.learninglanguageapp.models.Exercise;
 import com.example.learninglanguageapp.models.Word;
+import com.example.learninglanguageapp.utils.HelperFunction;
 import com.example.learninglanguageapp.viewmodels.ExerciseViewModel;
 import com.example.learninglanguageapp.viewmodels.LessonViewModel;
 import com.google.android.material.card.MaterialCardView;
@@ -38,7 +39,7 @@ import java.util.Random;
 public class SelectImageGameActivity extends AppCompatActivity {
 
     private static final String TAG = "SelectImageGame";
-    private static final int MAX_HEARTS = 5;
+//    private static final int MAX_HEARTS = 5;
     private static final int MAX_OPTIONS = 4;
     private static final int CORRECT_ANSWER_DELAY = 2000; // 2 seconds
 
@@ -58,14 +59,13 @@ public class SelectImageGameActivity extends AppCompatActivity {
     // Game Data
     private List<Word> allWords; // Dữ liệu này có thể đã lỗi thời, nên dùng allExercises
     private int currentWordIndex = 0;
-    private int hearts = MAX_HEARTS;
+    private int hearts = 5;
     private int correctAnswers = 0;
     private int wrongAnswers = 0;
     private long startTime;
 
     // lessonId ở đây thực ra là unitId
     private int unitId;
-    private int userId; // Biến này không được sử dụng
     private Handler handler = new Handler(Looper.getMainLooper());
     private boolean isAnswered = false;
 
@@ -77,7 +77,6 @@ public class SelectImageGameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_image_game);
 
-        // ❗ SỬA LỖI: Gọi initViews() NGAY LẬP TỨC để ánh xạ UI components
         initViews();
 
         exerciseViewModel = new ViewModelProvider(this).get(ExerciseViewModel.class);
@@ -160,7 +159,7 @@ public class SelectImageGameActivity extends AppCompatActivity {
         });
 
         // Cài đặt mặc định cho các thành phần UI ban đầu
-        tvHearts.setText(String.valueOf(MAX_HEARTS));
+        tvHearts.setText(String.valueOf(hearts));
         tvInstruction.setText("Nghe và chọn hình ảnh đúng"); // Đặt hướng dẫn cố định
     }
 
@@ -200,28 +199,12 @@ public class SelectImageGameActivity extends AppCompatActivity {
         List<String> options = new ArrayList<>(exercise.getOptions());
         Collections.shuffle(options);
 
-        // LƯU Ý QUAN TRỌNG:
-        // Bạn đang sử dụng tvWord (Text) làm câu hỏi và optionTexts (Text) làm đáp án,
-        // nhưng tên Activity là SelectImageGameActivity (Chọn Hình ảnh).
-        // Nếu ý định là hiển thị hình ảnh, bạn cần:
-        // 1. Dùng Glide để tải exercise.getQuestion() vào ImageView (nếu câu hỏi là hình ảnh).
-        // 2. Tải URL hình ảnh từ options (Giả sử options là URL hình ảnh) vào optionImages.
-        // 3. Hiển thị văn bản đáp án đúng/sai ở đâu đó (có lẽ là tvWord hoặc tvInstruction).
-
-        // Hiện tại, code này chỉ xử lý văn bản (text), KHÔNG xử lý hình ảnh.
-        // Tôi giữ lại logic văn bản của bạn và giả định các options là văn bản hiển thị
-
         for (int i = 0; i < MAX_OPTIONS; i++) {
             if (i < options.size()) {
                 String optionText = options.get(i);
                 optionCards[i].setVisibility(View.VISIBLE);
 
-                // Giả định optionText chứa URL hình ảnh hoặc tên hình ảnh (nhưng bạn đang set vào TextView)
-                // Nếu là hình ảnh, bạn cần tải nó vào optionImages[i]
                 optionTexts[i].setText(optionText);
-
-                // Nếu bạn muốn hiển thị hình ảnh, hãy dùng:
-                // Glide.with(this).load(optionText).placeholder(R.drawable.placeholder).into(optionImages[i]);
 
                 final int index = i;
                 optionCards[i].setOnClickListener(v -> {
@@ -263,6 +246,7 @@ public class SelectImageGameActivity extends AppCompatActivity {
             playSfx(R.raw.wrong);
             wrongAnswers++;
             hearts--;
+
             updateHearts();
             showWrongFeedback(selectedIndex, exercise.getCorrectAnswer());
 
@@ -320,6 +304,7 @@ public class SelectImageGameActivity extends AppCompatActivity {
     }
 
     private void updateHearts() {
+        HelperFunction.getInstance().saveUserHearts(hearts);
         tvHearts.setText(String.valueOf(hearts));
 
         // Animate hearts decrease
@@ -336,16 +321,6 @@ public class SelectImageGameActivity extends AppCompatActivity {
                 })
                 .start();
     }
-
-    // Phương thức này đã bị loại bỏ vì đã tích hợp logic vào initViews()
-    /*
-    private void playCurrentWordAudio() {
-        if (currentWordIndex < allWords.size()) {
-            Word currentWord = allWords.get(currentWordIndex);
-            playAudio(currentWord.getAudioFile());
-        }
-    }
-    */
 
     private void playAudio(String audioUrl) {
         if (audioUrl == null || audioUrl.isEmpty()) return;
@@ -402,14 +377,13 @@ public class SelectImageGameActivity extends AppCompatActivity {
         playSfx(R.raw.game_over);
         new AlertDialog.Builder(this)
                 .setTitle("Hết tim rồi!")
-                .setMessage("Bạn đã hết 5 tim. Hãy thử lại nhé!")
+                .setMessage("Bạn đã hết tim. Hãy mua thêm hoặc thử lại sau!")
                 .setCancelable(false)
-                .setPositiveButton("Về trang chủ", (dialog, which) -> {
-                    finish();
+                .setPositiveButton("Đi đến cửa hàng", (dialog, which) -> {
+                    Intent intent = new Intent(this, ShopActivity.class);
+                    startActivity(intent);
                 })
-                .setNegativeButton("Chơi lại", (dialog, which) -> {
-                    restartGame();
-                })
+                .setNeutralButton("Về trang chủ", (dialog, which) -> finish())
                 .show();
     }
 
@@ -446,7 +420,7 @@ public class SelectImageGameActivity extends AppCompatActivity {
 
     private void restartGame() {
         currentWordIndex = 0;
-        hearts = MAX_HEARTS;
+        hearts = HelperFunction.getInstance().loadUserHearts();
         correctAnswers = 0;
         wrongAnswers = 0;
         startTime = System.currentTimeMillis();
@@ -483,7 +457,12 @@ public class SelectImageGameActivity extends AppCompatActivity {
         }
         handler.removeCallbacksAndMessages(null);
     }
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+        this.hearts = HelperFunction.getInstance().loadUserHearts();
+        tvHearts.setText(String.valueOf(this.hearts));
+    }
     @Override
     public void onBackPressed() {
         new AlertDialog.Builder(this)

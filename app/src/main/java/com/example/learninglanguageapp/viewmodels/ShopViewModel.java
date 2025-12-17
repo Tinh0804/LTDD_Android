@@ -56,9 +56,32 @@ public class ShopViewModel extends AndroidViewModel {
 
         repository.purchaseWithDiamond(
                 pkg,
-                purchaseSuccessLiveData,
-                loadingLiveData,
-                errorLiveData
+                new ShopRepository.PurchaseCallback() {
+                    @Override
+                    public void onSuccess() {
+                        loadingLiveData.setValue(false);
+
+                        // 1. Lấy số dư hiện tại và trừ đi
+                        int currentBalance = HelperFunction.getInstance().loadUserDiamond();
+                        int newBalance = currentBalance - (int) pkg.getPrice();
+
+                        // 2. Lưu vào Local (SharedPrefs)
+                        HelperFunction.getInstance().saveUserDiamond(newBalance);
+
+                        // 3. Cập nhật LiveData để UI tự động đổi số
+                        balanceLiveData.setValue(newBalance);
+
+                        // 4. Thông báo thành công
+                        purchaseSuccessLiveData.setValue(true);
+                    }
+
+                    @Override
+                    public void onFailure(String errorMessage) {
+                        loadingLiveData.setValue(false);
+                        errorLiveData.setValue(errorMessage);
+                        purchaseSuccessLiveData.setValue(false);
+                    }
+                }
         );
     }
 
