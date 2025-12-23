@@ -6,60 +6,31 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Toast;
-
+import android.widget.*;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-
 import com.example.learninglanguageapp.R;
 import com.example.learninglanguageapp.activities.LessonActivity;
-import com.example.learninglanguageapp.models.Lesson;
-import com.example.learninglanguageapp.models.Unit;
-import com.example.learninglanguageapp.models.UnitWithLessons;
+import com.example.learninglanguageapp.models.*;
 import com.example.learninglanguageapp.viewmodels.UnitViewModel;
-
 import java.util.List;
 
 public class HomeFragment extends Fragment {
-
     private UnitViewModel unitViewModel;
     private LinearLayout lessonContainer;
-    private ProgressBar progressBar;
-
-    private int lessonIndex = 0;
+    private int lessonGlobalIndex = 0;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-
         lessonContainer = view.findViewById(R.id.lessonContainer);
-        progressBar = view.findViewById(R.id.progressBar);
 
         unitViewModel = new ViewModelProvider(this).get(UnitViewModel.class);
-
         unitViewModel.getUnitsWithLessonsLiveData().observe(getViewLifecycleOwner(), this::renderCoursePath);
-
-        unitViewModel.getIsLoadingLiveData().observe(getViewLifecycleOwner(), isLoading -> {
-            if (isLoading != null) {
-                progressBar.setVisibility(isLoading ? View.VISIBLE : View.GONE);
-                lessonContainer.setVisibility(isLoading ? View.GONE : View.VISIBLE);
-            }
-        });
-
-        unitViewModel.getErrorLiveData().observe(getViewLifecycleOwner(), error -> {
-            if (error != null)
-                Toast.makeText(getContext(), "Error: " + error, Toast.LENGTH_LONG).show();
-        });
 
         return view;
     }
@@ -67,138 +38,57 @@ public class HomeFragment extends Fragment {
     private void renderCoursePath(List<UnitWithLessons> unitWithLessonsList) {
         lessonContainer.removeAllViews();
         LayoutInflater inflater = LayoutInflater.from(getContext());
-        lessonIndex = 0;
+        lessonGlobalIndex = 0;
 
-        for (UnitWithLessons unitWithLessons : unitWithLessonsList) {
-            Unit unit = unitWithLessons.getUnit();
+        for (UnitWithLessons uwl : unitWithLessonsList) {
+            Unit unit = uwl.getUnit();
 
+            // Header Unit
             View headerView = inflater.inflate(R.layout.item_unit_header_line, lessonContainer, false);
-            TextView tvUnitName = headerView.findViewById(R.id.tvUnitName);
-            tvUnitName.setText(String.format("%d. %s", unit.getOrderIndex(), unit.getUnitName()));
+            ((TextView) headerView.findViewById(R.id.tvUnitName)).setText(unit.getUnitName());
             lessonContainer.addView(headerView);
 
-            List<Lesson> lessons = unitWithLessons.getLessons();
+            List<Lesson> lessons = uwl.getLessons();
+            if (lessons == null) continue;
+
             for (int i = 0; i < lessons.size(); i++) {
                 Lesson lesson = lessons.get(i);
+                View lessonView;
 
-                // Nếu là lesson thứ 3 (index 2), thêm mascot và lesson vào cùng 1 hàng
-                if (i == 2) {
-                    View rowView = createLessonWithMascotRow(inflater, unit, lesson, lessonIndex);
-                    lessonContainer.addView(rowView);
-                } else {
-                    View lessonView = createLessonView(inflater, unit, lesson, lessonIndex);
-                    lessonContainer.addView(lessonView);
-                }
-                lessonIndex++;
+                // Hiển thị mascot ở bài học thứ 3 của mỗi Unit
+                if (i == 2)
+                    lessonView = createLessonWithMascotRow(inflater, unit, lesson, lessonGlobalIndex);
+                else
+                    lessonView = createLessonView(inflater, unit, lesson, lessonGlobalIndex);
+                lessonContainer.addView(lessonView);
+                lessonGlobalIndex++;
             }
         }
     }
 
-    private View createLessonWithMascotRow(LayoutInflater inflater, Unit unit, Lesson lesson, int index) {
-        // Tạo LinearLayout ngang để chứa lesson và mascot
-        LinearLayout rowLayout = new LinearLayout(getContext());
-        rowLayout.setOrientation(LinearLayout.HORIZONTAL);
-        rowLayout.setGravity(Gravity.CENTER_HORIZONTAL);
+    private void setupLessonUI(View view, Unit unit, Lesson lesson) {
+        FrameLayout lessonCard = view.findViewById(R.id.lessonCard);
+        ImageView iconView = view.findViewById(R.id.iconView);
 
-        LinearLayout.LayoutParams rowParams = new LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT
-        );
-        rowParams.topMargin = 20;
-        rowParams.bottomMargin = 20;
-        rowLayout.setLayoutParams(rowParams);
+        // Logic: Khóa nếu Unit bị khóa HOẶC Lesson yêu cầu unlockRequired = true
+        boolean isLocked = unit.isLocked() || lesson.isUnlockRequired();
 
-        // Tạo lesson view
-        View lessonView = inflater.inflate(R.layout.item_lesson_circle, null, false);
-        FrameLayout lessonCard = lessonView.findViewById(R.id.lessonCard);
-        ImageView iconView = lessonView.findViewById(R.id.iconView);
-
-        if (lessonCard != null && iconView != null) {
-            boolean isLocked = lesson.isUnlockRequired() || unit.isLocked();
-
-            if (isLocked) {
-                lessonCard.setBackgroundResource(R.drawable.bg_circle_locked);
-                iconView.setImageResource(R.drawable.ic_lock);
-                iconView.setColorFilter(ContextCompat.getColor(getContext(), R.color.icon_locked));
-                lessonCard.setAlpha(0.7f);
-            } else {
-                if (lesson.getOrderIndex() <= 1) {
-                    lessonCard.setBackgroundResource(R.drawable.bg_gradient_yellow);
-                    iconView.setImageResource(R.drawable.ic_check);
-                } else {
-                    lessonCard.setBackgroundResource(R.drawable.bg_gradient_purple);
-                    iconView.setImageResource(R.drawable.ic_star);
-                }
-                iconView.setColorFilter(ContextCompat.getColor(getContext(), android.R.color.white));
-                lessonCard.setAlpha(1.0f);
-            }
-
-            lessonCard.setOnClickListener(v -> {
-                if (isLocked)
-                    Toast.makeText(getContext(), "Lesson is locked!", Toast.LENGTH_SHORT).show();
-                else {
-                    Intent intent = new Intent(getActivity(), LessonActivity.class);
-                    intent.putExtra("LESSON_ID", lesson.getLessonId());
-                    intent.putExtra("CATEGORY_NAME", lesson.getLessonName());
-                    startActivity(intent);
-                }
-            });
-        }
-
-        // Thêm lesson vào row với margin nhỏ bên phải
-        LinearLayout.LayoutParams lessonParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        lessonParams.rightMargin = (int) (getResources().getDisplayMetrics().density * 20);
-        lessonView.setLayoutParams(lessonParams);
-        rowLayout.addView(lessonView);
-
-        ImageView mascotView = new ImageView(getContext());
-        mascotView.setImageResource(R.drawable.mascot);
-
-        LinearLayout.LayoutParams mascotParams = new LinearLayout.LayoutParams(
-                (int) (getResources().getDisplayMetrics().density * 80),
-                (int) (getResources().getDisplayMetrics().density * 80)
-        );
-        mascotView.setLayoutParams(mascotParams);
-        mascotView.setScaleType(ImageView.ScaleType.FIT_CENTER);
-
-        rowLayout.addView(mascotView);
-
-        return rowLayout;
-    }
-
-    private View createLessonView(LayoutInflater inflater, Unit unit, Lesson lesson, int index) {
-
-        View lessonView = inflater.inflate(R.layout.item_lesson_circle, null, false);
-        FrameLayout lessonCard = lessonView.findViewById(R.id.lessonCard);
-        ImageView iconView = lessonView.findViewById(R.id.iconView);
-
-        if (lessonCard == null || iconView == null) {
-            return new View(getContext());
-        }
-
-        boolean isLocked = lesson.isUnlockRequired() || unit.isLocked();
-
-        // Áp dụng Style và Icon
         if (isLocked) {
             lessonCard.setBackgroundResource(R.drawable.bg_circle_locked);
             iconView.setImageResource(R.drawable.ic_lock);
             iconView.setColorFilter(ContextCompat.getColor(getContext(), R.color.icon_locked));
             lessonCard.setAlpha(0.7f);
         } else {
-            if (lesson.getOrderIndex() <= 1) {
-                lessonCard.setBackgroundResource(R.drawable.bg_gradient_yellow);
-                iconView.setImageResource(R.drawable.ic_check);
-            } else {
-                lessonCard.setBackgroundResource(R.drawable.bg_gradient_purple);
-                iconView.setImageResource(R.drawable.ic_star);
-            }
+            int bg = (lesson.getOrderIndex() % 2 == 0) ? R.drawable.bg_gradient_purple : R.drawable.bg_gradient_yellow;
+            lessonCard.setBackgroundResource(bg);
+            iconView.setImageResource(R.drawable.ic_star);
             iconView.setColorFilter(ContextCompat.getColor(getContext(), android.R.color.white));
             lessonCard.setAlpha(1.0f);
         }
 
         lessonCard.setOnClickListener(v -> {
             if (isLocked)
-                Toast.makeText(getContext(), "Lesson is locked!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Vui lòng hoàn thành bài học trước!", Toast.LENGTH_SHORT).show();
             else {
                 Intent intent = new Intent(getActivity(), LessonActivity.class);
                 intent.putExtra("LESSON_ID", lesson.getLessonId());
@@ -206,13 +96,19 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             }
         });
+    }
 
-        // Điều chỉnh layout params - các lesson gần center với độ nghiêng nhẹ
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+    private View createLessonView(LayoutInflater inflater, Unit unit, Lesson lesson, int index) {
+        View view = inflater.inflate(R.layout.item_lesson_circle, null, false);
+        setupLessonUI(view, unit, lesson);
+
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+        );
         params.topMargin = 20;
         params.bottomMargin = 20;
 
-        // Sử dụng margin nhỏ và đều để lesson gần center
         int baseMargin = (int) (getResources().getDisplayMetrics().density * 20);
         int offsetMargin = (int) (getResources().getDisplayMetrics().density * 15);
         int positionCycle = index % 5;
@@ -244,7 +140,48 @@ public class HomeFragment extends Fragment {
                 params.rightMargin = baseMargin - offsetMargin;
                 break;
         }
-        lessonView.setLayoutParams(params);
-        return lessonView;
+
+        view.setLayoutParams(params);
+        return view;
+    }
+
+    private View createLessonWithMascotRow(LayoutInflater inflater, Unit unit, Lesson lesson, int index) {
+        // Tạo LinearLayout ngang để chứa lesson và mascot
+        LinearLayout row = new LinearLayout(getContext());
+        row.setOrientation(LinearLayout.HORIZONTAL);
+        row.setGravity(Gravity.CENTER_HORIZONTAL);
+
+        LinearLayout.LayoutParams rowParams = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+        );
+        rowParams.topMargin = 20;
+        rowParams.bottomMargin = 20;
+        row.setLayoutParams(rowParams);
+
+        // Tạo lesson view
+        View lessonView = inflater.inflate(R.layout.item_lesson_circle, null, false);
+        setupLessonUI(lessonView, unit, lesson);
+
+        LinearLayout.LayoutParams lessonParams = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
+        );
+        lessonParams.rightMargin = (int) (getResources().getDisplayMetrics().density * 20);
+        lessonView.setLayoutParams(lessonParams);
+        row.addView(lessonView);
+
+        // Thêm mascot
+        ImageView mascot = new ImageView(getContext());
+        mascot.setImageResource(R.drawable.mascot);
+        LinearLayout.LayoutParams mascotParams = new LinearLayout.LayoutParams(
+                (int) (getResources().getDisplayMetrics().density * 80),
+                (int) (getResources().getDisplayMetrics().density * 80)
+        );
+        mascot.setLayoutParams(mascotParams);
+        mascot.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        row.addView(mascot);
+
+        return row;
     }
 }
