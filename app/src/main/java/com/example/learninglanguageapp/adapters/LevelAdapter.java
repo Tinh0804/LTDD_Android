@@ -12,17 +12,20 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.bumptech.glide.Glide;
 import com.example.learninglanguageapp.R;
-import com.example.learninglanguageapp.models.UIModel.Level;
+import com.example.learninglanguageapp.models.Course;
 
 import java.util.List;
 
-public class LevelAdapter extends ArrayAdapter<Level> {
+public class LevelAdapter extends ArrayAdapter<Course> {
 
     private int selectedPosition = -1;
+    // URL base của server để ghép với path icon từ API
+    private static final String BASE_URL = "http://192.168.1.73:5050";
 
-    public LevelAdapter(@NonNull Context context, @NonNull List<Level> levels) {
-        super(context, 0, levels);
+    public LevelAdapter(@NonNull Context context, @NonNull List<Course> courses) {
+        super(context, 0, courses);
     }
 
     @NonNull
@@ -33,20 +36,29 @@ public class LevelAdapter extends ArrayAdapter<Level> {
             view = LayoutInflater.from(getContext()).inflate(R.layout.level_item, parent, false);
         }
 
-        Level level = getItem(position);
+        Course course = getItem(position);
 
         ImageView ivIcon = view.findViewById(R.id.ivIcon);
         TextView tvName = view.findViewById(R.id.tvLevelName);
         TextView tvDesc = view.findViewById(R.id.tvLevelDesc);
 
-        if (level != null) {
-            ivIcon.setImageResource(level.getIcon());
-            tvName.setText(level.getName());
-            tvDesc.setText(level.getDesc());
+        if (course != null) {
+            // Hiển thị tên (ví dụ: Beginner)
+            tvName.setText(course.getDifficultyLevel().toUpperCase());
+            // Hiển thị mô tả đầy đủ
+            tvDesc.setText(course.getCourseName());
+
+            // Load ảnh từ API bằng Glide
+            String imageUrl = BASE_URL + course.getCourseIcon();
+            Glide.with(getContext())
+                    .load(imageUrl)
+                    .placeholder(R.drawable.beginer) // Ảnh chờ khi đang tải
+                    .error(R.drawable.beginer)       // Ảnh hiện ra nếu lỗi
+                    .into(ivIcon);
         }
 
-        // highlight item được chọn
-        view.setBackgroundColor(position == selectedPosition ? Color.parseColor("#D0CFFF") : Color.WHITE);
+        // Highlight item được chọn
+        view.setBackgroundColor(position == selectedPosition ? Color.parseColor("#D0CFFF") : Color.TRANSPARENT);
 
         view.setOnClickListener(v -> {
             selectedPosition = position;
@@ -56,7 +68,7 @@ public class LevelAdapter extends ArrayAdapter<Level> {
         return view;
     }
 
-    public Level getSelectedLevel() {
+    public Course getSelectedCourse() {
         if (selectedPosition != -1) {
             return getItem(selectedPosition);
         }

@@ -1,26 +1,36 @@
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+# ===== Android / Gradle =====
+.gradle/
+build/
+app/build/
+.externalNativeBuild/
+.cxx/
+
+# ===== Local config =====
 local.properties
 
-*.pub
-id_ed25519_tinh0804.pub
-id_ed25519_tinh0804
+# ===== IDE =====
+.idea/
+*.iml
+
+# ===== OS =====
+.DS_Store
+
+# ===== Logs / temp =====
+*.log
+*.tmp
+
+# ===== APK / Signing =====
 *.apk
 *.ap_
 *.keystore
 *.jks
-*.log
-*.tmp
+
+# ===== Room schema =====
+app/schemas/
+
+# ===== Captures =====
+captures/
+
+# ===== SSH keys (NEVER COMMIT) =====
+id_ed25519*
 *.pub

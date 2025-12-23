@@ -39,7 +39,7 @@ public class LanguageLearn extends AppCompatActivity {
         languages.add(new Language("Canada", R.drawable.flagcanada,3));
         languages.add(new Language("Germany", R.drawable.flaggermany,4));
         languages.add(new Language("Spanish", R.drawable.flagspainsh,5));
-        languages.add(new Language("French", R.drawable.flagfrench,6));
+        languages.add(new Language("French", R.drawable.flagfrench,7));
 
         adapter = new LanguageAdapter(this, languages);
         listView.setAdapter(adapter);
@@ -48,9 +48,10 @@ public class LanguageLearn extends AppCompatActivity {
             Language selected = adapter.getSelectedLanguage();
             if (selected != null) {
                 Bundle bundle = getIntent().getBundleExtra("data");
-                if (bundle == null) bundle = new Bundle(); // ✅
+                if (bundle == null) bundle = new Bundle();
 
-                bundle.putString("language_learn_id", selected.getLanguageId()+"");
+                // Đổi thành putInt
+                bundle.putInt("language_learn_id", selected.getLanguageId());
 
                 Intent intent = new Intent(LanguageLearn.this, LevelActivity.class);
                 intent.putExtra("data", bundle);

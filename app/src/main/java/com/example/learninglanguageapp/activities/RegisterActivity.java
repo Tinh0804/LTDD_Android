@@ -41,13 +41,13 @@ public class RegisterActivity extends AppCompatActivity {
                 return;
             }
             int nativeLanguageId = bundle.containsKey("language_use_id") ?
-                    Integer.parseInt(bundle.getString("language_use_id")) : 2;
+                    bundle.getInt("language_use_id") : 2;
 
             int learnLanguageId = bundle.containsKey("language_learn_id") ?
-                    Integer.parseInt(bundle.getString("language_learn_id")) : 1;
+                    bundle.getInt("language_learn_id") : 1;
 
-            int courseId = bundle.containsKey("level_id") ?
-                    Integer.parseInt(bundle.getString("level_id")) : 1;
+            int courseId = bundle.containsKey("course_id") ?
+                    bundle.getInt("course_id") : 1;
 
 
             String email = binding.etUserName.getText().toString().trim();

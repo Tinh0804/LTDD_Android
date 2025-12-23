@@ -1,6 +1,7 @@
 // network/ApiService.java
 package com.example.learninglanguageapp.network;
 
+import com.example.learninglanguageapp.models.Course;
 import com.example.learninglanguageapp.models.Exercise;
 import com.example.learninglanguageapp.models.Lesson;
 import com.example.learninglanguageapp.models.Request.LoginRequest;
@@ -73,4 +74,7 @@ public interface ApiService {
     Call<ApiResponse<String>> revokeToken(@Body String refreshToken);
     @GET("api/Profile")
     Call<ApiResponse<List<UserResponse>>> getAllUsersRanking(@Header("Authorization") String authHeader);
+
+    @GET("api/Courses/languages/{fromId}/{toId}")
+    Call<ApiResponse<List<Course>>> getCourses(@Path("fromId") int fromId , @Path("toId") int toId);
 }
