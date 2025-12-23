@@ -63,6 +63,9 @@ public interface ApiService {
     @GET("api/Units")
     Call<ApiResponse<List<Unit>>> getUnits();
 
+    @GET("api/Units/details/my")
+    Call<ApiResponse<List<Unit>>> getMyUnitsWithDetails(@Header("Authorization") String authHeader);
+    
     @GET("api/Lessons/unit/{unitId}")
     Call<ApiResponse<List<Lesson>>> getLessonsByUnit(
             @Path("unitId") int unitId
