@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -15,7 +16,8 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.learninglanguageapp.R;
 import com.example.learninglanguageapp.adapters.UnitAdapter;
 import com.example.learninglanguageapp.models.Unit;
-import com.example.learninglanguageapp.viewmodels.ExerciseViewModel;
+import com.example.learninglanguageapp.models.UnitWithLessons;
+import com.example.learninglanguageapp.viewmodels.UnitViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,8 +26,8 @@ public class PracticeFragment extends Fragment {
 
     private ListView listViewUnits;
     private UnitAdapter unitAdapter;
-    private List<Unit> mockUnitList;
-    private ExerciseViewModel exerciseViewModel;
+    private List<Unit> unitList;
+    private UnitViewModel unitViewModel;
 
     @Nullable
     @Override
@@ -34,44 +36,37 @@ public class PracticeFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.activity_practice, container, false);
+
         listViewUnits = view.findViewById(R.id.listUnits);
 
-        // Đảm bảo ViewModel được chia sẻ (requireActivity())
-        exerciseViewModel = new ViewModelProvider(requireActivity()).get(ExerciseViewModel.class);
-
-        // Tạo dữ liệu giả
-        mockUnitList = new ArrayList<>();
-        mockUnitList.add(new Unit(1, 1, "Animals", 1, false, 5, 0));
-        mockUnitList.add(new Unit(2, 1, "Family", 2, false, 4, 0));
-        mockUnitList.add(new Unit(3, 1, "Food", 3, true, 5, 0));
-        mockUnitList.add(new Unit(4, 1, "Weather", 4, true, 3, 0));
-        mockUnitList.add(new Unit(5, 1, "Daily Activities", 5, true, 5, 0));
-
-        unitAdapter = new UnitAdapter(requireContext(), mockUnitList);
+        unitList = new ArrayList<>();
+        unitAdapter = new UnitAdapter(requireContext(), unitList);
         listViewUnits.setAdapter(unitAdapter);
 
-        final int unitId = getArguments() != null ? getArguments().getInt("unitId", -1) : -1;
-        if (unitId != -1) {
-            // Gọi phương thức tải TẤT CẢ bài tập của Unit (không lọc theo type)
-            // Điều này kích hoạt kiểm tra cache và gọi API nếu cache trống.
-            exerciseViewModel.fetchExercises(unitId);
-        }
+        unitViewModel = new ViewModelProvider(requireActivity()).get(UnitViewModel.class);
 
-        // Chỉ quan sát lỗi (nếu có)
-        exerciseViewModel.errorLiveData.observe(getViewLifecycleOwner(), error -> {
-            if (error != null) {
-                Toast.makeText(requireContext(), error, Toast.LENGTH_SHORT).show();
-                // ❗ Rất quan trọng: Xóa giá trị lỗi sau khi hiển thị
-                exerciseViewModel.errorLiveData.setValue(null);
+        unitViewModel.getUnitsWithLessonsLiveData().observe(getViewLifecycleOwner(), unitsWithLessons -> {
+            if (unitsWithLessons != null) {
+                unitList.clear();
+                for (UnitWithLessons uwl : unitsWithLessons)
+                    unitList.add(uwl.getUnit());
+                unitAdapter.notifyDataSetChanged();
             }
         });
 
-        // 2️⃣ Click vào unit: Chuyển Fragment và truyền unitId
+        unitViewModel.getErrorLiveData().observe(getViewLifecycleOwner(), error -> {
+            if (error != null)
+                Toast.makeText(requireContext(), error, Toast.LENGTH_SHORT).show();
+        });
+
         listViewUnits.setOnItemClickListener((parent, view1, position, id) -> {
-            Unit clickedUnit = mockUnitList.get(position);
+            Unit clickedUnit = unitList.get(position);
+            if (clickedUnit.isLocked()) {
+                Toast.makeText(getContext(), "Bạn vẫn chưa mở khoá được unit để luyện tập!", Toast.LENGTH_SHORT).show();
+                return;
+            }
 
             Bundle bundle = new Bundle();
-            // Truyền ID để GameFragment biết nó cần tải dữ liệu nào
             bundle.putInt("unitId", clickedUnit.getUnitId());
 
             GameFragment gameFragment = new GameFragment();
@@ -83,7 +78,12 @@ public class PracticeFragment extends Fragment {
                     .addToBackStack(null)
                     .commit();
         });
-
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        unitViewModel.loadUnitsWithLessons();
     }
 }
