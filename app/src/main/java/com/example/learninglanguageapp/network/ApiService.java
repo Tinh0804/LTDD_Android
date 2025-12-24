@@ -89,9 +89,29 @@ public interface ApiService {
             @Header("Authorization") String authHeader
     );
 
+    // ===== Forgot password =====
+    @POST("api/Auth/forgot-password")
+    Call<com.example.learninglanguageapp.models.Response.MessageResponse> forgotPassword(
+            @Body com.example.learninglanguageapp.models.Request.ForgotPasswordRequest body
+    );
+
+    @POST("api/Auth/validate-otp")
+    Call<Boolean> validateOtp(
+            @Body com.example.learninglanguageapp.models.Request.ValidateOtpRequest body
+    );
+
+    @POST("api/Auth/reset-password")
+    Call<com.example.learninglanguageapp.models.Response.MessageResponse> resetPassword(
+            @Body com.example.learninglanguageapp.models.Request.ResetPasswordRequest body
+    );
     @GET("api/Languages/{id}")
     Call<ApiResponse<LanguageResponse>> getLanguageById(
             @Path("id") int id
     );
+    @GET("api/Friendship/friends")
+    Call<ApiResponse<List<com.example.learninglanguageapp.models.FriendModel>>> getFriends(
+            @Header("Authorization") String authHeader
+    );
+
 
 }
