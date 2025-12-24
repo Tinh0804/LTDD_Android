@@ -120,6 +120,15 @@
         <activity
             android:name=".activities.StudyTimeActivity"
             android:exported="false"/>
+        <activity
+            android:name=".activities.ForgotPasswordActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".activities.VerifyOtpActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".activities.NewPasswordActivity"
+            android:exported="false"/>
 
 
 
