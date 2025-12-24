@@ -281,7 +281,6 @@ id btnSignIn
 id btnToggleConfirmPassword
 id btnTogglePassword
 id btnUnlockCourse
-id btnUpdate
 id btnWeekly
 id btnWeeklyHistory
 id btnWeeklyTime
@@ -385,7 +384,6 @@ id layoutDarkMode
 id layoutDateOfBirth
 id layoutDiamondPackages
 id layoutFindFriends
-id layoutGender
 id layoutGeneral
 id layoutHeader
 id layoutLogout
@@ -471,7 +469,6 @@ id tvFollowers
 id tvFollowing
 id tvForgotPassword
 id tvGems
-id tvGender
 id tvHearts
 id tvHeartsTitle
 id tvImageWordSubtitle
@@ -532,7 +529,6 @@ id viewPager
 id webView
 id wordChip
 id wordChipSelected
-layout accountpersonal
 layout activity_account
 layout activity_account_person
 layout activity_forgot_password

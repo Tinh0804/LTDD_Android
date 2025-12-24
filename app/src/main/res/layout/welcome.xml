@@ -56,20 +56,20 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Welcome to AppleTalk"
+            android:text="Chào mừng đên AppleTalk"
+            android:textColor="@android:color/black"
             android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@android:color/black" />
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Learn languages whenever and wherever you want. It's all in your hands!"
-            android:textSize="14sp"
-            android:textColor="#8A8A8A"
-            android:gravity="center"
             android:layout_marginTop="8dp"
-            android:paddingHorizontal="16dp" />
+            android:gravity="center"
+            android:paddingHorizontal="16dp"
+            android:text="Học ngôn ngữ bất kỳ nơi đâu và bất cứ khi nào bạn muốn trong tầm tay!"
+            android:textColor="#8A8A8A"
+            android:textSize="14sp" />
 
         <ProgressBar
             android:id="@+id/prg"
@@ -85,10 +85,10 @@
             android:id="@+id/get_started_button"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="Get Started"
-            android:backgroundTint="#6A5AF9"
-            android:textColor="@android:color/white"
             android:layout_marginTop="32dp"
+            android:backgroundTint="#6A5AF9"
+            android:text="Bắt đầu"
+            android:textColor="@android:color/white"
             app:cornerRadius="38dp" />
 
         <Button
@@ -96,10 +96,10 @@
             style="@style/Widget.Material3.Button.TextButton"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="I Already Have an Account"
-            android:backgroundTint="#F0EEFF"
-            android:textColor="#6A5AF9"
             android:layout_marginTop="12dp"
+            android:backgroundTint="#F0EEFF"
+            android:text="Tôi đã có tài khoản"
+            android:textColor="#6A5AF9"
             app:cornerRadius="38dp" />
 
     </LinearLayout>

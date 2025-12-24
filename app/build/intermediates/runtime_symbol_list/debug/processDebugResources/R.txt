@@ -3820,7 +3820,6 @@ int id btnSignIn 0x7f0a009f
 int id btnToggleConfirmPassword 0x7f0a00a0
 int id btnTogglePassword 0x7f0a00a1
 int id btnUnlockCourse 0x7f0a00a2
-int id btnUpdate 0x7f0a00a3
 int id btnWeekly 0x7f0a00a4
 int id btnWeeklyHistory 0x7f0a00a5
 int id btnWeeklyTime 0x7f0a00a6
@@ -4139,7 +4138,6 @@ int id layoutDarkMode 0x7f0a01da
 int id layoutDateOfBirth 0x7f0a01db
 int id layoutDiamondPackages 0x7f0a01dc
 int id layoutFindFriends 0x7f0a01dd
-int id layoutGender 0x7f0a01de
 int id layoutGeneral 0x7f0a01df
 int id layoutHeader 0x7f0a01e0
 int id layoutLogout 0x7f0a01e1
@@ -4500,7 +4498,6 @@ int id tvFollowers 0x7f0a033a
 int id tvFollowing 0x7f0a033b
 int id tvForgotPassword 0x7f0a033c
 int id tvGems 0x7f0a033d
-int id tvGender 0x7f0a033e
 int id tvHearts 0x7f0a033f
 int id tvHeartsTitle 0x7f0a0340
 int id tvImageWordSubtitle 0x7f0a0341
@@ -4709,7 +4706,6 @@ int layout abc_search_dropdown_item_icons_2line 0x7f0d0018
 int layout abc_search_view 0x7f0d0019
 int layout abc_select_dialog_material 0x7f0d001a
 int layout abc_tooltip 0x7f0d001b
-int layout accountpersonal 0x7f0d001c
 int layout activity_account 0x7f0d001d
 int layout activity_account_person 0x7f0d001e
 int layout activity_forgot_password 0x7f0d001f

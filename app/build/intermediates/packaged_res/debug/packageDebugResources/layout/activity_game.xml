@@ -12,11 +12,11 @@
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="What type of games?"
+        android:layout_marginTop="16dp"
+        android:text="Chọn thể loại trò chơi?"
         android:textColor="#2D3748"
         android:textSize="32sp"
         android:textStyle="bold"
-        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

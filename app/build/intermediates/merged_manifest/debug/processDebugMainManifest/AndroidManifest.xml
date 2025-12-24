@@ -69,9 +69,10 @@
         <activity
             android:name="com.example.learninglanguageapp.activities.MatchingGameActivity"
             android:exported="false" />
-        <activity
-            android:name="com.example.learninglanguageapp.activities.LeaderboardActivity"
-            android:exported="false" />
+
+        <!-- <activity -->
+        <!-- android:name=".activities.LeaderboardActivity" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name="com.example.learninglanguageapp.activities.AccountPersonal"
             android:exported="false" />

@@ -77,7 +77,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Upgrade Plan Now!"
+                        android:text="Nâng cấp ngay"
                         android:textColor="#FFFFFF"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -85,10 +85,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Enjoy all the benefits and explore more possibilities"
+                        android:layout_marginTop="4dp"
+                        android:text="Tận hưởng tất cả lợi ích và khám phá nhiều tính năng"
                         android:textColor="#E0E0FF"
-                        android:textSize="12sp"
-                        android:layout_marginTop="4dp" />
+                        android:textSize="12sp" />
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -188,9 +188,9 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginStart="12dp"
-                        android:text="Preferences"
+                        android:layout_weight="1"
+                        android:text="Cài đặt"
                         android:textColor="#000000"
                         android:textSize="16sp" />
 
@@ -228,9 +228,9 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginStart="12dp"
-                        android:text="Personal Info"
+                        android:layout_weight="1"
+                        android:text="Thông tin cá nhân"
                         android:textColor="#000000"
                         android:textSize="16sp" />
 
@@ -268,9 +268,9 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginStart="12dp"
-                        android:text="Notification"
+                        android:layout_weight="1"
+                        android:text="Thông báo"
                         android:textColor="#000000"
                         android:textSize="16sp" />
 
@@ -308,9 +308,9 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginStart="12dp"
-                        android:text="General"
+                        android:layout_weight="1"
+                        android:text="Tổng quan"
                         android:textColor="#000000"
                         android:textSize="16sp" />
 
@@ -348,9 +348,9 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginStart="12dp"
-                        android:text="Accessibility"
+                        android:layout_weight="1"
+                        android:text="Khả năng truy cập"
                         android:textColor="#000000"
                         android:textSize="16sp" />
 
@@ -388,9 +388,9 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginStart="12dp"
-                        android:text="Security"
+                        android:layout_weight="1"
+                        android:text="Bảo mật"
                         android:textColor="#000000"
                         android:textSize="16sp" />
 
@@ -428,9 +428,9 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginStart="12dp"
-                        android:text="Find Friends"
+                        android:layout_weight="1"
+                        android:text="Tìm bạn bè"
                         android:textColor="#000000"
                         android:textSize="16sp" />
 
@@ -468,9 +468,9 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginStart="12dp"
-                        android:text="Dark Mode"
+                        android:layout_weight="1"
+                        android:text="Chế độ"
                         android:textColor="#000000"
                         android:textSize="16sp" />
 
@@ -507,9 +507,9 @@
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginStart="12dp"
-                        android:text="Logout"
+                        android:layout_weight="1"
+                        android:text="Đăng xuất"
                         android:textColor="#000000"
                         android:textSize="16sp" />
                 </LinearLayout>

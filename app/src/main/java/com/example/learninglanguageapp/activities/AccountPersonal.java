@@ -18,7 +18,7 @@ public class AccountPersonal extends AppCompatActivity {
 
     private ImageView btnBack;
     private EditText etName, etEmail, etPhoneNumber;
-    private TextView tvCountry, tvGender, tvDateOfBirth;
+    private TextView tvCountry, tvDateOfBirth;
 
     private SharedPrefsHelper sharedPrefsHelper;
     private UserResponse userResponse;
@@ -56,7 +56,6 @@ public class AccountPersonal extends AppCompatActivity {
         etEmail        = findViewById(R.id.etEmail);
         etPhoneNumber  = findViewById(R.id.etPhoneNumber);
         tvCountry      = findViewById(R.id.tvCountry);
-        tvGender       = findViewById(R.id.tvGender);
         tvDateOfBirth  = findViewById(R.id.tvDateOfBirth);
 
         etName.setEnabled(false);

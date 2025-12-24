@@ -43,9 +43,10 @@
         <activity
             android:name=".activities.MatchingGameActivity"
             android:exported="false" />
-        <activity
-            android:name=".activities.LeaderboardActivity"
-            android:exported="false" />
+
+<!--        <activity-->
+<!--            android:name=".activities.LeaderboardActivity"-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".activities.AccountPersonal"
             android:exported="false" />
