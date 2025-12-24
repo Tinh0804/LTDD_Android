@@ -3631,6 +3631,7 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable option_background
 drawable option_background_selected
+drawable otp_box
 drawable pen
 drawable placeholder
 drawable placeholder_img
@@ -3811,6 +3812,7 @@ id btnPrevMonth
 id btnPrevWeek
 id btnPrevious
 id btnRegister
+id btnSavePassword
 id btnSearch
 id btnSecurity
 id btnSettings
@@ -3964,7 +3966,9 @@ id east
 id edge
 id edit_query
 id edit_text_id
+id edtConfirmPassword
 id edtEmail
+id edtNewPassword
 id edtPassword
 id elastic
 id embed
@@ -4102,6 +4106,8 @@ id included
 id indeterminate
 id info
 id inline
+id inputConfirmPassword
+id inputNewPassword
 id invisible
 id inward
 id is_pooling_container_tag
@@ -4300,6 +4306,13 @@ id optionText1
 id optionText2
 id optionText3
 id optionText4
+id otp1
+id otp2
+id otp3
+id otp4
+id otp5
+id otp6
+id otpContainer
 id outline
 id outward
 id overlayView
@@ -4457,6 +4470,7 @@ id title
 id titleDividerNoCustom
 id title_template
 id toggle
+id toolbar
 id top
 id topBar
 id topPanel
@@ -4477,6 +4491,7 @@ id tvCategory
 id tvCountry
 id tvDateOfBirth
 id tvDateRange
+id tvDesc
 id tvDiamondCount
 id tvExampleSentence
 id tvExperiencePoints
@@ -4508,11 +4523,13 @@ id tvPronunciation
 id tvPronunciationBack
 id tvQuestion
 id tvRank
+id tvResend
 id tvSignIn
 id tvSignUp
 id tvStreak
 id tvStreakTitle
 id tvSubtitle
+id tvTimer
 id tvTitle
 id tvTotalFriends
 id tvTranslation
@@ -4706,6 +4723,7 @@ layout activity_login
 layout activity_main
 layout activity_match_game
 layout activity_matching_game
+layout activity_new_password
 layout activity_payment
 layout activity_practice
 layout activity_profile_fr
@@ -4717,6 +4735,7 @@ layout activity_setting
 layout activity_shop
 layout activity_splash
 layout activity_study_time
+layout activity_verify_otp
 layout activity_web_view
 layout browser_actions_context_menu_page
 layout browser_actions_context_menu_row
@@ -5525,6 +5544,7 @@ style MessengerButtonText_Blue_Small
 style MessengerButtonText_White
 style MessengerButtonText_White_Large
 style MessengerButtonText_White_Small
+style OtpEditText
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_MaterialComponents

@@ -204,6 +204,7 @@ drawable mother
 drawable notification
 drawable option_background
 drawable option_background_selected
+drawable otp_box
 drawable pen
 drawable placeholder
 drawable placeholder_img
@@ -271,6 +272,7 @@ id btnPrevMonth
 id btnPrevWeek
 id btnPrevious
 id btnRegister
+id btnSavePassword
 id btnSearch
 id btnSecurity
 id btnSettings
@@ -330,7 +332,9 @@ id chartContainer
 id chkRemember
 id cvUpgrade
 id cvUserProfile
+id edtConfirmPassword
 id edtEmail
+id edtNewPassword
 id edtPassword
 id etConfirmPassword
 id etEmail
@@ -357,6 +361,8 @@ id imgItem
 id imgLogo
 id imgMedal
 id imgUnit
+id inputConfirmPassword
+id inputNewPassword
 id ivAddFriend
 id ivApple
 id ivArrangeWordIcon
@@ -427,6 +433,13 @@ id optionText1
 id optionText2
 id optionText3
 id optionText4
+id otp1
+id otp2
+id otp3
+id otp4
+id otp5
+id otp6
+id otpContainer
 id overlayView
 id prg
 id progressBar
@@ -438,6 +451,7 @@ id scrollView
 id selectedWordsContainer
 id splash_text
 id switchDarkMode
+id toolbar
 id topBar
 id top_background
 id tvArrangeWordSubtitle
@@ -447,6 +461,7 @@ id tvCategory
 id tvCountry
 id tvDateOfBirth
 id tvDateRange
+id tvDesc
 id tvDiamondCount
 id tvExampleSentence
 id tvExperiencePoints
@@ -478,11 +493,13 @@ id tvPronunciation
 id tvPronunciationBack
 id tvQuestion
 id tvRank
+id tvResend
 id tvSignIn
 id tvSignUp
 id tvStreak
 id tvStreakTitle
 id tvSubtitle
+id tvTimer
 id tvTitle
 id tvTotalFriends
 id tvTranslation
@@ -528,6 +545,7 @@ layout activity_login
 layout activity_main
 layout activity_match_game
 layout activity_matching_game
+layout activity_new_password
 layout activity_payment
 layout activity_practice
 layout activity_profile_fr
@@ -539,6 +557,7 @@ layout activity_setting
 layout activity_shop
 layout activity_splash
 layout activity_study_time
+layout activity_verify_otp
 layout activity_web_view
 layout fragment_home
 layout fragment_home2
@@ -611,6 +630,7 @@ string title_activity_login
 string welcome
 string word_image
 style Base.Theme.LearningLanguageApp
+style OtpEditText
 style Theme.LearningLanguageApp
 style Theme.LearningLanguageApp.Splash
 xml backup_rules

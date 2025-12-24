@@ -20,6 +20,10 @@
         "source": "com.example.learninglanguageapp-main-73:/navigation/nav_graph2.xml"
     },
     {
+        "merged": "com.example.learninglanguageapp-debug-71:/drawable_otp_box.xml.flat",
+        "source": "com.example.learninglanguageapp-main-73:/drawable/otp_box.xml"
+    },
+    {
         "merged": "com.example.learninglanguageapp-debug-71:/layout_activity_register.xml.flat",
         "source": "com.example.learninglanguageapp-main-73:/layout/activity_register.xml"
     },
@@ -78,6 +82,10 @@
     {
         "merged": "com.example.learninglanguageapp-debug-71:/layout_activity_study_time.xml.flat",
         "source": "com.example.learninglanguageapp-main-73:/layout/activity_study_time.xml"
+    },
+    {
+        "merged": "com.example.learninglanguageapp-debug-71:/layout_activity_new_password.xml.flat",
+        "source": "com.example.learninglanguageapp-main-73:/layout/activity_new_password.xml"
     },
     {
         "merged": "com.example.learninglanguageapp-debug-71:/drawable_flagfrench.png.flat",
@@ -500,6 +508,10 @@
         "source": "com.example.learninglanguageapp-main-73:/layout/word_chip_selected.xml"
     },
     {
+        "merged": "com.example.learninglanguageapp-debug-71:/layout_activity_verify_otp.xml.flat",
+        "source": "com.example.learninglanguageapp-main-73:/layout/activity_verify_otp.xml"
+    },
+    {
         "merged": "com.example.learninglanguageapp-debug-71:/drawable_matching.png.flat",
         "source": "com.example.learninglanguageapp-main-73:/drawable/matching.png"
     },
@@ -680,16 +692,16 @@
         "source": "com.example.learninglanguageapp-main-73:/drawable/ic_puzzle.png"
     },
     {
-        "merged": "com.example.learninglanguageapp-debug-71:/drawable_ic_practice.png.flat",
-        "source": "com.example.learninglanguageapp-main-73:/drawable/ic_practice.png"
+        "merged": "com.example.learninglanguageapp-debug-71:/layout_item_unit_header_line.xml.flat",
+        "source": "com.example.learninglanguageapp-main-73:/layout/item_unit_header_line.xml"
     },
     {
         "merged": "com.example.learninglanguageapp-debug-71:/drawable_bg_icon_purple.xml.flat",
         "source": "com.example.learninglanguageapp-main-73:/drawable/bg_icon_purple.xml"
     },
     {
-        "merged": "com.example.learninglanguageapp-debug-71:/layout_item_unit_header_line.xml.flat",
-        "source": "com.example.learninglanguageapp-main-73:/layout/item_unit_header_line.xml"
+        "merged": "com.example.learninglanguageapp-debug-71:/drawable_ic_practice.png.flat",
+        "source": "com.example.learninglanguageapp-main-73:/drawable/ic_practice.png"
     },
     {
         "merged": "com.example.learninglanguageapp-debug-71:/mipmap-anydpi_ic_launcher.xml.flat",

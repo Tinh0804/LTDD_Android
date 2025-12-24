@@ -145,6 +145,15 @@
             android:name="com.example.learninglanguageapp.activities.StudyTimeActivity"
             android:exported="false" />
         <activity
+            android:name="com.example.learninglanguageapp.activities.ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.learninglanguageapp.activities.VerifyOtpActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.learninglanguageapp.activities.NewPasswordActivity"
+            android:exported="false" />
+        <activity
             android:name="com.example.learninglanguageapp.activities.LoginActivity"
             android:exported="false" >
         </activity> <!-- Main Activity -->
