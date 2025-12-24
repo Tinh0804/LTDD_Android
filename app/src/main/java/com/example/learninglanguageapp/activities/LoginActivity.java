@@ -63,8 +63,8 @@ public class LoginActivity extends AppCompatActivity {
         prefs = new SharedPrefsHelper(this);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken("976124393303-rlu8pmavq33q5q0781jbglma8ntglmb7.apps.googleusercontent.com")
-//                .requestIdToken("74834344847-io42cjb2tqhkkquvis1jnbjvec2rl6t5.apps.googleusercontent.com")
+//                .requestIdToken("976124393303-rlu8pmavq33q5q0781jbglma8ntglmb7.apps.googleusercontent.com")
+                .requestIdToken("74834344847-t15m8htf2jbv1gqbpvhp92lkje117dnn.apps.googleusercontent.com")
                 .requestEmail()
                 .build();
         googleSignInClient = GoogleSignIn.getClient(this, gso);

@@ -1,27 +1,37 @@
 package com.example.learninglanguageapp.fragments;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
 import com.example.learninglanguageapp.R;
+import com.example.learninglanguageapp.models.FriendModel;
+import com.example.learninglanguageapp.models.Response.ApiResponse;
+import com.example.learninglanguageapp.network.ApiClient;
+import com.example.learninglanguageapp.utils.SharedPrefsHelper;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class FriendFragment extends Fragment {
 
-    private LinearLayout friendsContainer;  // Container chứa danh sách bạn bè
-    private TextView tvTotalFriends; // Số lượng bạn bè
-    private TextView tvOnlineFriends; // Số lượng bạn bè online
-
-    private int totalFriends = 25; // Số lượng bạn bè (có thể lấy từ API hoặc database)
-    private int onlineFriends = 16; // Số lượng bạn bè online
+    private LinearLayout friendsContainer;
+    private TextView tvTotalFriends;
+    private TextView tvOnlineFriends;
 
     @Nullable
     @Override
@@ -29,46 +39,103 @@ public class FriendFragment extends Fragment {
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        // Inflate layout cho Fragment
         View view = inflater.inflate(R.layout.activity_list_friend, container, false);
 
-        // Khởi tạo view
         friendsContainer = view.findViewById(R.id.friendsContainer);
-        tvTotalFriends = view.findViewById(R.id.tvTotalFriends); // Lấy TextView hiển thị số bạn bè
-        tvOnlineFriends = view.findViewById(R.id.tvOnlineFriends); // Lấy TextView hiển thị số bạn bè online
+        tvTotalFriends = view.findViewById(R.id.tvTotalFriends);
+        tvOnlineFriends = view.findViewById(R.id.tvOnlineFriends);
 
-        // Cập nhật số liệu bạn bè
-        tvTotalFriends.setText(String.valueOf(totalFriends));
-        tvOnlineFriends.setText(String.valueOf(onlineFriends));
+        tvTotalFriends.setText("0");
+        tvOnlineFriends.setText("0");
 
-        // Thêm bạn bè vào layout (bạn có thể lấy dữ liệu động từ cơ sở dữ liệu hoặc API)
-        addFriend("Nguyễn Thị Phương Anh", "⚡️ 1500 XP", "Đang hoạt động", R.drawable.avt_fr2);
-        addFriend("Trần Hoàng Hiếu", "⚡️ 500 XP", "Online 2 giờ trước", R.drawable.avt_fr1);
-        addFriend("Lê Văn Công", "⚡️ 600 XP", "Đang hoạt động", R.drawable.avt_fr5);
-        addFriend("Phạm Thị Ánh Nguyên", "⚡️ 970 XP", "Online 1 ngày trước", R.drawable.avt_fr3);
-        addFriend("Hoàng Thị Mai Phương", "⚡️ 310 XP", "Đang hoạt động", R.drawable.avt_fr4);
-        addFriend("Vũ Thị Minh Anh", "⚡️ 4300 XP", "Online 3 giờ trước", R.drawable.avt_fr6);
+        loadFriends();
 
         return view;
     }
 
-    private void addFriend(String name, String experience, String onlineStatus, int avatarResId) {
-        // Inflate một item bạn bè
-        View friendView = getLayoutInflater().inflate(R.layout.item_friend, null);
+    private void loadFriends() {
+        SharedPrefsHelper prefs = new SharedPrefsHelper(requireContext());
+        String token = prefs.getToken();
 
-        // Khởi tạo các view trong item bạn bè
-        TextView tvName = friendView.findViewById(R.id.tvName);
-        TextView tvExperience = friendView.findViewById(R.id.tvExperiencePoints);
-        TextView tvStatus = friendView.findViewById(R.id.tvOnlineStatus);
-        ImageView ivAvatar = friendView.findViewById(R.id.ivAvatar);
+        Log.d("FRIEND", "TOKEN = " + token);
 
-        // Gán giá trị cho các view
-        tvName.setText(name);
-        tvExperience.setText(experience);
-        tvStatus.setText(onlineStatus);
-        ivAvatar.setImageResource(avatarResId);
+        if (token == null || token.isEmpty()) {
+            Toast.makeText(requireContext(),
+                    "Chưa có token, vui lòng đăng nhập lại",
+                    Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-        // Thêm view bạn bè vào container
-        friendsContainer.addView(friendView);
+        ApiClient.getApiService(requireContext())
+                .getFriends("Bearer " + token)
+                .enqueue(new Callback<ApiResponse<List<FriendModel>>>() {
+                    @Override
+                    public void onResponse(Call<ApiResponse<List<FriendModel>>> call,
+                                           Response<ApiResponse<List<FriendModel>>> response) {
+
+                        Log.d("FRIEND", "HTTP CODE = " + response.code());
+
+                        if (!isAdded()) return;
+
+                        if (response.isSuccessful() && response.body() != null) {
+                            ApiResponse<List<FriendModel>> body = response.body();
+
+                            if (body.isStatus() && body.getData() != null) {
+                                renderFriends(body.getData());
+                            } else {
+                                Toast.makeText(requireContext(),
+                                        body.getMessage(),
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            Toast.makeText(requireContext(),
+                                    "API error: " + response.code(),
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ApiResponse<List<FriendModel>>> call, Throwable t) {
+                        Toast.makeText(requireContext(),
+                                "Network error: " + t.getMessage(),
+                                Toast.LENGTH_LONG).show();
+                    }
+                });
+    }
+
+    private void renderFriends(List<FriendModel> friends) {
+        friendsContainer.removeAllViews();
+
+        tvTotalFriends.setText(String.valueOf(friends.size()));
+        tvOnlineFriends.setText("0");
+
+        for (FriendModel friend : friends) {
+            View view = LayoutInflater.from(getContext())
+                    .inflate(R.layout.item_friend, friendsContainer, false);
+
+            TextView tvName = view.findViewById(R.id.tvName);
+            TextView tvExp = view.findViewById(R.id.tvExperiencePoints);
+            TextView tvStatus = view.findViewById(R.id.tvOnlineStatus);
+            ImageView ivAvatar = view.findViewById(R.id.ivAvatar);
+
+            tvName.setText(friend.getDisplayName() != null
+                    ? friend.getDisplayName()
+                    : "Unknown");
+
+            tvExp.setText("⚡️ 0 XP");
+            tvStatus.setText("Friend");
+
+            if (friend.getAvatarUrl() != null && !friend.getAvatarUrl().isEmpty()) {
+                Glide.with(this)
+                        .load(friend.getAvatarUrl())
+                        .placeholder(R.drawable.avt_fr1)
+                        .error(R.drawable.avt_fr1)
+                        .into(ivAvatar);
+            } else {
+                ivAvatar.setImageResource(R.drawable.avt_fr1);
+            }
+
+            friendsContainer.addView(view);
+        }
     }
 }
