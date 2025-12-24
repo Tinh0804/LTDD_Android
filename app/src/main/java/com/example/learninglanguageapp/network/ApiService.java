@@ -11,6 +11,8 @@ import com.example.learninglanguageapp.models.Request.RegisterRequest;
 import com.example.learninglanguageapp.models.Request.SocialLoginRequest;
 import com.example.learninglanguageapp.models.Response.ApiResponse;
 import com.example.learninglanguageapp.models.Response.BalanceResponse;
+import com.example.learninglanguageapp.models.Response.LanguageResponse;
+import com.example.learninglanguageapp.models.Response.LeaderboardResponse;
 import com.example.learninglanguageapp.models.Response.LoginResponse;
 import com.example.learninglanguageapp.models.Response.PaymentResponse;
 import com.example.learninglanguageapp.models.Response.UserResponse;
@@ -80,4 +82,16 @@ public interface ApiService {
 
     @GET("api/Courses/languages/{fromId}/{toId}")
     Call<ApiResponse<List<Course>>> getCourses(@Path("fromId") int fromId , @Path("toId") int toId);
+
+    // Thêm vào interface ApiService
+    @GET("api/Profile/leaderboard")
+    Call<ApiResponse<LeaderboardResponse>> getLeaderboard(
+            @Header("Authorization") String authHeader
+    );
+
+    @GET("api/Languages/{id}")
+    Call<ApiResponse<LanguageResponse>> getLanguageById(
+            @Path("id") int id
+    );
+
 }
