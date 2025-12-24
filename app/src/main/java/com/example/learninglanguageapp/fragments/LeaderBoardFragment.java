@@ -14,52 +14,42 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.learninglanguageapp.R;
-import com.example.learninglanguageapp.activities.LeaderboardAdapter;
-import com.example.learninglanguageapp.models.Response.Result;
-import com.example.learninglanguageapp.models.Response.UserResponse;
-import com.example.learninglanguageapp.viewmodels.AuthViewModel;
-
-import java.util.List;
+import com.example.learninglanguageapp.adapters.LeaderboardAdapter;
+import com.example.learninglanguageapp.viewmodels.LeaderboardViewModel;
 
 public class LeaderBoardFragment extends Fragment {
 
-    private AuthViewModel viewModel;
+    private LeaderboardViewModel viewModel;
     private LeaderboardAdapter adapter;
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
+    public View onCreateView(
+            @NonNull LayoutInflater inflater,
+            @Nullable ViewGroup container,
+            @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.activity_leaderboard, container, false);
 
-        // RecyclerView + Adapter
         RecyclerView recyclerView = view.findViewById(R.id.recyclerViewLeaderboard);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
-        adapter = new LeaderboardAdapter();
+
+        adapter = new LeaderboardAdapter(requireContext());
         recyclerView.setAdapter(adapter);
 
-        // Dùng lại AuthViewModel
-        viewModel = new ViewModelProvider(requireActivity()).get(AuthViewModel.class);
+        viewModel = new ViewModelProvider(this)
+                .get(LeaderboardViewModel.class);
 
-        // Gọi API lấy bảng xếp hạng thật từ /api/Profile
-        viewModel.loadRanking();
+        viewModel.getLeaderboard().observe(getViewLifecycleOwner(),
+                adapter::submitList);
 
-        // Observe – ĐÃ DÙNG ĐÚNG getValue() và getException() CỦA BẠN
-        viewModel.getRankingLiveData().observe(getViewLifecycleOwner(), result -> {
-            if (result.isSuccess()) {
-                List<UserResponse> list = result.getValue();
-                adapter.submitList(list);
-            }
-        });
+        viewModel.getError().observe(getViewLifecycleOwner(),
+                msg -> Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show());
 
-        // 3 nút Weekly/Monthly/AllTime → để đẹp, click reload lại bảng
-        view.findViewById(R.id.btnWeekly).setOnClickListener(v -> viewModel.loadRanking());
-        view.findViewById(R.id.btnMonthly).setOnClickListener(v -> viewModel.loadRanking());
-        view.findViewById(R.id.btnAllTime).setOnClickListener(v -> viewModel.loadRanking());
+        view.findViewById(R.id.btnWeekly).setOnClickListener(v -> viewModel.loadLeaderboard());
+        view.findViewById(R.id.btnMonthly).setOnClickListener(v -> viewModel.loadLeaderboard());
+        view.findViewById(R.id.btnAllTime).setOnClickListener(v -> viewModel.loadLeaderboard());
 
-        // Nút back
         view.findViewById(R.id.btnback).setOnClickListener(v ->
                 requireActivity().getOnBackPressedDispatcher().onBackPressed());
 

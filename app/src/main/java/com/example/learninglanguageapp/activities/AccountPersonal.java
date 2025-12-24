@@ -1,6 +1,5 @@
 package com.example.learninglanguageapp.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -8,42 +7,47 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.example.learninglanguageapp.R;
-import com.example.learninglanguageapp.fragments.AccountFragment;
 import com.example.learninglanguageapp.models.Response.UserResponse;
 import com.example.learninglanguageapp.utils.SharedPrefsHelper;
+import com.example.learninglanguageapp.viewmodels.LanguageViewModel;
 
 public class AccountPersonal extends AppCompatActivity {
 
-    // View
     private ImageView btnBack;
     private EditText etName, etEmail, etPhoneNumber;
     private TextView tvCountry, tvGender, tvDateOfBirth;
 
-    // Prefs + user
     private SharedPrefsHelper sharedPrefsHelper;
-    private UserResponse userResponse;   // data user hiện tại
+    private UserResponse userResponse;
+
+    private LanguageViewModel languageViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_account_person); // layout của bạn
+        setContentView(R.layout.activity_account_person);
 
         initViews();
         setupListeners();
 
-        // Khởi tạo helper
         sharedPrefsHelper = new SharedPrefsHelper(this);
-
-        // Lấy user từ SharedPreferences
         userResponse = sharedPrefsHelper.getCurrentUserResponse();
 
-        if (userResponse != null) {
-            bindUserDataToViews();
-        } else {
+        if (userResponse == null) {
             Toast.makeText(this, "Không tìm thấy thông tin người dùng", Toast.LENGTH_SHORT).show();
+            return;
         }
+
+        bindUserDataToViews();
+
+        // ===== Language ViewModel =====
+        languageViewModel = new ViewModelProvider(this).get(LanguageViewModel.class);
+
+        observeLanguage();
+        languageViewModel.loadLanguage(userResponse.getNativeLanguageId());
     }
 
     private void initViews() {
@@ -55,7 +59,6 @@ public class AccountPersonal extends AppCompatActivity {
         tvGender       = findViewById(R.id.tvGender);
         tvDateOfBirth  = findViewById(R.id.tvDateOfBirth);
 
-        // KHÔNG CHO CHỈNH SỬA
         etName.setEnabled(false);
         etEmail.setEnabled(false);
         etPhoneNumber.setEnabled(false);
@@ -65,47 +68,20 @@ public class AccountPersonal extends AppCompatActivity {
         btnBack.setOnClickListener(v -> finish());
     }
 
-    /**
-     * Đổ dữ liệu từ userResponse lên layout
-     */
     private void bindUserDataToViews() {
-        // Name
-        if (userResponse.getFullName() != null) {
-            etName.setText(userResponse.getFullName());
-        }
-
-        // Phone
-        if (userResponse.getPhoneNumber() != null) {
-            etPhoneNumber.setText(userResponse.getPhoneNumber());
-        }
-
-        // DOB
-        if (userResponse.getDateOfBirth() != null) {
-            tvDateOfBirth.setText(userResponse.getDateOfBirth());
-        }
-
-        // Country: map theo nativeLanguageId (demo)
-        tvCountry.setText(mapLanguageIdToCountry(userResponse.getNativeLanguageId()));
-
+        etName.setText(userResponse.getFullName());
+        etPhoneNumber.setText(userResponse.getPhoneNumber());
+        tvDateOfBirth.setText(userResponse.getDateOfBirth());
         etEmail.setText("*******@gmail.com");
-
     }
 
-    /**
-     * Convert nativeLanguageId -> country hiển thị
-     */
-    private String mapLanguageIdToCountry(int languageId) {
-        switch (languageId) {
-            case 1:
-                return "Vietnam";
-            case 2:
-                return "United States of America";
-            case 3:
-                return "Japan";
-            case 4:
-                return "Korea";
-            default:
-                return "Unknown";
-        }
+    private void observeLanguage() {
+        languageViewModel.getLanguageName().observe(this, name ->
+                tvCountry.setText(name)
+        );
+
+        languageViewModel.getError().observe(this, err ->
+                tvCountry.setText("Unknown")
+        );
     }
 }

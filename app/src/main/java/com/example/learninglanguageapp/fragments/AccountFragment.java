@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton; // Thêm ImageButton cho Logout
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -21,7 +20,6 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.learninglanguageapp.R;
 import com.example.learninglanguageapp.activities.AccountPersonal;
-import com.example.learninglanguageapp.activities.LeaderboardActivity;
 import com.example.learninglanguageapp.activities.LoginActivity;
 import com.example.learninglanguageapp.activities.MatchGameActivity;
 import com.example.learninglanguageapp.models.Entities.UserEntity; // Thêm import
@@ -42,6 +40,7 @@ public class AccountFragment extends Fragment {
     private AuthViewModel authViewModel;
     private UserEntity currentUser;
     private boolean isDarkMode = false;
+
 
     @Nullable
     @Override
@@ -109,7 +108,7 @@ public class AccountFragment extends Fragment {
 
         layoutNotification.setOnClickListener(v -> {
             showToast("Notification clicked");
-            startActivity(LeaderboardActivity.class);
+            startActivity(LeaderBoardFragment.class);
         });
 
         layoutGeneral.setOnClickListener(v -> {

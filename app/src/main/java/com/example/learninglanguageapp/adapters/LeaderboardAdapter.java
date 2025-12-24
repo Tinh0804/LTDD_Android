@@ -1,7 +1,5 @@
 package com.example.learninglanguageapp.adapters;
 
-
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,107 +12,89 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.learninglanguageapp.R;
-import com.example.learninglanguageapp.models.UIModel.LeaderBoardItem;
+import com.example.learninglanguageapp.models.Entities.TopUserEntity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class LeaderboardAdapter extends RecyclerView.Adapter<LeaderboardAdapter.ViewHolder> {
+public class LeaderboardAdapter
+        extends RecyclerView.Adapter<LeaderboardAdapter.ViewHolder> {
 
-    private Context context;
-    private List<LeaderBoardItem> leaderboardList;
+    private final Context context;
+    private List<TopUserEntity> list = new ArrayList<>();
 
-    public LeaderboardAdapter(Context context, List<LeaderBoardItem> leaderboardList) {
+    public LeaderboardAdapter(Context context) {
         this.context = context;
-        this.leaderboardList = leaderboardList;
+    }
+
+    public void submitList(List<TopUserEntity> users) {
+        list = users != null ? users : new ArrayList<>();
+        notifyDataSetChanged();
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_leaderboard, parent, false);
+    public ViewHolder onCreateViewHolder(
+            @NonNull ViewGroup parent, int viewType) {
+
+        View view = LayoutInflater.from(context)
+                .inflate(R.layout.item_leaderboard, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        LeaderBoardItem item = leaderboardList.get(position);
+    public void onBindViewHolder(
+            @NonNull ViewHolder holder, int position) {
 
-        holder.tvName.setText(item.getName());
-        holder.tvXP.setText(item.getXp() + " XP");
+        TopUserEntity user = list.get(position);
 
-        // Load avatar
-        int avatarResId = context.getResources().getIdentifier(
-                item.getAvatarUrl(),
-                "drawable",
-                context.getPackageName()
-        );
-        holder.imgAvatar.setImageResource(avatarResId != 0 ? avatarResId : R.drawable.defaultavt);
+        holder.tvName.setText(user.getFullName());
+        holder.tvXP.setText(user.getTotalExperience() + " XP");
 
-        int rank = item.getRank();
+        Glide.with(context)
+                .load(user.getAvatar())
+                .placeholder(R.drawable.defaultavt)
+                .into(holder.imgAvatar);
 
-        // 🔥 Reset để tránh recycle lỗi
+        int rank = user.getRank();
         holder.imgMedal.setVisibility(View.GONE);
-        holder.tvRank.setVisibility(View.GONE);
 
         if (rank <= 8) {
-            // Top 5 hiển thị hình
             holder.imgMedal.setVisibility(View.VISIBLE);
-
-            switch (rank) {
-                case 1:
-                    holder.imgMedal.setImageResource(R.drawable.ic_medal_gold);
-                    break;
-                case 2:
-                    holder.imgMedal.setImageResource(R.drawable.ic_medal_silver);
-                    break;
-                case 3:
-                    holder.imgMedal.setImageResource(R.drawable.ic_medal_bronze);
-                    break;
-                case 4:
-                    holder.imgMedal.setImageResource(R.drawable.ic_medal_blue);
-                    break;
-                case 5:
-                    holder.imgMedal.setImageResource(R.drawable.ic_medal_top5);
-                    break;
-                case 6:
-                    holder.imgMedal.setImageResource(R.drawable.ic_medal_top6);
-                    break;
-                case 7:
-                    holder.imgMedal.setImageResource(R.drawable.ic_medal_top7);
-                    break;
-                case 8:
-                    holder.imgMedal.setImageResource(R.drawable.ic_medal_top8);
-                    break;
-            }
-
+            holder.imgMedal.setImageResource(getMedal(rank));
         }
     }
 
+    private int getMedal(int rank) {
+        switch (rank) {
+            case 1: return R.drawable.ic_medal_gold;
+            case 2: return R.drawable.ic_medal_silver;
+            case 3: return R.drawable.ic_medal_bronze;
+            case 4: return R.drawable.ic_medal_blue;
+            case 5: return R.drawable.ic_medal_top5;
+            case 6: return R.drawable.ic_medal_top6;
+            case 7: return R.drawable.ic_medal_top7;
+            case 8: return R.drawable.ic_medal_top8;
+            default: return 0;
+        }
+    }
 
     @Override
     public int getItemCount() {
-        return leaderboardList.size();
+        return list.size();
     }
 
-    public void updateList(List<LeaderBoardItem> newList) {
-        this.leaderboardList = newList;
-        notifyDataSetChanged();
-    }
+    static class ViewHolder extends RecyclerView.ViewHolder {
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView imgMedal;
-        TextView tvRank;
         CircleImageView imgAvatar;
-        TextView tvName;
-        TextView tvXP;
+        TextView tvName, tvXP;
 
-        @SuppressLint("WrongViewCast")
-        public ViewHolder(@NonNull View itemView) {
+        ViewHolder(@NonNull View itemView) {
             super(itemView);
             imgMedal = itemView.findViewById(R.id.imgMedal);
-            tvRank = itemView.findViewById(R.id.tvRank);
             imgAvatar = itemView.findViewById(R.id.imgAvatar);
             tvName = itemView.findViewById(R.id.tvName);
             tvXP = itemView.findViewById(R.id.tvXP);

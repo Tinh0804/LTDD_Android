@@ -13,6 +13,7 @@ import androidx.appcompat.widget.SwitchCompat;
 import androidx.cardview.widget.CardView;
 
 import com.example.learninglanguageapp.R;
+import com.example.learninglanguageapp.fragments.LeaderBoardFragment;
 
 public class AccountActivity extends AppCompatActivity {
 
@@ -128,7 +129,7 @@ public class AccountActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 showToast("Notification clicked");
-                Intent intentleader = new Intent(AccountActivity.this, LeaderboardActivity.class);
+                Intent intentleader = new Intent(AccountActivity.this, LeaderBoardFragment.class);
                 startActivity(intentleader);
             }
         });
