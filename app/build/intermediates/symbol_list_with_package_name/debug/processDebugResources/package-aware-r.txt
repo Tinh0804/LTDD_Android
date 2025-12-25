@@ -3819,7 +3819,6 @@ id btnSignIn
 id btnToggleConfirmPassword
 id btnTogglePassword
 id btnUnlockCourse
-id btnUpdate
 id btnWeekly
 id btnWeeklyHistory
 id btnWeeklyTime
@@ -4134,7 +4133,6 @@ id layoutDarkMode
 id layoutDateOfBirth
 id layoutDiamondPackages
 id layoutFindFriends
-id layoutGender
 id layoutGeneral
 id layoutHeader
 id layoutLogout
@@ -4486,7 +4484,6 @@ id tvFollowers
 id tvFollowing
 id tvForgotPassword
 id tvGems
-id tvGender
 id tvHearts
 id tvHeartsTitle
 id tvImageWordSubtitle
@@ -4693,7 +4690,6 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
-layout accountpersonal
 layout activity_account
 layout activity_account_person
 layout activity_forgot_password

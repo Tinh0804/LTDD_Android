@@ -55,24 +55,17 @@ public final class ActivityAccountPersonBinding implements ViewBinding {
   public final RelativeLayout layoutDateOfBirth;
 
   @NonNull
-  public final RelativeLayout layoutGender;
-
-  @NonNull
   public final TextView tvCountry;
 
   @NonNull
   public final TextView tvDateOfBirth;
-
-  @NonNull
-  public final TextView tvGender;
 
   private ActivityAccountPersonBinding(@NonNull ScrollView rootView, @NonNull ImageView btnBack,
       @NonNull RelativeLayout btnEditPhoto, @NonNull EditText etEmail, @NonNull EditText etName,
       @NonNull EditText etPhoneNumber, @NonNull ImageView ivCountryFlag,
       @NonNull CircleImageView ivProfileImage, @NonNull RelativeLayout layoutCountry,
       @NonNull LinearLayout layoutCountryCode, @NonNull RelativeLayout layoutDateOfBirth,
-      @NonNull RelativeLayout layoutGender, @NonNull TextView tvCountry,
-      @NonNull TextView tvDateOfBirth, @NonNull TextView tvGender) {
+      @NonNull TextView tvCountry, @NonNull TextView tvDateOfBirth) {
     this.rootView = rootView;
     this.btnBack = btnBack;
     this.btnEditPhoto = btnEditPhoto;
@@ -84,10 +77,8 @@ public final class ActivityAccountPersonBinding implements ViewBinding {
     this.layoutCountry = layoutCountry;
     this.layoutCountryCode = layoutCountryCode;
     this.layoutDateOfBirth = layoutDateOfBirth;
-    this.layoutGender = layoutGender;
     this.tvCountry = tvCountry;
     this.tvDateOfBirth = tvDateOfBirth;
-    this.tvGender = tvGender;
   }
 
   @Override
@@ -177,12 +168,6 @@ public final class ActivityAccountPersonBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.layoutGender;
-      RelativeLayout layoutGender = ViewBindings.findChildViewById(rootView, id);
-      if (layoutGender == null) {
-        break missingId;
-      }
-
       id = R.id.tvCountry;
       TextView tvCountry = ViewBindings.findChildViewById(rootView, id);
       if (tvCountry == null) {
@@ -195,15 +180,9 @@ public final class ActivityAccountPersonBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tvGender;
-      TextView tvGender = ViewBindings.findChildViewById(rootView, id);
-      if (tvGender == null) {
-        break missingId;
-      }
-
       return new ActivityAccountPersonBinding((ScrollView) rootView, btnBack, btnEditPhoto, etEmail,
           etName, etPhoneNumber, ivCountryFlag, ivProfileImage, layoutCountry, layoutCountryCode,
-          layoutDateOfBirth, layoutGender, tvCountry, tvDateOfBirth, tvGender);
+          layoutDateOfBirth, tvCountry, tvDateOfBirth);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
