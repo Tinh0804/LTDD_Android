@@ -31,6 +31,9 @@ public final class ActivityGameBinding implements ViewBinding {
   public final CardView cardMatchingGame;
 
   @NonNull
+  public final CardView cardPronunciation;
+
+  @NonNull
   public final CardView cardVocabularyGame;
 
   @NonNull
@@ -41,6 +44,9 @@ public final class ActivityGameBinding implements ViewBinding {
 
   @NonNull
   public final ImageView ivMatchingIcon;
+
+  @NonNull
+  public final ImageView ivPronunciationIcon;
 
   @NonNull
   public final ImageView ivVocabularyIcon;
@@ -64,6 +70,12 @@ public final class ActivityGameBinding implements ViewBinding {
   public final TextView tvMatchingTitle;
 
   @NonNull
+  public final TextView tvPronunciationSubTitle;
+
+  @NonNull
+  public final TextView tvPronunciationTitle;
+
+  @NonNull
   public final TextView tvTitle;
 
   @NonNull
@@ -74,22 +86,26 @@ public final class ActivityGameBinding implements ViewBinding {
 
   private ActivityGameBinding(@NonNull ConstraintLayout rootView,
       @NonNull CardView cardArrangeWordGame, @NonNull CardView cardImageWordGame,
-      @NonNull CardView cardMatchingGame, @NonNull CardView cardVocabularyGame,
-      @NonNull ImageView ivArrangeWordIcon, @NonNull ImageView ivImageWordIcon,
-      @NonNull ImageView ivMatchingIcon, @NonNull ImageView ivVocabularyIcon,
+      @NonNull CardView cardMatchingGame, @NonNull CardView cardPronunciation,
+      @NonNull CardView cardVocabularyGame, @NonNull ImageView ivArrangeWordIcon,
+      @NonNull ImageView ivImageWordIcon, @NonNull ImageView ivMatchingIcon,
+      @NonNull ImageView ivPronunciationIcon, @NonNull ImageView ivVocabularyIcon,
       @NonNull TextView tvArrangeWordSubtitle, @NonNull TextView tvArrangeWordTitle,
       @NonNull TextView tvImageWordSubtitle, @NonNull TextView tvImageWordTitle,
       @NonNull TextView tvMatchingSubtitle, @NonNull TextView tvMatchingTitle,
+      @NonNull TextView tvPronunciationSubTitle, @NonNull TextView tvPronunciationTitle,
       @NonNull TextView tvTitle, @NonNull TextView tvVocabularySubtitle,
       @NonNull TextView tvVocabularyTitle) {
     this.rootView = rootView;
     this.cardArrangeWordGame = cardArrangeWordGame;
     this.cardImageWordGame = cardImageWordGame;
     this.cardMatchingGame = cardMatchingGame;
+    this.cardPronunciation = cardPronunciation;
     this.cardVocabularyGame = cardVocabularyGame;
     this.ivArrangeWordIcon = ivArrangeWordIcon;
     this.ivImageWordIcon = ivImageWordIcon;
     this.ivMatchingIcon = ivMatchingIcon;
+    this.ivPronunciationIcon = ivPronunciationIcon;
     this.ivVocabularyIcon = ivVocabularyIcon;
     this.tvArrangeWordSubtitle = tvArrangeWordSubtitle;
     this.tvArrangeWordTitle = tvArrangeWordTitle;
@@ -97,6 +113,8 @@ public final class ActivityGameBinding implements ViewBinding {
     this.tvImageWordTitle = tvImageWordTitle;
     this.tvMatchingSubtitle = tvMatchingSubtitle;
     this.tvMatchingTitle = tvMatchingTitle;
+    this.tvPronunciationSubTitle = tvPronunciationSubTitle;
+    this.tvPronunciationTitle = tvPronunciationTitle;
     this.tvTitle = tvTitle;
     this.tvVocabularySubtitle = tvVocabularySubtitle;
     this.tvVocabularyTitle = tvVocabularyTitle;
@@ -147,6 +165,12 @@ public final class ActivityGameBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.cardPronunciation;
+      CardView cardPronunciation = ViewBindings.findChildViewById(rootView, id);
+      if (cardPronunciation == null) {
+        break missingId;
+      }
+
       id = R.id.cardVocabularyGame;
       CardView cardVocabularyGame = ViewBindings.findChildViewById(rootView, id);
       if (cardVocabularyGame == null) {
@@ -168,6 +192,12 @@ public final class ActivityGameBinding implements ViewBinding {
       id = R.id.ivMatchingIcon;
       ImageView ivMatchingIcon = ViewBindings.findChildViewById(rootView, id);
       if (ivMatchingIcon == null) {
+        break missingId;
+      }
+
+      id = R.id.ivPronunciationIcon;
+      ImageView ivPronunciationIcon = ViewBindings.findChildViewById(rootView, id);
+      if (ivPronunciationIcon == null) {
         break missingId;
       }
 
@@ -213,6 +243,18 @@ public final class ActivityGameBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tvPronunciationSubTitle;
+      TextView tvPronunciationSubTitle = ViewBindings.findChildViewById(rootView, id);
+      if (tvPronunciationSubTitle == null) {
+        break missingId;
+      }
+
+      id = R.id.tvPronunciationTitle;
+      TextView tvPronunciationTitle = ViewBindings.findChildViewById(rootView, id);
+      if (tvPronunciationTitle == null) {
+        break missingId;
+      }
+
       id = R.id.tvTitle;
       TextView tvTitle = ViewBindings.findChildViewById(rootView, id);
       if (tvTitle == null) {
@@ -232,10 +274,11 @@ public final class ActivityGameBinding implements ViewBinding {
       }
 
       return new ActivityGameBinding((ConstraintLayout) rootView, cardArrangeWordGame,
-          cardImageWordGame, cardMatchingGame, cardVocabularyGame, ivArrangeWordIcon,
-          ivImageWordIcon, ivMatchingIcon, ivVocabularyIcon, tvArrangeWordSubtitle,
-          tvArrangeWordTitle, tvImageWordSubtitle, tvImageWordTitle, tvMatchingSubtitle,
-          tvMatchingTitle, tvTitle, tvVocabularySubtitle, tvVocabularyTitle);
+          cardImageWordGame, cardMatchingGame, cardPronunciation, cardVocabularyGame,
+          ivArrangeWordIcon, ivImageWordIcon, ivMatchingIcon, ivPronunciationIcon, ivVocabularyIcon,
+          tvArrangeWordSubtitle, tvArrangeWordTitle, tvImageWordSubtitle, tvImageWordTitle,
+          tvMatchingSubtitle, tvMatchingTitle, tvPronunciationSubTitle, tvPronunciationTitle,
+          tvTitle, tvVocabularySubtitle, tvVocabularyTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

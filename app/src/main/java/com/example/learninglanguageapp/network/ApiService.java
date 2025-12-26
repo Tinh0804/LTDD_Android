@@ -15,7 +15,9 @@ import com.example.learninglanguageapp.models.Response.LanguageResponse;
 import com.example.learninglanguageapp.models.Response.LeaderboardResponse;
 import com.example.learninglanguageapp.models.Response.LoginResponse;
 import com.example.learninglanguageapp.models.Response.PaymentResponse;
+import com.example.learninglanguageapp.models.Response.PronunciationResponse;
 import com.example.learninglanguageapp.models.Response.UserResponse;
+import com.example.learninglanguageapp.models.Sentence;
 import com.example.learninglanguageapp.models.UIModel.PackagePayment;
 import com.example.learninglanguageapp.models.Unit;
 import com.example.learninglanguageapp.models.Word;
@@ -113,5 +115,9 @@ public interface ApiService {
             @Header("Authorization") String authHeader
     );
 
+    @GET("api/LessonSentence/lesson/{lessonId}")
+    Call<ApiResponse<List<Sentence>>> getSentencesByLesson(@Path("lessonId") int lessonId);
 
+    @POST("api/Pronunciation/evaluate")
+    Call<ApiResponse<PronunciationResponse>> evaluatePronunciation(@Body Map<String, Object> body);
 }

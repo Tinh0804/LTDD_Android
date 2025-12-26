@@ -11,6 +11,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.example.learninglanguageapp.mapper.WordMapper;
 import com.example.learninglanguageapp.models.Entities.WordEntity;
+import com.example.learninglanguageapp.models.Lesson;
 import com.example.learninglanguageapp.models.Response.ApiResponse;
 import com.example.learninglanguageapp.models.Word;
 import com.example.learninglanguageapp.network.ApiClient;
@@ -149,69 +150,27 @@ public class LessonRepository {
         }).start();
     }
 
-//    public void getWords(int lessonId,int userId,
-//                         MutableLiveData<List<Word>> wordsLiveData,
-//                         MutableLiveData<Boolean> loadingLiveData,
-//                         MutableLiveData<String> errorLiveData) {
-//
-//        loadingLiveData.setValue(true);
-//
-//        new android.os.Handler(android.os.Looper.getMainLooper()).postDelayed(() -> {
-//            loadingLiveData.setValue(false);
-//
-//            try {
-//                List<Word> fakeWords = new ArrayList<>();
-//
-//                String[] words = {
-//                        "apple","banana","cat","dog","elephant","fish","grape","house","ice","juice",
-//                        "kite","lion","monkey","nest","orange","penguin","queen","rabbit","sun","tree",
-//                        "umbrella","violet","wolf","xylophone","yacht","zebra","car","book","chair","table"
-//                };
-//
-//                String[] translations = {
-//                        "táo","chuối","mèo","chó","voi","cá","nho","nhà","đá","nước ép",
-//                        "diều","sư tử","khỉ","tổ","cam","chim cánh cụt","nữ hoàng","thỏ","mặt trời","cây",
-//                        "ô","tím","sói","đàn xylophone","du thuyền","ngựa vằn","xe hơi","sách","ghế","bàn"
-//                };
-//
-//                String[] pronunciations = {
-//                        "ˈæp.əl","bəˈnæn.ə","kæt","dɑːg","ˈel.ɪ.fənt","fɪʃ","ɡreɪp","haʊs","aɪs","dʒuːs",
-//                        "kaɪt","laɪ.ən","ˈmʌŋ.ki","nest","ˈɒr.ɪndʒ","ˈpɛŋ.ɡwɪn","kwiːn","ˈræb.ɪt","sʌn","triː",
-//                        "ʌmˈbrɛl.ə","ˈvaɪ.ə.lət","wʊlf","zaɪˈlə.foʊn","jɑːt","ˈziː.brə","kɑːr","bʊk","tʃer","teɪbəl"
-//                };
-//
-//                String[] wordTypes = new String[30];
-//                for (int i = 0; i < 30; i++) wordTypes[i] = "noun";
-//
-//                String[] exampleSentences = {
-//                        "I eat an apple every day.","Bananas are yellow.","The cat is sleeping.","The dog barks loudly.",
-//                        "The elephant is big.","I like fish.","Grapes are sweet.","My house is blue.","Ice melts fast.","I drink juice.",
-//                        "The kite flies high.","The lion roars.","The monkey is climbing.","The nest has eggs.","I like orange.","The penguin swims.","The queen is kind.","The rabbit is fast.","The sun is hot.","The tree is tall.",
-//                        "I need an umbrella.","Violet is a color.","The wolf howls.","He plays the xylophone.","The yacht is sailing.","The zebra has stripes.","My car is red.","I read a book.","Sit on the chair.","The table is round."
-//                };
-//
-//                for (int i = 0; i < 30; i++) {
-//                    Word w = new Word();
-//                    w.setWordId(i + 1);
-//                    w.setLanguageId(1);
-//                    w.setLessonId(1);
-//                    w.setWord(words[i]);
-//                    w.setTranslation(translations[i]);
-//                    w.setPronunciation(pronunciations[i]);
-//                    w.setWordType(wordTypes[i]);
-//                    w.setAudioFile("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-" + ((i % 10) + 1) + ".mp3");
-//                    w.setExampleSentence(exampleSentences[i]);
-//                    w.setImageUrl("https://via.placeholder.com/150?text=" + words[i]);
-//
-//                    fakeWords.add(w);
-//                }
-//
-//                wordsLiveData.setValue(fakeWords);
-//
-//            } catch (Exception e) {
-//                errorLiveData.setValue("Failed to generate fake data: " + e.getMessage());
-//            }
-//
-//        }, 1000); // delay 1 giây
-//    }
+    public void getLessonsByUnit(int unitId,
+                                 MutableLiveData<List<Lesson>> lessonsLiveData,
+                                 MutableLiveData<Boolean> isLoading,
+                                 MutableLiveData<String> errorLiveData) {
+        isLoading.setValue(true);
+        api.getLessonsByUnit(unitId).enqueue(new Callback<ApiResponse<List<Lesson>>>() {
+            @Override
+            public void onResponse(Call<ApiResponse<List<Lesson>>> call, Response<ApiResponse<List<Lesson>>> response) {
+                isLoading.setValue(false);
+                if (response.isSuccessful() && response.body() != null) {
+                    lessonsLiveData.setValue(response.body().getData());
+                } else {
+                    errorLiveData.setValue("Không thể tải danh sách bài học");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ApiResponse<List<Lesson>>> call, Throwable t) {
+                isLoading.setValue(false);
+                errorLiveData.setValue("Lỗi kết nối: " + t.getMessage());
+            }
+        });
+    }
 }

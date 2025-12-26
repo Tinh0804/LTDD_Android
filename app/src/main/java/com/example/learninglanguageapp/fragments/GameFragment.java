@@ -51,7 +51,21 @@ public class GameFragment extends Fragment {
         CardView cardViewArrangeWord = view.findViewById(R.id.cardArrangeWordGame);
         CardView cardViewMatchingGame = view.findViewById(R.id.cardMatchingGame);
         CardView cardViewPictureVocabulary = view.findViewById(R.id.cardVocabularyGame);
+        CardView cardPronunciation = view.findViewById(R.id.cardPronunciation);
+        cardPronunciation.setOnClickListener(v -> {
+            int currentUnitId = getArguments() != null ? getArguments().getInt("unitId", -1) : -1;
 
+            // Chuyển sang LessonFragment
+            LessonFragment fragment = new LessonFragment();
+            Bundle args = new Bundle();
+            args.putInt("unitId", currentUnitId);
+            fragment.setArguments(args);
+
+            getParentFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, fragment)
+                    .addToBackStack(null)
+                    .commit();
+        });
         // 1. QUAN SÁT LIVE DATA MỘT LẦN KHI VIEW ĐƯỢC TẠO
         viewModel.exercisesLiveData.observe(getViewLifecycleOwner(), exercises -> {
             if (exercises != null && !exercises.isEmpty() && nextActivityClass != null) {
