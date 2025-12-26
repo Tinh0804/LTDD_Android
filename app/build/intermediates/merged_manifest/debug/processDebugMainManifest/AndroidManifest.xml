@@ -69,9 +69,10 @@
         <activity
             android:name="com.example.learninglanguageapp.activities.MatchingGameActivity"
             android:exported="false" />
-        <activity
-            android:name="com.example.learninglanguageapp.activities.LeaderboardActivity"
-            android:exported="false" />
+
+        <!-- <activity -->
+        <!-- android:name=".activities.LeaderboardActivity" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name="com.example.learninglanguageapp.activities.AccountPersonal"
             android:exported="false" />
@@ -84,7 +85,7 @@
         <activity
             android:name="com.example.learninglanguageapp.activities.WebViewActivity"
             android:exported="true"
-            android:hardwareAccelerated="false" >
+            android:hardwareAccelerated="true" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -93,7 +94,6 @@
 
                 <data
                     android:host="payment_success"
-                    android:pathPrefix="/payment_success"
                     android:scheme="myapp" />
             </intent-filter>
         </activity>
@@ -143,6 +143,15 @@
             android:exported="false" />
         <activity
             android:name="com.example.learninglanguageapp.activities.StudyTimeActivity"
+            android:exported="false" />
+        <!-- <activity -->
+        <!-- android:name=".activities.ForgotPasswordActivity" -->
+        <!-- android:exported="false"/> -->
+        <activity
+            android:name="com.example.learninglanguageapp.activities.VerifyOtpActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.example.learninglanguageapp.activities.NewPasswordActivity"
             android:exported="false" />
         <activity
             android:name="com.example.learninglanguageapp.activities.LoginActivity"

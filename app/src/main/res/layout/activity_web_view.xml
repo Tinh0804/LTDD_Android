@@ -28,15 +28,15 @@
             android:id="@+id/tvTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Payment"
+            android:gravity="center"
+            android:text="Thanh toán"
+            android:textColor="#000000"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="#000000"
-            android:gravity="center"
-            app:layout_constraintStart_toEndOf="@id/btnClose"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintStart_toEndOf="@id/btnClose"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- Progress Bar -->

@@ -22,6 +22,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.learninglanguageapp.R;
+import com.example.learninglanguageapp.utils.HelperFunction;
 import com.example.learninglanguageapp.viewmodels.ShopViewModel;
 
 public class WebViewActivity extends AppCompatActivity {
@@ -34,6 +35,7 @@ public class WebViewActivity extends AppCompatActivity {
     private String paymentUrl;
     private String selectedPaymentMethod;
     private String transactionId;
+    private int diamondAmount; // Số kim cương sẽ nhận được
 
     private ShopViewModel viewModel;
 
@@ -54,6 +56,7 @@ public class WebViewActivity extends AppCompatActivity {
         paymentUrl = getIntent().getStringExtra("payment_url");
         selectedPaymentMethod = getIntent().getStringExtra("payment_method");
         transactionId = getIntent().getStringExtra("transaction_id");
+        diamondAmount = getIntent().getIntExtra("diamond_amount", 0); // Lấy số kim cương từ intent
 
         if (tvTitle != null) {
             tvTitle.setText(selectedPaymentMethod != null && selectedPaymentMethod.equalsIgnoreCase("vnpay") ? "VNPay Payment" : "Momo Payment");
@@ -99,74 +102,84 @@ public class WebViewActivity extends AppCompatActivity {
         android.webkit.CookieManager.getInstance().setAcceptThirdPartyCookies(webView, true);
 
         webView.setWebViewClient(new WebViewClient() {
-
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
                 String url = request.getUrl().toString();
                 Uri uri = request.getUrl();
-                Log.d("PaymentURL", "Override URL: " + url);
+                Log.d("PaymentURL", "Processing: " + url);
 
+                // --- 1. XỬ LÝ INTENT (MOMO, ZALOPAY, BANKING APP) ---
                 if (url.startsWith("intent://")) {
                     try {
-                        // Chuyển Intent URL thành Intent Android
                         Intent intent = Intent.parseUri(url, Intent.URI_INTENT_SCHEME);
-
-                        // Nếu có ứng dụng để xử lý Intent này (Momo)
-                        if (view.getContext().getPackageManager().resolveActivity(intent, 0) != null) {
-                            view.getContext().startActivity(intent);
-                        } else {
-                            // Nếu không có ứng dụng Momo, chuyển hướng đến link tải (fallback)
-                            String fallbackUrl = intent.getStringExtra("browser_fallback_url");
-                            if (fallbackUrl != null) {
-                                view.loadUrl(fallbackUrl);
-                            } else {
-                                Toast.makeText(view.getContext(), "Ứng dụng Momo chưa được cài đặt.", Toast.LENGTH_LONG).show();
-                            }
+                        if (intent.resolveActivity(getPackageManager()) != null) {
+                            startActivity(intent);
+                            return true;
                         }
-                        return true; // Quan trọng: Đã xử lý URL này
+                        // Fallback nếu không có app ngân hàng/momo
+                        String fallbackUrl = intent.getStringExtra("browser_fallback_url");
+                        if (fallbackUrl != null) {
+                            view.loadUrl(fallbackUrl);
+                            return true;
+                        }
                     } catch (Exception e) {
-                        Log.e("MomoIntent", "Error handling Momo Intent URL: " + e.getMessage());
                         return true;
                     }
                 }
 
-                // --- 2. LOGIC BẮT DEEP LINK CALLBACK (myapp://payment_success) ---
+                // --- 2. BẮT DEEP LINK THÀNH CÔNG (QUAN TRỌNG ĐỂ TỰ ĐÓNG) ---
+                // Link này do BE redirect về: myapp://payment_success?transactionId=...
                 if (url.startsWith("myapp://payment_success")) {
-                    Uri callbackUri = Uri.parse(url);
-                    String receivedTransactionId = callbackUri.getQueryParameter("transactionId");
+                    String receivedTransactionId = uri.getQueryParameter("transactionId");
 
+                    // Gọi hàm xử lý thành công (hàm này sẽ gọi finish() để đóng WebView)
                     handlePaymentSuccess(receivedTransactionId != null ? receivedTransactionId : transactionId);
-                    return true; // Đã xử lý callback
+                    return true;
                 }
 
-                // --- 3. LOGIC BẮT URL THẤT BẠI CỦA VNPAY/MOMO ---
-                else if (url.contains("payment_failed") || url.contains("/cancel") || url.contains("vnp_ResponseCode=24")) {
+                // --- 3. BẮT URL THÀNH CÔNG TỪ VNPAY/MOMO (KHÔNG CẦN DEEP LINK) ---
+                // VNPay: vnp_ResponseCode=00 hoặc vnp_TransactionStatus=00
+                if (url.contains("vnp_ResponseCode=00") || url.contains("vnp_TransactionStatus=00")) {
+                    Log.d("PaymentURL", "VNPay payment success detected!");
+                    handlePaymentSuccess(transactionId);
+                    return true;
+                }
+                
+                // Momo: resultCode=0 hoặc errorCode=0
+                if (url.contains("resultCode=0") || url.contains("errorCode=0")) {
+                    Log.d("PaymentURL", "Momo payment success detected!");
+                    handlePaymentSuccess(transactionId);
+                    return true;
+                }
+
+                // --- 4. BẮT URL THẤT BẠI/HỦY ---
+                if (url.contains("payment_failed") || url.contains("vnp_ResponseCode=24") || url.contains("cancel")) {
                     handlePaymentFailure();
                     return true;
                 }
 
-                // --- 4. Cho phép WebView xử lý URL HTTP/HTTPS thông thường ---
+                // --- 5. XỬ LÝ HTTP/HTTPS BÌNH THƯỜNG ---
                 if (url.startsWith("http://") || url.startsWith("https://")) {
-                    return false; // Trả về false để WebView tự tải
+                    return false; // WebView tiếp tục tự load
                 }
 
-                // Xử lý các scheme khác (tel:, mailto:)
+                // --- 6. XỬ LÝ CÁC SCHEME KHÁC (tel, mailto, v.v.) ---
                 try {
-                    view.getContext().startActivity(new Intent(Intent.ACTION_VIEW, uri).setClassName(/* TODO: provide the application ID. For example: */ getPackageName(), "com.facebook.CustomTabActivity"));
+                    Intent intent = new Intent(Intent.ACTION_VIEW, uri).setPackage(/* TODO: provide the application ID. For example: */ getPackageName());
+                    startActivity(intent);
                     return true;
                 } catch (Exception e) {
+                    Log.e("WebView", "Unknown scheme: " + url);
                     return true;
                 }
             }
 
-            @SuppressLint("WebViewClientOnReceivedSslError")
             @Override
             public void onReceivedSslError(WebView view, SslErrorHandler handler, android.net.http.SslError error) {
-                // Sandbox / Test environment: bỏ qua SSL
+                // Chỉ nên dùng trong môi trường Test/Sandbox
                 handler.proceed();
             }
         });
-
         webView.setWebChromeClient(new WebChromeClient() {
             @Override
             public boolean onCreateWindow(WebView view, boolean isDialog, boolean isUserGesture, android.os.Message resultMsg) {
@@ -200,11 +213,21 @@ public class WebViewActivity extends AppCompatActivity {
 
 
     private void handlePaymentSuccess(String finalTransactionId) {
+        // Verify payment với backend
         viewModel.verifyPayment(finalTransactionId);
+
+        // Cập nhật kim cương local ngay lập tức
+        if (diamondAmount > 0) {
+            int currentDiamond = HelperFunction.getInstance().loadUserDiamond();
+            int newDiamond = currentDiamond + diamondAmount;
+            HelperFunction.getInstance().saveUserDiamond(newDiamond);
+            Log.d("PaymentSuccess", "Updated diamond: " + currentDiamond + " -> " + newDiamond);
+        }
 
         Intent resultIntent = new Intent();
         resultIntent.putExtra("payment_status", "success");
         resultIntent.putExtra("transaction_id", finalTransactionId);
+        resultIntent.putExtra("diamond_amount", diamondAmount); // Truyền số kim cương về
         setResult(RESULT_OK, resultIntent);
         finish();
     }
@@ -228,11 +251,10 @@ public class WebViewActivity extends AppCompatActivity {
     @SuppressLint("MissingSuperCall")
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
         if (webView != null && webView.canGoBack()) {
-            webView.goBack();
+            webView.goBack(); // Quay lại trang trước đó của web
         } else {
-            handlePaymentCancel();
+            handlePaymentCancel(); // Nếu hết trang để lùi thì mới thoát
         }
     }
 }

@@ -9,7 +9,9 @@ import androidx.lifecycle.MutableLiveData;
 import com.example.learninglanguageapp.mapper.ExerciseMapper;
 import com.example.learninglanguageapp.models.Entities.ExerciseEntity;
 import com.example.learninglanguageapp.models.Exercise;
+import com.example.learninglanguageapp.models.Request.ExerciseSubmitRequest;
 import com.example.learninglanguageapp.models.Response.ApiResponse;
+import com.example.learninglanguageapp.models.Response.ExerciseSubmitResponse;
 import com.example.learninglanguageapp.network.ApiClient;
 import com.example.learninglanguageapp.network.ApiService;
 import com.example.learninglanguageapp.storage.AppDatabase;
@@ -147,6 +149,22 @@ public class ExerciseRepository {
         new Thread(() -> exerciseDao.insertExercises(exercises)).start();
     }
 
-
+    public void submitExercise(String token, ExerciseSubmitRequest request,
+                               MutableLiveData<ExerciseSubmitResponse> submitResult,
+                               MutableLiveData<String> errorData) {
+        api.submitExercise("Bearer " + token, request).enqueue(new Callback<ApiResponse<ExerciseSubmitResponse>>() {
+            @Override
+            public void onResponse(Call<ApiResponse<ExerciseSubmitResponse>> call, Response<ApiResponse<ExerciseSubmitResponse>> response) {
+                if (response.isSuccessful() && response.body() != null)
+                    submitResult.setValue(response.body().getData());
+                else
+                    errorData.setValue("Lỗi khi gửi kết quả lên server");
+            }
+            @Override
+            public void onFailure(Call<ApiResponse<ExerciseSubmitResponse>> call, Throwable t) {
+                errorData.setValue(t.getMessage());
+            }
+        });
+    }
 
 }

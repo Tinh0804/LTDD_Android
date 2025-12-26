@@ -14,28 +14,23 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.learninglanguageapp.R;
-import com.example.learninglanguageapp.activities.GameWordropActivity;
-import com.example.learninglanguageapp.activities.MatchGameActivity;
-import com.example.learninglanguageapp.activities.MatchingGameActivity;
-import com.example.learninglanguageapp.activities.SelectImageGameActivity;
+import com.example.learninglanguageapp.activities.*;
+import com.example.learninglanguageapp.models.Exercise;
 import com.example.learninglanguageapp.viewmodels.ExerciseViewModel;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 public class GameFragment extends Fragment {
 
     private ExerciseViewModel viewModel;
-    // Biến tạm thời để lưu Activity sẽ mở sau khi tải Exercises thành công
     private Class<?> nextActivityClass;
+    private int unitId;
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        // Cần tạo View ở đây
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.activity_game, container, false);
     }
 
@@ -43,91 +38,88 @@ public class GameFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // Lấy ViewModel từ Activity để chia sẻ dữ liệu
         viewModel = new ViewModelProvider(requireActivity()).get(ExerciseViewModel.class);
+        unitId = getArguments() != null ? getArguments().getInt("unitId", -1) : -1;
 
-        int unitId = getArguments() != null ? getArguments().getInt("unitId", -1) : -1;
-        CardView cardImageWordGame = view.findViewById(R.id.cardImageWordGame);
-        CardView cardViewArrangeWord = view.findViewById(R.id.cardArrangeWordGame);
-        CardView cardViewMatchingGame = view.findViewById(R.id.cardMatchingGame);
-        CardView cardViewPictureVocabulary = view.findViewById(R.id.cardVocabularyGame);
+        initEventListeners(view);
+        observeViewModel();
+    }
 
-        // 1. QUAN SÁT LIVE DATA MỘT LẦN KHI VIEW ĐƯỢC TẠO
+    private void initEventListeners(View view) {
+        // Gom nhóm các View
+        CardView cardImageWord = view.findViewById(R.id.cardImageWordGame);
+        CardView cardArrangeWord = view.findViewById(R.id.cardArrangeWordGame);
+        CardView cardMatching = view.findViewById(R.id.cardMatchingGame);
+        CardView cardVocabulary = view.findViewById(R.id.cardVocabularyGame);
+        CardView cardPronunciation = view.findViewById(R.id.cardPronunciation);
+
+        // Click listeners đơn giản
+        cardImageWord.setOnClickListener(v -> triggerGame("listen", SelectImageGameActivity.class));
+        cardArrangeWord.setOnClickListener(v -> triggerGame("word_order", GameWordropActivity.class));
+        cardMatching.setOnClickListener(v -> triggerGame("match_pairs", MatchingGameActivity.class));
+
+        // MatchGameActivity cần logic random LessonId đặc biệt
+        cardVocabulary.setOnClickListener(v -> triggerGame("match_pairs", MatchGameActivity.class));
+
+        cardPronunciation.setOnClickListener(v -> navigateToLessonFragment());
+    }
+
+    private void observeViewModel() {
         viewModel.exercisesLiveData.observe(getViewLifecycleOwner(), exercises -> {
-            if (exercises != null && !exercises.isEmpty() && nextActivityClass != null) {
-                // Chỉ mở Activity nếu có dữ liệu VÀ đã xác định Activity cần mở
-                Intent intent = new Intent(requireContext(), nextActivityClass);
-                intent.putExtra("unitId", unitId);
-                // Bạn có thể bundle danh sách exercises vào đây nếu cần thiết cho Activity
-                startActivity(intent);
-
-                // ❗ Rất quan trọng: Reset giá trị và biến để tránh kích hoạt lại
-                viewModel.exercisesLiveData.setValue(null);
-                nextActivityClass = null;
-            }
+            if (exercises == null || exercises.isEmpty() || nextActivityClass == null) return;
+            handleGameNavigation(exercises);
+            // Reset trạng thái sau khi xử lý
+            viewModel.exercisesLiveData.setValue(null);
+            nextActivityClass = null;
         });
 
-        // Chỉ quan sát lỗi
         viewModel.errorLiveData.observe(getViewLifecycleOwner(), error -> {
             if (error != null) {
                 Toast.makeText(requireContext(), error, Toast.LENGTH_SHORT).show();
                 viewModel.errorLiveData.setValue(null);
             }
         });
-
-        // 2. GÁN CLICK LISTENER: Gọi fetch và set biến Activity mục tiêu
-        cardImageWordGame.setOnClickListener(v -> triggerFetchAndOpenGame(unitId, "listen", SelectImageGameActivity.class));
-        cardImageWordGame.setOnClickListener(v -> triggerFetchAndOpenGame(unitId, "listen", SelectImageGameActivity.class));
-        // CHỈ SỬA DÒNG NÀY THÔI – DÒNG CLICK CỦA CARD PICTURE VOCABULARY
-        cardViewPictureVocabulary.setOnClickListener(v -> {
-
-            // BƯỚC 1: TẢI DỮ LIỆU MATCH_PAIRS NHƯ BÌNH THƯỜNG
-            this.nextActivityClass = MatchGameActivity.class;
-            viewModel.fetchExercisesByType(unitId, "match_pairs");
-
-            // BƯỚC 2: KHI CÓ DỮ LIỆU → RANDOM LESSON VÀ MỞ MATCHGAME NGAY
-            viewModel.exercisesLiveData.observe(getViewLifecycleOwner(), exercises -> {
-                if (exercises != null && !exercises.isEmpty() && nextActivityClass == MatchGameActivity.class) {
-                    // LẤY DANH SÁCH LESSON ID DUY NHẤT TRONG UNIT
-                    List<Integer> lessonIds = new ArrayList<>();
-                    for (var ex : exercises) {
-                        if (!lessonIds.contains(ex.getLessonId())) {
-                            lessonIds.add(ex.getLessonId());
-                        }
-                    }
-
-                    if (lessonIds.isEmpty()) {
-                        Toast.makeText(requireContext(), "Không có bài học nào!", Toast.LENGTH_SHORT).show();
-                        nextActivityClass = null;
-                        return;
-                    }
-
-                    // RANDOM 1 LESSON
-                    int randomLessonId = lessonIds.get(new Random().nextInt(lessonIds.size()));
-
-                    // MỞ MATCHGAME VỚI LESSON ĐÃ RANDOM
-                    Intent intent = new Intent(requireContext(), MatchGameActivity.class);
-                    intent.putExtra("lessonId", randomLessonId);
-                    startActivity(intent);
-
-                    // Reset để không mở lại
-                    viewModel.exercisesLiveData.setValue(null);
-                    nextActivityClass = null;
-                }
-            });
-        });
-        cardViewArrangeWord.setOnClickListener(v -> triggerFetchAndOpenGame(unitId, "word_order", GameWordropActivity.class));
-        cardViewMatchingGame.setOnClickListener(v -> triggerFetchAndOpenGame(unitId, "match_pairs", MatchingGameActivity.class));
     }
 
-    private void triggerFetchAndOpenGame(int unitId, String type, Class<?> activityClass) {
+    private void handleGameNavigation(List<Exercise> exercises) {
+        Intent intent = new Intent(requireContext(), nextActivityClass);
+
+        if (nextActivityClass == MatchGameActivity.class) {
+            int randomLessonId = getRandomLessonId(exercises);
+            if (randomLessonId != -1)
+                intent.putExtra("lessonId", randomLessonId);
+            else {
+                Toast.makeText(requireContext(), "Không tìm thấy bài học!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+        } else
+            // Các game khác dùng unitId
+            intent.putExtra("unitId", unitId);
+
+        startActivity(intent);
+    }
+
+    private void triggerGame(String type, Class<?> activityClass) {
         if (unitId == -1) {
-            Toast.makeText(requireContext(), "Lỗi: Unit ID không hợp lệ.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), "Unit ID không hợp lệ", Toast.LENGTH_SHORT).show();
             return;
         }
-        // Lưu Activity cần mở vào biến tạm
         this.nextActivityClass = activityClass;
-        // Bắt đầu tải dữ liệu. Khi dữ liệu được post, Observer ở trên sẽ tự động mở Activity.
         viewModel.fetchExercisesByType(unitId, type);
+    }
+
+    private int getRandomLessonId(List<Exercise> exercises) {
+        List<Integer> ids = exercises.stream().map(Exercise::getLessonId).distinct().collect(Collectors.toList());
+
+        return ids.isEmpty() ? -1 : ids.get(new Random().nextInt(ids.size()));
+    }
+
+    private void navigateToLessonFragment() {
+        LessonFragment fragment = new LessonFragment();
+        Bundle args = new Bundle();
+        args.putInt("unitId", unitId);
+        fragment.setArguments(args);
+
+        getParentFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).addToBackStack(null).commit();
     }
 }

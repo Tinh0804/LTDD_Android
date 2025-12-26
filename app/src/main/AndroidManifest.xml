@@ -43,9 +43,10 @@
         <activity
             android:name=".activities.MatchingGameActivity"
             android:exported="false" />
-        <activity
-            android:name=".activities.LeaderboardActivity"
-            android:exported="false" />
+
+<!--        <activity-->
+<!--            android:name=".activities.LeaderboardActivity"-->
+<!--            android:exported="false" />-->
         <activity
             android:name=".activities.AccountPersonal"
             android:exported="false" />
@@ -57,17 +58,13 @@
             android:exported="false" />
         <activity android:name=".activities.WebViewActivity"
             android:exported="true"
-            android:hardwareAccelerated="false"
-            >
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data
-                    android:scheme="myapp"
-                    android:host="payment_success"
-                    android:pathPrefix="/payment_success"/>
-            </intent-filter>
+            android:hardwareAccelerated="true"> <intent-filter>
+            <action android:name="android.intent.action.VIEW"/>
+            <category android:name="android.intent.category.DEFAULT"/>
+            <category android:name="android.intent.category.BROWSABLE"/>
+            <data
+                android:scheme="myapp"
+                android:host="payment_success" /> </intent-filter>
         </activity>
 
         <activity
@@ -120,8 +117,15 @@
         <activity
             android:name=".activities.StudyTimeActivity"
             android:exported="false"/>
-
-
+<!--        <activity-->
+<!--            android:name=".activities.ForgotPasswordActivity"-->
+<!--            android:exported="false"/>-->
+        <activity
+            android:name=".activities.VerifyOtpActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".activities.NewPasswordActivity"
+            android:exported="false"/>
 
         <activity
             android:name=".activities.LoginActivity"

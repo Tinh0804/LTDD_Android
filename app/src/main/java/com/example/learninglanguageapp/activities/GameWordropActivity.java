@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,7 +18,9 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.learninglanguageapp.R;
 import com.example.learninglanguageapp.models.Exercise;
+import com.example.learninglanguageapp.utils.GameResultHelper;
 import com.example.learninglanguageapp.utils.HelperFunction;
+import com.example.learninglanguageapp.utils.SharedPrefsHelper;
 import com.example.learninglanguageapp.viewmodels.ExerciseViewModel;
 import com.google.android.flexbox.FlexboxLayout;
 
@@ -29,45 +32,45 @@ public class GameWordropActivity extends AppCompatActivity {
 
     private ExerciseViewModel exerciseViewModel;
     private HelperFunction helperFunction;
+    private SharedPrefsHelper sharedPrefsHelper;
 
     private int unitId;
     private int hearts;
     private int currentQuestionIndex = 0;
     private int correctAnswersCount = 0;
+    private boolean isCheckingAnswer = false;
 
     private List<Exercise> wordOrderExercises = new ArrayList<>();
-    private Exercise currentExercise;
-
-    private ImageButton btnSettings;
-    private TextView tvHearts;
-    private View progressIndicator;
-    private TextView tvQuestion;
-    private FlexboxLayout selectedWordsContainer;
-    private FlexboxLayout availableWordsContainer;
-    private Button btnCheck;
-
     private List<Word> selectedWords = new ArrayList<>();
     private List<Word> availableWords = new ArrayList<>();
     private List<String> correctAnswerWords = new ArrayList<>();
 
+    private TextView tvHearts, tvQuestion;
+    private View progressIndicator;
+    private FlexboxLayout selectedWordsContainer, availableWordsContainer;
+    private Button btnCheck;
+    private ImageButton btnSettings;
+
     private MediaPlayer mediaPlayer;
-    private Handler handler = new Handler(Looper.getMainLooper());
-    private boolean isCheckingAnswer = false;
+    private final Handler handler = new Handler(Looper.getMainLooper());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gamewordrop);
 
+        initData();
+        initViews();
+        initViewModel();
+    }
+
+    private void initData() {
         HelperFunction.init(getApplicationContext());
         helperFunction = HelperFunction.getInstance();
+        sharedPrefsHelper = new SharedPrefsHelper(this);
 
         unitId = getIntent().getIntExtra("unitId", 1);
         hearts = helperFunction.loadUserHearts();
-
-        initViews();
-        initViewModel();
-        updateHeartsUI();
     }
 
     private void initViews() {
@@ -81,210 +84,207 @@ public class GameWordropActivity extends AppCompatActivity {
 
         btnSettings.setOnClickListener(v -> showSettingsDialog());
         btnCheck.setOnClickListener(v -> checkAnswerManually());
-        btnCheck.setEnabled(false);
+        updateHeartsUI();
     }
 
     private void initViewModel() {
         exerciseViewModel = new ViewModelProvider(this).get(ExerciseViewModel.class);
 
-        exerciseViewModel.errorLiveData.observe(this, error -> {
-            if (error != null && !error.isEmpty()) {
-                Toast.makeText(this, "Lỗi: " + error, Toast.LENGTH_LONG).show();
-            }
+        exerciseViewModel.submitResultLiveData.observe(this, response -> {
+            if (response != null)
+                GameResultHelper.showResultDialog(this, response, this::finish);
         });
 
         exerciseViewModel.exercisesLiveData.observe(this, exercises -> {
-            if (exercises != null && !exercises.isEmpty()) {
-                wordOrderExercises.clear();
-                for (Exercise ex : exercises) {
-                    if ("word_order".equalsIgnoreCase(ex.getExerciseType())) {
-                        wordOrderExercises.add(ex);
-                    }
-                }
-                if (wordOrderExercises.isEmpty()) {
-                    Toast.makeText(this, "Không có bài tập word_order!", Toast.LENGTH_LONG).show();
-                    finish();
-                } else {
-                    loadNextQuestion();
-                }
-            } else {
-                Toast.makeText(this, "Không có dữ liệu!", Toast.LENGTH_LONG).show();
-                finish();
-            }
+            if (exercises != null && !exercises.isEmpty())
+                filterExercises(exercises);
+        });
+
+        exerciseViewModel.errorLiveData.observe(this, error -> {
+            if (error != null) Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
         });
 
         exerciseViewModel.fetchExercisesByType(unitId, "word_order");
     }
 
+    private void filterExercises(List<Exercise> exercises) {
+        wordOrderExercises.clear();
+        for (Exercise ex : exercises)
+            if ("word_order".equalsIgnoreCase(ex.getExerciseType()))
+                wordOrderExercises.add(ex);
+
+        if (wordOrderExercises.isEmpty()) {
+            Toast.makeText(this, "Không có dữ liệu bài tập!", Toast.LENGTH_SHORT).show();
+            finish();
+        } else
+            loadNextQuestion();
+    }
+
     private void loadNextQuestion() {
         if (currentQuestionIndex >= wordOrderExercises.size()) {
-            showUnitCompleted();
+            submitGameResults();
             return;
         }
-        currentExercise = wordOrderExercises.get(currentQuestionIndex);
-        setupGame(currentExercise);
+        setupGame(wordOrderExercises.get(currentQuestionIndex));
         updateProgressBar();
     }
 
     private void setupGame(Exercise exercise) {
         tvQuestion.setText(exercise.getQuestion());
-
         String correct = exercise.getCorrectAnswer();
+
         if (correct == null || correct.trim().isEmpty()) {
             currentQuestionIndex++;
             loadNextQuestion();
             return;
         }
 
+        // Tách câu thành danh sách các từ
         String[] words = correct.trim().replaceAll("[.,?!;]", "").split("\\s+");
         correctAnswerWords.clear();
         availableWords.clear();
         selectedWords.clear();
 
         for (String w : words) {
-            String word = w.trim();
-            if (!word.isEmpty()) {
-                correctAnswerWords.add(word);
-                availableWords.add(new Word(word, false));
+            String cleanWord = w.trim();
+            if (!cleanWord.isEmpty()) {
+                correctAnswerWords.add(cleanWord);
+                availableWords.add(new Word(cleanWord));
             }
         }
 
-        // Thêm từ nhiễu nếu backend có
-        if (exercise.getOptions() != null && !exercise.getOptions().isEmpty()) {
-            for (String opt : exercise.getOptions()) {
-                for (String extra : opt.split(",")) {
-                    String e = extra.trim();
-                    if (!e.isEmpty() && !correctAnswerWords.contains(e)) {
-                        availableWords.add(new Word(e, false));
-                    }
-                }
-            }
-        }
-
+        // Xáo trộn vị trí các từ để người dùng sắp xếp
         Collections.shuffle(availableWords);
         updateWordContainers();
     }
 
     private void updateWordContainers() {
-        tvHearts.setText(String.valueOf(hearts));
-
         selectedWordsContainer.removeAllViews();
-        for (Word w : selectedWords) selectedWordsContainer.addView(createWordChip(w, true));
+        for (Word w : selectedWords)
+            selectedWordsContainer.addView(createWordChip(w, true));
 
         availableWordsContainer.removeAllViews();
-        for (Word w : availableWords) {
-            if (!w.isSelected) availableWordsContainer.addView(createWordChip(w, false));
-        }
+        for (Word w : availableWords)
+            if (!w.isSelected)
+                availableWordsContainer.addView(createWordChip(w, false));
 
         btnCheck.setEnabled(!selectedWords.isEmpty());
     }
 
-    // CHỈ DÙNG 2 FILE BẠN ĐÃ CÓ: word_chip.xml & word_chip_selected.xml
     private View createWordChip(Word word, boolean isSelected) {
-        int layoutRes = isSelected ? R.layout.word_chip_selected : R.layout.word_chip;
-        TextView chip = (TextView) getLayoutInflater().inflate(layoutRes, null, false);
+        int layout = isSelected ? R.layout.word_chip_selected : R.layout.word_chip;
+        TextView chip = (TextView) getLayoutInflater().inflate(layout, null, false);
         chip.setText(word.text);
 
         chip.setOnClickListener(v -> {
             if (isCheckingAnswer) return;
-
-            if (isSelected) {
-                word.isSelected = false;
-                selectedWords.remove(word);
-            } else {
-                word.isSelected = true;
-                selectedWords.add(word);
-            }
+            word.isSelected = !isSelected;
+            if (word.isSelected) selectedWords.add(word);
+            else selectedWords.remove(word);
             updateWordContainers();
         });
-
         return chip;
     }
 
     private void checkAnswerManually() {
         if (isCheckingAnswer || selectedWords.isEmpty()) return;
-
         isCheckingAnswer = true;
         btnCheck.setEnabled(false);
 
-        boolean isCorrect = selectedWords.size() == correctAnswerWords.size();
-        if (isCorrect) {
-            for (int i = 0; i < selectedWords.size(); i++) {
-                if (!selectedWords.get(i).text.equals(correctAnswerWords.get(i))) {
-                    isCorrect = false;
-                    break;
-                }
-            }
+        boolean isCorrect = compareAnswers();
+
+        if (isCorrect)
+            handleCorrectAnswer();
+        else
+            handleWrongAnswer();
+    }
+
+    private boolean compareAnswers() {
+        if (selectedWords.size() != correctAnswerWords.size()) return false;
+        for (int i = 0; i < selectedWords.size(); i++)
+            if (!selectedWords.get(i).text.equals(correctAnswerWords.get(i))) return false;
+        return true;
+    }
+
+    private void handleCorrectAnswer() {
+        playSfx(R.raw.correct);
+        applyChipFeedback(R.drawable.bg_word_chip_correct, R.anim.scale_up);
+
+        correctAnswersCount++;
+        currentQuestionIndex++;
+        handler.postDelayed(() -> {
+            loadNextQuestion();
+            isCheckingAnswer = false;
+        }, 1200);
+    }
+
+    private void handleWrongAnswer() {
+        playSfx(R.raw.wrong);
+        applyChipFeedback(R.drawable.bg_word_chip_wrong, R.anim.shake);
+
+        hearts--;
+        helperFunction.saveUserHearts(hearts);
+        updateHeartsUI();
+
+        if (hearts <= 0)
+            handler.postDelayed(this::showGameOver, 1500);
+        else {
+            handler.postDelayed(() -> {
+                resetCurrentQuestion();
+                isCheckingAnswer = false;
+            }, 1500);
+        }
+    }
+
+    private void applyChipFeedback(int backgroundRes, int animationRes) {
+        for (int i = 0; i < selectedWordsContainer.getChildCount(); i++) {
+            View v = selectedWordsContainer.getChildAt(i);
+            v.setBackgroundResource(backgroundRes);
+            v.startAnimation(AnimationUtils.loadAnimation(this, animationRes));
+        }
+    }
+
+    private void resetCurrentQuestion() {
+        selectedWords.clear();
+        for (Word w : availableWords) w.isSelected = false;
+        updateWordContainers();
+    }
+
+    private void submitGameResults() {
+        playSfx(R.raw.complete);
+
+        if (wordOrderExercises.isEmpty()) {
+            finish();
+            return;
         }
 
-        if (isCorrect) {
-            playSfx(R.raw.correct);
+        int lessonId = wordOrderExercises.get(0).getLessonId();
+        String token = sharedPrefsHelper.getToken();
 
-            // HIỆU ỨNG ĐÚNG: xanh + rung nhẹ
-            for (int i = 0; i < selectedWordsContainer.getChildCount(); i++) {
-                View v = selectedWordsContainer.getChildAt(i);
-                v.setBackgroundResource(R.drawable.bg_word_chip_correct); // bạn tạo file này 1 dòng thôi
-                v.startAnimation(AnimationUtils.loadAnimation(this, R.anim.scale_up));
-            }
-
-            correctAnswersCount++;
-            currentQuestionIndex++;
-
-            handler.postDelayed(() -> {
-                loadNextQuestion();
-                isCheckingAnswer = false;
-            }, 1200);
-
+        if (token != null) {
+            exerciseViewModel.submitExerciseResult(token, lessonId, wordOrderExercises.size(), correctAnswersCount);
         } else {
-            playSfx(R.raw.wrong);
-            hearts--;
-            helperFunction.saveUserHearts(hearts);
-            tvHearts.setText(String.valueOf(hearts));
-
-            // HIỆU ỨNG SAI: viền đỏ + rung
-            for (int i = 0; i < selectedWordsContainer.getChildCount(); i++) {
-                View v = selectedWordsContainer.getChildAt(i);
-                v.setBackgroundResource(R.drawable.bg_word_chip_wrong); // bạn tạo file này
-                v.startAnimation(AnimationUtils.loadAnimation(this, R.anim.shake));
-            }
-
-            if (hearts <= 0) {
-                handler.postDelayed(this::showGameOver, 1500);
-            } else {
-                handler.postDelayed(() -> {
-                    selectedWords.clear();
-                    for (Word w : availableWords) w.isSelected = false;
-                    isCheckingAnswer = false;
-                    updateWordContainers();
-                }, 1500);
-            }
+            finish();
         }
     }
 
     private void updateProgressBar() {
         if (wordOrderExercises.isEmpty()) return;
-        float progress = (float) correctAnswersCount / wordOrderExercises.size() * 100f;
-        android.widget.LinearLayout.LayoutParams params = (android.widget.LinearLayout.LayoutParams) progressIndicator.getLayoutParams();
-        params.weight = progress / 100f;
+        float progress = (float) currentQuestionIndex / wordOrderExercises.size();
+        LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) progressIndicator.getLayoutParams();
+        params.weight = progress;
         progressIndicator.setLayoutParams(params);
     }
 
-    private void showUnitCompleted() {
-        playSfx(R.raw.complete);
-        new AlertDialog.Builder(this)
-                .setTitle("Hoàn thành Unit!")
-                .setMessage("Tuyệt vời! Bạn đã làm đúng " + correctAnswersCount + "/" + wordOrderExercises.size() + " câu!")
-                .setCancelable(false)
-                .setPositiveButton("Về trang chủ", (d, w) -> finish())
-                .setNegativeButton("Chơi lại", (d, w) -> restartUnit())
-                .show();
+    private void updateHeartsUI() {
+        tvHearts.setText(String.valueOf(hearts));
     }
 
     private void showGameOver() {
         playSfx(R.raw.game_over);
         new AlertDialog.Builder(this)
-                .setTitle("Hết tim!")
-                .setMessage("Bạn đã làm đúng " + correctAnswersCount + " câu.")
+                .setTitle("Hết lượt!")
+                .setMessage("Bạn đã hết tim. Hãy thử lại sau.")
                 .setCancelable(false)
                 .setPositiveButton("Về trang chủ", (d, w) -> finish())
                 .setNegativeButton("Chơi lại", (d, w) -> restartUnit())
@@ -292,23 +292,18 @@ public class GameWordropActivity extends AppCompatActivity {
     }
 
     private void restartUnit() {
-        hearts = helperFunction.loadUserHearts();
         currentQuestionIndex = 0;
         correctAnswersCount = 0;
-        isCheckingAnswer = false;
+        hearts = helperFunction.loadUserHearts();
         updateHeartsUI();
-        updateProgressBar();
-        exerciseViewModel.fetchExercisesByType(unitId, "word_order");
+        loadNextQuestion();
     }
-
-    private void updateHeartsUI() { tvHearts.setText(String.valueOf(hearts)); }
 
     private void showSettingsDialog() {
         new AlertDialog.Builder(this)
                 .setTitle("Menu")
                 .setItems(new String[]{"Về trang chủ", "Chơi lại"}, (d, which) -> {
-                    if (which == 0) finish();
-                    else restartUnit();
+                    if (which == 0) finish(); else restartUnit();
                 }).show();
     }
 
@@ -320,15 +315,8 @@ public class GameWordropActivity extends AppCompatActivity {
         } catch (Exception ignored) {}
     }
 
-    @Override public void onBackPressed() {
-        new AlertDialog.Builder(this)
-                .setTitle("Thoát game?")
-                .setMessage("Tiến độ sẽ mất.")
-                .setPositiveButton("Thoát", (d, w) -> super.onBackPressed())
-                .setNegativeButton("Hủy", null).show();
-    }
-
-    @Override protected void onDestroy() {
+    @Override
+    protected void onDestroy() {
         super.onDestroy();
         if (mediaPlayer != null) mediaPlayer.release();
         handler.removeCallbacksAndMessages(null);
@@ -336,10 +324,7 @@ public class GameWordropActivity extends AppCompatActivity {
 
     private static class Word {
         String text;
-        boolean isSelected;
-        Word(String text, boolean isSelected) {
-            this.text = text;
-            this.isSelected = isSelected;
-        }
+        boolean isSelected = false;
+        Word(String text) { this.text = text; }
     }
 }

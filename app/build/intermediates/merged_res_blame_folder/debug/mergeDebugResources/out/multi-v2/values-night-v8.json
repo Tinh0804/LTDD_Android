@@ -4,7 +4,24 @@
             "outputFile": "com.example.learninglanguageapp-mergeDebugResources-69:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\asus\\.gradle\\caches\\8.13\\transforms\\528b93dbb8bc79a62485d6b9b2f1a3e8\\transformed\\appcompat-1.6.1\\res\\values-night-v8\\values-night-v8.xml",
+                    "source": "/Users/macbookpro/LTDD_Android/app/src/main/res/values-night/colors.xml",
+                    "from": {
+                        "startLines": "15,16,3,11,28,26,27,8,9,7,34,12,31,17,35,22,20,21,23,4,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "483,536,75,371,987,866,920,245,285,197,1158,410,1073,591,1203,753,657,704,797,117,330",
+                        "endColumns": "52,54,41,38,49,53,66,39,44,47,44,37,57,46,42,43,46,48,46,41,40",
+                        "endOffsets": "531,586,112,405,1032,915,982,280,325,240,1198,443,1126,633,1241,792,699,748,839,154,366"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,108,163,205,244,294,348,415,455,500,548,593,631,689,736,779,823,870,919,966,1008",
+                        "endColumns": "52,54,41,38,49,53,66,39,44,47,44,37,57,46,42,43,46,48,46,41,40",
+                        "endOffsets": "103,158,200,239,289,343,410,450,495,543,588,626,684,731,774,818,865,914,961,1003,1044"
+                    }
+                },
+                {
+                    "source": "/Users/macbookpro/.gradle/caches/8.13/transforms/528b93dbb8bc79a62485d6b9b2f1a3e8/transformed/appcompat-1.6.1/res/values-night-v8/values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -21,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\asus\\.gradle\\caches\\8.13\\transforms\\8805d80397f3f6db3330027ac067890d\\transformed\\material-1.10.0\\res\\values-night-v8\\values-night-v8.xml",
+                    "source": "/Users/macbookpro/.gradle/caches/8.13/transforms/8805d80397f3f6db3330027ac067890d/transformed/material-1.10.0/res/values-night-v8/values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,31 +55,14 @@
                     }
                 },
                 {
-                    "source": "D:\\adr_applearning\\app\\src\\main\\res\\values-night\\colors.xml",
-                    "from": {
-                        "startLines": "15,16,3,11,28,26,27,8,9,7,34,12,31,17,35,22,20,21,23,4,10",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "498,552,78,382,1015,892,947,253,294,204,1192,422,1104,608,1238,775,677,725,820,121,340",
-                        "endColumns": "52,54,41,38,49,53,66,39,44,47,44,37,57,46,42,43,46,48,46,41,40",
-                        "endOffsets": "546,602,115,416,1060,941,1009,288,334,247,1232,455,1157,650,1276,814,719,769,862,158,376"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,108,163,205,244,294,348,415,455,500,548,593,631,689,736,779,823,870,919,966,1008",
-                        "endColumns": "52,54,41,38,49,53,66,39,44,47,44,37,57,46,42,43,46,48,46,41,40",
-                        "endOffsets": "103,158,200,239,289,343,410,450,495,543,588,626,684,731,774,818,865,914,961,1003,1044"
-                    }
-                },
-                {
-                    "source": "D:\\adr_applearning\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "source": "/Users/macbookpro/LTDD_Android/app/src/main/res/values-night/themes.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
-                        "startOffsets": "102",
+                        "startOffsets": "100",
                         "endLines": "5",
                         "endColumns": "12",
-                        "endOffsets": "331"
+                        "endOffsets": "326"
                     },
                     "to": {
                         "startLines": "23",

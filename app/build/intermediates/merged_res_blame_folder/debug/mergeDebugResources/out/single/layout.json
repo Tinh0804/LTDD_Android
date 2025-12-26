@@ -12,8 +12,17 @@
         "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\layout\\activity_leaderboard.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-mergeDebugResources-70:\\layout\\activity_practice.xml",
         "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\layout\\activity_practice.xml"
+=======
+        "merged": "com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_verify_otp.xml",
+        "source": "com.example.learninglanguageapp-main-73:/layout/activity_verify_otp.xml"
+    },
+    {
+        "merged": "com.example.learninglanguageapp-mergeDebugResources-70:/layout/level_item.xml",
+        "source": "com.example.learninglanguageapp-main-73:/layout/level_item.xml"
+>>>>>>> main
     },
     {
         "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-mergeDebugResources-70:\\layout\\activity_profile_friend.xml",
@@ -24,16 +33,34 @@
         "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\layout\\activity_setting.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-mergeDebugResources-70:\\layout\\activity_match_game.xml",
         "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\layout\\activity_match_game.xml"
+=======
+        "merged": "com.example.learninglanguageapp-mergeDebugResources-70:/layout/item_lesson.xml",
+        "source": "com.example.learninglanguageapp-main-73:/layout/item_lesson.xml"
+    },
+    {
+        "merged": "com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_practice.xml",
+        "source": "com.example.learninglanguageapp-main-73:/layout/activity_practice.xml"
+>>>>>>> main
     },
     {
         "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-mergeDebugResources-70:\\layout\\activity_main.xml",
         "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\layout\\activity_main.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-mergeDebugResources-70:\\layout\\accountpersonal.xml",
         "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\layout\\accountpersonal.xml"
+=======
+        "merged": "com.example.learninglanguageapp-mergeDebugResources-70:/layout/dialog_game_result.xml",
+        "source": "com.example.learninglanguageapp-main-73:/layout/dialog_game_result.xml"
+    },
+    {
+        "merged": "com.example.learninglanguageapp-mergeDebugResources-70:/layout/language_use.xml",
+        "source": "com.example.learninglanguageapp-main-73:/layout/language_use.xml"
+>>>>>>> main
     },
     {
         "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-mergeDebugResources-70:\\layout\\activity_payment.xml",
@@ -44,8 +71,17 @@
         "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\layout\\language_learn.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-mergeDebugResources-70:\\layout\\word_chip_placeholder.xml",
         "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\layout\\word_chip_placeholder.xml"
+=======
+        "merged": "com.example.learninglanguageapp-mergeDebugResources-70:/layout/fragment_pronunciation.xml",
+        "source": "com.example.learninglanguageapp-main-73:/layout/fragment_pronunciation.xml"
+    },
+    {
+        "merged": "com.example.learninglanguageapp-mergeDebugResources-70:/layout/fragment_home.xml",
+        "source": "com.example.learninglanguageapp-main-73:/layout/fragment_home.xml"
+>>>>>>> main
     },
     {
         "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-mergeDebugResources-70:\\layout\\item_leaderboard.xml",
@@ -100,20 +136,34 @@
         "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\layout\\activity_account.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-mergeDebugResources-70:\\layout\\activity_splash.xml",
         "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\layout\\activity_splash.xml"
+=======
+        "merged": "com.example.learninglanguageapp-mergeDebugResources-70:/layout/fragment_lesson.xml",
+        "source": "com.example.learninglanguageapp-main-73:/layout/fragment_lesson.xml"
+    },
+    {
+        "merged": "com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_gamewordrop.xml",
+        "source": "com.example.learninglanguageapp-main-73:/layout/activity_gamewordrop.xml"
+>>>>>>> main
     },
     {
         "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-mergeDebugResources-70:\\layout\\activity_progress.xml",
         "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\layout\\activity_progress.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-mergeDebugResources-70:\\layout\\activity_account_person.xml",
         "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\layout\\activity_account_person.xml"
     },
     {
         "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-mergeDebugResources-70:\\layout\\item_match_card.xml",
         "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\layout\\item_match_card.xml"
+=======
+        "merged": "com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_match_game.xml",
+        "source": "com.example.learninglanguageapp-main-73:/layout/activity_match_game.xml"
+>>>>>>> main
     },
     {
         "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-mergeDebugResources-70:\\layout\\item_option.xml",
@@ -176,8 +226,17 @@
         "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\layout\\item_word_card.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-mergeDebugResources-70:\\layout\\word_chip.xml",
         "source": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-main-73:\\layout\\word_chip.xml"
+=======
+        "merged": "com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_new_password.xml",
+        "source": "com.example.learninglanguageapp-main-73:/layout/activity_new_password.xml"
+    },
+    {
+        "merged": "com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_select_image_game.xml",
+        "source": "com.example.learninglanguageapp-main-73:/layout/activity_select_image_game.xml"
+>>>>>>> main
     },
     {
         "merged": "C:\\Users\\asus\\.gradle\\daemon\\8.13\\com.example.learninglanguageapp-mergeDebugResources-70:\\layout\\loading.xml",

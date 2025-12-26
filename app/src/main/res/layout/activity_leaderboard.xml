@@ -23,12 +23,12 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
             android:layout_weight="1"
-            android:text="Leaderboard"
-            android:textSize="24sp"
+            android:text="Bảng xếp hạng"
             android:textColor="#000000"
-            android:textStyle="bold"
-            android:layout_marginStart="12dp" />
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/btnSearch"
@@ -54,28 +54,29 @@
             android:src="@drawable/ic_arrow_back"
             android:layout_gravity="center"
             android:layout_marginRight="16dp"/>
+
         <Button
             android:id="@+id/btnWeekly"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:text="Weekly"
-            android:textColor="#FFFFFF"
             android:background="@drawable/bg_button_selected"
             android:paddingHorizontal="24dp"
+            android:text="Tuần"
             android:textAllCaps="false"
+            android:textColor="#FFFFFF"
             android:textSize="16sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnMonthly"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:text="Monthly"
-            android:textColor="#6366F1"
+            android:layout_marginStart="12dp"
             android:background="@drawable/bg_button_unselected"
             android:backgroundTint="@null"
             android:paddingHorizontal="24dp"
-            android:layout_marginStart="12dp"
+            android:text="Tháng"
             android:textAllCaps="false"
+            android:textColor="#6366F1"
             android:textSize="16sp" />
 
 
@@ -83,13 +84,13 @@
             android:id="@+id/btnAllTime"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:text="Alltime"
-            android:textColor="#6366F1"
+            android:layout_marginStart="12dp"
             android:background="@drawable/bg_button_unselected"
             android:backgroundTint="@null"
             android:paddingHorizontal="24dp"
-            android:layout_marginStart="12dp"
+            android:text="Tất cả"
             android:textAllCaps="false"
+            android:textColor="#6366F1"
             android:textSize="16sp" />
 
     </LinearLayout>
