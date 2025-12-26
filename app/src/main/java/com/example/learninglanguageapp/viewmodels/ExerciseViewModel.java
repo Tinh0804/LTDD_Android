@@ -8,6 +8,8 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.example.learninglanguageapp.models.Entities.ExerciseEntity;
 import com.example.learninglanguageapp.models.Exercise;
+import com.example.learninglanguageapp.models.Request.ExerciseSubmitRequest;
+import com.example.learninglanguageapp.models.Response.ExerciseSubmitResponse;
 import com.example.learninglanguageapp.repository.ExerciseRepository;
 
 import java.util.List;
@@ -18,7 +20,7 @@ public class ExerciseViewModel extends AndroidViewModel {
     public MutableLiveData<List<Exercise>> exercisesLiveData = new MutableLiveData<>();
     public MutableLiveData<Boolean> loadingLiveData = new MutableLiveData<>();
     public MutableLiveData<String> errorLiveData = new MutableLiveData<>();
-
+    public MutableLiveData<ExerciseSubmitResponse> submitResultLiveData = new MutableLiveData<>();
     public ExerciseViewModel(@NonNull Application application) {
         super(application);
         repository = new ExerciseRepository(application);
@@ -34,11 +36,15 @@ public class ExerciseViewModel extends AndroidViewModel {
     public void saveUnitExercises(List<ExerciseEntity> exercises) {
         new Thread(() -> {
             if (exercises != null && !exercises.isEmpty()) {
-                repository.saveExercises(exercises); // gọi Repository để lưu
+                repository.saveExercises(exercises);
             }
         }).start();
     }
-
+    public void submitExerciseResult(String token, int lessonId, int total, int correct) {
+        int xp = correct * 10;
+        ExerciseSubmitRequest request = new ExerciseSubmitRequest(lessonId, 1, total, correct, xp);
+        repository.submitExercise(token, request, submitResultLiveData, errorLiveData);
+    }
 
 
 }

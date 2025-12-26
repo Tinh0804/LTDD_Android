@@ -12,7 +12,9 @@ import androidx.lifecycle.MutableLiveData;
 import com.example.learninglanguageapp.mapper.WordMapper;
 import com.example.learninglanguageapp.models.Entities.WordEntity;
 import com.example.learninglanguageapp.models.Lesson;
+import com.example.learninglanguageapp.models.Request.SubmitLessonRequest;
 import com.example.learninglanguageapp.models.Response.ApiResponse;
+import com.example.learninglanguageapp.models.Response.SubmitLessonResponse;
 import com.example.learninglanguageapp.models.Word;
 import com.example.learninglanguageapp.network.ApiClient;
 import com.example.learninglanguageapp.network.ApiService;
@@ -170,6 +172,33 @@ public class LessonRepository {
             public void onFailure(Call<ApiResponse<List<Lesson>>> call, Throwable t) {
                 isLoading.setValue(false);
                 errorLiveData.setValue("Lỗi kết nối: " + t.getMessage());
+            }
+        });
+    }
+
+    public void submitLesson(String token, SubmitLessonRequest request,
+                             MutableLiveData<SubmitLessonResponse> resultData,
+                             MutableLiveData<Boolean> isLoading,
+                             MutableLiveData<String> errorData) {
+
+        if (isLoading != null) isLoading.setValue(true);
+
+        api.submitLesson("Bearer " + token, request).enqueue(new Callback<ApiResponse<SubmitLessonResponse>>() {
+            @Override
+            public void onResponse(Call<ApiResponse<SubmitLessonResponse>> call, Response<ApiResponse<SubmitLessonResponse>> response) {
+                if (isLoading != null) isLoading.setValue(false);
+
+                if (response.isSuccessful() && response.body() != null && response.body().isStatus()) {
+                    resultData.setValue(response.body().getData());
+                } else {
+                    errorData.setValue("Lỗi hệ thống: Không thể lưu tiến trình");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ApiResponse<SubmitLessonResponse>> call, Throwable t) {
+                if (isLoading != null) isLoading.setValue(false);
+                errorData.setValue("Lỗi kết nối: " + t.getMessage());
             }
         });
     }

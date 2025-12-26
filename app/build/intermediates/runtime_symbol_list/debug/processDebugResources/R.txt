@@ -3525,6 +3525,7 @@ int drawable ic_play 0x7f080194
 int drawable ic_play_normal 0x7f080220
 int drawable ic_play_slow 0x7f080221
 int drawable ic_practice 0x7f080195
+int drawable ic_pronunciation 0x7f080224
 int drawable ic_puzzle 0x7f080196
 int drawable ic_search_black_24 0x7f080197
 int drawable ic_security 0x7f080198
@@ -3801,6 +3802,7 @@ int id btnFlip 0x7f0a0087
 int id btnFlipBack 0x7f0a0088
 int id btnGeneral 0x7f0a0089
 int id btnGoogle 0x7f0a008a
+int id btnHome 0x7f0a03c0
 int id btnInsights 0x7f0a008b
 int id btnLogout 0x7f0a008c
 int id btnMenu 0x7f0a008d
@@ -4140,6 +4142,7 @@ int id ivMatchingIcon 0x7f0a01d1
 int id ivMenu 0x7f0a01d2
 int id ivProfileImage 0x7f0a01d3
 int id ivPronunciationIcon 0x7f0a03a5
+int id ivResultIcon 0x7f0a03c1
 int id ivVocabularyIcon 0x7f0a01d4
 int id ivWord 0x7f0a01d5
 int id jumpToEnd 0x7f0a01d6
@@ -4176,7 +4179,6 @@ int id listViewLearn 0x7f0a01f4
 int id listViewUse 0x7f0a01f5
 int id list_item 0x7f0a01f6
 int id llActionButtons 0x7f0a03b6
-int id llProgressContainer 0x7f0a03b7
 int id llProgressDots 0x7f0a03b8
 int id llRecordingSection 0x7f0a03b9
 int id locale 0x7f0a01f7
@@ -4535,6 +4537,7 @@ int id tvLevelName 0x7f0a0351
 int id tvLives 0x7f0a0352
 int id tvMatchingSubtitle 0x7f0a0353
 int id tvMatchingTitle 0x7f0a0354
+int id tvMessage 0x7f0a03c2
 int id tvMicStatus 0x7f0a03ae
 int id tvMonthYear 0x7f0a0355
 int id tvName 0x7f0a0356
@@ -4585,6 +4588,7 @@ int id tvWordBack 0x7f0a037e
 int id tvWordType 0x7f0a037f
 int id tvWordTypeBack 0x7f0a0380
 int id tvXP 0x7f0a0381
+int id tvXpEarned 0x7f0a03c3
 int id unchecked 0x7f0a0382
 int id uniform 0x7f0a0383
 int id unknown 0x7f0a0384
@@ -4787,6 +4791,7 @@ int layout design_navigation_menu 0x7f0d0049
 int layout design_navigation_menu_item 0x7f0d004a
 int layout design_text_input_end_icon 0x7f0d004b
 int layout design_text_input_start_icon 0x7f0d004c
+int layout dialog_game_result 0x7f0d00c2
 int layout exo_list_divider 0x7f0d004d
 int layout exo_player_control_view 0x7f0d004e
 int layout exo_player_view 0x7f0d004f

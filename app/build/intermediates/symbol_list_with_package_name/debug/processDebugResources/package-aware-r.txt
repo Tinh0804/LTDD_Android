@@ -3526,6 +3526,7 @@ drawable ic_play
 drawable ic_play_normal
 drawable ic_play_slow
 drawable ic_practice
+drawable ic_pronunciation
 drawable ic_puzzle
 drawable ic_search_black_24
 drawable ic_security
@@ -3802,6 +3803,7 @@ id btnFlip
 id btnFlipBack
 id btnGeneral
 id btnGoogle
+id btnHome
 id btnInsights
 id btnLogout
 id btnMenu
@@ -4141,6 +4143,7 @@ id ivMatchingIcon
 id ivMenu
 id ivProfileImage
 id ivPronunciationIcon
+id ivResultIcon
 id ivVocabularyIcon
 id ivWord
 id jumpToEnd
@@ -4177,7 +4180,6 @@ id listViewLearn
 id listViewUse
 id list_item
 id llActionButtons
-id llProgressContainer
 id llProgressDots
 id llRecordingSection
 id locale
@@ -4536,6 +4538,7 @@ id tvLevelName
 id tvLives
 id tvMatchingSubtitle
 id tvMatchingTitle
+id tvMessage
 id tvMicStatus
 id tvMonthYear
 id tvName
@@ -4586,6 +4589,7 @@ id tvWordBack
 id tvWordType
 id tvWordTypeBack
 id tvXP
+id tvXpEarned
 id unchecked
 id uniform
 id unknown
@@ -4788,6 +4792,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout dialog_game_result
 layout exo_list_divider
 layout exo_player_control_view
 layout exo_player_view

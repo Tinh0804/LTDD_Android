@@ -56,12 +56,12 @@
         "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/ic_medal_silver.png"
     },
     {
-        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_img_travels.png.flat",
-        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/img_travels.png"
-    },
-    {
         "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_menu.png.flat",
         "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/menu.png"
+    },
+    {
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_img_travels.png.flat",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/img_travels.png"
     },
     {
         "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_ic_medal_gold.png.flat",
@@ -310,6 +310,10 @@
     {
         "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_edittext_background.xml.flat",
         "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/edittext_background.xml"
+    },
+    {
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/layout_dialog_game_result.xml.flat",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/dialog_game_result.xml"
     },
     {
         "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_ic_diamond.png.flat",
@@ -618,6 +622,10 @@
     {
         "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_ic_lesson.png.flat",
         "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/ic_lesson.png"
+    },
+    {
+        "merged": "com.example.learninglanguageapp-debug-71:/drawable_ic_pronunciation.png.flat",
+        "source": "com.example.learninglanguageapp-main-73:/drawable/ic_pronunciation.png"
     },
     {
         "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_bg_wrong.xml.flat",
@@ -1020,16 +1028,16 @@
         "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/ic_flag_france.xml"
     },
     {
-        "merged": "com.example.learninglanguageapp-debug-71:/layout_fragment_pronunciation.xml.flat",
-        "source": "com.example.learninglanguageapp-main-73:/layout/fragment_pronunciation.xml"
-    },
-    {
         "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/layout_item_leaderboard.xml.flat",
         "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/item_leaderboard.xml"
     },
     {
         "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_bg_edit_icon.xml.flat",
         "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/bg_edit_icon.xml"
+    },
+    {
+        "merged": "com.example.learninglanguageapp-debug-71:/layout_activity_game.xml.flat",
+        "source": "com.example.learninglanguageapp-main-73:/layout/activity_game.xml"
     },
     {
         "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_ic_trophy.png.flat",

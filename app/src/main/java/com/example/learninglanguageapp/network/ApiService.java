@@ -4,18 +4,22 @@ package com.example.learninglanguageapp.network;
 import com.example.learninglanguageapp.models.Course;
 import com.example.learninglanguageapp.models.Exercise;
 import com.example.learninglanguageapp.models.Lesson;
+import com.example.learninglanguageapp.models.Request.ExerciseSubmitRequest;
 import com.example.learninglanguageapp.models.Request.LoginRequest;
 import com.example.learninglanguageapp.models.Request.OrderInfoMomo;
 import com.example.learninglanguageapp.models.Request.PaymentRequest;
 import com.example.learninglanguageapp.models.Request.RegisterRequest;
 import com.example.learninglanguageapp.models.Request.SocialLoginRequest;
+import com.example.learninglanguageapp.models.Request.SubmitLessonRequest;
 import com.example.learninglanguageapp.models.Response.ApiResponse;
 import com.example.learninglanguageapp.models.Response.BalanceResponse;
+import com.example.learninglanguageapp.models.Response.ExerciseSubmitResponse;
 import com.example.learninglanguageapp.models.Response.LanguageResponse;
 import com.example.learninglanguageapp.models.Response.LeaderboardResponse;
 import com.example.learninglanguageapp.models.Response.LoginResponse;
 import com.example.learninglanguageapp.models.Response.PaymentResponse;
 import com.example.learninglanguageapp.models.Response.PronunciationResponse;
+import com.example.learninglanguageapp.models.Response.SubmitLessonResponse;
 import com.example.learninglanguageapp.models.Response.UserResponse;
 import com.example.learninglanguageapp.models.Sentence;
 import com.example.learninglanguageapp.models.UIModel.PackagePayment;
@@ -120,4 +124,16 @@ public interface ApiService {
 
     @POST("api/Pronunciation/evaluate")
     Call<ApiResponse<PronunciationResponse>> evaluatePronunciation(@Body Map<String, Object> body);
+
+    @POST("api/Lessons/submit")
+    Call<ApiResponse<SubmitLessonResponse>> submitLesson(
+            @Header("Authorization") String authHeader,
+            @Body SubmitLessonRequest request
+    );
+
+    @POST("api/Exercises/submit")
+    Call<ApiResponse<ExerciseSubmitResponse>> submitExercise(
+            @Header("Authorization") String authHeader,
+            @Body ExerciseSubmitRequest request
+    );
 }

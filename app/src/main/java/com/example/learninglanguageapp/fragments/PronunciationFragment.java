@@ -23,10 +23,11 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.learninglanguageapp.R;
 import com.example.learninglanguageapp.models.Sentence;
 import com.example.learninglanguageapp.viewmodels.PronunciationViewModel;
+import com.example.learninglanguageapp.models.Response.PronunciationResponse;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import com.example.learninglanguageapp.models.Response.PronunciationResponse;
 
 public class PronunciationFragment extends Fragment {
 
@@ -36,7 +37,7 @@ public class PronunciationFragment extends Fragment {
     private Button btnNext, btnRetry;
     private ProgressBar pbLoading;
     private View cvResult, vPulseRing;
-    private LinearLayout llProgressDots, llActionButtons;
+    private LinearLayout llActionButtons, llRecordingSection;
 
     private MediaRecorder recorder;
     private MediaPlayer mediaPlayer;
@@ -83,8 +84,8 @@ public class PronunciationFragment extends Fragment {
         pbLoading = v.findViewById(R.id.pbLoading);
         cvResult = v.findViewById(R.id.cvResult);
         vPulseRing = v.findViewById(R.id.vPulseRing);
-        llProgressDots = v.findViewById(R.id.llProgressDots);
         llActionButtons = v.findViewById(R.id.llActionButtons);
+        llRecordingSection = v.findViewById(R.id.llRecordingSection);
     }
 
     private void setupPulseAnimation() {
@@ -100,50 +101,51 @@ public class PronunciationFragment extends Fragment {
         btnPlayNormal.setOnClickListener(v -> playAudioFromUrl(1.0f));
         btnPlaySlow.setOnClickListener(v -> playAudioFromUrl(0.7f));
 
+        // Logic nhấn giữ để ghi âm
         btnMic.setOnTouchListener((v, event) -> {
-            if (event.getAction() == MotionEvent.ACTION_DOWN)
+            if (event.getAction() == MotionEvent.ACTION_DOWN) {
                 if (checkPermission()) startRecording();
                 else requestPermission();
-            else if (event.getAction() == MotionEvent.ACTION_UP)
+            } else if (event.getAction() == MotionEvent.ACTION_UP || event.getAction() == MotionEvent.ACTION_CANCEL) {
                 stopRecording();
+            }
             return true;
-        });
-
-        btnNext.setOnClickListener(v -> {
-            animateButtonPress(v);
-            viewModel.nextSentence();
         });
 
         btnRetry.setOnClickListener(v -> {
             animateButtonPress(v);
+            hideResultUI();
+        });
+
+        btnNext.setOnClickListener(v -> {
+            animateButtonPress(v);
+            hideResultUI();
+            viewModel.nextSentence();
         });
     }
 
     private void observeViewModel() {
         viewModel.getSentences().observe(getViewLifecycleOwner(), sentences -> {
             updateSentenceUI();
-            createProgressDots();
         });
 
         viewModel.getCurrentIndex().observe(getViewLifecycleOwner(), index -> {
             updateSentenceUI();
-            updateProgressDots();
         });
 
         viewModel.getEvaluationResult().observe(getViewLifecycleOwner(), response -> {
-            if (response != null) {
-                showResultWithAnimation(response);
-            } else {
-                hideResult();
-            }
+            if (response != null)
+                showResultUI(response);
+            else
+                hideResultUI();
         });
 
         viewModel.getIsProcessing().observe(getViewLifecycleOwner(), processing -> {
             pbLoading.setVisibility(processing ? View.VISIBLE : View.GONE);
             btnMic.setEnabled(!processing);
             if (processing)
-                tvMicStatus.setText("Đang xử lý...");
-            else if (!isRecording())
+                tvMicStatus.setText("Đang chấm điểm...");
+            else if (recorder == null)
                 tvMicStatus.setText("Nhấn giữ để nói");
         });
     }
@@ -156,61 +158,53 @@ public class PronunciationFragment extends Fragment {
 
             tvSentence.setText(current.getSentenceText());
             tvProgress.setText("Câu " + (index + 1) + "/" + total);
-
-            // Update progress bar
-            int progress = (int) (((index + 1) / (float) total) * 100);
         }
     }
 
-    private void createProgressDots() {
-        llProgressDots.removeAllViews();
-        if (viewModel.getSentences().getValue() == null) return;
+    private void showResultUI(PronunciationResponse response) {
+        cvResult.setVisibility(View.VISIBLE);
+        llActionButtons.setVisibility(View.VISIBLE);
 
-        int total = viewModel.getSentences().getValue().size();
-        int dotWidth = 8;
-        int dotMargin = 4;
+        llRecordingSection.setVisibility(View.GONE);
 
-        for (int i = 0; i < total; i++) {
-            View dot = new View(getContext());
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                    0,
-                    dotWidth,
-                    1.0f
-            );
-            params.setMargins(dotMargin, 0, dotMargin, 0);
-            dot.setLayoutParams(params);
-            llProgressDots.addView(dot);
-        }
-        updateProgressDots();
+        int overallScore = (int) Math.round(response.getOverall_score());
+        int accuracyScore = (int) Math.round(response.getAccuracy_score());
+
+        tvFeedback.setText(response.getFeedback());
+
+        animateScore(tvOverallScore, overallScore, false);
+        animateScore(tvAccuracyScore, accuracyScore, true);
     }
 
-    private void updateProgressDots() {
-        if (viewModel.getCurrentIndex().getValue() == null) return;
-        int currentIndex = viewModel.getCurrentIndex().getValue();
-
-        for (int i = 0; i < llProgressDots.getChildCount(); i++) {
-            View dot = llProgressDots.getChildAt(i);
-
-        }
+    private void hideResultUI() {
+        cvResult.setVisibility(View.GONE);
+        llActionButtons.setVisibility(View.GONE);
+        llRecordingSection.setVisibility(View.VISIBLE);
+        tvMicStatus.setText("Nhấn giữ để nói");
     }
 
+    private void animateScore(TextView textView, int targetScore, boolean isPercentage) {
+        ValueAnimator animator = ValueAnimator.ofInt(0, targetScore);
+        animator.setDuration(800);
+        animator.setInterpolator(new AccelerateDecelerateInterpolator());
+        animator.addUpdateListener(animation -> {
+            int value = (int) animation.getAnimatedValue();
+            textView.setText(isPercentage ? value + "%" : String.valueOf(value));
+        });
+        animator.start();
+    }
 
     private void playAudioFromUrl(float speed) {
         if (viewModel.getSentences().getValue() == null) return;
-
         int index = viewModel.getCurrentIndex().getValue();
         String audioUrl = viewModel.getSentences().getValue().get(index).getAudioFile();
 
-        if (mediaPlayer != null) {
-            mediaPlayer.release();
-            mediaPlayer = null;
-        }
+        if (mediaPlayer != null) { mediaPlayer.release(); }
 
         mediaPlayer = new MediaPlayer();
         try {
             mediaPlayer.setDataSource(audioUrl);
             mediaPlayer.prepareAsync();
-
             mediaPlayer.setOnPreparedListener(mp -> {
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
                     mp.setPlaybackParams(mp.getPlaybackParams().setSpeed(speed));
@@ -218,32 +212,9 @@ public class PronunciationFragment extends Fragment {
                 mp.start();
                 animateAudioButton(speed == 1.0f ? btnPlayNormal : btnPlaySlow);
             });
-
-            mediaPlayer.setOnCompletionListener(mp -> {
-                mp.release();
-                mediaPlayer = null;
-            });
-
-            mediaPlayer.setOnErrorListener((mp, what, extra) -> {
-                Toast.makeText(getContext(), "Không thể phát âm thanh", Toast.LENGTH_SHORT).show();
-                return true;
-            });
-
         } catch (IOException e) {
-            Toast.makeText(getContext(), "Lỗi khi tải audio", Toast.LENGTH_SHORT).show();
-            e.printStackTrace();
+            Toast.makeText(getContext(), "Lỗi âm thanh", Toast.LENGTH_SHORT).show();
         }
-    }
-
-    private void animateAudioButton(ImageButton button) {
-        button.animate()
-                .scaleX(1.2f)
-                .scaleY(1.2f)
-                .setDuration(100)
-                .withEndAction(() ->
-                        button.animate().scaleX(1.0f).scaleY(1.0f).setDuration(100).start()
-                )
-                .start();
     }
 
     private void startRecording() {
@@ -256,17 +227,11 @@ public class PronunciationFragment extends Fragment {
         try {
             recorder.prepare();
             recorder.start();
-            tvMicStatus.setText("Đang ghi âm...");
-
-            // Start pulse animation
+            tvMicStatus.setText("Đang nghe...");
             vPulseRing.setVisibility(View.VISIBLE);
             pulseAnimator.start();
-
-            // Animate mic button
             btnMic.animate().scaleX(1.1f).scaleY(1.1f).setDuration(200).start();
-
         } catch (IOException e) {
-            Toast.makeText(getContext(), "Lỗi khi ghi âm", Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
     }
@@ -276,33 +241,20 @@ public class PronunciationFragment extends Fragment {
             try {
                 recorder.stop();
                 recorder.release();
-            } catch (RuntimeException e) {
-                // Handle very short press
-                Toast.makeText(getContext(), "Ghi âm quá ngắn", Toast.LENGTH_SHORT).show();
+            } catch (Exception e) {
+                Toast.makeText(getContext(), "Nhấn giữ lâu hơn một chút", Toast.LENGTH_SHORT).show();
             }
             recorder = null;
-
-            // Stop pulse animation
             pulseAnimator.cancel();
             vPulseRing.setVisibility(View.GONE);
-
-            // Reset mic button
             btnMic.animate().scaleX(1.0f).scaleY(1.0f).setDuration(200).start();
-            tvMicStatus.setText("Nhấn giữ để nói");
             processAndUpload();
         }
     }
 
-    private boolean isRecording() {
-        return recorder != null;
-    }
-
     private void processAndUpload() {
         File file = new File(audioPath);
-        if (!file.exists()) {
-            Toast.makeText(getContext(), "Không tìm thấy file ghi âm", Toast.LENGTH_SHORT).show();
-            return;
-        }
+        if (!file.exists()) return;
 
         try (FileInputStream fis = new FileInputStream(file)) {
             byte[] bytes = new byte[(int) file.length()];
@@ -310,102 +262,33 @@ public class PronunciationFragment extends Fragment {
             String base64 = Base64.encodeToString(bytes, Base64.NO_WRAP);
             viewModel.sendEvaluation(base64);
         } catch (IOException e) {
-            Toast.makeText(getContext(), "Lỗi khi đọc file", Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
     }
 
-    private void showResultWithAnimation(PronunciationResponse response) {  // Đổi tham số thành PronunciationResponse
-        if (response == null) {
-            hideResult();
-            return;
-        }
-
-        cvResult.setAlpha(0f);
-        cvResult.setVisibility(View.VISIBLE);
-        cvResult.animate()
-                .alpha(1f)
-                .setDuration(400)
-                .start();
-
-        int overallScore = (int) Math.round(response.getOverall_score());
-        int accuracyScore = (int) Math.round(response.getAccuracy_score());
-
-        String feedback = response.getFeedback();
-        if (feedback == null) feedback = "Không có phản hồi";
-
-        tvOverallScore.setText(String.valueOf(overallScore));
-        tvAccuracyScore.setText(accuracyScore + "%");
-        tvFeedback.setText(feedback);
-
-        // Animation đếm số
-        animateScore(tvOverallScore, overallScore, false);
-        animateScore(tvAccuracyScore, accuracyScore, true);
-
-        llActionButtons.setVisibility(View.VISIBLE);
+    private void animateAudioButton(ImageButton button) {
+        button.animate().scaleX(1.2f).scaleY(1.2f).setDuration(100)
+                .withEndAction(() -> button.animate().scaleX(1.0f).scaleY(1.0f).setDuration(100).start()).start();
     }
-
-    private void animateScore(TextView textView, int targetScore, boolean isPercentage) {
-        ValueAnimator animator = ValueAnimator.ofInt(0, targetScore);
-        animator.setDuration(1000);
-        animator.setInterpolator(new AccelerateDecelerateInterpolator());
-        animator.addUpdateListener(animation -> {
-            int value = (int) animation.getAnimatedValue();
-            if (isPercentage) {
-                textView.setText(value + "%");
-            } else {
-                textView.setText(String.valueOf(value));
-            }
-        });
-        animator.start();
-    }
-
-    private void hideResult() {
-        cvResult.setVisibility(View.GONE);
-        llActionButtons.setVisibility(View.GONE);
-    }
-
 
     private void animateButtonPress(View button) {
-        button.animate()
-                .scaleX(0.95f)
-                .scaleY(0.95f)
-                .setDuration(100)
-                .withEndAction(() ->
-                        button.animate()
-                                .scaleX(1.0f)
-                                .scaleY(1.0f)
-                                .setDuration(100)
-                                .start()
-                )
-                .start();
+        button.animate().scaleX(0.9f).scaleY(0.9f).setDuration(100)
+                .withEndAction(() -> button.animate().scaleX(1.0f).scaleY(1.0f).setDuration(100).start()).start();
     }
 
     private boolean checkPermission() {
-        return ActivityCompat.checkSelfPermission(requireContext(),
-                Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED;
+        return ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED;
     }
 
     private void requestPermission() {
-        ActivityCompat.requestPermissions(requireActivity(),
-                new String[]{Manifest.permission.RECORD_AUDIO},
-                REQUEST_RECORD_AUDIO_PERMISSION);
+        ActivityCompat.requestPermissions(requireActivity(), new String[]{Manifest.permission.RECORD_AUDIO}, REQUEST_RECORD_AUDIO_PERMISSION);
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        // Cleanup
-        if (mediaPlayer != null) {
-            mediaPlayer.release();
-            mediaPlayer = null;
-        }
-        if (recorder != null) {
-            recorder.release();
-            recorder = null;
-        }
-        if (pulseAnimator != null) {
-            pulseAnimator.cancel();
-        }
+        if (mediaPlayer != null) mediaPlayer.release();
+        if (recorder != null) recorder.release();
+        if (pulseAnimator != null) pulseAnimator.cancel();
     }
 }

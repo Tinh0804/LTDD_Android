@@ -24,21 +24,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- Progress Bar Container -->
-        <LinearLayout
-            android:id="@+id/llProgressContainer"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvTitle">
-
-
-        </LinearLayout>
-
         <!-- Main Content Card -->
         <androidx.cardview.widget.CardView
             android:id="@+id/cvMainContent"
@@ -49,7 +34,7 @@
             app:cardElevation="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/llProgressContainer">
+            app:layout_constraintTop_toBottomOf="@id/tvTitle">
 
             <LinearLayout
                 android:layout_width="match_parent"

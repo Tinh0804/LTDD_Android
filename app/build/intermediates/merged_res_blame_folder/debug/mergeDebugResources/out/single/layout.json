@@ -4,6 +4,10 @@
         "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/activity_select_image_game.xml"
     },
     {
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/dialog_game_result.xml",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/dialog_game_result.xml"
+    },
+    {
         "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/level_item.xml",
         "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/level_item.xml"
     },
@@ -26,10 +30,6 @@
     {
         "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/word_chip_placeholder.xml",
         "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/word_chip_placeholder.xml"
-    },
-    {
-        "merged": "com.example.learninglanguageapp-mergeDebugResources-70:/layout/fragment_pronunciation.xml",
-        "source": "com.example.learninglanguageapp-main-73:/layout/fragment_pronunciation.xml"
     },
     {
         "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/item_leaderboard.xml",
@@ -194,6 +194,10 @@
     {
         "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/item_word_card.xml",
         "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/layout/item_word_card.xml"
+    },
+    {
+        "merged": "com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_game.xml",
+        "source": "com.example.learninglanguageapp-main-73:/layout/activity_game.xml"
     },
     {
         "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-mergeDebugResources-70:/layout/activity_splash.xml",
