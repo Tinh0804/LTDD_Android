@@ -105,7 +105,8 @@ public class ShopViewModel extends AndroidViewModel {
                 pkg.getName(),
                 username,
                 pkg.getType().equals("diamond") ? pkg.getValue() : 0,
-                pkg.getType().equals("heart")
+                pkg.getType().equals("heart"),
+                "myapp://payment_success"
         );
 
         loadingLiveData.setValue(true);

@@ -221,13 +221,15 @@ public class ShopActivity extends AppCompatActivity {
             if (resultCode == RESULT_OK && data != null) {
                 String transactionId = data.getStringExtra("transaction_id");
                 String status = data.getStringExtra("payment_status");
+                int diamondAmount = data.getIntExtra("diamond_amount", 0);
 
                 if ("success".equals(status)) {
+                    // Reload số dư kim cương sau khi thanh toán thành công
+                    reloadBalance();
+                    
                     Toast.makeText(this,
-                            "Thanh toán thành công! Mã giao dịch: " + transactionId,
+                            "Thanh toán thành công! Bạn nhận được " + diamondAmount + " kim cương 💎",
                             Toast.LENGTH_LONG).show();
-
-
                 } else {
                     Toast.makeText(this,
                             "Thanh toán thất bại hoặc bị hủy",
@@ -245,5 +247,14 @@ public class ShopActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         // Reload balance khi quay lại activity
+        reloadBalance();
+    }
+
+    /**
+     * Reload số dư kim cương từ server hoặc local storage
+     */
+    private void reloadBalance() {
+        // Gọi ViewModel để load lại balance từ server
+        viewModel.loadBalance();
     }
 }

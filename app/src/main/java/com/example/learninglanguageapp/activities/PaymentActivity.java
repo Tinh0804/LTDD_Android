@@ -178,6 +178,12 @@ public class PaymentActivity extends AppCompatActivity {
                 intent.putExtra("payment_method", selectedPaymentMethod);
                 // Giả sử PaymentResponse chứa TransactionId hoặc bạn đã trích xuất nó
                 intent.putExtra("transaction_id", response.getTransactionId());
+                
+                // Lấy số kim cương từ gói đã chọn và truyền sang WebViewActivity
+                PackagePayment selectedPackage = (PackagePayment) getIntent().getSerializableExtra("selected_package");
+                if (selectedPackage != null && selectedPackage.getType().equals("diamond")) {
+                    intent.putExtra("diamond_amount", selectedPackage.getValue());
+                }
 
                 startActivityForResult(intent, 100);
             } else if (response != null) {
