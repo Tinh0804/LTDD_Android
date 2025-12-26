@@ -56,12 +56,12 @@
         "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/ic_medal_silver.png"
     },
     {
-        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_menu.png.flat",
-        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/menu.png"
-    },
-    {
         "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_img_travels.png.flat",
         "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/img_travels.png"
+    },
+    {
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_menu.png.flat",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/menu.png"
     },
     {
         "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_ic_medal_gold.png.flat",
@@ -340,10 +340,6 @@
         "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/mipmap-anydpi/ic_launcher.xml"
     },
     {
-        "merged": "com.example.learninglanguageapp-debug-71:/layout_item_lesson.xml.flat",
-        "source": "com.example.learninglanguageapp-main-73:/layout/item_lesson.xml"
-    },
-    {
         "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_app.png.flat",
         "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/app.png"
     },
@@ -594,6 +590,10 @@
     {
         "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_answer_b.png.flat",
         "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/answer_b.png"
+    },
+    {
+        "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_ic_audio.png.flat",
+        "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/ic_audio.png"
     },
     {
         "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/anim_card_flip_out.xml.flat",
@@ -950,10 +950,6 @@
     {
         "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_fun.png.flat",
         "source": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-main-73:/drawable/fun.png"
-    },
-    {
-        "merged": "com.example.learninglanguageapp-debug-71:/drawable_ic_audio.png.flat",
-        "source": "com.example.learninglanguageapp-main-73:/drawable/ic_audio.png"
     },
     {
         "merged": "/Users/vyhau/.gradle/daemon/8.13/com.example.learninglanguageapp-debug-71:/drawable_book.png.flat",

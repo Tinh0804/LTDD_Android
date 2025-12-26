@@ -26,6 +26,7 @@ import com.example.learninglanguageapp.viewmodels.PronunciationViewModel;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import com.example.learninglanguageapp.models.Response.PronunciationResponse;
 
 public class PronunciationFragment extends Fragment {
 
@@ -130,10 +131,11 @@ public class PronunciationFragment extends Fragment {
         });
 
         viewModel.getEvaluationResult().observe(getViewLifecycleOwner(), response -> {
-            if (response != null)
+            if (response != null) {
                 showResultWithAnimation(response);
-            else
+            } else {
                 hideResult();
+            }
         });
 
         viewModel.getIsProcessing().observe(getViewLifecycleOwner(), processing -> {
@@ -313,7 +315,12 @@ public class PronunciationFragment extends Fragment {
         }
     }
 
-    private void showResultWithAnimation(Object response) {
+    private void showResultWithAnimation(PronunciationResponse response) {  // Đổi tham số thành PronunciationResponse
+        if (response == null) {
+            hideResult();
+            return;
+        }
+
         cvResult.setAlpha(0f);
         cvResult.setVisibility(View.VISIBLE);
         cvResult.animate()
@@ -321,33 +328,30 @@ public class PronunciationFragment extends Fragment {
                 .setDuration(400)
                 .start();
 
-        // Assuming response has getOverall_score(), getAccuracy_score(), getFeedback()
-        try {
-            int overallScore = (int) response.getClass().getMethod("getOverall_score").invoke(response);
-            int accuracyScore = (int) ((double) response.getClass().getMethod("getAccuracy_score").invoke(response));
-            String feedback = (String) response.getClass().getMethod("getFeedback").invoke(response);
+        int overallScore = (int) Math.round(response.getOverall_score());
+        int accuracyScore = (int) Math.round(response.getAccuracy_score());
 
-            tvOverallScore.setText(String.valueOf(overallScore));
-            tvAccuracyScore.setText(accuracyScore + "%");
-            tvFeedback.setText(feedback);
+        String feedback = response.getFeedback();
+        if (feedback == null) feedback = "Không có phản hồi";
 
-            animateScore(tvOverallScore, overallScore);
-            animateScore(tvAccuracyScore, accuracyScore);
+        tvOverallScore.setText(String.valueOf(overallScore));
+        tvAccuracyScore.setText(accuracyScore + "%");
+        tvFeedback.setText(feedback);
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        // Animation đếm số
+        animateScore(tvOverallScore, overallScore, false);
+        animateScore(tvAccuracyScore, accuracyScore, true);
 
         llActionButtons.setVisibility(View.VISIBLE);
     }
 
-    private void animateScore(TextView textView, int targetScore) {
+    private void animateScore(TextView textView, int targetScore, boolean isPercentage) {
         ValueAnimator animator = ValueAnimator.ofInt(0, targetScore);
         animator.setDuration(1000);
         animator.setInterpolator(new AccelerateDecelerateInterpolator());
         animator.addUpdateListener(animation -> {
             int value = (int) animation.getAnimatedValue();
-            if (textView == tvAccuracyScore) {
+            if (isPercentage) {
                 textView.setText(value + "%");
             } else {
                 textView.setText(String.valueOf(value));
